@@ -1,0 +1,19 @@
+console-sharp
+=============
+
+	Console sharp is an ncurses binding licensed under the terms
+	of the MIT X11 license.
+
+License
+=======
+
+	Console Sharp is licensed under the terms of M
+Implementation Notes
+====================
+
+	The initial implementation used SafeHandles, but since
+	SafeHandles only became available in recent versions of Mono,
+	I have switched the code to use IntPtrs for now, and will go
+	back to it when newer versions of Mono become more wildly
+	available.
+
