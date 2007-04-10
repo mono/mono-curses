@@ -1,5 +1,6 @@
 using System;
-using Mono.Curses;
+using Mono;
+using Mono.Terminal;
 
 class Demo {
 	static void Main ()

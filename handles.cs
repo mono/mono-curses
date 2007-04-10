@@ -1,7 +1,7 @@
 using System;
 using System.Runtime.InteropServices;
 
-namespace Mono.Curses {
+namespace Mono.Terminal {
 
 	public class Window {
 		public readonly IntPtr Handle;
@@ -112,7 +112,21 @@ namespace Mono.Curses {
 		{
 			return Curses.wnoutrefresh (Handle);
 		}
-		
+
+		public int move (int line, int col)
+		{
+			return Curses.wmove (Handle, line, col);
+		}
+
+		public int addch (char ch)
+		{
+			return Curses.waddch (Handle, ch);
+		}
+
+		public int refresh ()
+		{
+			return Curses.wrefresh (Handle);
+		}
 	}
 
 	// Currently unused, to do later

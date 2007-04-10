@@ -4,6 +4,7 @@ using System.Runtime.InteropServices;
 namespace Mono.Terminal {
 
 	public partial class Curses {
+
 #region Screen initialization
 	
 		[DllImport ("@CURSES@", EntryPoint="initscr")]
@@ -131,12 +132,45 @@ namespace Mono.Terminal {
 		[DllImport ("@CURSES@")]
 		extern internal static int wnoutrefresh (IntPtr win);
 #endregion
+
+#region Output
+		[DllImport ("@CURSES@")]
+		extern internal static int move (int line, int col);
+
+		[DllImport ("@CURSES@")]
+		extern internal static int addch (int ch);
+		[DllImport ("@CURSES@")]
+		extern internal static int addstr (string s);
+
+		[DllImport ("@CURSES@")]
+		extern internal static int wmove (IntPtr win, int line, int col);
+
+		[DllImport ("@CURSES@")]
+		extern internal static int waddch (IntPtr win, int ch);
+#endregion
+
+#region Attributes
+		[DllImport ("@CURSES@")]
+		extern internal static int attron (int attrs);
+		[DllImport ("@CURSES@")]
+		extern internal static int attroff (int attrs);
+		[DllImport ("@CURSES@")]
+		extern internal static int attrset (int attrs);
+#endregion
+
+#region Input
+		[DllImport ("@CURSES@")]
+		extern internal static int getch ();
+
+		[DllImport ("@CURSES@")]
+		extern internal static int mvgetch (int y, int x);
+#endregion
 		
 #region Helpers
-		[DllImport ("console-sharp")]
+		[DllImport ("mono-curses")]
 		internal extern static IntPtr console_sharp_get_stdscr ();
 
-		[DllImport ("console-sharp")]
+		[DllImport ("mono-curses")]
 		internal extern static IntPtr console_sharp_get_curscr ();
 #endregion
 	}
