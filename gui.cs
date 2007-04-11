@@ -13,7 +13,7 @@ namespace Mono.Terminal {
 	
 	public abstract class Widget {
 		public Container Container;
-		protected int x, y, w, h;
+		public int x, y, w, h;
 		public WidgetFlags Flags;
 		int color;
 		
@@ -26,6 +26,32 @@ namespace Mono.Terminal {
 			Flags = 0;
 		}
 
+		public bool CanFocus {
+			get {
+				return (Flags & WidgetFlags.CanFocus) != 0;
+			}
+
+			set {
+				if (value)
+					Flags |= WidgetFlags.CanFocus;
+				else
+					Flags &= ~WidgetFlags.CanFocus;
+			}
+		}
+
+		public bool HasFocus {
+			get {
+				return (Flags & WidgetFlags.HasFocus) != 0;
+			}
+
+			set {
+				if (value)
+					Flags |= WidgetFlags.HasFocus;
+				else
+					Flags &= ~WidgetFlags.HasFocus;
+			}
+		}
+		
 		public void Move (int line, int col)
 		{
 			if (Container != null)
@@ -72,6 +98,30 @@ namespace Mono.Terminal {
 		public virtual void PositionCursor ()
 		{
 			Move (y, x);
+		}
+		
+		static public void DrawFrame (int line, int col, int width, int height)
+		{
+			int b;
+			Curses.move (line, col);
+			Curses.addch (Curses.ACS_ULCORNER);
+			for (b = 0; b < width-2; b++)
+				Curses.addch (Curses.ACS_HLINE);
+			Curses.addch (Curses.ACS_URCORNER);
+			
+			for (b = 1; b < height-1; b++){
+				Curses.move (line+b, col);
+				Curses.addch (Curses.ACS_VLINE);
+			}
+			for (b = 1; b < height-1; b++){
+				Curses.move (line+b, col+width-1);
+				Curses.addch (Curses.ACS_VLINE);
+			}
+			Curses.move (line + height-1, col);
+			Curses.addch (Curses.ACS_LLCORNER);
+			for (b = 0; b < width-2; b++)
+				Curses.addch (Curses.ACS_HLINE);
+			Curses.addch (Curses.ACS_LRCORNER);
 		}
 	}
 
@@ -223,7 +273,6 @@ namespace Mono.Terminal {
 
 	public class Container : Widget {
 		ArrayList widgets = new ArrayList ();
-		int focused_idx = -1;
 		Widget focused = null;
 		public bool Running;
 		
@@ -243,16 +292,36 @@ namespace Mono.Terminal {
 			if (focused != null)
 				focused.PositionCursor ();
 		}
+
+		public void SetFocus (Widget w)
+		{
+			if (!w.CanFocus)
+				return;
+			if (focused == w)
+				return;
+			if (focused != null)
+				focused.HasFocus = false;
+			focused = w;
+			focused.HasFocus = true;
+			Container wc = w as Container;
+			if (wc != null)
+				wc.EnsureFocus ();
+			focused.PositionCursor ();
+		}
+
+		public void EnsureFocus ()
+		{
+			if (focused == null)
+				FocusFirst();
+		}
 		
 		public void FocusFirst ()
 		{
-			int i = 0;
 			foreach (Widget w in widgets){
-				if (focused_idx == -1 && (w.Flags & WidgetFlags.CanFocus) != 0){
-					focused_idx = i;
-					focused = w;
+				if (w.CanFocus){
+					SetFocus (w);
+					return;
 				}
-				i++;
 			}
 		}
 
@@ -263,22 +332,20 @@ namespace Mono.Terminal {
 				return;
 			}
 			int n = widgets.Count;
-			for (int i = 1; i <= n; i++){
-				int idx = (focused_idx + i) % n;
-
-				Widget w = (Widget) widgets [idx];
-				if ((w.Flags & WidgetFlags.CanFocus) == 0)
+			int focused_idx = -1;
+			int top = n*2-1;
+			for (int i = 0; i < top; i++){
+				Widget w = (Widget)widgets [i%n];
+				
+				if (w.HasFocus){
+					focused_idx = i;
 					continue;
-
-				w = (Widget) widgets [focused_idx];
-				w.Flags &= ~WidgetFlags.HasFocus;
-
-				focused = (Widget) widgets [idx];
-				focused.Flags |= WidgetFlags.HasFocus;
-				focused_idx = idx;
-
-				focused.PositionCursor ();
-				return;
+				}
+				if (w.CanFocus && focused_idx != -1){
+					focused.HasFocus = false;
+					SetFocus (w);
+					break;
+				}
 			}
 		}
 
@@ -287,7 +354,7 @@ namespace Mono.Terminal {
 			Curses.move (row + y, col + x);
 		}
 		
-		public void Add (Widget w)
+		public virtual void Add (Widget w)
 		{
 			widgets.Add (w);
 			w.Container = this;
@@ -306,6 +373,40 @@ namespace Mono.Terminal {
 		}
 	}
 
+	public class Frame : Container {
+		string title;
+		
+		public Frame (int x, int y, int w, int h, string title) : base (x, y, w, h)
+		{
+			this.title = title;
+		}
+
+		public override void ContainerMove (int row, int col)
+		{
+			base.ContainerMove (y + row + 1, x + col + 1);
+		}
+
+		public override void Redraw ()
+		{
+			Clear ();
+
+			Widget.DrawFrame (y, x, w, h);
+			Curses.move (y, x + 1);
+			Curses.addch (' ');
+			Curses.addstr (title);
+			Curses.addch (' ');
+			base.Redraw ();
+		}
+
+		public override void Add (Widget w)
+		{
+			base.Add (w);
+			if (w.CanFocus){
+				this.CanFocus = true;
+			}
+		}
+	}
+	
 	public class Dialog : Container {
 		string title;
 		
@@ -316,40 +417,15 @@ namespace Mono.Terminal {
 
 		public override void ContainerMove (int row, int col)
 		{
-			base.ContainerMove (row + 2, col + 2);
+			base.ContainerMove (y + row + 2, x + col + 2);
 		}
 
-		static public void Frame (int line, int col, int width, int height)
-		{
-			int b;
-			Curses.move (line, col);
-			Curses.addch (Curses.ACS_ULCORNER);
-			for (b = 0; b < width-2; b++)
-				Curses.addch (Curses.ACS_HLINE);
-			Curses.addch (Curses.ACS_URCORNER);
-			
-			for (b = 1; b < height-1; b++){
-				Curses.move (line+b, col);
-				Curses.addch (Curses.ACS_VLINE);
-			}
-			for (b = 1; b < height-1; b++){
-				Curses.move (line+b, col+width-1);
-				Curses.addch (Curses.ACS_VLINE);
-			}
-			Curses.move (line + height-1, col);
-			Curses.addch (Curses.ACS_LLCORNER);
-			for (b = 0; b < width-2; b++)
-				Curses.addch (Curses.ACS_HLINE);
-			Curses.addch (Curses.ACS_LRCORNER);
-			
-		}
-		
 		public override void Redraw ()
 		{
 			Curses.attrset (Curses.A_REVERSE);
 			Clear ();
 
-			Frame (y + 1, x + 1, w - 2, h - 2);
+			Widget.DrawFrame (y + 1, x + 1, w - 2, h - 2);
 			Curses.move (y + 1, x + (w - title.Length) / 2);
 			Curses.addch (' ');
 			Curses.addstr (title);
