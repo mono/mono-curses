@@ -168,7 +168,6 @@ namespace Mono.Terminal {
 		public override void Redraw ()
 		{
 			Move (y, x);
-			int j;
 			
 			for (int i = 0; i < w; i++){
 				int p = first + i;
@@ -436,13 +435,29 @@ namespace Mono.Terminal {
 	
 	public class Application {
 		static Stack toplevels = new Stack ();
-			
-		static void Init ()
+		
+		public static void Init ()
 		{
 			Curses.initscr ();
+		}
+
+		static public int Lines {	
+			get {
+				return Curses.Lines;
+			}
+		}
+
+		static public int Cols {
+			get {
+				return Curses.Cols;
+			}
+		}
+
+		static void InitApp ()
+		{
 			Curses.cbreak ();
 			Curses.noecho ();
-			Curses.nonl ();
+			//Curses.nonl ();
 			Window.Standard.keypad (true);
 		}
 
@@ -459,8 +474,10 @@ namespace Mono.Terminal {
 
 		static public void Run (Container container)
 		{
+			Init ();
+			
 			if (toplevels.Count == 0)
-				Init ();
+				InitApp ();
 
 			toplevels.Push (container);
 			

@@ -9,13 +9,27 @@ namespace Mono.Terminal {
 	
 		[DllImport ("@CURSES@", EntryPoint="initscr")]
 		extern static internal IntPtr real_initscr ();
+		static int lines, cols;
 
 		static Window main_window;
 		
 		static public Window initscr ()
 		{
 			main_window = new Window (real_initscr ());
+			console_sharp_get_dims (out lines, out cols);
 			return main_window;
+		}
+
+		public static int Lines {	
+			get {
+				return lines;
+			}
+		}
+
+		public static int Cols {
+			get {
+				return cols;
+			}
 		}
 
 		[DllImport ("@CURSES@")]
@@ -172,6 +186,9 @@ namespace Mono.Terminal {
 
 		[DllImport ("mono-curses")]
 		internal extern static IntPtr console_sharp_get_curscr ();
+
+		[DllImport ("mono-curses")]
+		internal extern static void console_sharp_get_dims (out int lines, out int cols);
 #endregion
 	}
 }
