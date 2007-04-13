@@ -180,6 +180,18 @@ namespace Mono.Terminal {
 		extern internal static int mvgetch (int y, int x);
 #endregion
 		
+#region Colors
+		[DllImport ("ncurses")]
+		extern internal static bool has_colors ();
+
+		[DllImport ("ncurses")]
+		extern internal static int start_color ();
+
+		[DllImport ("ncurses")]
+		extern internal static int init_pair (short pair, short f, short b);
+		
+#endregion
+		
 #region Helpers
 		[DllImport ("mono-curses")]
 		internal extern static IntPtr console_sharp_get_stdscr ();

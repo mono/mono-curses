@@ -31,11 +31,20 @@ main (int argc, char *argv [])
 	put (ACS_ULCORNER);
 	put (ACS_URCORNER);
 	put (ACS_VLINE);
+
+	put (COLOR_BLACK);
+	put (COLOR_RED);
+	put (COLOR_GREEN);
+	put (COLOR_YELLOW);
+	put (COLOR_BLUE);
+	put (COLOR_MAGENTA);
+	put (COLOR_CYAN);
+	put (COLOR_WHITE);
 	
 	put2 ("Backspace", KEY_BACKSPACE);
 
 	diff = COLOR_PAIR (1) - COLOR_PAIR(0);
-	fprintf (OUT, "\n\n\tpublic int ColorPair(int n){\n"
+	fprintf (OUT, "\n\n\tstatic public int ColorPair(int n){\n"
 		"\t\treturn %d + n * %d;\n"
 		"\t}\n\n", COLOR_PAIR (0), diff);
 	fprintf (OUT,"}\n}\n");

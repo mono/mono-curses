@@ -15,7 +15,6 @@ namespace Mono.Terminal {
 		public Container Container;
 		public int x, y, w, h;
 		public WidgetFlags Flags;
-		int color;
 		
 		public Widget (int x, int y, int w, int h)
 		{
@@ -24,6 +23,7 @@ namespace Mono.Terminal {
 			this.w = w;
 			this.h = h;
 			Flags = 0;
+			Container = Application.EmptyContainer;
 		}
 
 		public bool CanFocus {
@@ -49,15 +49,13 @@ namespace Mono.Terminal {
 					Flags |= WidgetFlags.HasFocus;
 				else
 					Flags &= ~WidgetFlags.HasFocus;
+				Redraw ();
 			}
 		}
 		
 		public void Move (int line, int col)
 		{
-			if (Container != null)
-				Container.ContainerMove (line, col);
-			else
-				Curses.move (line, col);
+			Container.ContainerMove (line, col);
 		}
 		
 		public void Clear ()
@@ -80,21 +78,16 @@ namespace Mono.Terminal {
 			}
 		}
 
-		public int Color {
-			get {
-				return color;
-			}
-
-			set {
-				color = value;
-			}
-		}
-
 		public virtual bool ProcessKey (int key)
 		{
 			return false;
 		}
 
+		public virtual bool ProcessHotKey (int key)
+		{
+			return false;
+		}
+		
 		public virtual void PositionCursor ()
 		{
 			Move (y, x);
@@ -123,6 +116,30 @@ namespace Mono.Terminal {
 				Curses.addch (Curses.ACS_HLINE);
 			Curses.addch (Curses.ACS_LRCORNER);
 		}
+
+		public int ColorNormal {
+			get {
+				return Container.ContainerColorNormal;
+			}
+		}
+
+		public int ColorFocus {
+			get {
+				return Container.ContainerColorFocus;
+			}
+		}
+
+		public int ColorHotNormal {
+			get {
+				return Container.ContainerColorHotNormal;
+			}
+		}
+
+		public int ColorHotFocus {
+			get {
+				return Container.ContainerColorHotFocus;
+			}
+		}
 	}
 
 	public class Label : Widget {
@@ -134,7 +151,7 @@ namespace Mono.Terminal {
 		
 		public override void Redraw ()
 		{
-			Curses.attrset (Color);
+			Curses.attrset (ColorNormal);
 			Move (y, x);
 			int pos = 0;
 			
@@ -167,6 +184,7 @@ namespace Mono.Terminal {
 		
 		public override void Redraw ()
 		{
+			Curses.attrset (Application.ColorDialogFocus);
 			Move (y, x);
 			
 			for (int i = 0; i < w; i++){
@@ -270,13 +288,85 @@ namespace Mono.Terminal {
 		}
 	}
 
+	public class Button : Widget {
+		string text;
+		char hot_key;
+		int  hot_pos = -1;
+
+		public event EventHandler Clicked;
+		
+		public Button (int x, int y, string s) : base (x, y, s.Length + 4, 1)
+		{
+			Flags = WidgetFlags.CanFocus;
+
+			text = "[ " + s + " ]";
+			int i = 0;
+			foreach (char c in text){
+				if (Char.IsUpper (c)){
+					hot_key = c;
+					hot_pos = i;
+					break;
+				}
+				i++;
+			}
+		}
+
+		public override void Redraw ()
+		{
+			Curses.attrset (HasFocus ? ColorFocus : ColorNormal);
+			Move (y, x);
+			Curses.addstr (text);
+			Move (y, x + hot_pos);
+			Curses.attrset (HasFocus ? ColorHotFocus : ColorHotNormal);
+			Curses.addch (hot_key);
+		}
+
+		public override void PositionCursor ()
+		{
+			Move (y, x + hot_pos);
+		}
+
+		public override bool ProcessHotKey (int key)
+		{
+			if (key == hot_key){
+				if (Clicked != null)
+					Clicked (this, EventArgs.Empty);
+				return true;
+			}
+			return false;
+		}
+
+		public override bool ProcessKey (int c)
+		{
+			if (c == '\n' || c == ' '){
+				if (Clicked != null)
+					Clicked (this, EventArgs.Empty);
+				return true;
+			}
+			return false;
+		}
+	}
+	
 	public class Container : Widget {
 		ArrayList widgets = new ArrayList ();
 		Widget focused = null;
 		public bool Running;
 		
+		public int ContainerColorNormal;
+		public int ContainerColorFocus;
+		public int ContainerColorHotNormal;
+		public int ContainerColorHotFocus;
+		
+		static Container ()
+		{
+		}
+		
 		public Container (int x, int y, int w, int h) : base (x, y, w, h)
 		{
+			ContainerColorNormal = Application.ColorNormal;
+			ContainerColorFocus = Application.ColorFocus;
+			ContainerColorHotNormal = Application.ColorHotNormal;
+			ContainerColorHotFocus = Application.ColorHotFocus;
 		}
 		
 		public override void Redraw ()
@@ -370,6 +460,22 @@ namespace Mono.Terminal {
 			}
 			return false;
 		}
+
+		public override bool ProcessHotKey (int key)
+		{
+			if (focused != null)
+				if (focused.ProcessHotKey (key))
+					return true;
+			
+			foreach (Widget w in widgets){
+				if (w == focused)
+					continue;
+				
+				if (w.ProcessHotKey (key))
+					return true;
+			}
+			return false;
+		}
 	}
 
 	public class Frame : Container {
@@ -387,8 +493,8 @@ namespace Mono.Terminal {
 
 		public override void Redraw ()
 		{
+			Curses.attrset (ContainerColorNormal);
 			Clear ();
-
 			Widget.DrawFrame (y, x, w, h);
 			Curses.move (y, x + 1);
 			Curses.addch (' ');
@@ -405,12 +511,20 @@ namespace Mono.Terminal {
 			}
 		}
 	}
-	
+
+	//
+	// A container with a border, and with a default set of colors
+	//
 	public class Dialog : Container {
 		string title;
 		
 		public Dialog (int x, int y, int w, int h, string title) : base (x, y, w, h)
 		{
+			ContainerColorNormal = Application.ColorDialogNormal;
+			ContainerColorFocus = Application.ColorDialogFocus;
+			ContainerColorHotNormal = Application.ColorDialogHotNormal;
+			ContainerColorHotFocus = Application.ColorDialogHotFocus;
+
 			this.title = title;
 		}
 
@@ -435,10 +549,81 @@ namespace Mono.Terminal {
 	
 	public class Application {
 		static Stack toplevels = new Stack ();
+
+		static public int ColorNormal;
+		static public int ColorFocus;
+		static public int ColorHotNormal;
+		static public int ColorHotFocus;
 		
-		public static void Init ()
+		static public int ColorMarked;
+		static public int ColorMarkedSelected;
+		
+		static public int ColorDialogNormal;
+		static public int ColorDialogFocus;
+		static public int ColorDialogHotNormal;
+		static public int ColorDialogHotFocus;
+
+		static short last_color_pair;
+		
+		static int MakeColor (short f, short b)
 		{
+			Curses.init_pair (++last_color_pair, f, b);
+			return Curses.ColorPair (last_color_pair);
+		}
+
+		static bool inited;
+
+		static Container empty_container;
+		static public Container EmptyContainer {
+			get {
+				return empty_container;
+			}
+		}
+		
+		public static void Init (bool disable_color)
+		{
+			empty_container = new Container (0, 0, Application.Cols, Application.Lines);
+			
 			Curses.initscr ();
+
+			if (inited)
+				return;
+			inited = true;
+			
+			bool use_color = false;
+			if (!disable_color){
+				use_color = Curses.has_colors ();
+				Console.WriteLine (use_color);
+			}
+			
+			Curses.start_color ();
+			if (use_color){
+				ColorNormal = MakeColor (Curses.COLOR_WHITE, Curses.COLOR_BLUE);
+				ColorFocus = MakeColor (Curses.COLOR_BLACK, Curses.COLOR_CYAN);
+				ColorHotNormal = Curses.A_BOLD | MakeColor (Curses.COLOR_YELLOW, Curses.COLOR_BLUE);
+				ColorHotFocus = Curses.A_BOLD | MakeColor (Curses.COLOR_YELLOW, Curses.COLOR_CYAN);
+
+				ColorMarked = ColorHotNormal;
+				ColorMarkedSelected = ColorHotFocus;
+
+				ColorDialogNormal    = MakeColor (Curses.COLOR_BLACK, Curses.COLOR_WHITE);
+				ColorDialogFocus     = MakeColor (Curses.COLOR_BLACK, Curses.COLOR_CYAN);
+				ColorDialogHotNormal = MakeColor (Curses.COLOR_BLUE,  Curses.COLOR_WHITE);
+				ColorDialogHotFocus  = MakeColor (Curses.COLOR_BLUE,  Curses.COLOR_CYAN);
+			} else {
+				ColorNormal = Curses.A_NORMAL;
+				ColorFocus = Curses.A_REVERSE;
+				ColorHotNormal = Curses.A_BOLD;
+				ColorHotFocus = Curses.A_REVERSE | Curses.A_BOLD;
+
+				ColorMarked = Curses.A_BOLD;
+				ColorMarkedSelected = Curses.A_REVERSE | Curses.A_BOLD;
+
+				ColorDialogNormal = Curses.A_REVERSE;
+				ColorDialogFocus = Curses.A_NORMAL;
+				ColorDialogHotNormal = Curses.A_BOLD;
+				ColorDialogHotFocus = Curses.A_NORMAL;
+			}
 		}
 
 		static public int Lines {	
@@ -474,7 +659,7 @@ namespace Mono.Terminal {
 
 		static public void Run (Container container)
 		{
-			Init ();
+			Init (false);
 			
 			if (toplevels.Count == 0)
 				InitApp ();
@@ -489,6 +674,9 @@ namespace Mono.Terminal {
 			for (container.Running = true; container.Running; ){
 				ch = Curses.getch ();
 
+				if (container.ProcessHotKey (ch))
+					continue;
+				
 				if (container.ProcessKey (ch))
 					continue;
 			}
