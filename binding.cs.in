@@ -177,6 +177,9 @@ namespace Mono.Terminal {
 		extern internal static int getch ();
 
 		[DllImport ("@CURSES@")]
+		extern internal static int ungetch (int ch);
+
+		[DllImport ("@CURSES@")]
 		extern internal static int mvgetch (int y, int x);
 #endregion
 		

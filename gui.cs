@@ -153,15 +153,7 @@ namespace Mono.Terminal {
 		{
 			Curses.attrset (ColorNormal);
 			Move (y, x);
-			int pos = 0;
-			
-			foreach (char c in text){
-				if (++pos > w)
-					break;
-				Curses.addch (c);
-			}
-			while (pos++ < w)
-				Curses.addch (' ');
+			Curses.addstr (text);
 		}
 	}
 
@@ -328,10 +320,16 @@ namespace Mono.Terminal {
 
 		public override bool ProcessHotKey (int key)
 		{
-			if (key == hot_key){
-				if (Clicked != null)
-					Clicked (this, EventArgs.Empty);
-				return true;
+			if (key == 27){
+				key = Curses.getch ();
+				if (Char.ToUpper ((char)key) == hot_key){
+					Container.SetFocus (this);
+					if (Clicked != null)
+						Clicked (this, EventArgs.Empty);
+					return true;
+				}
+				Curses.ungetch (key);
+				return false;
 			}
 			return false;
 		}
@@ -346,12 +344,121 @@ namespace Mono.Terminal {
 			return false;
 		}
 	}
+
+	public class ListView : Widget {
+		int items;
+		int top;
+		int selected;
+		
+		public ListView (int x, int y, int w, int h) : base (x, y, w, h)
+		{
+			Flags = WidgetFlags.CanFocus;
+
+			items = 40;
+		}
+
+		public override bool ProcessKey (int c)
+		{
+			int n;
+			
+			switch (c){
+			case 16: // Control-p
+			case Curses.Up:
+				if (selected > 0){
+					selected--;
+					if (selected < top)
+						top = selected;
+					Redraw ();
+				}
+				return true;
+
+			case 14: // Control-n
+			case Curses.Down:
+				if (selected+1 < items){
+					selected++;
+					if (selected >= top + h){
+						top++;
+					}
+					Redraw ();
+				}
+				return true;
+
+			case 22: //  Control-v
+			case Curses.NPage:
+				n = (selected + h);
+				if (n > items)
+					n = items-1;
+				if (n != selected){
+					selected = n;
+					if (items >= h)
+						top = selected;
+					else
+						top = 0;
+					Redraw ();
+				}
+				return true;
+				
+			case Curses.PPage:
+				n = (selected - h);
+				if (n < 0)
+					n = 0;
+				if (n != selected){
+					selected = n;
+					top = selected;
+					Redraw ();
+				}
+				return true;
+			}
+			return false;
+		}
+
+		public override void PositionCursor ()
+		{
+			Move (y + (selected-top), x);
+		}
+
+		bool IsMarked (int item)
+		{
+			return item % 2 == 0;
+		}
+		
+		public override void Redraw ()
+		{
+			for (int l = 0; l < h; l++){
+				Move (y + l, x);
+				int item = l + top;
+
+				if (item > items){
+					Curses.attrset (ColorNormal);
+					for (int c = 0; c < w; c++)
+						Curses.addch (' ');
+					continue;
+				}
+				
+				if (item == selected){
+					if (IsMarked (item))
+						Curses.attrset (ColorHotFocus);
+					else
+						Curses.attrset (ColorHotNormal);
+				} else {
+					if (IsMarked (item))
+						Curses.attrset (ColorFocus);
+					else
+						Curses.attrset (ColorNormal);
+				}
+				for (int c = 0; c < w; c++){
+					Curses.addch ((byte) 'a' + (item % 24));
+				}
+			}
+			PositionCursor ();
+		}
+	}
 	
 	public class Container : Widget {
 		ArrayList widgets = new ArrayList ();
 		Widget focused = null;
 		public bool Running;
-		
+	
 		public int ContainerColorNormal;
 		public int ContainerColorFocus;
 		public int ContainerColorHotNormal;
@@ -488,7 +595,7 @@ namespace Mono.Terminal {
 
 		public override void ContainerMove (int row, int col)
 		{
-			base.ContainerMove (y + row + 1, x + col + 1);
+			base.ContainerMove (row + 1, col + 1);
 		}
 
 		public override void Redraw ()

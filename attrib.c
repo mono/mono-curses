@@ -42,6 +42,11 @@ main (int argc, char *argv [])
 	put (COLOR_WHITE);
 	
 	put2 ("Backspace", KEY_BACKSPACE);
+	put2 ("Up",    KEY_UP);
+	put2 ("Down",  KEY_DOWN);
+	put2 ("Left",  KEY_LEFT);
+	put2 ("NPage", KEY_NPAGE);
+	put2 ("PPage", KEY_PPAGE);
 
 	diff = COLOR_PAIR (1) - COLOR_PAIR(0);
 	fprintf (OUT, "\n\n\tstatic public int ColorPair(int n){\n"
