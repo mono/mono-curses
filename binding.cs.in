@@ -149,12 +149,12 @@ namespace Mono.Terminal {
 
 #region Output
 		[DllImport ("@CURSES@")]
-		extern internal static int move (int line, int col);
+		extern public static int move (int line, int col);
 
 		[DllImport ("@CURSES@")]
-		extern internal static int addch (int ch);
+		extern public static int addch (int ch);
 		[DllImport ("@CURSES@")]
-		extern internal static int addstr (string s);
+		extern public static int addstr (string s);
 
 		[DllImport ("@CURSES@")]
 		extern internal static int wmove (IntPtr win, int line, int col);
@@ -205,5 +205,15 @@ namespace Mono.Terminal {
 		[DllImport ("mono-curses")]
 		internal extern static void console_sharp_get_dims (out int lines, out int cols);
 #endregion
+
+		// We encode ESC + char (what Alt-char generates) as 0x2000 + char
+		public const int KeyAlt = 0x2000;
+
+		static public int IsAlt (int key)
+		{
+			if ((key & KeyAlt) != 0)
+				return key & ~KeyAlt;
+			return 0;
+		}
 	}
 }

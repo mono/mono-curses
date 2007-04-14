@@ -1,0 +1,10 @@
+2007-04-13  Miguel de Icaza  <miguel@novell.com>
+
+	* binding.cs (IsAlt): new routine, constants to encode alt
+	setting.
+
+	* demo.cs: Provide a model for the listview, improve demo, include
+	new pane to test focus across containers.
+	
+	* gui.cs: 
+
