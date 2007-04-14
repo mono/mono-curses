@@ -20,6 +20,40 @@ License
 	Console sharp is an ncurses binding licensed under the terms
 	of the MIT X11 license.
 
+Features
+========
+
+	Detects window changes, invokes event for widgets to relayout if
+	the user wishes to.
+
+	Hotkeys (Alt-letter) are handled by buttons and a handful others.
+
+	Dialog boxes automatically get centered (even with window size change
+	scenarios).
+
+	Entry widget has emacs keybindings.
+
+	ListView widget uses Model/View setup.
+
+	Color and black and white support (first parameter to Application.Init)
+
+TODO
+====
+
+	* Add mouse support 
+	* Add scrollbar and thumb to listviews
+	* Add text view widget
+	* Add scrollable control
+	* Checkbox/Radio button are missing
+	* Date/Time widget
+	* Process widget
+	* Command line parsing to demo (to active B&W support).
+	* Port to MacOS X (they have a downgraded curses).
+
+	* Implement Layout managers, which?
+
+	* Write a manual/tutorial
+
 Implementation Notes
 ====================
 
