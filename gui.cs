@@ -1,3 +1,31 @@
+//
+// gui.cs: Simple curses-based GUI toolkit, core
+//
+// Authors:
+//   Miguel de Icaza (miguel.de.icaza@gmail.com)
+//
+// Copyright (C) 2007 Novell (http://www.novell.com)
+//
+// Permission is hereby granted, free of charge, to any person obtaining
+// a copy of this software and associated documentation files (the
+// "Software"), to deal in the Software without restriction, including
+// without limitation the rights to use, copy, modify, merge, publish,
+// distribute, sublicense, and/or sell copies of the Software, and to
+// permit persons to whom the Software is furnished to do so, subject to
+// the following conditions:
+// 
+// The above copyright notice and this permission notice shall be
+// included in all copies or substantial portions of the Software.
+// 
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+// EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+// NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+// LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+// OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+// WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+//
+
 using System;
 using System.Collections;
 using Mono;
@@ -176,6 +204,9 @@ namespace Mono.Terminal {
 
 		public Entry (int x, int y, int w, string s) : base (x, y, w, 1)
 		{
+			if (s == null)
+				s = "";
+			
 			text = s;
 			point = s.Length;
 			first = point > w ? point - w : 0;
@@ -361,7 +392,6 @@ namespace Mono.Terminal {
 		{
 			int k = Curses.IsAlt (key);
 			if (k != 0){
-				Console.WriteLine ("HOT={0} {1}", k, (int)hot_key);
 				if (Char.ToUpper ((char)k) == hot_key){
 					Container.SetFocus (this);
 					if (Clicked != null)
@@ -680,6 +710,20 @@ namespace Mono.Terminal {
 			}
 			return false;
 		}
+
+		public virtual void DoSizeChanged ()
+		{
+			// nothing
+		}
+
+		public event EventHandler SizeChangedEvent;
+		
+		public void SizeChanged ()
+		{
+			DoSizeChanged ();
+			if (SizeChangedEvent != null)
+				SizeChangedEvent (this, EventArgs.Empty);
+		}
 	}
 
 	public class Frame : Container {
@@ -736,6 +780,11 @@ namespace Mono.Terminal {
 
 		public override void Prepare ()
 		{
+			LayoutButtons ();
+		}
+
+		void LayoutButtons ()
+		{
 			if (buttons == null)
 				return;
 			
@@ -767,7 +816,7 @@ namespace Mono.Terminal {
 
 		public override void Redraw ()
 		{
-			Curses.attrset (Curses.A_REVERSE);
+			Curses.attrset (ContainerColorNormal);
 			Clear ();
 
 			Widget.DrawFrame (y + 1, x + 1, w - 2, h - 2);
@@ -787,10 +836,18 @@ namespace Mono.Terminal {
 
 			return base.ProcessKey (key);
 		}
+
+		public override void DoSizeChanged ()
+		{
+			x = (Application.Cols - w) / 2;
+			y = (Application.Lines-h) / 2;
+
+			LayoutButtons ();
+		}
 	}
 	
 	public class Application {
-		static Stack toplevels = new Stack ();
+		static ArrayList toplevels = new ArrayList ();
 
 		static public int ColorNormal;
 		static public int ColorFocus;
@@ -805,6 +862,8 @@ namespace Mono.Terminal {
 		static public int ColorDialogHotNormal;
 		static public int ColorDialogHotFocus;
 
+		static public int ColorError;
+		
 		static short last_color_pair;
 		
 		static int MakeColor (short f, short b)
@@ -852,6 +911,8 @@ namespace Mono.Terminal {
 				ColorDialogFocus     = MakeColor (Curses.COLOR_BLACK, Curses.COLOR_CYAN);
 				ColorDialogHotNormal = MakeColor (Curses.COLOR_BLUE,  Curses.COLOR_WHITE);
 				ColorDialogHotFocus  = MakeColor (Curses.COLOR_BLUE,  Curses.COLOR_CYAN);
+
+				ColorError = Curses.A_BOLD | MakeColor (Curses.COLOR_WHITE, Curses.COLOR_RED);
 			} else {
 				ColorNormal = Curses.A_NORMAL;
 				ColorFocus = Curses.A_REVERSE;
@@ -865,6 +926,8 @@ namespace Mono.Terminal {
 				ColorDialogFocus = Curses.A_NORMAL;
 				ColorDialogHotNormal = Curses.A_BOLD;
 				ColorDialogHotFocus = Curses.A_NORMAL;
+
+				ColorError = Curses.A_BOLD;
 			}
 		}
 
@@ -888,6 +951,43 @@ namespace Mono.Terminal {
 			Window.Standard.keypad (true);
 		}
 
+		static public void Error (string caption, string format, params object [] pars)
+		{
+			ArrayList lines = new ArrayList ();
+			string t = String.Format (format, pars);
+
+			int last = 0;
+			int max_w = 0;
+			string x;
+			for (int i = 0; i < t.Length; i++){
+				if (t [i] == '\n'){
+					x = t.Substring (last, i-last);
+					lines.Add (x);
+					last = i + 1;
+					if (x.Length > max_w)
+						max_w = x.Length;
+				}
+			}
+			x = t.Substring (last);
+			if (x.Length > max_w)
+				max_w = x.Length;
+			lines.Add (x);
+
+			Dialog d = new Dialog (System.Math.Max (caption.Length + 8, max_w + 8), lines.Count + 7, caption);
+			d.ContainerColorNormal = Application.ColorError;
+			d.ContainerColorFocus = Application.ColorError;
+			d.ContainerColorHotFocus = Application.ColorError;
+			
+			for (int i = 0; i < lines.Count; i++)
+				d.Add (new Label (1, i + 1, (string) lines [i]));
+
+			Button b = new Button (0, 0, "Ok", true);
+			d.AddButton (b);
+			b.Clicked += delegate { b.Container.Running = false; };
+
+			Application.Run (d);
+		}
+		
 		static void Shutdown ()
 		{
 			Curses.endwin ();
@@ -914,7 +1014,7 @@ namespace Mono.Terminal {
 			if (toplevels.Count == 0)
 				InitApp ();
 
-			toplevels.Push (container);
+			toplevels.Add (container);
 
 			container.Prepare ();
 			
@@ -926,6 +1026,13 @@ namespace Mono.Terminal {
 			for (container.Running = true; container.Running; ){
 				ch = Curses.getch ();
 
+				if (ch == -1){
+					if (Curses.CheckWinChange ()){
+						foreach (Container c in toplevels)
+							c.SizeChanged ();
+						Refresh ();
+					}
+				}
 				if (ch == 27){
 					Curses.timeout (0);
 					int k = Curses.getch ();
@@ -951,7 +1058,7 @@ namespace Mono.Terminal {
 				
 			}
 
-			toplevels.Pop ();
+			toplevels.Remove (toplevels.Count-1);
 			if (toplevels.Count == 0)
 				Shutdown ();
 			else

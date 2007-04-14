@@ -1,3 +1,19 @@
+2007-04-14  Miguel de Icaza  <miguel@novell.com>
+
+	* binding.cs.in: Add support for checking SIGWINCH.
+
+	* gui.cs: Support SIGWINCH.   Add the basics for layout, only
+	Dialogs take advantage of this now.   more to come.
+
+	Add error method.
+
+	* demo.cs: Add some prototypical stuff for starting to layout the
+	UI for monotorrent.
+
+	Add load/save settings, 
+
+	Add options dialog.
+
 2007-04-13  Miguel de Icaza  <miguel@novell.com>
 
 	* binding.cs (IsAlt): new routine, constants to encode alt
