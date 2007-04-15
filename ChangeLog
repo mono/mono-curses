@@ -1,3 +1,16 @@
+2007-04-15  Miguel de Icaza  <miguel@novell.com>
+
+	* demo.cs: Link it with MonoTorrent, add statistics display,
+	actually switch the stats based on it, add resizing support, etc.
+
+	Add a bunch of extra settings.
+
+	* gui.cs: Add filing, fix Clear and all the related classes,
+	complete resizing support, add Info methods, run in raw mode,
+	support c-c and c-z.
+	
+	* Makefile: You must specify your bitsharp directory now.
+
 2007-04-14  Miguel de Icaza  <miguel@novell.com>
 
 	* binding.cs.in: Add support for checking SIGWINCH.

@@ -34,16 +34,33 @@ using System.IO;
 namespace Mono.Terminal {
 
 	[Flags]
-	public enum WidgetFlags {
-		CanFocus = 1,
-		HasFocus = 2
+	public enum Anchor {
+		None = 0,
+		Left = 1,
+		Right = 2,
+		Top = 4,
+		Bottom = 8
+	}
+
+	//
+	// The fill values apply from the given x, y values, they will not do
+	// a full fill, you must compute x, y yourself.
+	//
+	[Flags]
+	public enum Fill {
+		None = 0,
+		Horizontal = 1,
+		Vertical = 2
 	}
 	
 	public abstract class Widget {
 		public Container Container;
 		public int x, y, w, h;
-		public WidgetFlags Flags;
-
+		bool can_focus;
+		bool has_focus;
+		public Anchor Anchor;
+		public Fill Fill;
+		
 		static StreamWriter l = new StreamWriter (File.OpenWrite ("log2"));
 		
 		public static void Log (string s)
@@ -63,46 +80,47 @@ namespace Mono.Terminal {
 			this.y = y;
 			this.w = w;
 			this.h = h;
-			Flags = 0;
 			Container = Application.EmptyContainer;
 		}
 
 		public bool CanFocus {
 			get {
-				return (Flags & WidgetFlags.CanFocus) != 0;
+				return can_focus;
 			}
 
 			set {
-				if (value)
-					Flags |= WidgetFlags.CanFocus;
-				else
-					Flags &= ~WidgetFlags.CanFocus;
+				can_focus = value;
 			}
 		}
 
 		public bool HasFocus {
 			get {
-				return (Flags & WidgetFlags.HasFocus) != 0;
+				return has_focus;
 			}
 
 			set {
-				if (value)
-					Flags |= WidgetFlags.HasFocus;
-				else
-					Flags &= ~WidgetFlags.HasFocus;
+				has_focus = value;
 				Redraw ();
 			}
 		}
-		
+
+		// Moves inside the first location inside the container
 		public void Move (int line, int col)
 		{
 			Container.ContainerMove (line, col);
 		}
 		
+
+		// Move relative to the top of the container
+		public void BaseMove (int line, int col)
+		{
+			Container.ContainerBaseMove (line, col);
+		}
+		
 		public void Clear ()
 		{
 			for (int line = 0; line < h; line++){
-				Move (y + line, x);
+				BaseMove (y + line, x);
 				for (int col = 0; col < w; col++){
 					Curses.addch (' ');
 				}
@@ -133,8 +151,12 @@ namespace Mono.Terminal {
 		{
 			Move (y, x);
 		}
+
+		public virtual void DoSizeChanged ()
+		{
+		}
 		
-		static public void DrawFrame (int line, int col, int width, int height)
+		static public void DrawFrame (int col, int line, int width, int height)
 		{
 			int b;
 			Curses.move (line, col);
@@ -184,7 +206,9 @@ namespace Mono.Terminal {
 	}
 
 	public class Label : Widget {
-		string text;
+		protected string text;
+		public int Color = -1;
+		
 		public Label (int x, int y, string s) : base (x, y, s.Length, 1)
 		{
 			text = s;
@@ -192,12 +216,45 @@ namespace Mono.Terminal {
 		
 		public override void Redraw ()
 		{
-			Curses.attrset (ColorNormal);
+			if (Color != -1)
+				Curses.attrset (Color);
+			else
+				Curses.attrset (ColorNormal);
+
 			Move (y, x);
 			Curses.addstr (text);
 		}
+
+		public string Text {
+			get {
+				return text;
+			}
+			set {
+				Curses.attrset (ColorNormal);
+				Move (y, x);
+				for (int i = 0; i < text.Length; i++)
+					Curses.addch (' ');
+				text = value;
+				Redraw ();
+			}
+		}
 	}
 
+	public class TrimLabel : Label {
+		public TrimLabel (int x, int y, int w, string s) : base (x, y, s)
+		{
+			this.w = w;
+			if (s.Length > w){
+				if (w < 5)
+					text = s.Substring (0, w);
+				else {
+					text = s.Substring (0, w/2-2) + "..." + s.Substring (s.Length - w/2+1);
+				}
+			} else
+				text = s;
+		}
+	}
+	
 	public class Entry : Widget {
 		string text, kill;
 		int first, point;
@@ -210,7 +267,7 @@ namespace Mono.Terminal {
 			text = s;
 			point = s.Length;
 			first = point > w ? point - w : 0;
-			Flags = WidgetFlags.CanFocus;
+			CanFocus = true;
 		}
 
 		public string Text {
@@ -349,12 +406,16 @@ namespace Mono.Terminal {
 		
 		public event EventHandler Clicked;
 
+		public Button (string s) : this (0, 0, s) {}
+		
+		public Button (string s, bool is_default) : this (0, 0, s, is_default) {}
+		
 		public Button (int x, int y, string s) : this (x, y, s, false) {}
 		
 		public Button (int x, int y, string s, bool is_default)
 			: base (x, y, s.Length + 4 + (is_default ? 2 : 0), 1)
 		{
-			Flags = WidgetFlags.CanFocus;
+			CanFocus = true;
 
 			this.is_default = is_default;
 			if (is_default)
@@ -426,6 +487,8 @@ namespace Mono.Terminal {
 		bool IsMarked (int item);
 		void Render (int line, int col, int width, int item);
 		void SetListView (ListView target);
+		bool ProcessKey (int ch);
+		void SelectedChanged ();
 	}
 	
 	public class ListView : Widget {
@@ -437,14 +500,14 @@ namespace Mono.Terminal {
 		
 		public ListView (int x, int y, int w, int h, IListProvider provider) : base (x, y, w, h)
 		{
-			Flags = WidgetFlags.CanFocus;
+			CanFocus = true;
 
 			this.provider = provider;
 			provider.SetListView (this);
 			items = provider.Items;
 			allow_mark = provider.AllowMark;
 		}
-
+		
 		public void ProviderChanged ()
 		{
 			if (provider.Items != items){
@@ -465,10 +528,15 @@ namespace Mono.Terminal {
 			Redraw ();
 		}
 
+		void SelectedChanged ()
+		{
+			provider.SelectedChanged ();
+		}
+		
 		public override bool ProcessKey (int c)
 		{
 			int n;
-			
+
 			switch (c){
 			case 16: // Control-p
 			case Curses.KeyUp:
@@ -476,6 +544,7 @@ namespace Mono.Terminal {
 					selected--;
 					if (selected < top)
 						top = selected;
+					SelectedChanged ();
 					Redraw ();
 				}
 				return true;
@@ -487,6 +556,7 @@ namespace Mono.Terminal {
 					if (selected >= top + h){
 						top++;
 					}
+					SelectedChanged ();
 					Redraw ();
 				}
 				return true;
@@ -502,6 +572,7 @@ namespace Mono.Terminal {
 						top = selected;
 					else
 						top = 0;
+					SelectedChanged ();
 					Redraw ();
 				}
 				return true;
@@ -513,9 +584,13 @@ namespace Mono.Terminal {
 				if (n != selected){
 					selected = n;
 					top = selected;
+					SelectedChanged ();
 					Redraw ();
 				}
 				return true;
+
+			default:
+				return provider.ProcessKey (c);
 			}
 			return false;
 		}
@@ -531,7 +606,7 @@ namespace Mono.Terminal {
 				Move (y + l, x);
 				int item = l + top;
 
-				if (item > items){
+				if (item >= items){
 					Curses.attrset (ColorNormal);
 					for (int c = 0; c < w; c++)
 						Curses.addch (' ');
@@ -555,6 +630,22 @@ namespace Mono.Terminal {
 			}
 			PositionCursor ();
 		}
+
+		public int Selected {
+			get {
+				if (items == 0)
+					return -1;
+				return selected;
+			}
+
+			set {
+				if (value >= items)
+					throw new ArgumentException ("value");
+
+				selected = value;
+				Redraw ();
+			}
+		}
 	}
 	
 	public class Container : Widget {
@@ -566,6 +657,8 @@ namespace Mono.Terminal {
 		public int ContainerColorFocus;
 		public int ContainerColorHotNormal;
 		public int ContainerColorHotFocus;
+
+		protected int Border;
 		
 		static Container ()
 		{
@@ -587,6 +680,12 @@ namespace Mono.Terminal {
 		public void RedrawChildren ()
 		{
 			foreach (Widget w in widgets){
+				// Poor man's clipping.
+				if (w.x >= this.w - Border * 2)
+					continue;
+				if (w.y >= this.h - Border * 2)
+					continue;
+				
 				w.Redraw ();
 			}
 		}
@@ -642,7 +741,6 @@ namespace Mono.Terminal {
 			}
 			int n = widgets.Count;
 			int focused_idx = -1;
-			Log ("Count {0}", n);
 			for (int i = 0; i < n; i++){
 				Widget w = (Widget)widgets [i%n];
 
@@ -675,7 +773,18 @@ namespace Mono.Terminal {
 
 		public virtual void ContainerMove (int row, int col)
 		{
-			Curses.move (row + y, col + x);
+			if (Container != Application.EmptyContainer && Container != null)
+				Container.ContainerMove (row + y, col + x);
+			else
+				Curses.move (row + y, col + x);
+		}
+		
+		public virtual void ContainerBaseMove (int row, int col)
+		{
+			if (Container != Application.EmptyContainer && Container != null)
+				Container.ContainerBaseMove (row + y, col + x);
+			else
+				Curses.move (row + y, col + x);
 		}
 		
 		public virtual void Add (Widget w)
@@ -711,27 +820,52 @@ namespace Mono.Terminal {
 			return false;
 		}
 
-		public virtual void DoSizeChanged ()
+		public override void DoSizeChanged ()
 		{
-			// nothing
+			foreach (Widget widget in widgets){
+				widget.DoSizeChanged ();
+
+				//Anchor a = w.Anchor;
+				//
+				//// Left/Top anchors are just x, y
+				//if ((a & Anchor.Right) != 0)
+				//	w.x = w - border - w.w;
+				//
+				//if ((a & Anchor.Bottom) != 0)
+				//	w.y = h - border - w.h;
+
+				if ((widget.Fill & Fill.Horizontal) != 0){
+					widget.w = w - (Border*2) - widget.x;
+				}
+
+				if ((widget.Fill & Fill.Vertical) != 0){
+					widget.h = h - (Border * 2) - widget.y;
+					Log ("Got: {0}", widget.h);
+				}
+			}
 		}
 
 		public event EventHandler SizeChangedEvent;
 		
 		public void SizeChanged ()
 		{
-			DoSizeChanged ();
 			if (SizeChangedEvent != null)
 				SizeChangedEvent (this, EventArgs.Empty);
+			DoSizeChanged ();
 		}
 	}
 
 	public class Frame : Container {
 		public string Title;
 
+		public Frame (string title) : this (0, 0, 0, 0, title)
+		{
+		}
+		
 		public Frame (int x, int y, int w, int h, string title) : base (x, y, w, h)
 		{
 			Title = title;
+			Border++;
 		}
 
 		public override void ContainerMove (int row, int col)
@@ -743,7 +877,8 @@ namespace Mono.Terminal {
 		{
 			Curses.attrset (ContainerColorNormal);
 			Clear ();
-			Widget.DrawFrame (y, x, w, h);
+			
+			Widget.DrawFrame (x, y, w, h);
 			Curses.attrset (Container.ContainerColorNormal);
 			Curses.move (y, x + 1);
 			if (HasFocus)
@@ -767,7 +902,7 @@ namespace Mono.Terminal {
 		int button_len;
 		ArrayList buttons;
 
-		const int button_space = 4;
+		const int button_space = 3;
 		
 		public Dialog (int w, int h, string title)
 			: base ((Application.Cols - w) / 2, (Application.Lines-h)/2, w, h, title)
@@ -776,6 +911,8 @@ namespace Mono.Terminal {
 			ContainerColorFocus = Application.ColorDialogFocus;
 			ContainerColorHotNormal = Application.ColorDialogHotNormal;
 			ContainerColorHotFocus = Application.ColorDialogHotFocus;
+
+			Border++;
 		}
 
 		public override void Prepare ()
@@ -819,8 +956,8 @@ namespace Mono.Terminal {
 			Curses.attrset (ContainerColorNormal);
 			Clear ();
 
-			Widget.DrawFrame (y + 1, x + 1, w - 2, h - 2);
-			Curses.move (y + 1, x + (w - Title.Length) / 2);
+			Widget.DrawFrame (x + 1, y + 1, w - 2, h - 2);
+			Curses.move (y, x + (w - Title.Length) / 2);
 			Curses.addch (' ');
 			Curses.addstr (Title);
 			Curses.addch (' ');
@@ -839,6 +976,8 @@ namespace Mono.Terminal {
 
 		public override void DoSizeChanged ()
 		{
+			base.DoSizeChanged ();
+			
 			x = (Application.Cols - w) / 2;
 			y = (Application.Lines-h) / 2;
 
@@ -847,24 +986,32 @@ namespace Mono.Terminal {
 	}
 	
 	public class Application {
+		public static int ColorNormal;
+		public static int ColorFocus;
+		public static int ColorHotNormal;
+		public static int ColorHotFocus;
+		
+		public static int ColorMarked;
+		public static int ColorMarkedSelected;
+		
+		public static int ColorDialogNormal;
+		public static int ColorDialogFocus;
+		public static int ColorDialogHotNormal;
+		public static int ColorDialogHotFocus;
+
+		public static int ColorError;
+		
+		// Every timeout milliseconds to wait
+		static public int Timeout = -1;
+
+		// Iteration, on each cycle of Application.Run
+		static public event EventHandler Iteration;
+
+		// Private variables
 		static ArrayList toplevels = new ArrayList ();
-
-		static public int ColorNormal;
-		static public int ColorFocus;
-		static public int ColorHotNormal;
-		static public int ColorHotFocus;
-		
-		static public int ColorMarked;
-		static public int ColorMarkedSelected;
-		
-		static public int ColorDialogNormal;
-		static public int ColorDialogFocus;
-		static public int ColorDialogHotNormal;
-		static public int ColorDialogHotFocus;
-
-		static public int ColorError;
-		
 		static short last_color_pair;
+		static bool inited;
+		static Container empty_container;
 		
 		static int MakeColor (short f, short b)
 		{
@@ -872,9 +1019,6 @@ namespace Mono.Terminal {
 			return Curses.ColorPair (last_color_pair);
 		}
 
-		static bool inited;
-
-		static Container empty_container;
 		static public Container EmptyContainer {
 			get {
 				return empty_container;
@@ -945,17 +1089,15 @@ namespace Mono.Terminal {
 
 		static void InitApp ()
 		{
-			Curses.cbreak ();
+			Curses.raw ();
 			Curses.noecho ();
 			//Curses.nonl ();
 			Window.Standard.keypad (true);
 		}
 
-		static public void Error (string caption, string format, params object [] pars)
+		static public void Msg (bool error, string caption, string t)
 		{
 			ArrayList lines = new ArrayList ();
-			string t = String.Format (format, pars);
-
 			int last = 0;
 			int max_w = 0;
 			string x;
@@ -974,9 +1116,11 @@ namespace Mono.Terminal {
 			lines.Add (x);
 
 			Dialog d = new Dialog (System.Math.Max (caption.Length + 8, max_w + 8), lines.Count + 7, caption);
-			d.ContainerColorNormal = Application.ColorError;
-			d.ContainerColorFocus = Application.ColorError;
-			d.ContainerColorHotFocus = Application.ColorError;
+			if (error){
+				d.ContainerColorNormal = Application.ColorError;
+				d.ContainerColorFocus = Application.ColorError;
+				d.ContainerColorHotFocus = Application.ColorError;
+			}
 			
 			for (int i = 0; i < lines.Count; i++)
 				d.Add (new Label (1, i + 1, (string) lines [i]));
@@ -988,6 +1132,30 @@ namespace Mono.Terminal {
 			Application.Run (d);
 		}
 		
+		static public void Error (string caption, string text)
+		{
+			Msg (true, caption, text);
+		}
+		
+		static public void Error (string caption, string format, params object [] pars)
+		{
+			string t = String.Format (format, pars);
+
+			Msg (true, caption, t);
+		}
+
+		static public void Info (string caption, string text)
+		{
+			Msg (false, caption, text);
+		}
+		
+		static public void Info (string caption, string format, params object [] pars)
+		{
+			string t = String.Format (format, pars);
+
+			Msg (false, caption, t);
+		}
+
 		static void Shutdown ()
 		{
 			Curses.endwin ();
@@ -999,13 +1167,19 @@ namespace Mono.Terminal {
 			Curses.refresh ();
 		}
 
-		static void Refresh ()
+		public static void Refresh ()
 		{
-			foreach (Container c in toplevels)
+			Container last = null;
+			
+			foreach (Container c in toplevels){
 				c.Redraw ();
+				last = c;
+			}
 			Curses.refresh ();
+			if (last != null)
+				last.PositionCursor ();
 		}
-		
+
 		static public void Run (Container container)
 		{
 			Init (false);
@@ -1017,17 +1191,23 @@ namespace Mono.Terminal {
 			toplevels.Add (container);
 
 			container.Prepare ();
-			
+			container.SizeChanged ();			
 			container.FocusFirst ();
 			Redraw (container);
 			container.PositionCursor ();
 			
 			int ch;
+			Curses.timeout (Timeout);
+
 			for (container.Running = true; container.Running; ){
 				ch = Curses.getch ();
 
+				if (Iteration != null)
+					Iteration (null, EventArgs.Empty);
+				
 				if (ch == -1){
 					if (Curses.CheckWinChange ()){
+						EmptyContainer.Clear ();
 						foreach (Container c in toplevels)
 							c.SizeChanged ();
 						Refresh ();
@@ -1038,7 +1218,7 @@ namespace Mono.Terminal {
 					int k = Curses.getch ();
 					if (k != Curses.ERR)
 						ch = Curses.KeyAlt | k;
-					Curses.timeout (-1);
+					Curses.timeout (Timeout);
 				}
 				
 				if (container.ProcessHotKey (ch))
@@ -1047,6 +1227,17 @@ namespace Mono.Terminal {
 				if (container.ProcessKey (ch))
 					continue;
 
+				// Control-c, quit the current operation.
+				if (ch == 3)
+					break;
+
+				// Control-z, suspend execution, then repaint.
+				if (ch == 26){
+					Curses.console_sharp_sendsigtstp ();
+					Window.Standard.redrawwin ();
+					Curses.refresh ();
+				}
+				
 				//
 				// Focus handling
 				//
@@ -1055,10 +1246,9 @@ namespace Mono.Terminal {
 						container.FocusNext ();
 					continue;
 				}
-				
 			}
 
-			toplevels.Remove (toplevels.Count-1);
+			toplevels.Remove (container);
 			if (toplevels.Count == 0)
 				Shutdown ();
 			else

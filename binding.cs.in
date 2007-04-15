@@ -244,6 +244,9 @@ namespace Mono.Terminal {
 
 		[DllImport ("mono-curses")]
 		internal extern static void console_sharp_get_dims (out int lines, out int cols);
+
+		[DllImport ("mono-curses")]
+		internal extern static void console_sharp_sendsigtstp ();
 #endregion
 
 		// We encode ESC + char (what Alt-char generates) as 0x2000 + char

@@ -27,21 +27,19 @@
 //
 
 using System;
+using System.Collections.Generic;
 using System.IO;
-using Mono.Terminal;
 using System.Collections;
 using System.Xml;
 using System.Xml.Serialization;
+using System.Threading;
 
-[XmlRoot ("config")]
-public class Config {
-	[XmlAttribute] public string DownloadDir;
-	[XmlAttribute] public int ListenPort;
-	[XmlAttribute] public float UploadSpeed;
-	[XmlAttribute] public float DownloadSpeed;
-}
+using Mono.Terminal;
 
-class MonoTorrent {
+using MonoTorrent.Common;
+using MonoTorrent.Client;
+
+public class TorrentCurses {
 
 	//
 	// Configuration data, loaded at startup
@@ -50,17 +48,27 @@ class MonoTorrent {
 							  Environment.SpecialFolder.ApplicationData), "monotorrent.config");
 
 	static Config config;
-	
-	public class TorrentList : IListProvider {
-		public ArrayList items = new ArrayList ();
-		ListView view;
 
-		public void SetListView (ListView v)
+	// The torrent status
+	static TorrentList torrent_list;
+	static TorrentDetailsList details_list;
+	static EngineSettings engine_settings;
+	static TorrentSettings torrent_settings;
+	static ClientEngine engine;
+	static ListView list_details;
+	
+	static Label iteration;
+
+	public class TorrentList : IListProvider {
+		public List<TorrentManager> items = new List<TorrentManager> ();
+		public ListView view;
+
+		void IListProvider.SetListView (ListView v)
 		{
 			view = v;
 		}
 		
-		public int Items {
+		int IListProvider.Items {
 			get {
 				return items.Count;
 			}
@@ -68,25 +76,47 @@ class MonoTorrent {
 
 		public void Add (string s)
 		{
-			items.Add (s);
+			if (!File.Exists (s))
+				return;
+
+			foreach (TorrentManager mgr in items){
+				if (mgr.Torrent.TorrentPath == s){
+					Application.Info ("Info", "The specified torrent is already loaded");
+					continue;
+				}
+			}
+			
+			TorrentManager manager = engine.LoadTorrent (s);
+			if (manager == null){
+				Application.Error ("LoadTorrent", "I got a null");
+				return;
+			}
+			
+			items.Add (manager);
+			
 			if (view != null)
 				view.ProviderChanged ();
+
+			engine.Start (manager);
 		}
 		
-		public bool AllowMark {
+		bool IListProvider.AllowMark {
 			get {
 				return false;
 			}
 		}
 
-		public bool IsMarked (int n)
+		bool IListProvider.IsMarked (int n)
 		{
 			return false;
 		}
 
-		public void Render (int line, int col, int width, int item)
+		void IListProvider.Render (int line, int col, int width, int item)
 		{
-			string s = String.Format ("{0}. {1}", item, items [item]);
+			TorrentManager manager = items [item];
+			string name = manager.Torrent.Name;
+			
+			string s = String.Format ("[{2,3:N0}%] {1}", name, manager.Progress);
 			if (s.Length > width){
 				s = s.Substring (0, width);
 				Curses.addstr (s);
@@ -96,9 +126,167 @@ class MonoTorrent {
 					Curses.addch (' ');
 			}
 		}
+
+		bool IListProvider.ProcessKey (int ch)
+		{
+			if (ch != '\n')
+				return false;
+
+			int selected = view.Selected;
+			if (selected == -1)
+				return false;
+
+			TorrentControl (selected);
+			return true;
+		}
+
+		void IListProvider.SelectedChanged ()
+		{
+			UpdateStatus ();
+
+			list_details.ProviderChanged ();
+		}
+		
+		public void TorrentControl (int selected)
+		{
+			Dialog d = new Dialog (60, 8, "Torrent Control");
+
+			TorrentManager item = items [selected];
+			
+			d.Add (new TrimLabel (1, 1, 60-6, item.Torrent.Name));
+
+			bool stopped = item.State == TorrentState.Stopped;
+			Button bstartstop = new Button (stopped ? "Start" : "Stop");
+			bstartstop.Clicked += delegate {
+				if (stopped)
+					engine.Start (item);
+				else
+					engine.Stop (item);
+				d.Running = false;
+				
+			};
+			d.AddButton (bstartstop);
+			
+			// Later, when we hook it up, look up the state
+			
+			bool paused = item.State == TorrentState.Paused;
+			Button br = new Button (paused ? "Resume" : "Pause");
+			br.Clicked += delegate {
+				if (paused)
+					engine.Start (item);
+				else
+					engine.Pause (item);
+				d.Running = false;
+			};
+			d.AddButton (br);
+
+			Button bd = new Button ("Delete");
+			br.Clicked += delegate {
+				Application.Error ("Not Implemented",
+						   "I have not implemented delete yet");
+				d.Running = false;
+			};
+			d.AddButton (bd);
+			
+			Button bmap = new Button ("Map");
+			bmap.Clicked += delegate {
+				Application.Error ("Not Implemented",
+						   "I have not implemented map yet");
+				d.Running = false;
+			};
+			d.AddButton (bmap);
+
+			Button bcancel = new Button ("Cancel");
+			bcancel.Clicked += delegate {
+				d.Running = false;
+			};
+			Application.Run (d);
+			UpdateStatus ();
+		}
+
+		public ArrayList GetPathNames ()
+		{
+			ArrayList names = new ArrayList ();
+			
+			foreach (TorrentManager tm in items){
+				TorrentDesc td = new TorrentDesc ();
+				td.Filename = tm.Torrent.TorrentPath;
+				names.Add (td);
+			}
+
+			return names;
+		}
+
+		public TorrentManager GetSelected ()
+		{
+			int selected = view.Selected;
+			if (selected == -1)
+				return null;
+
+			return items [selected];
+		}
 	}
-	
-	static TorrentList tl;
+
+	public class TorrentDetailsList : IListProvider {
+		public ListView view;
+		
+		void IListProvider.SetListView (ListView v)
+		{
+			view = v;
+		}
+		
+		int IListProvider.Items {
+			get {
+				TorrentManager tm = torrent_list.GetSelected ();
+
+				if (tm == null)
+					return 0;
+
+				return tm.Torrent.Files.Length;
+			}
+		}
+
+		bool IListProvider.AllowMark {
+			get {
+				return false;
+			}
+		}
+
+		bool IListProvider.IsMarked (int n)
+		{
+			return false;
+		}
+
+		void IListProvider.Render (int line, int col, int width, int item)
+		{
+			TorrentManager tm = torrent_list.GetSelected ();
+			string name;
+			
+			if (tm == null)
+				name = "";
+			else 
+				name = tm.Torrent.Files [item].Path;
+			
+			string s = String.Format ("{0}. {1}", item, name);
+			if (s.Length > width){
+				s = s.Substring (0, width);
+				Curses.addstr (s);
+			} else {
+				Curses.addstr (s);
+				for (int i = s.Length; i < width; i++)
+					Curses.addch (' ');
+			}
+		}
+
+		bool IListProvider.ProcessKey (int ch)
+		{
+			return false;
+		}
+
+		void IListProvider.SelectedChanged ()
+		{
+		}
+	}
 	
 	static void AddDialog ()
 	{
@@ -113,13 +301,13 @@ class MonoTorrent {
 		d.Add (e);
 
 		// buttons
-		Button b = new Button (0, 0, "Ok", true);
+		Button b = new Button ("Ok", true);
 		b.Clicked += delegate {
 			b.Container.Running = false;
 			name = e.Text;
 		};
 		d.AddButton (b);
-		b = new Button (0, 0, "Cancel");
+		b = new Button ("Cancel");
 		b.Clicked += delegate {
 			b.Container.Running = false;
 		};
@@ -128,11 +316,15 @@ class MonoTorrent {
 		Application.Run (d);
 
 		if (name != null){
-			tl.Add (name);
+			if (!File.Exists (name)){
+				Application.Error ("Missing File", "Torrent file:\n" + name + "\ndoes not exist");
+				return;
+			}
+			torrent_list.Add (name);
 		}
 	}
 
-	static bool ValidateSpeed (Entry e, out float value)
+	static bool ValidateSpeed (Entry e, out int value)
 	{
 		string t = e.Text;
 
@@ -141,7 +333,7 @@ class MonoTorrent {
 			return true;
 		}
 
-		if (float.TryParse (t, out value))
+		if (int.TryParse (t, out value))
 			return true;
 
 		Application.Error ("Error", "Invalid speed `{0}' specified", t);
@@ -180,11 +372,11 @@ class MonoTorrent {
 		
 		bool ok = false;
 		
-		Button b = new Button (0, 0, "Ok", true);
+		Button b = new Button ("Ok", true);
 		b.Clicked += delegate { ok = true; b.Container.Running = false; };
 		d.AddButton (b);
 
-		b = new Button (0, 0, "Cancel");
+		b = new Button ("Cancel");
 		b.Clicked += delegate { b.Container.Running = false; };
 		d.AddButton (b);
 		
@@ -214,45 +406,141 @@ class MonoTorrent {
 		}
 	}
 
-	static void RunGui ()
+	//
+	// We split this, so if the terminal resizes, we resize accordingly
+	//
+	static void LayoutDialogs (Frame ftorrents, Frame fstatus, Frame fdetails, Frame fprogress)
 	{
-		Container a = new Container (1, 1, Application.Cols, Application.Lines);
-		//Dialog a = new Dialog (1, 1, 80, 25, "Demo");
-
+		int cols = Application.Cols;
+		int lines = Application.Lines;
+		
 		int midx = Application.Cols/2;
 		int midy = Application.Lines/2;
-		Frame f = new Frame (0,  0, midx, midy, "Torrents");
-		a.Add (f);
 
-		tl = new TorrentList ();
-		for (int i = 0; i < 20; i++)
-			tl.Add ("Am torrent file #" + i);
+		// Torrents
+		ftorrents.x = 0;
+		ftorrents.y = 0;
+		ftorrents.w = cols - 40;
+		ftorrents.h = midy;
+
+		// Status: Always 40x12
+		fstatus.x = cols - 40;
+		fstatus.y = 0;
+		fstatus.w = 40;
+		fstatus.h = midy;
+
+		// Details
+		fdetails.x = 0;
+		fdetails.y = midy;
+		fdetails.w = midx;
+		fdetails.h = midy;
+
+		// fprogress
+		fprogress.x = midx;
+		fprogress.y = midy;
+		fprogress.w = midx;
+		fprogress.h = midy;
+	}
+
+	static Label status_progress;
+	static Label status_state;
+	static Label status_peers;
+	static Label status_tracker;
+	static Label status_up, status_up_speed;
+	static Label status_down, status_down_speed;
+	static Label status_warnings, status_failures;
 		
+	static Frame SetupStatus ()
+	{
+		Frame fstatus = new Frame ("Status");
+		int y = 0;
+		int x = 13;
+		string init = "<init>";
+		
+		fstatus.Add (status_progress = new Label (x, y, "0%"));
+		status_progress.Color = status_progress.ColorHotNormal;
+		fstatus.Add (new Label (1, y++, "Progress:"));
+		
+		fstatus.Add (status_state = new Label (x, y, init));
+		fstatus.Add (new Label (1, y++, "State:"));
+
+		fstatus.Add (status_peers = new Label (x, y, init));
+		fstatus.Add (new Label (1, y++, "Peers:"));
+
+		fstatus.Add (status_tracker = new Label (x, y, init));
+		fstatus.Add (new Label (1, y++, "Tracker: "));
+		y++;
+
+		fstatus.Add (new Label (1, y++, "Upload:"));
+		fstatus.Add (new Label (16, y, "KB   Speed: "));
+		fstatus.Add (status_up = new Label (1, y, init));
+		fstatus.Add (status_up_speed = new Label (28, y, init));
+		y++;
+		fstatus.Add (new Label (1, y++, "Download:"));
+		fstatus.Add (new Label (16, y, "KB   Speed: "));
+		fstatus.Add (status_down = new Label (1, y, init));
+		fstatus.Add (status_down_speed = new Label (28, y, init));
+		y += 2;
+		fstatus.Add (status_warnings = new Label (11, y, init));
+		fstatus.Add (new Label (1, y++, "Warnings: "));
+		fstatus.Add (status_failures = new Label (11, y, init));
+		fstatus.Add (new Label (1, y++, "Failures: "));
+		y += 2;
+
+		return fstatus;
+	}
+
+	static void UpdateStatus ()
+	{
+		TorrentManager tm = torrent_list.GetSelected ();
+		if (tm == null)
+			return;
+
+		status_progress.Text   = String.Format ("{0:0.00}%", tm.Progress);
+		status_state.Text      = tm.State.ToString ();
+		status_peers.Text      = String.Format ("{0} ({1}/{2})", tm.Peers.Available, tm.Peers.Seeds (), tm.Peers.Leechs ());
+		status_tracker.Text    = tm.TrackerManager.TrackerTiers[0].Trackers[0].State.ToString ();
+
+		status_up.Text         = String.Format ("{0,14:N0}", tm.Monitor.DataBytesUploaded / 1024.0);
+		status_up_speed.Text   = String.Format ("{0:0.0}", tm.Monitor.UploadSpeed / 1024);
+		status_down.Text       = String.Format ("{0,14:N0}", tm.Monitor.DataBytesDownloaded / 1024.0);
+		status_down_speed.Text = String.Format ("{0:0.0}", tm.Monitor.DownloadSpeed / 1024);
+	}
+	
+	static void Shutdown ()
+	{
+		Console.WriteLine ("Shutting down");
+		WaitHandle[] handles = engine.Stop();
+		for (int i = 0; i < handles.Length; i++)
+			if (handles[i] != null)
+				handles[i].WaitOne();
+		Console.WriteLine ("Shut down");
+	}
+	
+	static void RunGui ()
+	{
+		Container a = new Container (0, 0, Application.Cols, Application.Lines);
+
+		Frame ftorrents = new Frame (0,  0, 0, 0, "Torrents");
+		a.Add (ftorrents);
+
 		// Add
 		Button badd = new Button (1, 1, "Add");
 		badd.Clicked += delegate { AddDialog (); };
-		f.Add (badd);
-
-		// Pause
-		Button bpause = new Button (9, 1, "Pause");
-		f.Add (bpause);
-
-		// Remote
-		Button bremove = new Button (19, 1, "Remove");
-		f.Add (bremove);
+		ftorrents.Add (badd);
 
 		// Options
-		Button boptions = new Button (1, 2, "Options");
+		Button boptions = new Button (9, 1, "Options");
 		boptions.Clicked += delegate { OptionsDialog (); };
-		f.Add (boptions);
+		ftorrents.Add (boptions);
 
 		// Quit
-		Button bquit = new Button (13, 2, "Quit");
+		Button bquit = new Button (21, 1, "Quit");
 		bquit.Clicked += delegate {
 			// FIXME: shut down torrent here
-			bquit.Container.Running = false;
+			a.Running = false;
 		};
-		f.Add (bquit);
+		ftorrents.Add (bquit);
 		
 		// Random widget tests
 		//f.Add (new Label (7,  3, "Name:"));
@@ -261,10 +549,12 @@ class MonoTorrent {
 		//f.Add (new Label (4,  5, "Address:"));
 		//f.Add (new Entry (13, 5, 20, "Second"));
 
-		f.Add (new ListView (1, 5, midx-3, 15, tl));
+		ListView ltorrents = new ListView (1, 5, 0, 0, torrent_list);
+		ltorrents.Fill = Fill.Horizontal | Fill.Vertical;
+		ftorrents.Add (ltorrents);
 		
-		f = new Frame (midx, midy, midx-1, midy-1, "Progress");
-		a.Add (f);
+		Frame fprogress = new Frame ("Messages");
+		a.Add (fprogress);
 
 		// For testing focus, not ready
 		//f.Add (new Label (0, 0, "->0<-"));
@@ -272,49 +562,46 @@ class MonoTorrent {
 
 
 		// Details
-		f = new Frame (0,  midy, midx, midy-1, "Details");
-		int y = 1;
-		f.Add (new Label (1, y++, "1. First File.avi"));
-		f.Add (new Label (1, y++, "2. Second File.avi of Torrent"));
-		a.Add (f);
+		Frame fdetails = new Frame ("Details");
+		details_list = new TorrentDetailsList ();
+		list_details = new ListView (1, 3, 0, 0, details_list);
+		ltorrents.Fill = Fill.Horizontal | Fill.Vertical;
+		a.Add (fdetails);
 
 		// Status
-		Frame status = new Frame (midx,  0, midx-1, midy, "Status");
-		y = 1;
-		status.Add (new Label (1, y++, "Uploading to:      0"));
-		status.Add (new Label (1, y++, "Half opens:        0"));
-		status.Add (new Label (1, y++, "Max open:          150"));
-		status.Add (new Label (1, y++, "Progress:          0.00"));
-		status.Add (new Label (1, y++, "Download Speed:    0.00"));
-		status.Add (new Label (1, y++, "Upload Speed:      0.00"));
-		status.Add (new Label (1, y++, "Torrent State:     Downloading"));
-		status.Add (new Label (1, y++, "Seeds = 0   Leechs  = 0"));
-		status.Add (new Label (1, y++, "Total available:   0"));
-		status.Add (new Label (1, y++, "Downloaded:        0.00"));
-		status.Add (new Label (1, y++, "Uploaded:          0.00"));
-		status.Add (new Label (1, y++, "Tracker Status:    Announcing"));
-		status.Add (new Label (1, y++, "Protocol Download: 0.00"));
-		status.Add (new Label (1, y++, "Protocol Upload:   0.00"));
-		status.Add (new Label (1, y++, "Hashfails:         0"));
-		status.Add (new Label (1, y++, "Scrape complete:   0"));
-		status.Add (new Label (1, y++, "Scrape incomplete: 0"));
-		status.Add (new Label (1, y++, "Scrape downloaded: 0"));
-		status.Add (new Label (1, y++, "Warning Message:"));
-		status.Add (new Label (1, y++, "Failure Message:"));
-		status.Add (new Label (1, y++, "Endgame Mode:     False"));
+		Frame fstatus = SetupStatus ();
+		a.Add (fstatus);
 
-		a.Add (status);
-	
+		iteration = new Label (35, 0, "0");
+		fstatus.Add (iteration);
+		
+		Application.Timeout = 1000;
+
+		Application.Iteration += delegate {
+			iteration.Text = (it++).ToString ();
+			UpdateStatus ();
+			Application.Refresh ();
+		};
+		
+		LayoutDialogs (ftorrents, fstatus, fdetails, fprogress);
+		a.SizeChangedEvent += delegate {
+			LayoutDialogs (ftorrents, fstatus, fdetails, fprogress);
+		};
+
+		UpdateStatus ();
 		Application.Run (a);
 	}
-
+	static int it;
+	
 	static void SetupDefaults ()
 	{
 		config = new Config ();
 		config.ListenPort = 9876;
 		config.UploadSpeed = 0;
 		config.DownloadSpeed = 0;
-		
+		config.Torrents = new ArrayList ();
+		config.UploadSlots = 5;
+		config.MaxConnections = 50;
 		config.DownloadDir = Path.Combine (Environment.GetFolderPath (
 							   Environment.SpecialFolder.Personal), "downloads");
 		
@@ -340,28 +627,93 @@ class MonoTorrent {
 		
 		try {
 			config = (Config)
-				new XmlSerializer (typeof (Config)).Deserialize (new XmlTextReader (config_file));
+				new XmlSerializer (typeof (Config), new Type [] { typeof (TorrentDesc) })
+					.Deserialize (new XmlTextReader (config_file));
 		} catch {
 			SetupDefaults ();
+		}
+
+		if (config.UploadSpeed < 0)
+			config.UploadSpeed = 0;
+		if (config.DownloadSpeed < 0)
+			config.DownloadSpeed = 0;
+		if (config.UploadSlots < 0)
+			config.UploadSlots = 1;
+		if (config.MaxConnections < 0)
+			config.MaxConnections = 1;
+		if (!Directory.Exists (config.DownloadDir)){
+			try {
+				Directory.CreateDirectory (config.DownloadDir);
+			} catch {
+				Application.Error ("Error",
+						   "Problem with the configured download directory:\n\n" +
+						   config.DownloadDir + "\n\n" +
+						   "Create the directory, or edit your ~/.config/monotorrent.config file");
+				Environment.Exit (1);
+			}
 		}
 	}
 
 	static void SaveSettings ()
 	{
+		config.Torrents = torrent_list.GetPathNames ();
+		
 		try {
+			File.Delete (config_file);
 			using (FileStream f = File.Create (config_file)){
-				new XmlSerializer (typeof (Config)).Serialize (new XmlTextWriter (new StreamWriter (f)), config);
+				XmlTextWriter tw = new XmlTextWriter (new StreamWriter (f));
+				tw.Formatting = Formatting.Indented;
+				
+				new XmlSerializer (typeof (Config), new Type [] { typeof (TorrentDesc) }).
+					Serialize (tw, config);
 			}
-		} catch {
+		} catch (Exception e){
+			Application.Error ("Exception", e.ToString ());
+		}
+	}
+
+	static void InitMonoTorrent ()
+	{
+		engine_settings = new EngineSettings (config.DownloadDir, config.ListenPort, false);
+		torrent_settings = new TorrentSettings (config.UploadSlots, config.MaxConnections,
+							(int) config.UploadSpeed, (int) config.DownloadSpeed);
+		
+		engine = new ClientEngine (engine_settings, torrent_settings);
+
+		// Our store
+		torrent_list = new TorrentList ();
+		foreach (TorrentDesc td in config.Torrents){
+			if (File.Exists (td.Filename)){
+				torrent_list.Add (td.Filename);
+			}
 		}
 	}
 	
 	static void Main ()
 	{
+		Application.Init (false);
+		
 		LoadSettings ();
 		
-		Application.Init (false);
-
+		InitMonoTorrent ();
 		RunGui ();
+		SaveSettings ();
+		Shutdown ();
+	}
+
+	[XmlRoot ("config")]
+	public class Config {
+		[XmlAttribute] public string DownloadDir;
+		[XmlAttribute] public int ListenPort;
+		[XmlAttribute] public int UploadSlots;
+		[XmlAttribute] public int MaxConnections;
+		[XmlAttribute] public int UploadSpeed;
+		[XmlAttribute] public int DownloadSpeed;
+		[XmlElement ("Torrent", typeof (TorrentDesc))] public ArrayList Torrents;
+	}
+
+	public class TorrentDesc {
+		[XmlAttribute] public string Filename;
 	}
 }
+
