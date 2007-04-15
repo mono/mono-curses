@@ -116,7 +116,7 @@ public class TorrentCurses {
 			TorrentManager manager = items [item];
 			string name = manager.Torrent.Name;
 			
-			string s = String.Format ("[{2,3:N0}%] {1}", name, manager.Progress);
+			string s = String.Format ("[{0,3:N0}%] {1}", manager.Progress, name);
 			if (s.Length > width){
 				s = s.Substring (0, width);
 				Curses.addstr (s);
@@ -239,6 +239,7 @@ public class TorrentCurses {
 			get {
 				TorrentManager tm = torrent_list.GetSelected ();
 
+				Widget.Log ("called, got {0}", tm == null ? 0 : tm.Torrent.Files.Length);
 				if (tm == null)
 					return 0;
 
@@ -259,6 +260,7 @@ public class TorrentCurses {
 
 		void IListProvider.Render (int line, int col, int width, int item)
 		{
+			Widget.Log ("called");
 			TorrentManager tm = torrent_list.GetSelected ();
 			string name;
 			
@@ -266,7 +268,7 @@ public class TorrentCurses {
 				name = "";
 			else 
 				name = tm.Torrent.Files [item].Path;
-			
+
 			string s = String.Format ("{0}. {1}", item, name);
 			if (s.Length > width){
 				s = s.Substring (0, width);
