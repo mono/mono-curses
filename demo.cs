@@ -323,7 +323,6 @@ public class TorrentCurses {
 				if (item < 0)
 					item = messages.Length+item;
 
-				Log ("L={0} i={1} item={2} head={3} tail={4}", l, i, item, head, tail);
 				Move (y+l, x);
 
 				int sl = messages [item].Length;

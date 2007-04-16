@@ -61,10 +61,13 @@ namespace Mono.Terminal {
 		public Anchor Anchor;
 		public Fill Fill;
 		
-		static StreamWriter l = new StreamWriter (File.OpenWrite ("log2"));
+		static StreamWriter l;
 		
 		public static void Log (string s)
 		{
+			if (l == null)
+				l = new StreamWriter (File.OpenWrite ("log2"));
+			
 			l.WriteLine (s);
 			l.Flush ();
 		}
