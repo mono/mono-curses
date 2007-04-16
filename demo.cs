@@ -647,6 +647,14 @@ public class TorrentCurses {
 		Application.Iteration += delegate {
 			iteration.Text = (it++).ToString ();
 			UpdateStatus ();
+			lock (queue){
+				if (queue.Count > 0){
+					foreach (string s in queue){
+						log_widget.AddText (s);
+					}
+					queue.Clear ();
+				}
+			}
 			Application.Refresh ();
 		};
 		
@@ -739,8 +747,25 @@ public class TorrentCurses {
 		}
 	}
 
+        static void cm_PeerDisconnected(object sender, PeerConnectionEventArgs e)
+        {
+		lock (queue){
+			queue.Add ("Disconnected: " + e.PeerID.Peer.Location + " - " + e.ConnectionDirection.ToString());
+		}
+        }
+
+        static void cm_PeerConnected(object sender, PeerConnectionEventArgs e)
+        {
+		lock (queue){
+			queue.Add ("Connected: " + e.PeerID.Peer.Location + " - " + e.ConnectionDirection.ToString());
+		}
+        }
+
+	static ArrayList queue;
+	
 	static void InitMonoTorrent ()
 	{
+		queue = new ArrayList ();
 		engine_settings = new EngineSettings (config.DownloadDir, config.ListenPort, false);
 		torrent_settings = new TorrentSettings (config.UploadSlots, config.MaxConnections,
 							(int) config.UploadSpeed, (int) config.DownloadSpeed);
@@ -754,6 +779,13 @@ public class TorrentCurses {
 				torrent_list.Add (td.Filename);
 			}
 		}
+
+		// Messages
+		ClientEngine.ConnectionManager.PeerConnected +=
+			new EventHandler<PeerConnectionEventArgs>(cm_PeerConnected);
+                ClientEngine.ConnectionManager.PeerDisconnected +=
+			new EventHandler<PeerConnectionEventArgs>(cm_PeerDisconnected);
+
 	}
 	
 	static void Main ()
