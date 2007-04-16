@@ -1067,10 +1067,8 @@ namespace Mono.Terminal {
 			inited = true;
 			
 			bool use_color = false;
-			if (!disable_color){
+			if (!disable_color)
 				use_color = Curses.has_colors ();
-				Console.WriteLine (use_color);
-			}
 			
 			Curses.start_color ();
 			if (use_color){
