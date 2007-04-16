@@ -349,6 +349,7 @@ namespace Mono.Terminal {
 		public override bool ProcessKey (int key)
 		{
 			switch (key){
+			case 127:
 			case Curses.KeyBackspace:
 				if (point == 0)
 					return true;
@@ -1242,6 +1243,7 @@ namespace Mono.Terminal {
 							c.SizeChanged ();
 						Refresh ();
 					}
+					continue;
 				}
 				if (ch == 27){
 					Curses.timeout (0);
