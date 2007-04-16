@@ -28,7 +28,7 @@ run: demo.exe
 mono-curses.dll: $(SOURCES)
 	gmcs -debug -target:library -out:mono-curses.dll -debug $(SOURCES)
 
-binding.cs: binding.cs.in
+binding.cs: binding.cs.in Makefile
 	if test `uname` = Darwin; then make t-bugosx; else make binding; fi
 
 t-bugosx: 
