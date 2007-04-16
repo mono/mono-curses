@@ -224,28 +224,28 @@ namespace Mono.Terminal {
 #endregion
 		
 #region Colors
-		[DllImport ("ncurses")]
+		[DllImport ("@CURSES@")]
 		extern internal static bool has_colors ();
 
-		[DllImport ("ncurses")]
+		[DllImport ("@CURSES@")]
 		extern internal static int start_color ();
 
-		[DllImport ("ncurses")]
+		[DllImport ("@CURSES@")]
 		extern internal static int init_pair (short pair, short f, short b);
 		
 #endregion
 		
 #region Helpers
-		[DllImport ("mono-curses")]
+		[DllImport ("@MONO_CURSES@")]
 		internal extern static IntPtr console_sharp_get_stdscr ();
 
-		[DllImport ("mono-curses")]
+		[DllImport ("@MONO_CURSES@")]
 		internal extern static IntPtr console_sharp_get_curscr ();
 
-		[DllImport ("mono-curses")]
+		[DllImport ("@MONO_CURSES@")]
 		internal extern static void console_sharp_get_dims (out int lines, out int cols);
 
-		[DllImport ("mono-curses")]
+		[DllImport ("@MONO_CURSES@")]
 		internal extern static void console_sharp_sendsigtstp ();
 #endregion
 

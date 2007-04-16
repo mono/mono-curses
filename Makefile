@@ -1,4 +1,6 @@
-CURSES=ncurses
+CURSES=curses
+MONO_CURSES=mono-curses
+
 SOURCES = 		\
 	handles.cs	\
 	binding.cs	\
@@ -21,13 +23,19 @@ demo.exe: demo.cs mono-curses.dll libmono-curses.so
 	gmcs -debug demo.cs -r:mono-curses.dll $(TORRENTLIBS)
 
 run: demo.exe
-	MONO_PATH=$(TORRENTDIR)/bin:$(TORRENTDIR)/Libs mono --debug demo.exe || stty sane
+	DYLD_LIBRARY_PATH=. MONO_PATH=$(TORRENTDIR)/bin:$(TORRENTDIR)/Libs mono --debug demo.exe || stty sane
 
 mono-curses.dll: $(SOURCES)
 	gmcs -debug -target:library -out:mono-curses.dll -debug $(SOURCES)
 
 binding.cs: binding.cs.in
-	sed -e 's/@CURSES@/$(CURSES)/' < binding.cs.in > binding.cs
+	if test `uname` = Darwin; then make t-bugosx; else make binding; fi
+
+t-bugosx: 
+	make binding CURSES=libncurses.dylib MONO_CURSES=libmono-curses.dylib
+
+binding:
+	sed -e 's/@CURSES@/$(CURSES)/' -e 's/@MONO_CURSES@/$(MONO_CURSES)/' < binding.cs.in > binding.cs
 
 constants.cs: attrib.c
 	gcc -o attrib attrib.c  -lncurses
