@@ -56,6 +56,7 @@ public class TorrentCurses {
 	static TorrentSettings torrent_settings;
 	static ClientEngine engine;
 	static ListView list_details;
+	static LogWidget log_widget;
 	
 	static Label iteration;
 
@@ -181,7 +182,8 @@ public class TorrentCurses {
 			d.AddButton (br);
 
 			Button bd = new Button ("Delete");
-			br.Clicked += delegate {
+			bd.Clicked += delegate {
+				throw new Exception ();
 				Application.Error ("Not Implemented",
 						   "I have not implemented delete yet");
 				d.Running = false;
@@ -239,7 +241,6 @@ public class TorrentCurses {
 			get {
 				TorrentManager tm = torrent_list.GetSelected ();
 
-				Widget.Log ("called, got {0}", tm == null ? 0 : tm.Torrent.Files.Length);
 				if (tm == null)
 					return 0;
 
@@ -260,7 +261,6 @@ public class TorrentCurses {
 
 		void IListProvider.Render (int line, int col, int width, int item)
 		{
-			Widget.Log ("called");
 			TorrentManager tm = torrent_list.GetSelected ();
 			string name;
 			
@@ -287,6 +287,61 @@ public class TorrentCurses {
 
 		void IListProvider.SelectedChanged ()
 		{
+		}
+	}
+
+	public class LogWidget : Widget {
+		string [] messages = new string [80];
+		int head, tail;
+		int count;
+		
+		public LogWidget (int x, int y) : base (x, y, 0, 0)
+		{
+			Fill = Fill.Horizontal | Fill.Vertical;
+			AddText ("Started");
+		}
+
+		public void AddText (string s)
+		{
+			messages [head] = s;
+			head++;
+			if (head == messages.Length)
+				head = 0;
+			if (head == tail)
+				tail = (tail+1) % messages.Length;
+		}
+		
+		public override void Redraw ()
+		{
+			Curses.attrset (ColorNormal);
+
+			int i = 0;
+			int l;
+			int n = head > tail ? head-tail : (head + messages.Length) - tail;
+			for (l = h-1; l >= 0 && n-- > 0; l--){
+				int item = head-1-i;
+				if (item < 0)
+					item = messages.Length+item;
+
+				Log ("L={0} i={1} item={2} head={3} tail={4}", l, i, item, head, tail);
+				Move (y+l, x);
+
+				int sl = messages [item].Length;
+				if (sl < w){
+					Curses.addstr (messages [item]);
+					for (int fi = 0; fi < w-sl; fi++)
+						Curses.addch (' ');
+				} else {
+					Curses.addstr (messages [item].Substring (0, sl));
+				}
+				i++;
+			}
+
+			for (; l >= 0; l--){
+				Move (y+l, x);
+				for (i = 0; i < w; i++)
+					Curses.addch (' ');
+			}
 		}
 	}
 	
@@ -440,7 +495,7 @@ public class TorrentCurses {
 		// fprogress
 		fprogress.x = midx;
 		fprogress.y = midy;
-		fprogress.w = midx;
+		fprogress.w = midx + Application.Cols % 2;
 		fprogress.h = midy;
 	}
 
@@ -451,7 +506,8 @@ public class TorrentCurses {
 	static Label status_up, status_up_speed;
 	static Label status_down, status_down_speed;
 	static Label status_warnings, status_failures;
-		
+	static Label torrent_name;
+	
 	static Frame SetupStatus ()
 	{
 		Frame fstatus = new Frame ("Status");
@@ -507,6 +563,8 @@ public class TorrentCurses {
 		status_up_speed.Text   = String.Format ("{0:0.0}", tm.Monitor.UploadSpeed / 1024);
 		status_down.Text       = String.Format ("{0,14:N0}", tm.Monitor.DataBytesDownloaded / 1024.0);
 		status_down_speed.Text = String.Format ("{0:0.0}", tm.Monitor.DownloadSpeed / 1024);
+
+		torrent_name.Text      = tm.Torrent.Name;
 	}
 	
 	static void Shutdown ()
@@ -556,6 +614,7 @@ public class TorrentCurses {
 		ftorrents.Add (ltorrents);
 		
 		Frame fprogress = new Frame ("Messages");
+		fprogress.Add (log_widget = new LogWidget (0, 0));
 		a.Add (fprogress);
 
 		// For testing focus, not ready
@@ -565,9 +624,16 @@ public class TorrentCurses {
 
 		// Details
 		Frame fdetails = new Frame ("Details");
+		fdetails.Add (new Label (1, 1, "Files for: "));
+		torrent_name = new TrimLabel (12, 1, 10, "");
+		torrent_name.Fill = Fill.Horizontal;
+		fdetails.Add (torrent_name);
+			      
 		details_list = new TorrentDetailsList ();
 		list_details = new ListView (1, 3, 0, 0, details_list);
-		ltorrents.Fill = Fill.Horizontal | Fill.Vertical;
+		list_details.Fill = Fill.Horizontal | Fill.Vertical;
+		fdetails.Add (list_details);
+		
 		a.Add (fdetails);
 
 		// Status

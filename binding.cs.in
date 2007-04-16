@@ -205,11 +205,11 @@ namespace Mono.Terminal {
 
 #region Attributes
 		[DllImport ("@CURSES@")]
-		extern internal static int attron (int attrs);
+		extern public static int attron (int attrs);
 		[DllImport ("@CURSES@")]
-		extern internal static int attroff (int attrs);
+		extern public static int attroff (int attrs);
 		[DllImport ("@CURSES@")]
-		extern internal static int attrset (int attrs);
+		extern public static int attrset (int attrs);
 #endregion
 
 #region Input

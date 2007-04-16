@@ -225,7 +225,7 @@ namespace Mono.Terminal {
 			Curses.addstr (text);
 		}
 
-		public string Text {
+		public virtual string Text {
 			get {
 				return text;
 			}
@@ -241,8 +241,20 @@ namespace Mono.Terminal {
 	}
 
 	public class TrimLabel : Label {
+		string original;
+		
 		public TrimLabel (int x, int y, int w, string s) : base (x, y, s)
 		{
+			original = s;
+
+			SetString (w, s);
+		}
+
+		void SetString (int w, string s)
+		{
+			if ((Fill & Fill.Horizontal) != 0)
+				w = Container.w - Container.Border * 2 - x;
+			
 			this.w = w;
 			if (s.Length > w){
 				if (w < 5)
@@ -252,6 +264,23 @@ namespace Mono.Terminal {
 				}
 			} else
 				text = s;
+		}
+
+		public override void DoSizeChanged ()
+		{
+			if ((Fill & Fill.Horizontal) != 0)
+				SetString (0, original);
+		}
+
+		public override string Text {
+			get {
+				return original;
+			}
+
+			set {
+				SetString (w, value);
+				base.Text = text;
+			}
 		}
 	}
 	
@@ -399,7 +428,7 @@ namespace Mono.Terminal {
 	}
 
 	public class Button : Widget {
-		string text;
+		public string text;
 		char hot_key;
 		int  hot_pos = -1;
 		bool is_default;
@@ -658,7 +687,7 @@ namespace Mono.Terminal {
 		public int ContainerColorHotNormal;
 		public int ContainerColorHotFocus;
 
-		protected int Border;
+		public int Border;
 		
 		static Container ()
 		{
@@ -838,10 +867,8 @@ namespace Mono.Terminal {
 					widget.w = w - (Border*2) - widget.x;
 				}
 
-				if ((widget.Fill & Fill.Vertical) != 0){
+				if ((widget.Fill & Fill.Vertical) != 0)
 					widget.h = h - (Border * 2) - widget.y;
-					Log ("Got: {0}", widget.h);
-				}
 			}
 		}
 
@@ -957,7 +984,7 @@ namespace Mono.Terminal {
 			Clear ();
 
 			Widget.DrawFrame (x + 1, y + 1, w - 2, h - 2);
-			Curses.move (y, x + (w - Title.Length) / 2);
+			Curses.move (y + 1, x + (w - Title.Length) / 2);
 			Curses.addch (' ');
 			Curses.addstr (Title);
 			Curses.addch (' ');
