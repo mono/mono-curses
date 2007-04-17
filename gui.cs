@@ -579,8 +579,9 @@ namespace Mono.Terminal {
 						top = selected;
 					SelectedChanged ();
 					Redraw ();
-				}
-				return true;
+					return true;
+				} else
+					return false;
 
 			case 14: // Control-n
 			case Curses.KeyDown:
@@ -591,8 +592,9 @@ namespace Mono.Terminal {
 					}
 					SelectedChanged ();
 					Redraw ();
-				}
-				return true;
+					return true;
+				} else 
+					return false;
 
 			case 22: //  Control-v
 			case Curses.KeyNPage:
@@ -766,6 +768,57 @@ namespace Mono.Terminal {
 			}
 		}
 
+		public void FocusLast ()
+		{
+			for (int i = widgets.Count; i > 0; ){
+				i--;
+
+				Widget w = (Widget) widgets [i];
+				if (w.CanFocus){
+					SetFocus (w);
+					return;
+				}
+			}
+		}
+
+		public bool FocusPrev ()
+		{
+			if (focused == null){
+				FocusLast ();
+				return true;
+			}
+			int focused_idx = -1;
+			for (int i = widgets.Count; i > 0; ){
+				i--;
+				Widget w = (Widget)widgets [i];
+
+				if (w.HasFocus){
+					Container c = w as Container;
+					if (c != null){
+						if (c.FocusPrev ())
+							return true;
+					}
+					focused_idx = i;
+					continue;
+				}
+				if (w.CanFocus && focused_idx != -1){
+					focused.HasFocus = false;
+
+					Container c = w as Container;
+					if (c != null && c.CanFocus){
+						c.FocusLast ();
+					} 
+					SetFocus (w);
+					return true;
+				}
+			}
+			if (focused != null){
+				focused.HasFocus = false;
+				focused = null;
+			}
+			return false;
+		}
+
 		public bool FocusNext ()
 		{
 			if (focused == null){
@@ -775,7 +828,7 @@ namespace Mono.Terminal {
 			int n = widgets.Count;
 			int focused_idx = -1;
 			for (int i = 0; i < n; i++){
-				Widget w = (Widget)widgets [i%n];
+				Widget w = (Widget)widgets [i];
 
 				if (w.HasFocus){
 					Container c = w as Container;
@@ -1271,11 +1324,16 @@ namespace Mono.Terminal {
 				//
 				// Focus handling
 				//
-				if (ch == 9 || ch == Curses.KeyDown){
+				if (ch == 9 || ch == Curses.KeyDown || ch == Curses.KeyRight){
 					if (!container.FocusNext ())
 						container.FocusNext ();
 					continue;
+				} else if (ch == Curses.KeyUp || ch == Curses.KeyLeft){
+					if (!container.FocusPrev ())
+						container.FocusPrev ();
+					continue;
 				}
+					
 			}
 
 			toplevels.Remove (container);
