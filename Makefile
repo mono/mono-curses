@@ -9,9 +9,7 @@ SOURCES = 		\
 
 TORRENTDIR=/cvs/bitsharp/src
 TORRENTLIBS=	\
-	-r:$(TORRENTDIR)/bin/MonoTorrent.Common.dll 	\
-	-r:$(TORRENTDIR)/bin/MonoTorrent.Client.dll 	\
-	-r:$(TORRENTDIR)/bin/MonoTorrent.BEncoding.dll	\
+	-r:$(TORRENTDIR)/bin/MonoTorrent.dll 	\
 	-r:$(TORRENTDIR)/Libs/Upnp.dll
 
 all: mono-curses.dll libmono-curses.so demo.exe
