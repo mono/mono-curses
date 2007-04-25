@@ -7,6 +7,15 @@ SOURCES = 		\
 	gui.cs		\
 	constants.cs
 
+EXTRA_DIST = 	\
+	configure	\
+	Makefile	\
+	monotorrent.in	\
+	binding.cs.in	\
+	attrib.c	\
+	mono-curses.c	\
+	monotorrent.cs
+
 TORRENTDIR=/cvs/bitsharp/src
 TORRENTLIBS=`pkg-config --libs monotorrent`
 
@@ -26,7 +35,7 @@ MonoTorrent.dll Upnp.dll:
 	cp `pkg-config --variable=Libraries monotorrent` .
 
 run: monotorrent.exe
-	DYLD_LIBRARY_PATH=. MONO_PATH=$(TORRENTDIR)/bin:$(TORRENTDIR)/Libs mono --debug demo.exe || stty sane
+	DYLD_LIBRARY_PATH=. MONO_PATH=$(TORRENTDIR)/bin:$(TORRENTDIR)/Libs mono --debug monotorrent.exe || stty sane
 
 mono-curses.dll: $(SOURCES)
 	gmcs -debug -target:library -out:mono-curses.dll -debug $(SOURCES)
@@ -65,3 +74,18 @@ config.make:
 	exit 1
 
 include config.make
+
+dist: 
+	rm -rf monotorrent-curses-$(VERSION)
+	mkdir monotorrent-curses-$(VERSION)
+	cp $(SOURCES) $(EXTRA_DIST) monotorrent-curses-$(VERSION)
+	tar czvf monotorrent-curses-$(VERSION).tar.gz monotorrent-curses-$(VERSION)
+	rm -rf monotorrent-curses-$(VERSION)
+
+distcheck: dist
+	rm -rf test
+	(mkdir test; cd test; tar xzvf ../monotorrent-curses-$(VERSION).tar.gz; cd monotorrent-curses-$(VERSION); \
+	 ./configure --prefix=$$(cd `pwd`/..; pwd); \
+	 make && make install && make dist);
+	rm -rf test
+	echo monotorrent-curses-$(VERSION).tar.gz is ready for release

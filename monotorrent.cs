@@ -183,7 +183,6 @@ public class TorrentCurses {
 
 			Button bd = new Button ("Delete");
 			bd.Clicked += delegate {
-				throw new Exception ();
 				Application.Error ("Not Implemented",
 						   "I have not implemented delete yet");
 				d.Running = false;
