@@ -1,4 +1,4 @@
-CURSES=curses
+CURSES=ncurses
 MONO_CURSES=mono-curses
 
 SOURCES = 		\
