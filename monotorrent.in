@@ -1,0 +1,7 @@
+#!/bin/sh
+export DYLD_LIBRARY_PATH
+export LD_LIBRARY_PATH
+DYLD_LIBRARY_PATH=@prefix@/lib/monotorrent:$DYLD_LIBRARY_PATH
+LD_LIBRARY_PATH=@prefix@/lib/monotorrent:$LD_LIBRARY_PATH
+
+mono @prefix@/lib/monotorrent/monotorrent.exe || stty sane

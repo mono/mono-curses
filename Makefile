@@ -8,19 +8,24 @@ SOURCES = 		\
 	constants.cs
 
 TORRENTDIR=/cvs/bitsharp/src
-TORRENTLIBS=	\
-	-r:$(TORRENTDIR)/bin/MonoTorrent.dll 	\
-	-r:$(TORRENTDIR)/Libs/Upnp.dll
+TORRENTLIBS=`pkg-config --libs monotorrent`
 
-all: mono-curses.dll libmono-curses.so demo.exe
+all: config.make mono-curses.dll libmono-curses.so monotorrent.exe monotorrent
+
+monotorrent: monotorrent.in Makefile
+	sed "s,@prefix@,$(prefix)," < monotorrent.in > monotorrent
+	chmod +x monotorrent
 
 test.exe: test.cs mono-curses.dll libmono-curses.so
 	gmcs -debug test.cs -r:mono-curses.dll
 
-demo.exe: demo.cs mono-curses.dll libmono-curses.so
-	gmcs -debug demo.cs -r:mono-curses.dll $(TORRENTLIBS)
+monotorrent.exe: monotorrent.cs mono-curses.dll libmono-curses.so MonoTorrent.dll Upnp.dll
+	gmcs -debug monotorrent.cs -r:mono-curses.dll $(TORRENTLIBS)
 
-run: demo.exe
+MonoTorrent.dll Upnp.dll:
+	cp `pkg-config --variable=Libraries monotorrent` .
+
+run: monotorrent.exe
 	DYLD_LIBRARY_PATH=. MONO_PATH=$(TORRENTDIR)/bin:$(TORRENTDIR)/Libs mono --debug demo.exe || stty sane
 
 mono-curses.dll: $(SOURCES)
@@ -47,3 +52,16 @@ test: test.exe
 
 clean:
 	rm *.exe *dll binding.cs *.so
+
+install: all
+	mkdir -p $(prefix)/bin
+	mkdir -p $(prefix)/lib/monotorrent
+	cp mono-curses.dll MonoTorrent.dll Upnp.dll monotorrent.exe $(prefix)/lib/monotorrent
+	cp libmono-curses* $(prefix)/lib/monotorrent
+	cp monotorrent $(prefix)/bin
+
+config.make:
+	echo You must run configure first
+	exit 1
+
+include config.make
