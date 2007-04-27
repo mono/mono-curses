@@ -32,7 +32,12 @@ monotorrent.exe: monotorrent.cs mono-curses.dll libmono-curses.so MonoTorrent.dl
 	gmcs -debug monotorrent.cs -r:mono-curses.dll $(TORRENTLIBS)
 
 MonoTorrent.dll Upnp.dll:
-	cp `pkg-config --variable=Libraries monotorrent` .
+	if pkg-config --atleast-version=0.1 monotorrent; then \
+		cp `pkg-config --variable=Libraries monotorrent` .; \
+	else \
+		echo You must install The Monotorrent libraries first;  \
+		exit 1; \
+	fi
 
 run: monotorrent.exe
 	DYLD_LIBRARY_PATH=. MONO_PATH=$(TORRENTDIR)/bin:$(TORRENTDIR)/Libs mono --debug monotorrent.exe || stty sane
