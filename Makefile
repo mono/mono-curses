@@ -41,10 +41,16 @@ mono-curses.dll: $(SOURCES)
 	gmcs -debug -target:library -out:mono-curses.dll -debug $(SOURCES)
 
 binding.cs: binding.cs.in Makefile
-	if test `uname` = Darwin; then make t-bugosx; else make binding; fi
+	if test `uname` = Darwin; then make t-bugosx; else make detect; fi
 
 t-bugosx: 
 	make binding CURSES=libncurses.dylib MONO_CURSES=libmono-curses.dylib
+
+#cute hack to avoid depending on ncurses-devel on Linux
+detect:
+	echo "main () {initscr();}" > tmp.c
+	gcc tmp.c -lncurses -o tmp
+	make binding CURSES=`ldd ./tmp  | grep ncurses | awk '{print $$3}' | sed 's#.*libncurses#ncurses#'`
 
 binding:
 	sed -e 's/@CURSES@/$(CURSES)/' -e 's/@MONO_CURSES@/$(MONO_CURSES)/' < binding.cs.in > binding.cs
