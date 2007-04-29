@@ -145,6 +145,10 @@ namespace Mono.Terminal {
 			return false;
 		}
 
+		public virtual void ProcessMouse (Curses.MouseEvent ev)
+		{
+		}
+
 		public virtual bool ProcessHotKey (int key)
 		{
 			return false;
@@ -429,6 +433,24 @@ namespace Mono.Terminal {
 			}
 			return true;
 		}
+
+		public override void ProcessMouse (Curses.MouseEvent ev)
+		{
+			if ((ev.ButtonState & Curses.BUTTON1_CLICKED) == 0)
+				return;
+
+			Container.SetFocus (this);
+
+			// We could also set the cursor position.
+			point = first + (ev.X - x);
+			if (point > text.Length)
+				point = text.Length;
+			if (point < first)
+				point = 0;
+			
+			Container.Redraw ();
+			Container.PositionCursor ();
+		}
 	}
 
 	public class Button : Widget {
@@ -511,6 +533,16 @@ namespace Mono.Terminal {
 				return true;
 			}
 			return false;
+		}
+
+		public override void ProcessMouse (Curses.MouseEvent ev)
+		{
+			if ((ev.ButtonState & Curses.BUTTON1_CLICKED) != 0){
+				Container.SetFocus (this);
+				Container.Redraw ();
+				if (Clicked != null)
+					Clicked (this, EventArgs.Empty);
+			}
 		}
 	}
 
@@ -627,7 +659,6 @@ namespace Mono.Terminal {
 			default:
 				return provider.ProcessKey (c);
 			}
-			return false;
 		}
 
 		public override void PositionCursor ()
@@ -680,6 +711,24 @@ namespace Mono.Terminal {
 				selected = value;
 				Redraw ();
 			}
+		}
+		
+		public override void ProcessMouse (Curses.MouseEvent ev)
+		{
+			if ((ev.ButtonState & Curses.BUTTON1_CLICKED) == 0)
+				return;
+
+			ev.X -= x;
+			ev.Y -= y;
+
+			if (ev.Y < 0)
+				return;
+			if (ev.Y+top >= items)
+				return;
+			selected = ev.Y - top;
+			SelectedChanged ();
+			
+			Redraw ();
 		}
 	}
 	
@@ -857,6 +906,12 @@ namespace Mono.Terminal {
 			return false;
 		}
 
+		public virtual void GetBase (out int row, out int col)
+		{
+			row = 0;
+			col = 0;
+		}
+		
 		public virtual void ContainerMove (int row, int col)
 		{
 			if (Container != Application.EmptyContainer && Container != null)
@@ -906,6 +961,34 @@ namespace Mono.Terminal {
 			return false;
 		}
 
+		public override void ProcessMouse (Curses.MouseEvent ev)
+		{
+			int bx, by;
+
+			GetBase (out bx, out by);
+			ev.X -= x;
+			ev.Y -= y;
+			
+			foreach (Widget w in widgets){
+				int wx = w.x + bx;
+				int wy = w.y + by;
+
+				Log ("considering {0}", w);
+				if ((ev.X < wx) || (ev.X > (wx + w.w)))
+					continue;
+
+				if ((ev.Y < wy) || (ev.Y > (wy + w.h)))
+					continue;
+				
+				Log ("OK {0}", w);
+				ev.X -= bx;
+				ev.Y -= by;
+
+				w.ProcessMouse (ev);
+				return;
+			}			
+		}
+		
 		public override void DoSizeChanged ()
 		{
 			foreach (Widget widget in widgets){
@@ -952,6 +1035,12 @@ namespace Mono.Terminal {
 			Border++;
 		}
 
+		public override void GetBase (out int row, out int col)
+		{
+			row = 1;
+			col = 1;
+		}
+		
 		public override void ContainerMove (int row, int col)
 		{
 			base.ContainerMove (row + 1, col + 1);
@@ -1030,6 +1119,13 @@ namespace Mono.Terminal {
 			Add (b);
 		}
 		
+		public override void GetBase (out int row, out int col)
+		{
+			base.GetBase (out row, out col);
+			row++;
+			col++;
+		}
+		
 		public override void ContainerMove (int row, int col)
 		{
 			base.ContainerMove (row + 1, col + 1);
@@ -1096,6 +1192,7 @@ namespace Mono.Terminal {
 		static short last_color_pair;
 		static bool inited;
 		static Container empty_container;
+		public static long MouseEventsAvailable;
 		
 		static int MakeColor (short f, short b)
 		{
@@ -1118,6 +1215,10 @@ namespace Mono.Terminal {
 			if (inited)
 				return;
 			inited = true;
+
+			long old = 0;
+			MouseEventsAvailable = Curses.console_sharp_mouse_mask (
+				Curses.BUTTON1_CLICKED | Curses.BUTTON1_DOUBLE_CLICKED, out old);
 			
 			bool use_color = false;
 			if (!disable_color)
@@ -1296,6 +1397,15 @@ namespace Mono.Terminal {
 					}
 					continue;
 				}
+				
+				if (ch == Curses.KeyMouse){
+					Curses.MouseEvent ev;
+					
+					Curses.console_sharp_getmouse (out ev);
+					container.ProcessMouse (ev);
+					continue;
+				}
+				
 				if (ch == 27){
 					Curses.timeout (0);
 					int k = Curses.getch ();

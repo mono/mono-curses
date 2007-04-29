@@ -32,6 +32,13 @@ namespace Mono.Terminal {
 
 	public partial class Curses {
 
+		[StructLayout (LayoutKind.Sequential)]
+		public struct MouseEvent {
+			public int ID;
+			public int X, Y, Z;
+			public long ButtonState;
+		}
+
 #region Screen initialization
 	
 		[DllImport ("@CURSES@", EntryPoint="initscr")]
@@ -235,6 +242,9 @@ namespace Mono.Terminal {
 		
 #endregion
 		
+#region Mouse
+#endregion
+
 #region Helpers
 		[DllImport ("@MONO_CURSES@")]
 		internal extern static IntPtr console_sharp_get_stdscr ();
@@ -247,6 +257,15 @@ namespace Mono.Terminal {
 
 		[DllImport ("@MONO_CURSES@")]
 		internal extern static void console_sharp_sendsigtstp ();
+
+		[DllImport ("@MONO_CURSES@")]
+		internal extern static long console_sharp_mouse_mask (long newmask, out long oldmask);
+
+		[DllImport ("@MONO_CURSES@")]
+		internal extern static uint console_sharp_getmouse (out MouseEvent ev);
+
+		[DllImport ("@MONO_CURSES@")]
+		internal extern static uint console_sharp_ungetmouse (ref MouseEvent ev);
 #endregion
 
 		// We encode ESC + char (what Alt-char generates) as 0x2000 + char

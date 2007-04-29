@@ -68,6 +68,32 @@ main (int argc, char *argv [])
 	put (COLOR_CYAN);
 	put (COLOR_WHITE);
 
+	put (BUTTON1_PRESSED);
+	put (BUTTON1_RELEASED);
+	put (BUTTON1_CLICKED);
+	put (BUTTON1_DOUBLE_CLICKED);
+	put (BUTTON1_TRIPLE_CLICKED);
+	put (BUTTON2_PRESSED);
+	put (BUTTON2_RELEASED);
+	put (BUTTON2_CLICKED);
+	put (BUTTON2_DOUBLE_CLICKED);
+	put (BUTTON2_TRIPLE_CLICKED);
+	put (BUTTON3_PRESSED);
+	put (BUTTON3_RELEASED);
+	put (BUTTON3_CLICKED);
+	put (BUTTON3_DOUBLE_CLICKED);
+	put (BUTTON3_TRIPLE_CLICKED);
+	put (BUTTON4_PRESSED);
+	put (BUTTON4_RELEASED);
+	put (BUTTON4_CLICKED);
+	put (BUTTON4_DOUBLE_CLICKED);
+	put (BUTTON4_TRIPLE_CLICKED);
+	put (BUTTON_SHIFT);
+	put (BUTTON_CTRL);
+	put (BUTTON_ALT);
+	put (ALL_MOUSE_EVENTS);
+	put (REPORT_MOUSE_POSITION);
+
 	put (ERR);
 	
 	put2 ("Backspace", KEY_BACKSPACE);
@@ -78,6 +104,7 @@ main (int argc, char *argv [])
 	put2 ("NPage", KEY_NPAGE);
 	put2 ("PPage", KEY_PPAGE);
 	put2 ("Home",  KEY_HOME);
+	put2 ("Mouse", KEY_MOUSE);
 	put2 ("End",   KEY_END);
 	
 	diff = COLOR_PAIR (1) - COLOR_PAIR(0);

@@ -65,7 +65,7 @@ constants.cs: attrib.c
 	./attrib constants.cs
 
 libmono-curses.so: mono-curses.c
-	if test `uname` = Darwin; then gcc -dynamiclib mono-curses.c -o libmono-curses.dylib -lncurses; else gcc -shared -fPIC mono-curses.c -o libmono-curses.so -lncurses; fi
+	if test `uname` = Darwin; then gcc -dynamiclib mono-curses.c -o libmono-curses.dylib -lncurses; else gcc -g -shared -fPIC mono-curses.c -o libmono-curses.so -lncurses; fi
 
 test: test.exe
 	mono test.exe
