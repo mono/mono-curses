@@ -28,10 +28,10 @@ monotorrent: monotorrent.in Makefile
 test.exe: test.cs mono-curses.dll libmono-curses.so
 	gmcs -debug test.cs -r:mono-curses.dll
 
-monotorrent.exe: monotorrent.cs mono-curses.dll libmono-curses.so MonoTorrent.dll Upnp.dll
+monotorrent.exe: monotorrent.cs mono-curses.dll libmono-curses.so MonoTorrent.dll
 	gmcs -debug monotorrent.cs -r:mono-curses.dll $(TORRENTLIBS)
 
-MonoTorrent.dll Upnp.dll:
+MonoTorrent.dll:
 	if pkg-config --atleast-version=0.1 monotorrent; then \
 		cp `pkg-config --variable=Libraries monotorrent` .; \
 	else \
@@ -76,7 +76,7 @@ clean:
 install: all
 	mkdir -p $(prefix)/bin
 	mkdir -p $(prefix)/lib/monotorrent
-	cp mono-curses.dll MonoTorrent.dll Upnp.dll monotorrent.exe $(prefix)/lib/monotorrent
+	cp mono-curses.dll MonoTorrent.dll monotorrent.exe $(prefix)/lib/monotorrent
 	cp libmono-curses* $(prefix)/lib/monotorrent
 	cp monotorrent $(prefix)/bin
 

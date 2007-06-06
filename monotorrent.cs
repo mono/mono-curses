@@ -86,19 +86,15 @@ public class TorrentCurses {
 					continue;
 				}
 			}
-			
-			TorrentManager manager = engine.LoadTorrent (s);
-			if (manager == null){
-				Application.Error ("LoadTorrent", "I got a null");
-				return;
-			}
-			
+			Torrent torrent = Torrent.Load(s);
+			TorrentManager manager = new TorrentManager(torrent, engine_settings.SavePath, (TorrentSettings)torrent_settings.Clone());
+			engine.Register(manager);
 			items.Add (manager);
 			
 			if (view != null)
 				view.ProviderChanged ();
 
-			engine.Start (manager);
+			manager.Start();
 		}
 		
 		bool IListProvider.AllowMark {
@@ -160,9 +156,9 @@ public class TorrentCurses {
 			Button bstartstop = new Button (stopped ? "Start" : "Stop");
 			bstartstop.Clicked += delegate {
 				if (stopped)
-					engine.Start (item);
+					item.Start();
 				else
-					engine.Stop (item);
+					item.Stop();
 				d.Running = false;
 				
 			};
@@ -174,9 +170,9 @@ public class TorrentCurses {
 			Button br = new Button (paused ? "Resume" : "Pause");
 			br.Clicked += delegate {
 				if (paused)
-					engine.Start (item);
+					item.Start();
 				else
-					engine.Pause (item);
+					item.Pause();
 				d.Running = false;
 			};
 			d.AddButton (br);
@@ -568,7 +564,7 @@ public class TorrentCurses {
 	static void Shutdown ()
 	{
 		Console.WriteLine ("Shutting down");
-		WaitHandle[] handles = engine.Stop();
+		WaitHandle[] handles = engine.StopAll();
 		for (int i = 0; i < handles.Length; i++)
 			if (handles[i] != null)
 				handles[i].WaitOne();
@@ -765,11 +761,11 @@ public class TorrentCurses {
 	static void InitMonoTorrent ()
 	{
 		queue = new ArrayList ();
-		engine_settings = new EngineSettings (config.DownloadDir, config.ListenPort, false);
+		engine_settings = new EngineSettings (config.DownloadDir, config.ListenPort);
 		torrent_settings = new TorrentSettings (config.UploadSlots, config.MaxConnections,
 							(int) config.UploadSpeed, (int) config.DownloadSpeed);
 		
-		engine = new ClientEngine (engine_settings, torrent_settings);
+		engine = new ClientEngine (engine_settings);
 
 		// Our store
 		torrent_list = new TorrentList ();
@@ -780,9 +776,9 @@ public class TorrentCurses {
 		}
 
 		// Messages
-		ClientEngine.ConnectionManager.PeerConnected +=
+		engine.ConnectionManager.PeerConnected +=
 			new EventHandler<PeerConnectionEventArgs>(cm_PeerConnected);
-                ClientEngine.ConnectionManager.PeerDisconnected +=
+        engine.ConnectionManager.PeerDisconnected +=
 			new EventHandler<PeerConnectionEventArgs>(cm_PeerDisconnected);
 
 	}
