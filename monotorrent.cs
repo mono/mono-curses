@@ -550,7 +550,7 @@ public class TorrentCurses {
 
 		status_progress.Text   = String.Format ("{0:0.00}%", tm.Progress);
 		status_state.Text      = tm.State.ToString ();
-		status_peers.Text      = String.Format ("{0} ({1}/{2})", tm.Peers.Available, tm.Peers.Seeds (), tm.Peers.Leechs ());
+		status_peers.Text      = String.Format ("{0} ({1}/{2})", tm.Peers.Available, tm.Peers.Seeds, tm.Peers.Leechs);
 		status_tracker.Text    = tm.TrackerManager.TrackerTiers[0].Trackers[0].State.ToString ();
 
 		status_up.Text         = String.Format ("{0,14:N0}", tm.Monitor.DataBytesUploaded / 1024.0);
@@ -745,14 +745,14 @@ public class TorrentCurses {
         static void cm_PeerDisconnected(object sender, PeerConnectionEventArgs e)
         {
 		lock (queue){
-			queue.Add ("Disconnected: " + e.PeerID.Peer.Location + " - " + e.ConnectionDirection.ToString());
+			queue.Add ("Disconnected: " + e.PeerID.Location + " - " + e.ConnectionDirection.ToString());
 		}
         }
 
         static void cm_PeerConnected(object sender, PeerConnectionEventArgs e)
         {
 		lock (queue){
-			queue.Add ("Connected: " + e.PeerID.Peer.Location + " - " + e.ConnectionDirection.ToString());
+			queue.Add ("Connected: " + e.PeerID.Location + " - " + e.ConnectionDirection.ToString());
 		}
         }
 
