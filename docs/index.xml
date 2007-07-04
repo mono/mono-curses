@@ -1,0 +1,35 @@
+<Overview>
+  <Assemblies>
+    <Assembly Name="mono-curses" Version="0.0.0.0">
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.CompilerServices.RuntimeCompatibility(WrapNonExceptionThrows=true)</AttributeName>
+        </Attribute>
+      </Attributes>
+    </Assembly>
+  </Assemblies>
+  <Remarks>To be added.</Remarks>
+  <Copyright>To be added.</Copyright>
+  <Types>
+    <Namespace Name="Mono.Terminal">
+      <Type Name="Window" />
+      <Type Name="Screen" />
+      <Type Name="Curses" />
+      <Type Name="Curses+MouseEvent" />
+      <Type Name="Anchor" />
+      <Type Name="Fill" />
+      <Type Name="Widget" />
+      <Type Name="Label" />
+      <Type Name="TrimLabel" />
+      <Type Name="Entry" />
+      <Type Name="Button" />
+      <Type Name="IListProvider" />
+      <Type Name="ListView" />
+      <Type Name="Container" />
+      <Type Name="Frame" />
+      <Type Name="Dialog" />
+      <Type Name="Application" />
+    </Namespace>
+  </Types>
+  <Title>mono-curses</Title>
+</Overview>

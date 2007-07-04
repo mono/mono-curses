@@ -19,7 +19,7 @@ EXTRA_DIST = 	\
 TORRENTDIR=/cvs/bitsharp/src
 TORRENTLIBS=`pkg-config --libs monotorrent`
 
-all: config.make mono-curses.dll libmono-curses.so monotorrent.exe monotorrent
+all: config.make mono-curses.dll libmono-curses.so monotorrent.exe monotorrent mono-curses.zip
 
 monotorrent: monotorrent.in Makefile
 	sed "s,@prefix@,$(prefix)," < monotorrent.in > monotorrent
@@ -42,8 +42,13 @@ MonoTorrent.dll:
 run: monotorrent.exe
 	DYLD_LIBRARY_PATH=. MONO_PATH=$(TORRENTDIR)/bin:$(TORRENTDIR)/Libs mono --debug monotorrent.exe || stty sane
 
-mono-curses.dll: $(SOURCES)
-	gmcs -debug -target:library -out:mono-curses.dll -debug $(SOURCES)
+mono-curses.dll mono-curses.xml: $(SOURCES)
+	gmcs -doc:mono-curses.xml -debug -target:library -out:mono-curses.dll -debug $(SOURCES)
+
+#
+mono-curses.tree mono-curses.zip: mono-curses.xml mono-curses.dll docs/Mono.Terminal.xml docs/index.xml
+	monodocer -importslashdoc:mono-curses.xml -path:docs -assembly:mono-curses.dll
+	mdassembler --ecma docs/ --out mono-curses
 
 binding.cs: binding.cs.in Makefile
 	if test `uname` = Darwin; then make t-bugosx; else make detect; fi
@@ -79,6 +84,7 @@ install: all
 	cp mono-curses.dll MonoTorrent.dll monotorrent.exe $(prefix)/lib/monotorrent
 	cp libmono-curses* $(prefix)/lib/monotorrent
 	cp monotorrent $(prefix)/bin
+	cp mono-curses.tree mono-curses.zip mono-curses.source  `pkg-config --variable sourcesdir monodoc`
 
 config.make:
 	echo You must run configure first

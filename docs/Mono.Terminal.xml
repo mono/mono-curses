@@ -1,0 +1,6 @@
+<Namespace Name="Mono.Terminal">
+  <Docs>
+    <summary>A toolkit for building terminal applications with curses.</summary>
+    <remarks></remarks>
+  </Docs>
+</Namespace>
