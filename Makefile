@@ -14,7 +14,13 @@ EXTRA_DIST = 	\
 	binding.cs.in	\
 	attrib.c	\
 	mono-curses.c	\
-	monotorrent.cs
+	monotorrent.cs	\
+	mono-curses.source
+
+DOCS_DIST = \
+	docs/Mono.Terminal.xml \
+	docs/index.xml
+
 
 TORRENTDIR=/cvs/bitsharp/src
 TORRENTLIBS=`pkg-config --libs monotorrent`
@@ -31,7 +37,7 @@ test.exe: test.cs mono-curses.dll libmono-curses.so
 monotorrent.exe: monotorrent.cs mono-curses.dll libmono-curses.so MonoTorrent.dll
 	gmcs -debug monotorrent.cs -r:mono-curses.dll $(TORRENTLIBS)
 
-MonoTorrent.dll:
+MonoTorrent.dll Upnp.dll:
 	if pkg-config --atleast-version=0.1 monotorrent; then \
 		cp `pkg-config --variable=Libraries monotorrent` .; \
 	else \
@@ -95,7 +101,9 @@ include config.make
 dist: 
 	rm -rf monotorrent-curses-$(VERSION)
 	mkdir monotorrent-curses-$(VERSION)
-	cp $(SOURCES) $(EXTRA_DIST) monotorrent-curses-$(VERSION)
+	mkdir monotorrent-curses-$(VERSION)/docs
+	cp -a $(SOURCES) $(EXTRA_DIST) monotorrent-curses-$(VERSION)
+	cp -a $(DOCS_DIST) monotorrent-curses-$(VERSION)/docs
 	tar czvf monotorrent-curses-$(VERSION).tar.gz monotorrent-curses-$(VERSION)
 	rm -rf monotorrent-curses-$(VERSION)
 
@@ -106,3 +114,6 @@ distcheck: dist
 	 make && make install && make dist);
 	rm -rf test
 	echo monotorrent-curses-$(VERSION).tar.gz is ready for release
+
+push:
+	scp mono-curses.tree mono-curses.zip mono-curses.source root@www.go-mono.com:/usr/lib/monodoc/sources/
