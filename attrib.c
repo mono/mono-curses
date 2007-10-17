@@ -28,8 +28,8 @@
 #include <stdio.h>
 #include <ncurses.h>
 
-#define put(x) fprintf (OUT, "\tpublic const int " #x " = %ld;\n", x)
-#define put2(s,x) fprintf (OUT, "\tpublic const int Key%s = %d;\n", s, x)
+#define put(x) fprintf (OUT, "\tpublic const int " #x " = unchecked((int)0x%x);\n", x)
+#define put2(s,x) fprintf (OUT, "\tpublic const int Key%s = unchecked((int)0x%x);\n", s, x)
 
 int
 main (int argc, char *argv [])

@@ -1,3 +1,10 @@
+
+Wed Oct 17 15:09:30 CEST 2007 Paolo Molaro <lupus@ximian.com>
+
+	* attrib.c: fixed compilation of constants. Note that mono-curses
+	programs that use these constants are not portable to different
+	systems and they'll need a recompile (bug #333808).
+
 2007-04-15  Miguel de Icaza  <miguel@novell.com>
 
 	* demo.cs: Link it with MonoTorrent, add statistics display,
