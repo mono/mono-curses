@@ -12,23 +12,23 @@
   <Copyright>To be added.</Copyright>
   <Types>
     <Namespace Name="Mono.Terminal">
-      <Type Name="Window" />
-      <Type Name="Screen" />
+      <Type Name="Anchor" />
+      <Type Name="Application" />
+      <Type Name="Button" />
+      <Type Name="Container" />
       <Type Name="Curses" />
       <Type Name="Curses+MouseEvent" />
-      <Type Name="Anchor" />
-      <Type Name="Fill" />
-      <Type Name="Widget" />
-      <Type Name="Label" />
-      <Type Name="TrimLabel" />
-      <Type Name="Entry" />
-      <Type Name="Button" />
-      <Type Name="IListProvider" />
-      <Type Name="ListView" />
-      <Type Name="Container" />
-      <Type Name="Frame" />
       <Type Name="Dialog" />
-      <Type Name="Application" />
+      <Type Name="Entry" />
+      <Type Name="Fill" />
+      <Type Name="Frame" />
+      <Type Name="IListProvider" />
+      <Type Name="Label" />
+      <Type Name="ListView" />
+      <Type Name="Screen" />
+      <Type Name="TrimLabel" />
+      <Type Name="Widget" />
+      <Type Name="Window" />
     </Namespace>
   </Types>
   <Title>mono-curses</Title>
