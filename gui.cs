@@ -1775,8 +1775,13 @@ namespace Mono.Terminal {
 		public static void Init (bool disable_color)
 		{
 			empty_container = new Container (0, 0, Application.Cols, Application.Lines);
-			
-			Curses.initscr ();
+
+			try {
+				Curses.initscr ();
+			} catch (Exception e){
+				Console.WriteLine ("Curses failed to initialize, the exception is: " + e);
+				throw new Exception ("Application.Init failed");
+			}
 
 			if (inited)
 				return;
