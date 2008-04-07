@@ -88,6 +88,10 @@ public class TorrentCurses {
 			}
 			Torrent torrent = Torrent.Load(s);
 			TorrentManager manager = new TorrentManager(torrent, engine_settings.SavePath, (TorrentSettings)torrent_settings.Clone());
+			manager.PeerConnected +=
+				new EventHandler<PeerConnectionEventArgs>(cm_PeerConnected);
+			manager.PeerDisconnected +=
+			new EventHandler<PeerConnectionEventArgs>(cm_PeerDisconnected);
 			engine.Register(manager);
 			items.Add (manager);
 			
@@ -553,10 +557,10 @@ public class TorrentCurses {
 		status_peers.Text      = String.Format ("{0} ({1}/{2})", tm.Peers.Available, tm.Peers.Seeds, tm.Peers.Leechs);
 		status_tracker.Text    = tm.TrackerManager.TrackerTiers[0].Trackers[0].State.ToString ();
 
-		status_up.Text         = String.Format ("{0,14:N0}", tm.Monitor.DataBytesUploaded);
-		status_up_speed.Text   = String.Format ("{0:0.0}", tm.Monitor.UploadSpeed);
-		status_down.Text       = String.Format ("{0,14:N0}", tm.Monitor.DataBytesDownloaded);
-		status_down_speed.Text = String.Format ("{0:0.0}", tm.Monitor.DownloadSpeed);
+		status_up.Text         = String.Format ("{0,14:N0}", tm.Monitor.DataBytesUploaded / 1024.0);
+		status_up_speed.Text   = String.Format ("{0:0.0}", tm.Monitor.UploadSpeed / 1024.0);
+		status_down.Text       = String.Format ("{0,14:N0}", tm.Monitor.DataBytesDownloaded / 1024.0);
+		status_down_speed.Text = String.Format ("{0:0.0}", tm.Monitor.DownloadSpeed / 1024.0);
 
 		torrent_name.Text      = tm.Torrent.Name;
 	}
@@ -568,6 +572,7 @@ public class TorrentCurses {
 		for (int i = 0; i < handles.Length; i++)
 			if (handles[i] != null)
 				handles[i].WaitOne();
+		engine.Dispose ();
 		Console.WriteLine ("Shut down");
 	}
 	
@@ -774,13 +779,6 @@ public class TorrentCurses {
 				torrent_list.Add (td.Filename);
 			}
 		}
-
-		// Messages
-		engine.ConnectionManager.PeerConnected +=
-			new EventHandler<PeerConnectionEventArgs>(cm_PeerConnected);
-        engine.ConnectionManager.PeerDisconnected +=
-			new EventHandler<PeerConnectionEventArgs>(cm_PeerDisconnected);
-
 	}
 	
 	static void Main ()
