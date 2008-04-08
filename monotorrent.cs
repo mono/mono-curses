@@ -57,7 +57,7 @@ public class TorrentCurses {
 	static TorrentDetailsList details_list;
 	static EngineSettings engine_settings;
 	static TorrentSettings torrent_settings;
-	static ClientEngine engine;
+	public static ClientEngine engine;
 	static ListView list_details;
 	static LogWidget log_widget;
 	
@@ -474,10 +474,10 @@ public class TorrentCurses {
 		Entry listen_port = new Entry (24, 3, 6, config.ListenPort.ToString ());
 		d.Add (listen_port);
 
-		Entry upload_limit = new Entry (24, 5, 10, RenderSpeed (config.UploadSpeed));
+		Entry upload_limit = new Entry (24, 5, 10, RenderSpeed (config.UploadSpeed / 1024));
 		d.Add (upload_limit);
 
-		Entry download_limit = new Entry (24, 7, 10, RenderSpeed (config.DownloadSpeed));
+		Entry download_limit = new Entry (24, 7, 10, RenderSpeed (config.DownloadSpeed / 1024));
 		d.Add (download_limit);
 		
 		bool ok = false;
@@ -513,6 +513,12 @@ public class TorrentCurses {
 
 			config.DownloadDir = download_dir.Text;
 			config.ListenPort = v;
+
+			// The user enters in kB/sec, the engine expects bytes/sec
+			config.UploadSpeed *= 1024;
+			config.DownloadSpeed *= 1024;
+			TorrentCurses.engine.Settings.GlobalMaxUploadSpeed = config.UploadSpeed;
+			TorrentCurses.engine.Settings.GlobalMaxDownloadSpeed = config.DownloadSpeed;
 		}
 	}
 
