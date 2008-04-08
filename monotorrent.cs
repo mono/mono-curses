@@ -38,6 +38,7 @@ using Mono.Terminal;
 
 using MonoTorrent.Common;
 using MonoTorrent.Client;
+using MonoTorrent.BEncoding;
 
 public class TorrentCurses {
 
@@ -46,6 +47,8 @@ public class TorrentCurses {
 	//
 	static string config_file = Path.Combine (Environment.GetFolderPath (
 							  Environment.SpecialFolder.ApplicationData), "monotorrent.config");
+	public static string fast_resume = Path.Combine (Environment.GetFolderPath (
+							  Environment.SpecialFolder.ApplicationData), "monotorrent.fastresume");
 
 	static Config config;
 
@@ -63,6 +66,7 @@ public class TorrentCurses {
 	public class TorrentList : IListProvider {
 		public List<TorrentManager> items = new List<TorrentManager> ();
 		public ListView view;
+		private List<FastResume> fastResume;
 
 		void IListProvider.SetListView (ListView v)
 		{
@@ -75,6 +79,46 @@ public class TorrentCurses {
 			}
 		}
 
+		public TorrentList ()
+		{
+			fastResume = new List<FastResume>();
+			LoadFastResume ();
+		}
+		
+		public void SaveFastResume ()
+		{
+			
+			BEncodedDictionary dict = new BEncodedDictionary();
+			foreach (TorrentManager manager in items)
+				dict.Add (manager.Torrent.InfoHash, manager.SaveFastResume ().Encode ());
+			try
+			{
+				File.WriteAllBytes (TorrentCurses.fast_resume, dict.Encode ());
+			}
+			catch
+			{
+			}
+		}
+		void LoadFastResume()
+		{
+			fastResume = new List<FastResume>();
+			
+			try
+			{
+				if (!File.Exists (fast_resume))
+					return;
+				BEncodedDictionary dict = BEncodedValue.Decode<BEncodedDictionary>(File.ReadAllBytes(fast_resume));
+				
+				foreach (BEncodedDictionary v in dict.Values)
+					fastResume.Add (new FastResume(v));
+				
+				File.Delete (fast_resume);
+			}
+			catch
+			{
+			}
+		}
+		
 		public void Add (string s)
 		{
 			if (!File.Exists (s))
@@ -87,7 +131,18 @@ public class TorrentCurses {
 				}
 			}
 			Torrent torrent = Torrent.Load(s);
-			TorrentManager manager = new TorrentManager(torrent, engine_settings.SavePath, (TorrentSettings)torrent_settings.Clone());
+			FastResume resume = null;
+			foreach (FastResume r in fastResume)
+			{
+				if (((BEncodedString)r.InfoHash).Equals((BEncodedString)torrent.InfoHash))
+					resume = r;
+			}
+			TorrentManager manager;
+			if (resume == null)
+				manager = new TorrentManager(torrent, engine_settings.SavePath, (TorrentSettings)torrent_settings.Clone());
+			else
+				manager = new MonoTorrent.Client.TorrentManager(torrent, engine_settings.SavePath, (TorrentSettings)torrent_settings.Clone(), resume);
+			
 			manager.PeerConnected +=
 				new EventHandler<PeerConnectionEventArgs>(cm_PeerConnected);
 			manager.PeerDisconnected +=
@@ -572,6 +627,7 @@ public class TorrentCurses {
 		for (int i = 0; i < handles.Length; i++)
 			if (handles[i] != null)
 				handles[i].WaitOne();
+		torrent_list.SaveFastResume ();
 		engine.Dispose ();
 		Console.WriteLine ("Shut down");
 	}
