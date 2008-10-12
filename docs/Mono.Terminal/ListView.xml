@@ -1,0 +1,54 @@
+<Type Name="ListView" FullName="Mono.Terminal.ListView">
+  <TypeSignature Language="C#" Value="public class ListView : Mono.Terminal.Widget" />
+  <AssemblyInfo>
+    <AssemblyName>mono-curses</AssemblyName>
+    <AssemblyVersion>0.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>Mono.Terminal.Widget</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>
+            A Listview widget.
+            </summary>
+    <remarks>
+            This widget renders a list of data.   The actual
+            rendering is implemented by an instance of the class
+            IListProvider that must be supplied at construction time.
+            </remarks>
+  </Docs>
+  <Members>
+    
+    
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ListView (int x, int y, int w, int h, Mono.Terminal.IListProvider provider);" />
+      <MemberType>Constructor</MemberType>
+      <Parameters><Parameter Name="x" Type="System.Int32" /><Parameter Name="y" Type="System.Int32" /><Parameter Name="w" Type="System.Int32" /><Parameter Name="h" Type="System.Int32" /><Parameter Name="provider" Type="Mono.Terminal.IListProvider" /></Parameters>
+      <Docs><param name="x">To be added.</param><param name="y">To be added.</param><param name="w">To be added.</param><param name="h">To be added.</param><param name="provider">To be added.</param><summary>
+            Public constructor.
+            </summary><remarks /></Docs>
+    <AssemblyInfo><AssemblyVersion>0.0.0.0</AssemblyVersion></AssemblyInfo></Member><Member MemberName="ProviderChanged">
+      <MemberSignature Language="C#" Value="public void ProviderChanged ();" />
+      <MemberType>Method</MemberType>
+      <ReturnValue><ReturnType>System.Void</ReturnType></ReturnValue>
+      <Parameters />
+      <Docs><summary>
+            This method can be invoked by the model to
+            notify the view that the contents of the model
+            have changed.
+            </summary><remarks>
+            Invoke this method to invalidate the contents of
+            the ListView and force the ListView to repaint
+            the contents displayed.
+            </remarks></Docs>
+    <AssemblyInfo><AssemblyVersion>0.0.0.0</AssemblyVersion></AssemblyInfo></Member><Member MemberName="Selected">
+      <MemberSignature Language="C#" Value="public int Selected { set; get; }" />
+      <MemberType>Property</MemberType>
+      <ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue>
+      <Docs><summary>
+            Returns the index of the currently selected item.
+            </summary><value>To be added.</value><remarks>To be added.</remarks></Docs>
+    <AssemblyInfo><AssemblyVersion>0.0.0.0</AssemblyVersion></AssemblyInfo></Member>
+  </Members>
+</Type>

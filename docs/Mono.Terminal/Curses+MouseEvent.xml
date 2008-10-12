@@ -1,0 +1,47 @@
+<Type Name="Curses+MouseEvent" FullName="Mono.Terminal.Curses+MouseEvent">
+  <TypeSignature Language="C#" Value="public struct Curses.MouseEvent" />
+  <AssemblyInfo>
+    <AssemblyName>mono-curses</AssemblyName>
+    <AssemblyVersion>0.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ValueType</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>To be added.</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    
+    
+    
+    
+    <Member MemberName="ButtonState">
+      <MemberSignature Language="C#" Value="public long ButtonState;" />
+      <MemberType>Field</MemberType>
+      <ReturnValue><ReturnType>System.Int64</ReturnType></ReturnValue>
+      <Docs><summary>To be added.</summary><remarks>To be added.</remarks></Docs>
+    <AssemblyInfo><AssemblyVersion>0.0.0.0</AssemblyVersion></AssemblyInfo></Member><Member MemberName="ID">
+      <MemberSignature Language="C#" Value="public int ID;" />
+      <MemberType>Field</MemberType>
+      <ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue>
+      <Docs><summary>To be added.</summary><remarks>To be added.</remarks></Docs>
+    <AssemblyInfo><AssemblyVersion>0.0.0.0</AssemblyVersion></AssemblyInfo></Member><Member MemberName="X">
+      <MemberSignature Language="C#" Value="public int X;" />
+      <MemberType>Field</MemberType>
+      <ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue>
+      <Docs><summary>To be added.</summary><remarks>To be added.</remarks></Docs>
+    <AssemblyInfo><AssemblyVersion>0.0.0.0</AssemblyVersion></AssemblyInfo></Member><Member MemberName="Y">
+      <MemberSignature Language="C#" Value="public int Y;" />
+      <MemberType>Field</MemberType>
+      <ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue>
+      <Docs><summary>To be added.</summary><remarks>To be added.</remarks></Docs>
+    <AssemblyInfo><AssemblyVersion>0.0.0.0</AssemblyVersion></AssemblyInfo></Member><Member MemberName="Z">
+      <MemberSignature Language="C#" Value="public int Z;" />
+      <MemberType>Field</MemberType>
+      <ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue>
+      <Docs><summary>To be added.</summary><remarks>To be added.</remarks></Docs>
+    <AssemblyInfo><AssemblyVersion>0.0.0.0</AssemblyVersion></AssemblyInfo></Member>
+  </Members>
+</Type>

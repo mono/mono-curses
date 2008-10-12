@@ -1,0 +1,47 @@
+<Type Name="Dialog" FullName="Mono.Terminal.Dialog">
+  <TypeSignature Language="C#" Value="public class Dialog : Mono.Terminal.Frame" />
+  <AssemblyInfo>
+    <AssemblyName>mono-curses</AssemblyName>
+    <AssemblyVersion>0.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>Mono.Terminal.Frame</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>
+            A Dialog is a container that can also have a number of
+            buttons at the bottom
+            </summary>
+    <remarks>
+      <para>Dialogs are containers that can have a set of buttons at
+            the bottom.   Dialogs are automatically centered on the
+            screen, and on screen changes the buttons are
+            relaid out.</para>
+      <para>
+            To make the dialog box run until an option has been
+            executed, you would typically create the dialog box and
+            then call Application.Run on the Dialog instance.
+            </para>
+    </remarks>
+  </Docs>
+  <Members>
+    
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Dialog (int w, int h, string title);" />
+      <MemberType>Constructor</MemberType>
+      <Parameters><Parameter Name="w" Type="System.Int32" /><Parameter Name="h" Type="System.Int32" /><Parameter Name="title" Type="System.String" /></Parameters>
+      <Docs><param name="w">To be added.</param><param name="h">To be added.</param><param name="title">To be added.</param><summary>
+            Public constructor.
+            </summary><remarks /></Docs>
+    <AssemblyInfo><AssemblyVersion>0.0.0.0</AssemblyVersion></AssemblyInfo></Member><Member MemberName="AddButton">
+      <MemberSignature Language="C#" Value="public void AddButton (Mono.Terminal.Button b);" />
+      <MemberType>Method</MemberType>
+      <ReturnValue><ReturnType>System.Void</ReturnType></ReturnValue>
+      <Parameters><Parameter Name="b" Type="Mono.Terminal.Button" /></Parameters>
+      <Docs><param name="b">To be added.</param><summary>
+            Adds a button to the dialog
+            </summary><remarks /></Docs>
+    <AssemblyInfo><AssemblyVersion>0.0.0.0</AssemblyVersion></AssemblyInfo></Member>
+  </Members>
+</Type>

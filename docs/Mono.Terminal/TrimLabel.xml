@@ -1,0 +1,31 @@
+<Type Name="TrimLabel" FullName="Mono.Terminal.TrimLabel">
+  <TypeSignature Language="C#" Value="public class TrimLabel : Mono.Terminal.Label" />
+  <AssemblyInfo>
+    <AssemblyName>mono-curses</AssemblyName>
+    <AssemblyVersion>0.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>Mono.Terminal.Label</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>
+            A label that can be trimmed to a given position
+            </summary>
+    <remarks>
+            Just like a label, but it can be trimmed to a given
+            position if the text being displayed overflows the
+            specified width.
+            </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TrimLabel (int x, int y, int w, string s);" />
+      <MemberType>Constructor</MemberType>
+      <Parameters><Parameter Name="x" Type="System.Int32" /><Parameter Name="y" Type="System.Int32" /><Parameter Name="w" Type="System.Int32" /><Parameter Name="s" Type="System.String" /></Parameters>
+      <Docs><param name="x">To be added.</param><param name="y">To be added.</param><param name="w">To be added.</param><param name="s">To be added.</param><summary>
+            Public constructor.
+            </summary><remarks /></Docs>
+    <AssemblyInfo><AssemblyVersion>0.0.0.0</AssemblyVersion></AssemblyInfo></Member>
+  </Members>
+</Type>

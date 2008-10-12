@@ -1,0 +1,86 @@
+<Type Name="Button" FullName="Mono.Terminal.Button">
+  <TypeSignature Language="C#" Value="public class Button : Mono.Terminal.Widget" />
+  <AssemblyInfo>
+    <AssemblyName>mono-curses</AssemblyName>
+    <AssemblyVersion>0.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>Mono.Terminal.Widget</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>
+            Button widget
+            </summary>
+    <remarks>
+            Provides a button that can be clicked, or pressed with
+            the enter key and processes hotkeys (the first uppercase
+            letter in the button becomes the hotkey).
+            </remarks>
+  </Docs>
+  <Members>
+    
+    
+    
+    
+    
+    
+  <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Button (string s);" />
+      <MemberType>Constructor</MemberType>
+      <Parameters><Parameter Name="s" Type="System.String" /></Parameters>
+      <Docs><param name="s">To be added.</param><summary>
+            Public constructor, creates a button based on
+            the given text at position 0,0
+            </summary><remarks>
+            The size of the button is computed based on the
+            text length.   This button is not a default button.
+            </remarks></Docs>
+    <AssemblyInfo><AssemblyVersion>0.0.0.0</AssemblyVersion></AssemblyInfo></Member><Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Button (string s, bool is_default);" />
+      <MemberType>Constructor</MemberType>
+      <Parameters><Parameter Name="s" Type="System.String" /><Parameter Name="is_default" Type="System.Boolean" /></Parameters>
+      <Docs><param name="s">To be added.</param><param name="is_default">To be added.</param><summary>
+            Public constructor, creates a button based on
+            the given text.
+            </summary><remarks>
+            If the value for is_default is true, a special
+            decoration is used, and the enter key on a
+            dialog would implicitly activate this button.
+            </remarks></Docs>
+    <AssemblyInfo><AssemblyVersion>0.0.0.0</AssemblyVersion></AssemblyInfo></Member><Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Button (int x, int y, string s);" />
+      <MemberType>Constructor</MemberType>
+      <Parameters><Parameter Name="x" Type="System.Int32" /><Parameter Name="y" Type="System.Int32" /><Parameter Name="s" Type="System.String" /></Parameters>
+      <Docs><param name="x">To be added.</param><param name="y">To be added.</param><param name="s">To be added.</param><summary>
+            Public constructor, creates a button based on
+            the given text at the given position.
+            </summary><remarks>
+            The size of the button is computed based on the
+            text length.   This button is not a default button.
+            </remarks></Docs>
+    <AssemblyInfo><AssemblyVersion>0.0.0.0</AssemblyVersion></AssemblyInfo></Member><Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Button (int x, int y, string s, bool is_default);" />
+      <MemberType>Constructor</MemberType>
+      <Parameters><Parameter Name="x" Type="System.Int32" /><Parameter Name="y" Type="System.Int32" /><Parameter Name="s" Type="System.String" /><Parameter Name="is_default" Type="System.Boolean" /></Parameters>
+      <Docs><param name="x">To be added.</param><param name="y">To be added.</param><param name="s">To be added.</param><param name="is_default">To be added.</param><summary>
+            Public constructor, creates a button based on
+            the given text at the given position.
+            </summary><remarks>
+            If the value for is_default is true, a special
+            decoration is used, and the enter key on a
+            dialog would implicitly activate this button.
+            </remarks></Docs>
+    <AssemblyInfo><AssemblyVersion>0.0.0.0</AssemblyVersion></AssemblyInfo></Member><Member MemberName="Clicked">
+      <MemberSignature Language="C#" Value="public event EventHandler Clicked;" />
+      <MemberType>Event</MemberType>
+      <ReturnValue><ReturnType>System.EventHandler</ReturnType></ReturnValue>
+      <Docs><summary>
+            Clicked event, raised when the button is clicked.
+            </summary><remarks>
+            Client code can hook up to this event, it is
+            raised when the button is activated either with
+            the mouse or the keyboard.
+            </remarks></Docs>
+    <AssemblyInfo><AssemblyVersion>0.0.0.0</AssemblyVersion></AssemblyInfo></Member><Member MemberName="Text"><MemberSignature Language="C#" Value="public string Text { set; get; }" /><MemberType>Property</MemberType><AssemblyInfo><AssemblyVersion>0.0.0.0</AssemblyVersion></AssemblyInfo><ReturnValue><ReturnType>System.String</ReturnType></ReturnValue><Docs><summary>To be added.</summary><value>To be added.</value><remarks>To be added.</remarks></Docs></Member></Members>
+</Type>
