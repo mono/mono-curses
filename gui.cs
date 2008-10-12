@@ -1754,7 +1754,7 @@ namespace Mono.Terminal {
 		/// <summary>
 		///    A flag indicating which mouse events are available
 		/// </summary>
-		public static long MouseEventsAvailable;
+		public static Curses.Event MouseEventsAvailable;
 		
 		static int MakeColor (short f, short b)
 		{
@@ -1790,7 +1790,7 @@ namespace Mono.Terminal {
 				return;
 			inited = true;
 
-			long old = 0;
+			Curses.Event old = 0;
 			MouseEventsAvailable = Curses.console_sharp_mouse_mask (
 				Curses.Event.Button1Clicked | Curses.Event.Button1DoubleClicked, out old);
 			

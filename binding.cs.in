@@ -36,7 +36,7 @@ namespace Mono.Terminal {
 		public struct MouseEvent {
 			public int ID;
 			public int X, Y, Z;
-			public long ButtonState;
+			public Event ButtonState;
 		}
 
 #region Screen initialization
@@ -259,7 +259,7 @@ namespace Mono.Terminal {
 		internal extern static void console_sharp_sendsigtstp ();
 
 		[DllImport ("@MONO_CURSES@")]
-		internal extern static long console_sharp_mouse_mask (long newmask, out long oldmask);
+		internal extern static Event console_sharp_mouse_mask (Event newmask, out Event oldmask);
 
 		[DllImport ("@MONO_CURSES@")]
 		internal extern static uint console_sharp_getmouse (out MouseEvent ev);

@@ -2,28 +2,35 @@ CURSES=ncurses
 MONO_CURSES=mono-curses
 
 SOURCES = 		\
+	AssemblyInfo.cs	\
 	handles.cs	\
 	binding.cs	\
 	gui.cs		\
 	constants.cs
 
 EXTRA_DIST = 	\
+	mono-curses.snk	\
 	configure	\
 	Makefile	\
 	binding.cs.in	\
 	attrib.c	\
 	mono-curses.c	\
-	mono-curses.source
+	mono-curses.source	\
+	mono-curses.pc.in
+
 
 DOCS_DIST = \
 	docs/ns-Mono.Terminal.xml \
 	docs/index.xml
 
 
-all: config.make mono-curses.dll libmono-curses.so mono-curses.zip
+all: config.make mono-curses.dll libmono-curses.so mono-curses.zip mono-curses.pc
 
 test.exe: test.cs mono-curses.dll libmono-curses.so
 	gmcs -debug test.cs -r:mono-curses.dll
+
+mono-curses.pc: mono-curses.pc.in Makefile
+	sed -e 's,@PREFIX@,$(prefix),' -e 's/@VERSION@/$(VERSION)/' < mono-curses.pc.in > mono-curses.pc
 
 mono-curses.dll mono-curses.xml: $(SOURCES)
 	gmcs -doc:mono-curses.xml -debug -target:library -out:mono-curses.dll -debug $(SOURCES)
@@ -64,8 +71,9 @@ clean:
 install: all
 	mkdir -p $(prefix)/bin
 	mkdir -p $(prefix)/lib/mono-curses
-	cp mono-curses.dll $(prefix)/lib/mono-curses
+	gacutil -i mono-curses.dll -package mono-curses
 	cp libmono-curses* $(prefix)/lib/
+	cp mono-curses.pc $(prefix)/lib/pkgconfig
 	cp mono-curses.tree mono-curses.zip mono-curses.source  `pkg-config --variable sourcesdir monodoc`
 
 config.make:

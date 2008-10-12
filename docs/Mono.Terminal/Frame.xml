@@ -3,6 +3,7 @@
   <AssemblyInfo>
     <AssemblyName>mono-curses</AssemblyName>
     <AssemblyVersion>0.0.0.0</AssemblyVersion>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Mono.Terminal.Container</BaseTypeName>
@@ -27,18 +28,18 @@
       <Docs><param name="title">To be added.</param><summary>
             Creates an empty frame, with the given title
             </summary><remarks /></Docs>
-    <AssemblyInfo><AssemblyVersion>0.0.0.0</AssemblyVersion></AssemblyInfo></Member><Member MemberName=".ctor">
+    <AssemblyInfo><AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion></AssemblyInfo></Member><Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public Frame (int x, int y, int w, int h, string title);" />
       <MemberType>Constructor</MemberType>
       <Parameters><Parameter Name="x" Type="System.Int32" /><Parameter Name="y" Type="System.Int32" /><Parameter Name="w" Type="System.Int32" /><Parameter Name="h" Type="System.Int32" /><Parameter Name="title" Type="System.String" /></Parameters>
       <Docs><param name="x">To be added.</param><param name="y">To be added.</param><param name="w">To be added.</param><param name="h">To be added.</param><param name="title">To be added.</param><summary>
             Public constructor, a frame, with the given title.
             </summary><remarks /></Docs>
-    <AssemblyInfo><AssemblyVersion>0.0.0.0</AssemblyVersion></AssemblyInfo></Member><Member MemberName="Title">
+    <AssemblyInfo><AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion></AssemblyInfo></Member><Member MemberName="Title">
       <MemberSignature Language="C#" Value="public string Title;" />
       <MemberType>Field</MemberType>
       <ReturnValue><ReturnType>System.String</ReturnType></ReturnValue>
       <Docs><summary>To be added.</summary><remarks>To be added.</remarks></Docs>
-    <AssemblyInfo><AssemblyVersion>0.0.0.0</AssemblyVersion></AssemblyInfo></Member>
+    <AssemblyInfo><AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion></AssemblyInfo></Member>
   </Members>
 </Type>

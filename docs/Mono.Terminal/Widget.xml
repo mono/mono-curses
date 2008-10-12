@@ -3,6 +3,7 @@
   <AssemblyInfo>
     <AssemblyName>mono-curses</AssemblyName>
     <AssemblyVersion>0.0.0.0</AssemblyVersion>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
@@ -49,7 +50,7 @@
             </summary><remarks><para>
             Constructs a widget that starts at positio (x,y) and has width w and height h.
             These parameters are used by the methods <see cref="M:Mono.Terminal.Widget.Clear" /> and <see cref="M:Mono.Terminal.Widget.Redraw" /></para></remarks></Docs>
-    <AssemblyInfo><AssemblyVersion>0.0.0.0</AssemblyVersion></AssemblyInfo></Member><Member MemberName="BaseMove">
+    <AssemblyInfo><AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion></AssemblyInfo></Member><Member MemberName="BaseMove">
       <MemberSignature Language="C#" Value="public void BaseMove (int line, int col);" />
       <MemberType>Method</MemberType>
       <ReturnValue><ReturnType>System.Void</ReturnType></ReturnValue>
@@ -69,7 +70,7 @@
             frame, while <see cref="M:Mono.Terminal.Widget.Move(System.Int32,System.Int32)" /> would position
             the cursor within the frame.
             </para></remarks></Docs>
-    <AssemblyInfo><AssemblyVersion>0.0.0.0</AssemblyVersion></AssemblyInfo></Member><Member MemberName="CanFocus">
+    <AssemblyInfo><AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion></AssemblyInfo></Member><Member MemberName="CanFocus">
       <MemberSignature Language="C#" Value="public bool CanFocus { set; get; }" />
       <MemberType>Property</MemberType>
       <ReturnValue><ReturnType>System.Boolean</ReturnType></ReturnValue>
@@ -80,7 +81,7 @@
             this widget can receive focus or not.    Focus is activated
             by either clicking with the mouse on that widget or by using
             </para></remarks></Docs>
-    <AssemblyInfo><AssemblyVersion>0.0.0.0</AssemblyVersion></AssemblyInfo></Member><Member MemberName="Clear">
+    <AssemblyInfo><AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion></AssemblyInfo></Member><Member MemberName="Clear">
       <MemberSignature Language="C#" Value="public void Clear ();" />
       <MemberType>Method</MemberType>
       <ReturnValue><ReturnType>System.Void</ReturnType></ReturnValue>
@@ -90,21 +91,21 @@
             </summary><remarks><para>
             This clears the entire region used by this widget.
             </para></remarks></Docs>
-    <AssemblyInfo><AssemblyVersion>0.0.0.0</AssemblyVersion></AssemblyInfo></Member><Member MemberName="ColorFocus">
+    <AssemblyInfo><AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion></AssemblyInfo></Member><Member MemberName="ColorFocus">
       <MemberSignature Language="C#" Value="public int ColorFocus { get; }" />
       <MemberType>Property</MemberType>
       <ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue>
       <Docs><summary>
             The color used for rendering a focused widget.
             </summary><value>To be added.</value><remarks>To be added.</remarks></Docs>
-    <AssemblyInfo><AssemblyVersion>0.0.0.0</AssemblyVersion></AssemblyInfo></Member><Member MemberName="ColorHotFocus">
+    <AssemblyInfo><AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion></AssemblyInfo></Member><Member MemberName="ColorHotFocus">
       <MemberSignature Language="C#" Value="public int ColorHotFocus { get; }" />
       <MemberType>Property</MemberType>
       <ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue>
       <Docs><summary>
             The color used to render a hotkey in a focused widget.
             </summary><value>To be added.</value><remarks>To be added.</remarks></Docs>
-    <AssemblyInfo><AssemblyVersion>0.0.0.0</AssemblyVersion></AssemblyInfo></Member><Member MemberName="ColorHotNormal">
+    <AssemblyInfo><AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion></AssemblyInfo></Member><Member MemberName="ColorHotNormal">
       <MemberSignature Language="C#" Value="public int ColorHotNormal { get; }" />
       <MemberType>Property</MemberType>
       <ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue>
@@ -112,21 +113,21 @@
             The color used for rendering the hotkey on an
             unfocused widget.
             </summary><value>To be added.</value><remarks>To be added.</remarks></Docs>
-    <AssemblyInfo><AssemblyVersion>0.0.0.0</AssemblyVersion></AssemblyInfo></Member><Member MemberName="ColorNormal">
+    <AssemblyInfo><AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion></AssemblyInfo></Member><Member MemberName="ColorNormal">
       <MemberSignature Language="C#" Value="public int ColorNormal { get; }" />
       <MemberType>Property</MemberType>
       <ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue>
       <Docs><summary>
             The color used for rendering an unfocused widget.
             </summary><value>To be added.</value><remarks>To be added.</remarks></Docs>
-    <AssemblyInfo><AssemblyVersion>0.0.0.0</AssemblyVersion></AssemblyInfo></Member><Member MemberName="Container">
+    <AssemblyInfo><AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion></AssemblyInfo></Member><Member MemberName="Container">
       <MemberSignature Language="C#" Value="public Mono.Terminal.Container Container;" />
       <MemberType>Field</MemberType>
       <ReturnValue><ReturnType>Mono.Terminal.Container</ReturnType></ReturnValue>
       <Docs><summary>
             Points to the container of this widget
             </summary><remarks>To be added.</remarks></Docs>
-    <AssemblyInfo><AssemblyVersion>0.0.0.0</AssemblyVersion></AssemblyInfo></Member><Member MemberName="DoSizeChanged">
+    <AssemblyInfo><AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion></AssemblyInfo></Member><Member MemberName="DoSizeChanged">
       <MemberSignature Language="C#" Value="public virtual void DoSizeChanged ();" />
       <MemberType>Method</MemberType>
       <ReturnValue><ReturnType>System.Void</ReturnType></ReturnValue>
@@ -139,7 +140,7 @@
             contents or children (if they are
             containers).
             </para></remarks></Docs>
-    <AssemblyInfo><AssemblyVersion>0.0.0.0</AssemblyVersion></AssemblyInfo></Member><Member MemberName="DrawFrame">
+    <AssemblyInfo><AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion></AssemblyInfo></Member><Member MemberName="DrawFrame">
       <MemberSignature Language="C#" Value="public static void DrawFrame (int col, int line, int width, int height);" />
       <MemberType>Method</MemberType>
       <ReturnValue><ReturnType>System.Void</ReturnType></ReturnValue>
@@ -150,17 +151,17 @@
             Draws a frame with the current color in the
             specified coordinates.
             </remarks></Docs>
-    <AssemblyInfo><AssemblyVersion>0.0.0.0</AssemblyVersion></AssemblyInfo></Member><Member MemberName="Fill">
+    <AssemblyInfo><AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion></AssemblyInfo></Member><Member MemberName="Fill">
       <MemberSignature Language="C#" Value="public Mono.Terminal.Fill Fill;" />
       <MemberType>Field</MemberType>
       <ReturnValue><ReturnType>Mono.Terminal.Fill</ReturnType></ReturnValue>
       <Docs><summary>To be added.</summary><remarks>To be added.</remarks></Docs>
-    <AssemblyInfo><AssemblyVersion>0.0.0.0</AssemblyVersion></AssemblyInfo></Member><Member MemberName="h">
+    <AssemblyInfo><AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion></AssemblyInfo></Member><Member MemberName="h">
       <MemberSignature Language="C#" Value="public int h;" />
       <MemberType>Field</MemberType>
       <ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue>
       <Docs><summary>To be added.</summary><remarks>To be added.</remarks></Docs>
-    <AssemblyInfo><AssemblyVersion>0.0.0.0</AssemblyVersion></AssemblyInfo></Member><Member MemberName="HasFocus">
+    <AssemblyInfo><AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion></AssemblyInfo></Member><Member MemberName="HasFocus">
       <MemberSignature Language="C#" Value="public bool HasFocus { set; get; }" />
       <MemberType>Property</MemberType>
       <ReturnValue><ReturnType>System.Boolean</ReturnType></ReturnValue>
@@ -170,7 +171,7 @@
             A widget can grab the focus by setting this value to true and
             the current focus status can be inquired by using this property.
             </para></remarks></Docs>
-    <AssemblyInfo><AssemblyVersion>0.0.0.0</AssemblyVersion></AssemblyInfo></Member><Member MemberName="Log">
+    <AssemblyInfo><AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion></AssemblyInfo></Member><Member MemberName="Log">
       <MemberSignature Language="C#" Value="public static void Log (string s);" />
       <MemberType>Method</MemberType>
       <ReturnValue><ReturnType>System.Void</ReturnType></ReturnValue>
@@ -181,7 +182,7 @@
             that will be stored in a file (as curses has taken over the
             screen and you can not really log information there).</para><para>
             The data is written to the file "log2" for now</para></remarks></Docs>
-    <AssemblyInfo><AssemblyVersion>0.0.0.0</AssemblyVersion></AssemblyInfo></Member><Member MemberName="Log">
+    <AssemblyInfo><AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion></AssemblyInfo></Member><Member MemberName="Log">
       <MemberSignature Language="C#" Value="public static void Log (string s, object[] args);" />
       <MemberType>Method</MemberType>
       <ReturnValue><ReturnType>System.Void</ReturnType></ReturnValue>
@@ -192,7 +193,7 @@
             that will be stored in a file (as curses has taken over the
             screen and you can not really log information there). </para><para>
             The data is written to the file "log2" for now</para></remarks></Docs>
-    <AssemblyInfo><AssemblyVersion>0.0.0.0</AssemblyVersion></AssemblyInfo></Member><Member MemberName="Move">
+    <AssemblyInfo><AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion></AssemblyInfo></Member><Member MemberName="Move">
       <MemberSignature Language="C#" Value="public void Move (int line, int col);" />
       <MemberType>Method</MemberType>
       <ReturnValue><ReturnType>System.Void</ReturnType></ReturnValue>
@@ -212,7 +213,7 @@
             while <see cref="M:Mono.Terminal.Widget.BaseMove(System.Int32,System.Int32)" /> would position
             the cursor at the top of the frame.
             </para></remarks></Docs>
-    <AssemblyInfo><AssemblyVersion>0.0.0.0</AssemblyVersion></AssemblyInfo></Member><Member MemberName="PositionCursor">
+    <AssemblyInfo><AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion></AssemblyInfo></Member><Member MemberName="PositionCursor">
       <MemberSignature Language="C#" Value="public virtual void PositionCursor ();" />
       <MemberType>Method</MemberType>
       <ReturnValue><ReturnType>System.Void</ReturnType></ReturnValue>
@@ -237,7 +238,7 @@
             an entry the location of the editing cursor
             and so on.
             </para></remarks></Docs>
-    <AssemblyInfo><AssemblyVersion>0.0.0.0</AssemblyVersion></AssemblyInfo></Member><Member MemberName="ProcessHotKey">
+    <AssemblyInfo><AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion></AssemblyInfo></Member><Member MemberName="ProcessHotKey">
       <MemberSignature Language="C#" Value="public virtual bool ProcessHotKey (int key);" />
       <MemberType>Method</MemberType>
       <ReturnValue><ReturnType>System.Boolean</ReturnType></ReturnValue>
@@ -264,7 +265,7 @@
             Curses.IsAlt(key) and then Char.ToUpper(key)
             to compare with your hotkey.
             </para></remarks></Docs>
-    <AssemblyInfo><AssemblyVersion>0.0.0.0</AssemblyVersion></AssemblyInfo></Member><Member MemberName="ProcessKey">
+    <AssemblyInfo><AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion></AssemblyInfo></Member><Member MemberName="ProcessKey">
       <MemberSignature Language="C#" Value="public virtual bool ProcessKey (int key);" />
       <MemberType>Method</MemberType>
       <ReturnValue><ReturnType>System.Boolean</ReturnType></ReturnValue>
@@ -282,7 +283,7 @@
             keystroke will be passed out to other widgets
             for processing.
             </para></remarks></Docs>
-    <AssemblyInfo><AssemblyVersion>0.0.0.0</AssemblyVersion></AssemblyInfo></Member><Member MemberName="ProcessMouse">
+    <AssemblyInfo><AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion></AssemblyInfo></Member><Member MemberName="ProcessMouse">
       <MemberSignature Language="C#" Value="public virtual void ProcessMouse (Mono.Terminal.Curses.MouseEvent ev);" />
       <MemberType>Method</MemberType>
       <ReturnValue><ReturnType>System.Void</ReturnType></ReturnValue>
@@ -296,7 +297,7 @@
             message they are interested in (typically
             ev.ButtonState &amp; Curses.Event.Button1Clicked).
             </remarks></Docs>
-    <AssemblyInfo><AssemblyVersion>0.0.0.0</AssemblyVersion></AssemblyInfo></Member><Member MemberName="Redraw">
+    <AssemblyInfo><AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion></AssemblyInfo></Member><Member MemberName="Redraw">
       <MemberSignature Language="C#" Value="public virtual void Redraw ();" />
       <MemberType>Method</MemberType>
       <ReturnValue><ReturnType>System.Void</ReturnType></ReturnValue>
@@ -312,21 +313,21 @@
             Widgets are responsible for painting the
             entire region that they have been allocated.
             </para></remarks></Docs>
-    <AssemblyInfo><AssemblyVersion>0.0.0.0</AssemblyVersion></AssemblyInfo></Member><Member MemberName="w">
+    <AssemblyInfo><AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion></AssemblyInfo></Member><Member MemberName="w">
       <MemberSignature Language="C#" Value="public int w;" />
       <MemberType>Field</MemberType>
       <ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue>
       <Docs><summary>To be added.</summary><remarks>To be added.</remarks></Docs>
-    <AssemblyInfo><AssemblyVersion>0.0.0.0</AssemblyVersion></AssemblyInfo></Member><Member MemberName="x">
+    <AssemblyInfo><AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion></AssemblyInfo></Member><Member MemberName="x">
       <MemberSignature Language="C#" Value="public int x;" />
       <MemberType>Field</MemberType>
       <ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue>
       <Docs><summary>To be added.</summary><remarks>To be added.</remarks></Docs>
-    <AssemblyInfo><AssemblyVersion>0.0.0.0</AssemblyVersion></AssemblyInfo></Member><Member MemberName="y">
+    <AssemblyInfo><AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion></AssemblyInfo></Member><Member MemberName="y">
       <MemberSignature Language="C#" Value="public int y;" />
       <MemberType>Field</MemberType>
       <ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue>
       <Docs><summary>To be added.</summary><remarks>To be added.</remarks></Docs>
-    <AssemblyInfo><AssemblyVersion>0.0.0.0</AssemblyVersion></AssemblyInfo></Member>
+    <AssemblyInfo><AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion></AssemblyInfo></Member>
   </Members>
 </Type>

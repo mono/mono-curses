@@ -3,6 +3,7 @@
   <AssemblyInfo>
     <AssemblyName>mono-curses</AssemblyName>
     <AssemblyVersion>0.0.0.0</AssemblyVersion>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>Mono.Terminal.Label</BaseTypeName>
@@ -26,6 +27,6 @@
       <Docs><param name="x">To be added.</param><param name="y">To be added.</param><param name="w">To be added.</param><param name="s">To be added.</param><summary>
             Public constructor.
             </summary><remarks /></Docs>
-    <AssemblyInfo><AssemblyVersion>0.0.0.0</AssemblyVersion></AssemblyInfo></Member>
+    <AssemblyInfo><AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion></AssemblyInfo></Member>
   </Members>
 </Type>

@@ -3,6 +3,7 @@
   <AssemblyInfo>
     <AssemblyName>mono-curses</AssemblyName>
     <AssemblyVersion>0.0.0.0</AssemblyVersion>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Interfaces />
   <Docs>
@@ -29,7 +30,7 @@
             Whether the ListView should allow items to be
             marked.
             </summary><value>To be added.</value><remarks>To be added.</remarks></Docs>
-    <AssemblyInfo><AssemblyVersion>0.0.0.0</AssemblyVersion></AssemblyInfo></Member><Member MemberName="IsMarked">
+    <AssemblyInfo><AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion></AssemblyInfo></Member><Member MemberName="IsMarked">
       <MemberSignature Language="C#" Value="public bool IsMarked (int item);" />
       <MemberType>Method</MemberType>
       <ReturnValue><ReturnType>System.Boolean</ReturnType></ReturnValue>
@@ -37,7 +38,7 @@
       <Docs><param name="item">To be added.</param><summary>
             Whether the given item is marked.
             </summary><returns>To be added.</returns><remarks>To be added.</remarks></Docs>
-    <AssemblyInfo><AssemblyVersion>0.0.0.0</AssemblyVersion></AssemblyInfo></Member><Member MemberName="Items">
+    <AssemblyInfo><AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion></AssemblyInfo></Member><Member MemberName="Items">
       <MemberSignature Language="C#" Value="public int Items { get; }" />
       <MemberType>Property</MemberType>
       <ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue>
@@ -47,7 +48,7 @@
             This should return the number of items in the
             model.
             </remarks></Docs>
-    <AssemblyInfo><AssemblyVersion>0.0.0.0</AssemblyVersion></AssemblyInfo></Member><Member MemberName="ProcessKey">
+    <AssemblyInfo><AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion></AssemblyInfo></Member><Member MemberName="ProcessKey">
       <MemberSignature Language="C#" Value="public bool ProcessKey (int ch);" />
       <MemberType>Method</MemberType>
       <ReturnValue><ReturnType>System.Boolean</ReturnType></ReturnValue>
@@ -58,7 +59,7 @@
             The model should return true if the key was
             processed, false otherwise.
             </remarks></Docs>
-    <AssemblyInfo><AssemblyVersion>0.0.0.0</AssemblyVersion></AssemblyInfo></Member><Member MemberName="Render">
+    <AssemblyInfo><AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion></AssemblyInfo></Member><Member MemberName="Render">
       <MemberSignature Language="C#" Value="public void Render (int line, int col, int width, int item);" />
       <MemberType>Method</MemberType>
       <ReturnValue><ReturnType>System.Void</ReturnType></ReturnValue>
@@ -67,7 +68,7 @@
             This should render the item at the given line,
             col with the specified width.
             </summary><remarks>To be added.</remarks></Docs>
-    <AssemblyInfo><AssemblyVersion>0.0.0.0</AssemblyVersion></AssemblyInfo></Member><Member MemberName="SelectedChanged">
+    <AssemblyInfo><AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion></AssemblyInfo></Member><Member MemberName="SelectedChanged">
       <MemberSignature Language="C#" Value="public void SelectedChanged ();" />
       <MemberType>Method</MemberType>
       <ReturnValue><ReturnType>System.Void</ReturnType></ReturnValue>
@@ -75,7 +76,7 @@
       <Docs><summary>
             Callback: invoked when the selected item has changed.
             </summary><remarks>To be added.</remarks></Docs>
-    <AssemblyInfo><AssemblyVersion>0.0.0.0</AssemblyVersion></AssemblyInfo></Member><Member MemberName="SetListView">
+    <AssemblyInfo><AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion></AssemblyInfo></Member><Member MemberName="SetListView">
       <MemberSignature Language="C#" Value="public void SetListView (Mono.Terminal.ListView target);" />
       <MemberType>Method</MemberType>
       <ReturnValue><ReturnType>System.Void</ReturnType></ReturnValue>
@@ -84,6 +85,6 @@
             Callback: this is the way that the model is
             hooked up to its actual view.
             </summary><remarks>To be added.</remarks></Docs>
-    <AssemblyInfo><AssemblyVersion>0.0.0.0</AssemblyVersion></AssemblyInfo></Member>
+    <AssemblyInfo><AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion></AssemblyInfo></Member>
   </Members>
 </Type>

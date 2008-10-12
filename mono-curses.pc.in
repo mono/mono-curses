@@ -1,0 +1,11 @@
+prefix=@PREFIX@
+exec_prefix=${prefix}
+pkglibdir=${exec_prefix}/lib/mono/mono-curses
+Libraries=  ${pkglibdir}/mono-curses.dll
+
+Name: Mono.Curses
+Description: Mono bindings for Curses Console Library.
+Version: @VERSION@
+
+Requires: 
+Libs:  -L:${pkglibdir} -r:mono-curses.dll
