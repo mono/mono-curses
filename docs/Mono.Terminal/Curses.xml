@@ -211,12 +211,6 @@
       <ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue>
       <Parameters><Parameter Name="s" Type="System.String" /></Parameters>
       <Docs><param name="s">To be added.</param><summary>To be added.</summary><returns>To be added.</returns><remarks>To be added.</remarks></Docs>
-    <AssemblyInfo><AssemblyVersion>0.0.0.0</AssemblyVersion></AssemblyInfo></Member><Member MemberName="ALL_MOUSE_EVENTS">
-      <MemberSignature Language="C#" Value="public const int ALL_MOUSE_EVENTS = 134217727;" />
-      <MemberType>Field</MemberType>
-      <ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue>
-      <MemberValue>134217727</MemberValue>
-      <Docs><summary>To be added.</summary><remarks>To be added.</remarks></Docs>
     <AssemblyInfo><AssemblyVersion>0.0.0.0</AssemblyVersion></AssemblyInfo></Member><Member MemberName="attroff">
       <MemberSignature Language="C#" Value="public static int attroff (int attrs);" />
       <MemberType>Method</MemberType>
@@ -235,144 +229,6 @@
       <ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue>
       <Parameters><Parameter Name="attrs" Type="System.Int32" /></Parameters>
       <Docs><param name="attrs">To be added.</param><summary>To be added.</summary><returns>To be added.</returns><remarks>To be added.</remarks></Docs>
-    <AssemblyInfo><AssemblyVersion>0.0.0.0</AssemblyVersion></AssemblyInfo></Member><Member MemberName="BUTTON_ALT">
-      <MemberSignature Language="C#" Value="public const int BUTTON_ALT = 67108864;" />
-      <MemberType>Field</MemberType>
-      <ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue>
-      <MemberValue>67108864</MemberValue>
-      <Docs><summary>To be added.</summary><remarks>To be added.</remarks></Docs>
-    <AssemblyInfo><AssemblyVersion>0.0.0.0</AssemblyVersion></AssemblyInfo></Member><Member MemberName="BUTTON_CTRL">
-      <MemberSignature Language="C#" Value="public const int BUTTON_CTRL = 16777216;" />
-      <MemberType>Field</MemberType>
-      <ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue>
-      <MemberValue>16777216</MemberValue>
-      <Docs><summary>To be added.</summary><remarks>To be added.</remarks></Docs>
-    <AssemblyInfo><AssemblyVersion>0.0.0.0</AssemblyVersion></AssemblyInfo></Member><Member MemberName="BUTTON_SHIFT">
-      <MemberSignature Language="C#" Value="public const int BUTTON_SHIFT = 33554432;" />
-      <MemberType>Field</MemberType>
-      <ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue>
-      <MemberValue>33554432</MemberValue>
-      <Docs><summary>To be added.</summary><remarks>To be added.</remarks></Docs>
-    <AssemblyInfo><AssemblyVersion>0.0.0.0</AssemblyVersion></AssemblyInfo></Member><Member MemberName="BUTTON1_CLICKED">
-      <MemberSignature Language="C#" Value="public const int BUTTON1_CLICKED = 4;" />
-      <MemberType>Field</MemberType>
-      <ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue>
-      <MemberValue>4</MemberValue>
-      <Docs><summary>To be added.</summary><remarks>To be added.</remarks></Docs>
-    <AssemblyInfo><AssemblyVersion>0.0.0.0</AssemblyVersion></AssemblyInfo></Member><Member MemberName="BUTTON1_DOUBLE_CLICKED">
-      <MemberSignature Language="C#" Value="public const int BUTTON1_DOUBLE_CLICKED = 8;" />
-      <MemberType>Field</MemberType>
-      <ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue>
-      <MemberValue>8</MemberValue>
-      <Docs><summary>To be added.</summary><remarks>To be added.</remarks></Docs>
-    <AssemblyInfo><AssemblyVersion>0.0.0.0</AssemblyVersion></AssemblyInfo></Member><Member MemberName="BUTTON1_PRESSED">
-      <MemberSignature Language="C#" Value="public const int BUTTON1_PRESSED = 2;" />
-      <MemberType>Field</MemberType>
-      <ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue>
-      <MemberValue>2</MemberValue>
-      <Docs><summary>To be added.</summary><remarks>To be added.</remarks></Docs>
-    <AssemblyInfo><AssemblyVersion>0.0.0.0</AssemblyVersion></AssemblyInfo></Member><Member MemberName="BUTTON1_RELEASED">
-      <MemberSignature Language="C#" Value="public const int BUTTON1_RELEASED = 1;" />
-      <MemberType>Field</MemberType>
-      <ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue>
-      <MemberValue>1</MemberValue>
-      <Docs><summary>To be added.</summary><remarks>To be added.</remarks></Docs>
-    <AssemblyInfo><AssemblyVersion>0.0.0.0</AssemblyVersion></AssemblyInfo></Member><Member MemberName="BUTTON1_TRIPLE_CLICKED">
-      <MemberSignature Language="C#" Value="public const int BUTTON1_TRIPLE_CLICKED = 16;" />
-      <MemberType>Field</MemberType>
-      <ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue>
-      <MemberValue>16</MemberValue>
-      <Docs><summary>To be added.</summary><remarks>To be added.</remarks></Docs>
-    <AssemblyInfo><AssemblyVersion>0.0.0.0</AssemblyVersion></AssemblyInfo></Member><Member MemberName="BUTTON2_CLICKED">
-      <MemberSignature Language="C#" Value="public const int BUTTON2_CLICKED = 256;" />
-      <MemberType>Field</MemberType>
-      <ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue>
-      <MemberValue>256</MemberValue>
-      <Docs><summary>To be added.</summary><remarks>To be added.</remarks></Docs>
-    <AssemblyInfo><AssemblyVersion>0.0.0.0</AssemblyVersion></AssemblyInfo></Member><Member MemberName="BUTTON2_DOUBLE_CLICKED">
-      <MemberSignature Language="C#" Value="public const int BUTTON2_DOUBLE_CLICKED = 512;" />
-      <MemberType>Field</MemberType>
-      <ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue>
-      <MemberValue>512</MemberValue>
-      <Docs><summary>To be added.</summary><remarks>To be added.</remarks></Docs>
-    <AssemblyInfo><AssemblyVersion>0.0.0.0</AssemblyVersion></AssemblyInfo></Member><Member MemberName="BUTTON2_PRESSED">
-      <MemberSignature Language="C#" Value="public const int BUTTON2_PRESSED = 128;" />
-      <MemberType>Field</MemberType>
-      <ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue>
-      <MemberValue>128</MemberValue>
-      <Docs><summary>To be added.</summary><remarks>To be added.</remarks></Docs>
-    <AssemblyInfo><AssemblyVersion>0.0.0.0</AssemblyVersion></AssemblyInfo></Member><Member MemberName="BUTTON2_RELEASED">
-      <MemberSignature Language="C#" Value="public const int BUTTON2_RELEASED = 64;" />
-      <MemberType>Field</MemberType>
-      <ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue>
-      <MemberValue>64</MemberValue>
-      <Docs><summary>To be added.</summary><remarks>To be added.</remarks></Docs>
-    <AssemblyInfo><AssemblyVersion>0.0.0.0</AssemblyVersion></AssemblyInfo></Member><Member MemberName="BUTTON2_TRIPLE_CLICKED">
-      <MemberSignature Language="C#" Value="public const int BUTTON2_TRIPLE_CLICKED = 1024;" />
-      <MemberType>Field</MemberType>
-      <ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue>
-      <MemberValue>1024</MemberValue>
-      <Docs><summary>To be added.</summary><remarks>To be added.</remarks></Docs>
-    <AssemblyInfo><AssemblyVersion>0.0.0.0</AssemblyVersion></AssemblyInfo></Member><Member MemberName="BUTTON3_CLICKED">
-      <MemberSignature Language="C#" Value="public const int BUTTON3_CLICKED = 16384;" />
-      <MemberType>Field</MemberType>
-      <ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue>
-      <MemberValue>16384</MemberValue>
-      <Docs><summary>To be added.</summary><remarks>To be added.</remarks></Docs>
-    <AssemblyInfo><AssemblyVersion>0.0.0.0</AssemblyVersion></AssemblyInfo></Member><Member MemberName="BUTTON3_DOUBLE_CLICKED">
-      <MemberSignature Language="C#" Value="public const int BUTTON3_DOUBLE_CLICKED = 32768;" />
-      <MemberType>Field</MemberType>
-      <ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue>
-      <MemberValue>32768</MemberValue>
-      <Docs><summary>To be added.</summary><remarks>To be added.</remarks></Docs>
-    <AssemblyInfo><AssemblyVersion>0.0.0.0</AssemblyVersion></AssemblyInfo></Member><Member MemberName="BUTTON3_PRESSED">
-      <MemberSignature Language="C#" Value="public const int BUTTON3_PRESSED = 8192;" />
-      <MemberType>Field</MemberType>
-      <ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue>
-      <MemberValue>8192</MemberValue>
-      <Docs><summary>To be added.</summary><remarks>To be added.</remarks></Docs>
-    <AssemblyInfo><AssemblyVersion>0.0.0.0</AssemblyVersion></AssemblyInfo></Member><Member MemberName="BUTTON3_RELEASED">
-      <MemberSignature Language="C#" Value="public const int BUTTON3_RELEASED = 4096;" />
-      <MemberType>Field</MemberType>
-      <ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue>
-      <MemberValue>4096</MemberValue>
-      <Docs><summary>To be added.</summary><remarks>To be added.</remarks></Docs>
-    <AssemblyInfo><AssemblyVersion>0.0.0.0</AssemblyVersion></AssemblyInfo></Member><Member MemberName="BUTTON3_TRIPLE_CLICKED">
-      <MemberSignature Language="C#" Value="public const int BUTTON3_TRIPLE_CLICKED = 65536;" />
-      <MemberType>Field</MemberType>
-      <ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue>
-      <MemberValue>65536</MemberValue>
-      <Docs><summary>To be added.</summary><remarks>To be added.</remarks></Docs>
-    <AssemblyInfo><AssemblyVersion>0.0.0.0</AssemblyVersion></AssemblyInfo></Member><Member MemberName="BUTTON4_CLICKED">
-      <MemberSignature Language="C#" Value="public const int BUTTON4_CLICKED = 1048576;" />
-      <MemberType>Field</MemberType>
-      <ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue>
-      <MemberValue>1048576</MemberValue>
-      <Docs><summary>To be added.</summary><remarks>To be added.</remarks></Docs>
-    <AssemblyInfo><AssemblyVersion>0.0.0.0</AssemblyVersion></AssemblyInfo></Member><Member MemberName="BUTTON4_DOUBLE_CLICKED">
-      <MemberSignature Language="C#" Value="public const int BUTTON4_DOUBLE_CLICKED = 2097152;" />
-      <MemberType>Field</MemberType>
-      <ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue>
-      <MemberValue>2097152</MemberValue>
-      <Docs><summary>To be added.</summary><remarks>To be added.</remarks></Docs>
-    <AssemblyInfo><AssemblyVersion>0.0.0.0</AssemblyVersion></AssemblyInfo></Member><Member MemberName="BUTTON4_PRESSED">
-      <MemberSignature Language="C#" Value="public const int BUTTON4_PRESSED = 524288;" />
-      <MemberType>Field</MemberType>
-      <ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue>
-      <MemberValue>524288</MemberValue>
-      <Docs><summary>To be added.</summary><remarks>To be added.</remarks></Docs>
-    <AssemblyInfo><AssemblyVersion>0.0.0.0</AssemblyVersion></AssemblyInfo></Member><Member MemberName="BUTTON4_RELEASED">
-      <MemberSignature Language="C#" Value="public const int BUTTON4_RELEASED = 262144;" />
-      <MemberType>Field</MemberType>
-      <ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue>
-      <MemberValue>262144</MemberValue>
-      <Docs><summary>To be added.</summary><remarks>To be added.</remarks></Docs>
-    <AssemblyInfo><AssemblyVersion>0.0.0.0</AssemblyVersion></AssemblyInfo></Member><Member MemberName="BUTTON4_TRIPLE_CLICKED">
-      <MemberSignature Language="C#" Value="public const int BUTTON4_TRIPLE_CLICKED = 4194304;" />
-      <MemberType>Field</MemberType>
-      <ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue>
-      <MemberValue>4194304</MemberValue>
-      <Docs><summary>To be added.</summary><remarks>To be added.</remarks></Docs>
     <AssemblyInfo><AssemblyVersion>0.0.0.0</AssemblyVersion></AssemblyInfo></Member><Member MemberName="cbreak">
       <MemberSignature Language="C#" Value="public static int cbreak ();" />
       <MemberType>Method</MemberType>
@@ -629,12 +485,6 @@
       <ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue>
       <Parameters />
       <Docs><summary>To be added.</summary><returns>To be added.</returns><remarks>To be added.</remarks></Docs>
-    <AssemblyInfo><AssemblyVersion>0.0.0.0</AssemblyVersion></AssemblyInfo></Member><Member MemberName="REPORT_MOUSE_POSITION">
-      <MemberSignature Language="C#" Value="public const int REPORT_MOUSE_POSITION = 134217728;" />
-      <MemberType>Field</MemberType>
-      <ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue>
-      <MemberValue>134217728</MemberValue>
-      <Docs><summary>To be added.</summary><remarks>To be added.</remarks></Docs>
     <AssemblyInfo><AssemblyVersion>0.0.0.0</AssemblyVersion></AssemblyInfo></Member><Member MemberName="setscrreg">
       <MemberSignature Language="C#" Value="public static int setscrreg (int top, int bot);" />
       <MemberType>Method</MemberType>

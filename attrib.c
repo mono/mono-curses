@@ -29,6 +29,7 @@
 #include <ncurses.h>
 
 #define put(x) fprintf (OUT, "\tpublic const int " #x " = unchecked((int)0x%x);\n", x)
+#define pute(k,x) fprintf (OUT, "\t\t%s = unchecked((int)0x%x),\n", k, x)
 #define put2(s,x) fprintf (OUT, "\tpublic const int Key%s = unchecked((int)0x%x);\n", s, x)
 
 int
@@ -68,34 +69,35 @@ main (int argc, char *argv [])
 	put (COLOR_CYAN);
 	put (COLOR_WHITE);
 
-	put (BUTTON1_PRESSED);
-	put (BUTTON1_RELEASED);
-	put (BUTTON1_CLICKED);
-	put (BUTTON1_DOUBLE_CLICKED);
-	put (BUTTON1_TRIPLE_CLICKED);
-	put (BUTTON2_PRESSED);
-	put (BUTTON2_RELEASED);
-	put (BUTTON2_CLICKED);
-	put (BUTTON2_DOUBLE_CLICKED);
-	put (BUTTON2_TRIPLE_CLICKED);
-	put (BUTTON3_PRESSED);
-	put (BUTTON3_RELEASED);
-	put (BUTTON3_CLICKED);
-	put (BUTTON3_DOUBLE_CLICKED);
-	put (BUTTON3_TRIPLE_CLICKED);
-	put (BUTTON4_PRESSED);
-	put (BUTTON4_RELEASED);
-	put (BUTTON4_CLICKED);
-	put (BUTTON4_DOUBLE_CLICKED);
-	put (BUTTON4_TRIPLE_CLICKED);
-	put (BUTTON_SHIFT);
-	put (BUTTON_CTRL);
-	put (BUTTON_ALT);
-	put (ALL_MOUSE_EVENTS);
-	put (REPORT_MOUSE_POSITION);
-
+	fprintf (OUT, "public enum Event : long {\n");
+	pute ("Button1Pressed", BUTTON1_PRESSED);
+	pute ("Button1Released", BUTTON1_RELEASED);
+	pute ("Button1Clicked", BUTTON1_CLICKED);
+	pute ("Button1DoubleClicked", BUTTON1_DOUBLE_CLICKED);
+	pute ("Button1TripleClicked", BUTTON1_TRIPLE_CLICKED);
+	pute ("Button2Pressed", BUTTON2_PRESSED);
+	pute ("Button2Released", BUTTON2_RELEASED);
+	pute ("Button2Clicked", BUTTON2_CLICKED);
+	pute ("Button2DoubleClicked", BUTTON2_DOUBLE_CLICKED);
+	pute ("Button2TrippleClicked", BUTTON2_TRIPLE_CLICKED);
+	pute ("Button3Pressed", BUTTON3_PRESSED);
+	pute ("Button3Released", BUTTON3_RELEASED);
+	pute ("Button3Clicked", BUTTON3_CLICKED);
+	pute ("Button3DoubleClicked", BUTTON3_DOUBLE_CLICKED);
+	pute ("Button3TripleClicked", BUTTON3_TRIPLE_CLICKED);
+	pute ("Button4Pressed", BUTTON4_PRESSED);
+	pute ("Button4Released", BUTTON4_RELEASED);
+	pute ("Button4Clicked", BUTTON4_CLICKED);
+	pute ("Button4DoubleClicked", BUTTON4_DOUBLE_CLICKED);
+	pute ("Button4TripleClicked", BUTTON4_TRIPLE_CLICKED);
+	pute ("ButtonShift", BUTTON_SHIFT);
+	pute ("ButtonCtrl", BUTTON_CTRL);
+	pute ("ButtonAlt", BUTTON_ALT);
+	pute ("ReportMousePosition", REPORT_MOUSE_POSITION);
+	pute ("AllEvents", ALL_MOUSE_EVENTS);
+	fprintf (OUT, "}\n");
 	put (ERR);
-	
+
 	put2 ("Backspace", KEY_BACKSPACE);
 	put2 ("Up",    KEY_UP);
 	put2 ("Down",  KEY_DOWN);

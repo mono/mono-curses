@@ -18,9 +18,9 @@
     
     
     <Member MemberName="ButtonState">
-      <MemberSignature Language="C#" Value="public long ButtonState;" />
+      <MemberSignature Language="C#" Value="public Mono.Terminal.Curses.Event ButtonState;" />
       <MemberType>Field</MemberType>
-      <ReturnValue><ReturnType>System.Int64</ReturnType></ReturnValue>
+      <ReturnValue><ReturnType>Mono.Terminal.Curses+Event</ReturnType></ReturnValue>
       <Docs><summary>To be added.</summary><remarks>To be added.</remarks></Docs>
     <AssemblyInfo><AssemblyVersion>0.0.0.0</AssemblyVersion></AssemblyInfo></Member><Member MemberName="ID">
       <MemberSignature Language="C#" Value="public int ID;" />

@@ -294,7 +294,7 @@
             Widgets can inspect the value of
             ev.ButtonState to determine if this is a
             message they are interested in (typically
-            ev.ButtonState &amp; Curses.BUTTON1_CLICKED).
+            ev.ButtonState &amp; Curses.Event.Button1Clicked).
             </remarks></Docs>
     <AssemblyInfo><AssemblyVersion>0.0.0.0</AssemblyVersion></AssemblyInfo></Member><Member MemberName="Redraw">
       <MemberSignature Language="C#" Value="public virtual void Redraw ();" />

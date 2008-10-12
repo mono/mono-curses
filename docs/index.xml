@@ -16,6 +16,7 @@
       <Type Name="Button" Kind="Class" />
       <Type Name="Container" Kind="Class" />
       <Type Name="Curses" Kind="Class" />
+      <Type Name="Curses+Event" Kind="Enumeration" />
       <Type Name="Curses+MouseEvent" Kind="Structure" />
       <Type Name="Dialog" Kind="Class" />
       <Type Name="Entry" Kind="Class" />

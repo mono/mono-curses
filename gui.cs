@@ -275,7 +275,7 @@ namespace Mono.Terminal {
 		///     Widgets can inspect the value of
 		///     ev.ButtonState to determine if this is a
 		///     message they are interested in (typically
-		///     ev.ButtonState &amp; Curses.BUTTON1_CLICKED).
+		///     ev.ButtonState &amp; Curses.Event.Button1Clicked).
 		/// </remarks>
 		public virtual void ProcessMouse (Curses.MouseEvent ev)
 		{
@@ -691,7 +691,7 @@ namespace Mono.Terminal {
 
 		public override void ProcessMouse (Curses.MouseEvent ev)
 		{
-			if ((ev.ButtonState & Curses.BUTTON1_CLICKED) == 0)
+			if ((ev.ButtonState & Curses.Event.Button1Clicked) == 0)
 				return;
 
 			Container.SetFocus (this);
@@ -854,7 +854,7 @@ namespace Mono.Terminal {
 
 		public override void ProcessMouse (Curses.MouseEvent ev)
 		{
-			if ((ev.ButtonState & Curses.BUTTON1_CLICKED) != 0){
+			if ((ev.ButtonState & Curses.Event.Button1Clicked) != 0){
 				Container.SetFocus (this);
 				Container.Redraw ();
 				if (Clicked != null)
@@ -1103,7 +1103,7 @@ namespace Mono.Terminal {
 		
 		public override void ProcessMouse (Curses.MouseEvent ev)
 		{
-			if ((ev.ButtonState & Curses.BUTTON1_CLICKED) == 0)
+			if ((ev.ButtonState & Curses.Event.Button1Clicked) == 0)
 				return;
 
 			ev.X -= x;
@@ -1792,7 +1792,7 @@ namespace Mono.Terminal {
 
 			long old = 0;
 			MouseEventsAvailable = Curses.console_sharp_mouse_mask (
-				Curses.BUTTON1_CLICKED | Curses.BUTTON1_DOUBLE_CLICKED, out old);
+				Curses.Event.Button1Clicked | Curses.Event.Button1DoubleClicked, out old);
 			
 			bool use_color = false;
 			if (!disable_color)
