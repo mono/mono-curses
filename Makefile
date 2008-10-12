@@ -10,49 +10,26 @@ SOURCES = 		\
 EXTRA_DIST = 	\
 	configure	\
 	Makefile	\
-	monotorrent.in	\
 	binding.cs.in	\
 	attrib.c	\
 	mono-curses.c	\
-	monotorrent.cs	\
 	mono-curses.source
 
 DOCS_DIST = \
-	docs/Mono.Terminal.xml \
+	docs/ns-Mono.Terminal.xml \
 	docs/index.xml
 
 
-TORRENTDIR=/cvs/bitsharp/src
-TORRENTLIBS=`pkg-config --libs monotorrent`
-
-all: config.make mono-curses.dll libmono-curses.so monotorrent.exe monotorrent mono-curses.zip
-
-monotorrent: monotorrent.in Makefile
-	sed "s,@prefix@,$(prefix)," < monotorrent.in > monotorrent
-	chmod +x monotorrent
+all: config.make mono-curses.dll libmono-curses.so mono-curses.zip
 
 test.exe: test.cs mono-curses.dll libmono-curses.so
 	gmcs -debug test.cs -r:mono-curses.dll
-
-monotorrent.exe: monotorrent.cs mono-curses.dll libmono-curses.so MonoTorrent.dll
-	gmcs -debug monotorrent.cs -r:mono-curses.dll $(TORRENTLIBS)
-
-MonoTorrent.dll Upnp.dll:
-	if pkg-config --atleast-version=0.1 monotorrent; then \
-		cp `pkg-config --variable=Libraries monotorrent` .; \
-	else \
-		echo You must install The Monotorrent libraries first;  \
-		exit 1; \
-	fi
-
-run: monotorrent.exe
-	DYLD_LIBRARY_PATH=. MONO_PATH=$(TORRENTDIR)/bin:$(TORRENTDIR)/Libs mono --debug monotorrent.exe || stty sane
 
 mono-curses.dll mono-curses.xml: $(SOURCES)
 	gmcs -doc:mono-curses.xml -debug -target:library -out:mono-curses.dll -debug $(SOURCES)
 
 #
-mono-curses.tree mono-curses.zip: mono-curses.xml mono-curses.dll docs/Mono.Terminal.xml docs/index.xml
+mono-curses.tree mono-curses.zip: mono-curses.xml mono-curses.dll docs/ns-Mono.Terminal.xml docs/index.xml
 	monodocer -importslashdoc:mono-curses.xml -path:docs -assembly:mono-curses.dll
 	mdassembler --ecma docs/ --out mono-curses
 
@@ -86,10 +63,9 @@ clean:
 
 install: all
 	mkdir -p $(prefix)/bin
-	mkdir -p $(prefix)/lib/monotorrent
-	cp mono-curses.dll MonoTorrent.dll monotorrent.exe $(prefix)/lib/monotorrent
-	cp libmono-curses* $(prefix)/lib/monotorrent
-	cp monotorrent $(prefix)/bin
+	mkdir -p $(prefix)/lib/mono-curses
+	cp mono-curses.dll $(prefix)/lib/mono-curses
+	cp libmono-curses* $(prefix)/lib/
 	cp mono-curses.tree mono-curses.zip mono-curses.source  `pkg-config --variable sourcesdir monodoc`
 
 config.make:
@@ -99,21 +75,21 @@ config.make:
 include config.make
 
 dist: 
-	rm -rf monotorrent-curses-$(VERSION)
-	mkdir monotorrent-curses-$(VERSION)
-	mkdir monotorrent-curses-$(VERSION)/docs
-	cp -a $(SOURCES) $(EXTRA_DIST) monotorrent-curses-$(VERSION)
-	cp -a $(DOCS_DIST) monotorrent-curses-$(VERSION)/docs
-	tar czvf monotorrent-curses-$(VERSION).tar.gz monotorrent-curses-$(VERSION)
-	rm -rf monotorrent-curses-$(VERSION)
+	rm -rf mono-curses-$(VERSION)
+	mkdir mono-curses-$(VERSION)
+	mkdir mono-curses-$(VERSION)/docs
+	cp -a $(SOURCES) $(EXTRA_DIST) mono-curses-$(VERSION)
+	cp -a $(DOCS_DIST) mono-curses-$(VERSION)/docs
+	tar czvf mono-curses-$(VERSION).tar.gz mono-curses-$(VERSION)
+	rm -rf mono-curses-$(VERSION)
 
 distcheck: dist
 	rm -rf test
-	(mkdir test; cd test; tar xzvf ../monotorrent-curses-$(VERSION).tar.gz; cd monotorrent-curses-$(VERSION); \
+	(mkdir test; cd test; tar xzvf ../mono-curses-$(VERSION).tar.gz; cd mono-curses-$(VERSION); \
 	 ./configure --prefix=$$(cd `pwd`/..; pwd); \
 	 make && make install && make dist);
 	rm -rf test
-	echo monotorrent-curses-$(VERSION).tar.gz is ready for release
+	echo mono-curses-$(VERSION).tar.gz is ready for release
 
 push:
 	scp mono-curses.tree mono-curses.zip mono-curses.source root@www.go-mono.com:/usr/lib/monodoc/sources/

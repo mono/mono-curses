@@ -33,19 +33,10 @@ using System.IO;
 
 namespace Mono.Terminal {
 
-	[Flags]
-	public enum Anchor {
-		None = 0,
-		Left = 1,
-		Right = 2,
-		Top = 4,
-		Bottom = 8
-	}
-
-	//
-	// The fill values apply from the given x, y values, they will not do
-	// a full fill, you must compute x, y yourself.
-	//
+	/// <summary>
+	/// The fill values apply from the given x, y values, they will not do
+	/// a full fill, you must compute x, y yourself.
+	/// </summary>
 	[Flags]
 	public enum Fill {
 		None = 0,
@@ -57,11 +48,13 @@ namespace Mono.Terminal {
 	///   Base class for creating curses widgets
 	/// </summary>
 	public abstract class Widget {
+		/// <summary>
+		///    Points to the container of this widget
+		/// </summary>
 		public Container Container;
 		public int x, y, w, h;
 		bool can_focus;
 		bool has_focus;
-		public Anchor Anchor;
 		public Fill Fill;
 		
 		static StreamWriter l;
@@ -724,7 +717,8 @@ namespace Mono.Terminal {
 	///   letter in the button becomes the hotkey).
 	/// </remarks>
 	public class Button : Widget {
-		public string text;
+		string text;
+		string shown_text;
 		char hot_key;
 		int  hot_pos = -1;
 		bool is_default;
@@ -770,6 +764,30 @@ namespace Mono.Terminal {
 		/// </remarks>
 		public Button (int x, int y, string s) : this (x, y, s, false) {}
 		
+		public string Text {
+			get {
+				return text;
+			}
+
+			set {
+				text = value;
+				if (is_default)
+					shown_text = "[< " + value + " >]";
+				else
+					shown_text = "[ " + value + " ]";
+				
+				int i = 0;
+				foreach (char c in shown_text){
+					if (Char.IsUpper (c)){
+						hot_key = c;
+						hot_pos = i;
+						break;
+					}
+					i++;
+				}
+			}
+		}
+		
 		/// <summary>
 		///   Public constructor, creates a button based on
 		///   the given text at the given position.
@@ -785,27 +803,14 @@ namespace Mono.Terminal {
 			CanFocus = true;
 
 			this.is_default = is_default;
-			if (is_default)
-				text = "[< " + s + " >]";
-			else
-				text = "[ " + s + " ]";
-			
-			int i = 0;
-			foreach (char c in text){
-				if (Char.IsUpper (c)){
-					hot_key = c;
-					hot_pos = i;
-					break;
-				}
-				i++;
-			}
+			Text = s;
 		}
 
 		public override void Redraw ()
 		{
 			Curses.attrset (HasFocus ? ColorFocus : ColorNormal);
 			Move (y, x);
-			Curses.addstr (text);
+			Curses.addstr (shown_text);
 			Move (y, x + hot_pos);
 			Curses.attrset (HasFocus ? ColorHotFocus : ColorHotNormal);
 			Curses.addch (hot_key);
@@ -1443,15 +1448,6 @@ namespace Mono.Terminal {
 			foreach (Widget widget in widgets){
 				widget.DoSizeChanged ();
 
-				//Anchor a = w.Anchor;
-				//
-				//// Left/Top anchors are just x, y
-				//if ((a & Anchor.Right) != 0)
-				//	w.x = w - border - w.w;
-				//
-				//if ((a & Anchor.Bottom) != 0)
-				//	w.y = h - border - w.h;
-
 				if ((widget.Fill & Fill.Horizontal) != 0){
 					widget.w = w - (Border*2) - widget.x;
 				}
@@ -1754,6 +1750,10 @@ namespace Mono.Terminal {
 		static short last_color_pair;
 		static bool inited;
 		static Container empty_container;
+		
+		/// <summary>
+		///    A flag indicating which mouse events are available
+		/// </summary>
 		public static long MouseEventsAvailable;
 		
 		static int MakeColor (short f, short b)
@@ -1762,6 +1762,9 @@ namespace Mono.Terminal {
 			return Curses.ColorPair (last_color_pair);
 		}
 
+		/// <summary>
+		///    The singleton EmptyContainer that covers the entire screen.
+		/// </summary>
 		static public Container EmptyContainer {
 			get {
 				return empty_container;
