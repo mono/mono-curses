@@ -1,3 +1,7 @@
+2009-02-09  Jonathan Pryor  <jpryor@novell.com>
+
+	* mono-curses.source: Add a /monodoc/node element so that
+	  documentation is inserted under the "Mono Libraries" node.
 
 Wed Oct 17 15:09:30 CEST 2007 Paolo Molaro <lupus@ximian.com>
 
