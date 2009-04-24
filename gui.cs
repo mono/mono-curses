@@ -1020,6 +1020,7 @@ namespace Mono.Terminal {
 				
 				if (Toggled != null)
 					Toggled (this, EventArgs.Empty);
+				Redraw ();
 			}
 		}
 	}
