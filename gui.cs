@@ -52,7 +52,27 @@ namespace Mono.Terminal {
 		///    Points to the container of this widget
 		/// </summary>
 		public Container Container;
-		public int x, y, w, h;
+		
+		/// <summary>
+		///    The x position of this widget
+		/// </summary>
+		public int x;
+
+		/// <summary>
+		///    The y position of this widget
+		/// </summary>
+		public int y;
+
+		/// <summary>
+		///    The width of this widget, it is the area that receives mouse events and that must be repainted.
+		/// </summary>
+		public int w;
+
+		/// <summary>
+		///    The height of this widget, it is the area that receives mouse events and that must be repainted.
+		/// </summary>
+		public int h;
+		
 		bool can_focus;
 		bool has_focus;
 		public Fill Fill;
@@ -517,6 +537,9 @@ namespace Mono.Terminal {
 				SetString (0, original);
 		}
 
+		/// <summary>
+		///   The text displayed by this widget.
+		/// </summary>
 		public override string Text {
 			get {
 				return original;
@@ -574,6 +597,14 @@ namespace Mono.Terminal {
 				Redraw ();
 			}
 		}
+
+		/// <summary>
+		///   Sets the secret property.
+		/// </summary>
+		/// <remarks>
+		///   This makes the text entry suitable for entering passwords. 
+		/// </remarks>
+		public bool Secret { get; set; }
 		
 		public override void PositionCursor ()
 		{
@@ -588,9 +619,9 @@ namespace Mono.Terminal {
 			for (int i = 0; i < w; i++){
 				int p = first + i;
 
-				if (p < text.Length)
-					Curses.addch (text [p]);
-				else
+				if (p < text.Length){
+					Curses.addch (Secret ? '*' : text [p]);
+				} else
 					Curses.addch (' ' );
 			}
 			PositionCursor ();
@@ -764,6 +795,9 @@ namespace Mono.Terminal {
 		/// </remarks>
 		public Button (int x, int y, string s) : this (x, y, s, false) {}
 		
+		/// <summary>
+		///   The text displayed by this widget.
+		/// </summary>
 		public string Text {
 			get {
 				return text;
@@ -775,7 +809,9 @@ namespace Mono.Terminal {
 					shown_text = "[< " + value + " >]";
 				else
 					shown_text = "[ " + value + " ]";
-				
+
+				hot_pos = -1;
+				hot_key = (char) 0;
 				int i = 0;
 				foreach (char c in shown_text){
 					if (Char.IsUpper (c)){
@@ -811,9 +847,12 @@ namespace Mono.Terminal {
 			Curses.attrset (HasFocus ? ColorFocus : ColorNormal);
 			Move (y, x);
 			Curses.addstr (shown_text);
-			Move (y, x + hot_pos);
-			Curses.attrset (HasFocus ? ColorHotFocus : ColorHotNormal);
-			Curses.addch (hot_key);
+
+			if (hot_pos != -1){
+				Move (y, x + hot_pos);
+				Curses.attrset (HasFocus ? ColorHotFocus : ColorHotNormal);
+				Curses.addch (hot_key);
+			}
 		}
 
 		public override void PositionCursor ()
@@ -863,6 +902,128 @@ namespace Mono.Terminal {
 		}
 	}
 
+	public class CheckBox : Widget {
+		string text;
+		int hot_pos = -1;
+		char hot_key;
+		
+		/// <summary>
+		///   Toggled event, raised when the CheckButton is toggled.
+		/// </summary>
+		/// <remarks>
+		///   Client code can hook up to this event, it is
+		///   raised when the checkbutton is activated either with
+		///   the mouse or the keyboard.
+		/// </remarks>
+		public event EventHandler Toggled;
+
+		/// <summary>
+		///   Public constructor, creates a CheckButton based on
+		///   the given text at the given position.
+		/// </summary>
+		/// <remarks>
+		///   The size of CheckButton is computed based on the
+		///   text length. This CheckButton is not toggled.
+		/// </remarks>
+		public CheckBox (int x, int y, string s) : this (x, y, s, false)
+		{
+		}
+
+		/// <summary>
+		///   Public constructor, creates a CheckButton based on
+		///   the given text at the given position and a state.
+		/// </summary>
+		/// <remarks>
+		///   The size of CheckButton is computed based on the
+		///   text length. 
+		/// </remarks>
+		public CheckBox (int x, int y, string s, bool is_checked) : base (x, y, s.Length + 4, 1)
+		{
+			Checked = is_checked;
+			Text = s;
+
+			CanFocus = true;
+		}
+
+		/// <summary>
+		///    The state of the checkbox.
+		/// </summary>
+		public bool Checked { get; set; }
+
+		/// <summary>
+		///   The text displayed by this widget.
+		/// </summary>
+		public string Text {
+			get {
+				return text;
+			}
+
+			set {
+				text = value;
+
+				int i = 0;
+				hot_pos = -1;
+				hot_key = (char) 0;
+				foreach (char c in text){
+					if (Char.IsUpper (c)){
+						hot_key = c;
+						hot_pos = i;
+						break;
+					}
+					i++;
+				}
+			}
+		}
+		
+		public override void Redraw ()
+		{
+			Curses.attrset (ColorNormal);
+			Move (y, x);
+			Curses.addstr (Checked ? "[X] " : "[ ] ");
+			Curses.attrset (HasFocus ? ColorFocus : ColorNormal);
+			Move (y, x + 3);
+			Curses.addstr (Text);
+			if (hot_pos != -1){
+				Move (y, x + 3 + hot_pos);
+				Curses.attrset (HasFocus ? ColorHotFocus : ColorHotNormal);
+				Curses.addch (hot_key);
+			}
+			PositionCursor();
+		}
+
+		public override void PositionCursor ()
+		{
+			Move (y, x + 1);
+		}
+
+		public override bool ProcessKey (int c)
+		{
+			if (c == ' '){
+				Checked = !Checked;
+
+				if (Toggled != null)
+					Toggled (this, EventArgs.Empty);
+
+				Redraw();
+				return true;
+			}
+			return false;
+		}
+
+		public override void ProcessMouse (Curses.MouseEvent ev)
+		{
+			if ((ev.ButtonState & Curses.Event.Button1Clicked) != 0){
+				Container.SetFocus (this);
+				Container.Redraw ();
+
+				Checked = !Checked;
+				
+				if (Toggled != null)
+					Toggled (this, EventArgs.Empty);
+			}
+		}
+	}
+	
 	/// <summary>
 	///   Model for the <see cref="ListView"/> widget.
 	/// </summary>
@@ -1389,7 +1550,32 @@ namespace Mono.Terminal {
 			if (w.CanFocus)
 				this.CanFocus = true;
 		}
-		
+
+		/// <summary>
+		///   Removes all the widgets from this container.
+		/// </summary>
+		/// <remarks>
+		/// </remarks>
+		public virtual void RemoveAll ()
+		{
+			foreach (Widget w in widgets)
+				Remove (w);
+		}
+
+		/// <summary>
+		///   Removes a widget from this container.
+		/// </summary>
+		/// <remarks>
+		/// </remarks>
+		public virtual void Remove (Widget w)
+		{
+			widgets.Remove (w);
+			w.Container = null;
+			
+			if (widgets.Count < 1)
+				this.CanFocus = false;
+		}
+
 		public override bool ProcessKey (int key)
 		{
 			if (focused != null){

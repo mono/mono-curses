@@ -1,3 +1,13 @@
+2009-04-24  Miguel de Icaza  <miguel@novell.com>
+
+	* gui.cs: A handful of bug fixes.
+
+	Based on patches from Flavio Percoco Premoli (flaper87@gmail.com):
+	
+	* gui.cs (Entry): Add support for Secret property.
+
+	* gui.cs (CheckBox): New widget, a Checkbox.
+
 2009-02-09  Jonathan Pryor  <jpryor@novell.com>
 
 	* mono-curses.source: Add a /monodoc/node element so that

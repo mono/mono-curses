@@ -21,501 +21,275 @@
             </remarks>
   </Docs>
   <Members>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public Container (int x, int y, int w, int h);" />
       <MemberType>Constructor</MemberType>
-      <Parameters>
-        <Parameter Name="x" Type="System.Int32" />
-        <Parameter Name="y" Type="System.Int32" />
-        <Parameter Name="w" Type="System.Int32" />
-        <Parameter Name="h" Type="System.Int32" />
-      </Parameters>
-      <Docs>
-        <param name="x">To be added.</param>
-        <param name="y">To be added.</param>
-        <param name="w">To be added.</param>
-        <param name="h">To be added.</param>
-        <summary>
+      <Parameters><Parameter Name="x" Type="System.Int32" /><Parameter Name="y" Type="System.Int32" /><Parameter Name="w" Type="System.Int32" /><Parameter Name="h" Type="System.Int32" /></Parameters>
+      <Docs><param name="x">To be added.</param><param name="y">To be added.</param><param name="w">To be added.</param><param name="h">To be added.</param><summary>
             Public constructor.
-            </summary>
-        <remarks />
-      </Docs>
+            </summary><remarks /></Docs>
       <AssemblyInfo>
-        <AssemblyVersion>0.0.0.0</AssemblyVersion>
-        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        
+        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member>
-    <Member MemberName="Add">
+    </Member><Member MemberName="Add">
       <MemberSignature Language="C#" Value="public virtual void Add (Mono.Terminal.Widget w);" />
       <MemberType>Method</MemberType>
-      <ReturnValue>
-        <ReturnType>System.Void</ReturnType>
-      </ReturnValue>
-      <Parameters>
-        <Parameter Name="w" Type="Mono.Terminal.Widget" />
-      </Parameters>
-      <Docs>
-        <param name="w">To be added.</param>
-        <summary>
+      <ReturnValue><ReturnType>System.Void</ReturnType></ReturnValue>
+      <Parameters><Parameter Name="w" Type="Mono.Terminal.Widget" /></Parameters>
+      <Docs><param name="w">To be added.</param><summary>
             Adds a widget to this container.
-            </summary>
-        <remarks />
-      </Docs>
+            </summary><remarks /></Docs>
       <AssemblyInfo>
-        <AssemblyVersion>0.0.0.0</AssemblyVersion>
-        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        
+        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member>
-    <Member MemberName="Border">
+    </Member><Member MemberName="Border">
       <MemberSignature Language="C#" Value="public int Border;" />
       <MemberType>Field</MemberType>
-      <ReturnValue>
-        <ReturnType>System.Int32</ReturnType>
-      </ReturnValue>
-      <Docs>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
-      </Docs>
+      <ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue>
+      <Docs><summary>To be added.</summary><remarks>To be added.</remarks></Docs>
       <AssemblyInfo>
-        <AssemblyVersion>0.0.0.0</AssemblyVersion>
-        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        
+        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member>
-    <Member MemberName="ContainerBaseMove">
+    </Member><Member MemberName="ContainerBaseMove">
       <MemberSignature Language="C#" Value="public virtual void ContainerBaseMove (int row, int col);" />
       <MemberType>Method</MemberType>
-      <ReturnValue>
-        <ReturnType>System.Void</ReturnType>
-      </ReturnValue>
-      <Parameters>
-        <Parameter Name="row" Type="System.Int32" />
-        <Parameter Name="col" Type="System.Int32" />
-      </Parameters>
-      <Docs>
-        <param name="row">To be added.</param>
-        <param name="col">To be added.</param>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
-      </Docs>
+      <ReturnValue><ReturnType>System.Void</ReturnType></ReturnValue>
+      <Parameters><Parameter Name="row" Type="System.Int32" /><Parameter Name="col" Type="System.Int32" /></Parameters>
+      <Docs><param name="row">To be added.</param><param name="col">To be added.</param><summary>To be added.</summary><remarks>To be added.</remarks></Docs>
       <AssemblyInfo>
-        <AssemblyVersion>0.0.0.0</AssemblyVersion>
-        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        
+        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member>
-    <Member MemberName="ContainerColorFocus">
+    </Member><Member MemberName="ContainerColorFocus">
       <MemberSignature Language="C#" Value="public int ContainerColorFocus;" />
       <MemberType>Field</MemberType>
-      <ReturnValue>
-        <ReturnType>System.Int32</ReturnType>
-      </ReturnValue>
-      <Docs>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
-      </Docs>
+      <ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue>
+      <Docs><summary>To be added.</summary><remarks>To be added.</remarks></Docs>
       <AssemblyInfo>
-        <AssemblyVersion>0.0.0.0</AssemblyVersion>
-        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        
+        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member>
-    <Member MemberName="ContainerColorHotFocus">
+    </Member><Member MemberName="ContainerColorHotFocus">
       <MemberSignature Language="C#" Value="public int ContainerColorHotFocus;" />
       <MemberType>Field</MemberType>
-      <ReturnValue>
-        <ReturnType>System.Int32</ReturnType>
-      </ReturnValue>
-      <Docs>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
-      </Docs>
+      <ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue>
+      <Docs><summary>To be added.</summary><remarks>To be added.</remarks></Docs>
       <AssemblyInfo>
-        <AssemblyVersion>0.0.0.0</AssemblyVersion>
-        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        
+        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member>
-    <Member MemberName="ContainerColorHotNormal">
+    </Member><Member MemberName="ContainerColorHotNormal">
       <MemberSignature Language="C#" Value="public int ContainerColorHotNormal;" />
       <MemberType>Field</MemberType>
-      <ReturnValue>
-        <ReturnType>System.Int32</ReturnType>
-      </ReturnValue>
-      <Docs>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
-      </Docs>
+      <ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue>
+      <Docs><summary>To be added.</summary><remarks>To be added.</remarks></Docs>
       <AssemblyInfo>
-        <AssemblyVersion>0.0.0.0</AssemblyVersion>
-        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        
+        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member>
-    <Member MemberName="ContainerColorNormal">
+    </Member><Member MemberName="ContainerColorNormal">
       <MemberSignature Language="C#" Value="public int ContainerColorNormal;" />
       <MemberType>Field</MemberType>
-      <ReturnValue>
-        <ReturnType>System.Int32</ReturnType>
-      </ReturnValue>
-      <Docs>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
-      </Docs>
+      <ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue>
+      <Docs><summary>To be added.</summary><remarks>To be added.</remarks></Docs>
       <AssemblyInfo>
-        <AssemblyVersion>0.0.0.0</AssemblyVersion>
-        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        
+        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member>
-    <Member MemberName="ContainerMove">
+    </Member><Member MemberName="ContainerMove">
       <MemberSignature Language="C#" Value="public virtual void ContainerMove (int row, int col);" />
       <MemberType>Method</MemberType>
-      <ReturnValue>
-        <ReturnType>System.Void</ReturnType>
-      </ReturnValue>
-      <Parameters>
-        <Parameter Name="row" Type="System.Int32" />
-        <Parameter Name="col" Type="System.Int32" />
-      </Parameters>
-      <Docs>
-        <param name="row">To be added.</param>
-        <param name="col">To be added.</param>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
-      </Docs>
+      <ReturnValue><ReturnType>System.Void</ReturnType></ReturnValue>
+      <Parameters><Parameter Name="row" Type="System.Int32" /><Parameter Name="col" Type="System.Int32" /></Parameters>
+      <Docs><param name="row">To be added.</param><param name="col">To be added.</param><summary>To be added.</summary><remarks>To be added.</remarks></Docs>
       <AssemblyInfo>
-        <AssemblyVersion>0.0.0.0</AssemblyVersion>
-        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        
+        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member>
-    <Member MemberName="DoSizeChanged">
-      <MemberSignature Language="C#" Value="public override void DoSizeChanged ();" />
-      <MemberType>Method</MemberType>
-      <AssemblyInfo>
-        <AssemblyVersion>1.0.0.0</AssemblyVersion>
-      </AssemblyInfo>
-      <ReturnValue>
-        <ReturnType>System.Void</ReturnType>
-      </ReturnValue>
-      <Parameters />
-      <Docs>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
-      </Docs>
-    </Member>
-    <Member MemberName="EnsureFocus">
+    </Member><Member MemberName="EnsureFocus">
       <MemberSignature Language="C#" Value="public void EnsureFocus ();" />
       <MemberType>Method</MemberType>
-      <ReturnValue>
-        <ReturnType>System.Void</ReturnType>
-      </ReturnValue>
+      <ReturnValue><ReturnType>System.Void</ReturnType></ReturnValue>
       <Parameters />
-      <Docs>
-        <summary>
+      <Docs><summary>
             Focuses the first possible focusable widget in
             the contained widgets.
-            </summary>
-        <remarks>To be added.</remarks>
-      </Docs>
+            </summary><remarks>To be added.</remarks></Docs>
       <AssemblyInfo>
-        <AssemblyVersion>0.0.0.0</AssemblyVersion>
-        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        
+        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member>
-    <Member MemberName="FocusFirst">
+    </Member><Member MemberName="FocusFirst">
       <MemberSignature Language="C#" Value="public void FocusFirst ();" />
       <MemberType>Method</MemberType>
-      <ReturnValue>
-        <ReturnType>System.Void</ReturnType>
-      </ReturnValue>
+      <ReturnValue><ReturnType>System.Void</ReturnType></ReturnValue>
       <Parameters />
-      <Docs>
-        <summary>
+      <Docs><summary>
             Focuses the first widget in the contained widgets.
-            </summary>
-        <remarks>To be added.</remarks>
-      </Docs>
+            </summary><remarks>To be added.</remarks></Docs>
       <AssemblyInfo>
-        <AssemblyVersion>0.0.0.0</AssemblyVersion>
-        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        
+        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member>
-    <Member MemberName="FocusLast">
+    </Member><Member MemberName="FocusLast">
       <MemberSignature Language="C#" Value="public void FocusLast ();" />
       <MemberType>Method</MemberType>
-      <ReturnValue>
-        <ReturnType>System.Void</ReturnType>
-      </ReturnValue>
+      <ReturnValue><ReturnType>System.Void</ReturnType></ReturnValue>
       <Parameters />
-      <Docs>
-        <summary>
+      <Docs><summary>
             Focuses the last widget in the contained widgets.
-            </summary>
-        <remarks>To be added.</remarks>
-      </Docs>
+            </summary><remarks>To be added.</remarks></Docs>
       <AssemblyInfo>
-        <AssemblyVersion>0.0.0.0</AssemblyVersion>
-        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        
+        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member>
-    <Member MemberName="FocusNext">
+    </Member><Member MemberName="FocusNext">
       <MemberSignature Language="C#" Value="public bool FocusNext ();" />
       <MemberType>Method</MemberType>
-      <ReturnValue>
-        <ReturnType>System.Boolean</ReturnType>
-      </ReturnValue>
+      <ReturnValue><ReturnType>System.Boolean</ReturnType></ReturnValue>
       <Parameters />
-      <Docs>
-        <summary>
+      <Docs><summary>
             Focuses the next widget.
-            </summary>
-        <returns>To be added.</returns>
-        <remarks />
-      </Docs>
+            </summary><returns>To be added.</returns><remarks /></Docs>
       <AssemblyInfo>
-        <AssemblyVersion>0.0.0.0</AssemblyVersion>
-        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        
+        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member>
-    <Member MemberName="FocusPrev">
+    </Member><Member MemberName="FocusPrev">
       <MemberSignature Language="C#" Value="public bool FocusPrev ();" />
       <MemberType>Method</MemberType>
-      <ReturnValue>
-        <ReturnType>System.Boolean</ReturnType>
-      </ReturnValue>
+      <ReturnValue><ReturnType>System.Boolean</ReturnType></ReturnValue>
       <Parameters />
-      <Docs>
-        <summary>
+      <Docs><summary>
             Focuses the previous widget.
-            </summary>
-        <returns>To be added.</returns>
-        <remarks />
-      </Docs>
+            </summary><returns>To be added.</returns><remarks /></Docs>
       <AssemblyInfo>
-        <AssemblyVersion>0.0.0.0</AssemblyVersion>
-        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        
+        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member>
-    <Member MemberName="GetBase">
+    </Member><Member MemberName="GetBase">
       <MemberSignature Language="C#" Value="public virtual void GetBase (out int row, out int col);" />
       <MemberType>Method</MemberType>
-      <ReturnValue>
-        <ReturnType>System.Void</ReturnType>
-      </ReturnValue>
-      <Parameters>
-        <Parameter Name="row" Type="System.Int32&amp;" RefType="out" />
-        <Parameter Name="col" Type="System.Int32&amp;" RefType="out" />
-      </Parameters>
-      <Docs>
-        <param name="row">To be added.</param>
-        <param name="col">To be added.</param>
-        <summary>
+      <ReturnValue><ReturnType>System.Void</ReturnType></ReturnValue>
+      <Parameters><Parameter Name="row" Type="System.Int32&amp;" RefType="out" /><Parameter Name="col" Type="System.Int32&amp;" RefType="out" /></Parameters>
+      <Docs><param name="row">To be added.</param><param name="col">To be added.</param><summary>
             Returns the base position for child widgets to
             paint on.
-            </summary>
-        <remarks>
+            </summary><remarks>
             This method is typically overwritten by
             containers that want to have some padding (like
             Frames or Dialogs).
-            </remarks>
-      </Docs>
+            </remarks></Docs>
       <AssemblyInfo>
-        <AssemblyVersion>0.0.0.0</AssemblyVersion>
-        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        
+        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member>
-    <Member MemberName="PositionCursor">
-      <MemberSignature Language="C#" Value="public override void PositionCursor ();" />
-      <MemberType>Method</MemberType>
-      <AssemblyInfo>
-        <AssemblyVersion>1.0.0.0</AssemblyVersion>
-      </AssemblyInfo>
-      <ReturnValue>
-        <ReturnType>System.Void</ReturnType>
-      </ReturnValue>
-      <Parameters />
-      <Docs>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
-      </Docs>
-    </Member>
-    <Member MemberName="Prepare">
+    </Member><Member MemberName="Prepare">
       <MemberSignature Language="C#" Value="public virtual void Prepare ();" />
       <MemberType>Method</MemberType>
-      <ReturnValue>
-        <ReturnType>System.Void</ReturnType>
-      </ReturnValue>
+      <ReturnValue><ReturnType>System.Void</ReturnType></ReturnValue>
       <Parameters />
-      <Docs>
-        <summary>
+      <Docs><summary>
             Called on top-level container before starting up.
-            </summary>
-        <remarks />
-      </Docs>
+            </summary><remarks /></Docs>
       <AssemblyInfo>
-        <AssemblyVersion>0.0.0.0</AssemblyVersion>
-        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        
+        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member>
-    <Member MemberName="ProcessHotKey">
-      <MemberSignature Language="C#" Value="public override bool ProcessHotKey (int key);" />
-      <MemberType>Method</MemberType>
-      <AssemblyInfo>
-        <AssemblyVersion>1.0.0.0</AssemblyVersion>
-      </AssemblyInfo>
-      <ReturnValue>
-        <ReturnType>System.Boolean</ReturnType>
-      </ReturnValue>
-      <Parameters>
-        <Parameter Name="key" Type="System.Int32" />
-      </Parameters>
-      <Docs>
-        <param name="key">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
-        <remarks>To be added.</remarks>
-      </Docs>
-    </Member>
-    <Member MemberName="ProcessKey">
-      <MemberSignature Language="C#" Value="public override bool ProcessKey (int key);" />
-      <MemberType>Method</MemberType>
-      <AssemblyInfo>
-        <AssemblyVersion>1.0.0.0</AssemblyVersion>
-      </AssemblyInfo>
-      <ReturnValue>
-        <ReturnType>System.Boolean</ReturnType>
-      </ReturnValue>
-      <Parameters>
-        <Parameter Name="key" Type="System.Int32" />
-      </Parameters>
-      <Docs>
-        <param name="key">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
-        <remarks>To be added.</remarks>
-      </Docs>
-    </Member>
-    <Member MemberName="ProcessMouse">
-      <MemberSignature Language="C#" Value="public override void ProcessMouse (Mono.Terminal.Curses.MouseEvent ev);" />
-      <MemberType>Method</MemberType>
-      <AssemblyInfo>
-        <AssemblyVersion>1.0.0.0</AssemblyVersion>
-      </AssemblyInfo>
-      <ReturnValue>
-        <ReturnType>System.Void</ReturnType>
-      </ReturnValue>
-      <Parameters>
-        <Parameter Name="ev" Type="Mono.Terminal.Curses+MouseEvent" />
-      </Parameters>
-      <Docs>
-        <param name="ev">To be added.</param>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
-      </Docs>
-    </Member>
-    <Member MemberName="Redraw">
-      <MemberSignature Language="C#" Value="public override void Redraw ();" />
-      <MemberType>Method</MemberType>
-      <AssemblyInfo>
-        <AssemblyVersion>1.0.0.0</AssemblyVersion>
-      </AssemblyInfo>
-      <ReturnValue>
-        <ReturnType>System.Void</ReturnType>
-      </ReturnValue>
-      <Parameters />
-      <Docs>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
-      </Docs>
-    </Member>
-    <Member MemberName="RedrawChildren">
+    </Member><Member MemberName="RedrawChildren">
       <MemberSignature Language="C#" Value="public void RedrawChildren ();" />
       <MemberType>Method</MemberType>
-      <ReturnValue>
-        <ReturnType>System.Void</ReturnType>
-      </ReturnValue>
+      <ReturnValue><ReturnType>System.Void</ReturnType></ReturnValue>
       <Parameters />
-      <Docs>
-        <summary>
+      <Docs><summary>
             Used to redraw all the children in this container.
-            </summary>
-        <remarks />
-      </Docs>
+            </summary><remarks /></Docs>
       <AssemblyInfo>
-        <AssemblyVersion>0.0.0.0</AssemblyVersion>
-        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        
+        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member>
-    <Member MemberName="Running">
+    </Member><Member MemberName="Remove"><MemberSignature Language="C#" Value="public virtual void Remove (Mono.Terminal.Widget w);" /><MemberType>Method</MemberType><AssemblyInfo><AssemblyVersion>1.0.0.0</AssemblyVersion></AssemblyInfo><ReturnValue><ReturnType>System.Void</ReturnType></ReturnValue><Parameters><Parameter Name="w" Type="Mono.Terminal.Widget" /></Parameters><Docs><param name="w">To be added.</param><summary>
+            Removes a widget from this container.
+            </summary><remarks /></Docs></Member><Member MemberName="RemoveAll"><MemberSignature Language="C#" Value="public virtual void RemoveAll ();" /><MemberType>Method</MemberType><AssemblyInfo><AssemblyVersion>1.0.0.0</AssemblyVersion></AssemblyInfo><ReturnValue><ReturnType>System.Void</ReturnType></ReturnValue><Parameters /><Docs><summary>
+            Removes all the widgets from this container.
+            </summary><remarks /></Docs></Member><Member MemberName="Running">
       <MemberSignature Language="C#" Value="public bool Running;" />
       <MemberType>Field</MemberType>
-      <ReturnValue>
-        <ReturnType>System.Boolean</ReturnType>
-      </ReturnValue>
-      <Docs>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
-      </Docs>
+      <ReturnValue><ReturnType>System.Boolean</ReturnType></ReturnValue>
+      <Docs><summary>To be added.</summary><remarks>To be added.</remarks></Docs>
       <AssemblyInfo>
-        <AssemblyVersion>0.0.0.0</AssemblyVersion>
-        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        
+        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member>
-    <Member MemberName="SetFocus">
+    </Member><Member MemberName="SetFocus">
       <MemberSignature Language="C#" Value="public void SetFocus (Mono.Terminal.Widget w);" />
       <MemberType>Method</MemberType>
-      <ReturnValue>
-        <ReturnType>System.Void</ReturnType>
-      </ReturnValue>
-      <Parameters>
-        <Parameter Name="w" Type="Mono.Terminal.Widget" />
-      </Parameters>
-      <Docs>
-        <param name="w">To be added.</param>
-        <summary>
+      <ReturnValue><ReturnType>System.Void</ReturnType></ReturnValue>
+      <Parameters><Parameter Name="w" Type="Mono.Terminal.Widget" /></Parameters>
+      <Docs><param name="w">To be added.</param><summary>
             Focuses the specified widget in this container.
-            </summary>
-        <remarks>
+            </summary><remarks>
             Focuses the specified widge, taking the focus
             away from any previously focused widgets.   This
             method only works if the widget specified
             supports being focused.
-            </remarks>
-      </Docs>
+            </remarks></Docs>
       <AssemblyInfo>
-        <AssemblyVersion>0.0.0.0</AssemblyVersion>
-        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        
+        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member>
-    <Member MemberName="SizeChanged">
+    </Member><Member MemberName="SizeChanged">
       <MemberSignature Language="C#" Value="public void SizeChanged ();" />
       <MemberType>Method</MemberType>
-      <ReturnValue>
-        <ReturnType>System.Void</ReturnType>
-      </ReturnValue>
+      <ReturnValue><ReturnType>System.Void</ReturnType></ReturnValue>
       <Parameters />
-      <Docs>
-        <summary>
+      <Docs><summary>
             This method is invoked when the size of this
             container changes.
-            </summary>
-        <remarks />
-      </Docs>
+            </summary><remarks /></Docs>
       <AssemblyInfo>
-        <AssemblyVersion>0.0.0.0</AssemblyVersion>
-        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        
+        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member>
-    <Member MemberName="SizeChangedEvent">
+    </Member><Member MemberName="SizeChangedEvent">
       <MemberSignature Language="C#" Value="public event EventHandler SizeChangedEvent;" />
       <MemberType>Event</MemberType>
-      <ReturnValue>
-        <ReturnType>System.EventHandler</ReturnType>
-      </ReturnValue>
-      <Docs>
-        <summary>
+      <ReturnValue><ReturnType>System.EventHandler</ReturnType></ReturnValue>
+      <Docs><summary>
             Raised when the size of this container changes.
-            </summary>
-        <remarks />
-      </Docs>
+            </summary><remarks /></Docs>
       <AssemblyInfo>
-        <AssemblyVersion>0.0.0.0</AssemblyVersion>
-        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        
+        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
     </Member>
   </Members>

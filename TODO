@@ -1,0 +1,8 @@
+Things that should be done:
+
+       * Make some of the virtual methods that are part of the GUI
+         infrastructure protected, no point in having ProcessEvent,
+         HandleKey and so on be public.
+
+       * Expose x, y, w, h into properties and have those trigger
+         repaints if changed.
