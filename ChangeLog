@@ -1,5 +1,7 @@
 2009-04-24  Miguel de Icaza  <miguel@novell.com>
 
+	* gui.cs (Entry): Raise the Changed event if set.
+	
 	* gui.cs: A handful of bug fixes.
 
 	Based on patches from Flavio Percoco Premoli (flaper87@gmail.com):

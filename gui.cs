@@ -564,6 +564,15 @@ namespace Mono.Terminal {
 		int first, point;
 
 		/// <summary>
+		///   Changed event, raised when the text has clicked.
+		/// </summary>
+		/// <remarks>
+		///   Client code can hook up to this event, it is
+		///   raised when the text in the entry changes.
+		/// </remarks>
+		public event EventHandler Changed;
+		
+		/// <summary>
 		///   Public constructor.
 		/// </summary>
 		/// <remarks>
@@ -635,6 +644,13 @@ namespace Mono.Terminal {
 				first = point - (w / 3);
 			Redraw ();
 		}
+
+		void SetText (int new_text)
+		{
+			text = new_text;
+			if (Changed != null)
+				Changed (this, EventArgs.Empty);
+		}
 		
 		public override bool ProcessKey (int key)
 		{
@@ -644,7 +660,7 @@ namespace Mono.Terminal {
 				if (point == 0)
 					return true;
 				
-				text = text.Substring (0, point - 1) + text.Substring (point);
+				SetText (text.Substring (0, point - 1) + text.Substring (point));
 				point--;
 				Adjust ();
 				break;
@@ -666,7 +682,7 @@ namespace Mono.Terminal {
 			case 4: // Control-d, Delete
 				if (point == text.Length)
 					break;
-				text = text.Substring (0, point) + text.Substring (point+1);
+				SetText (text.Substring (0, point) + text.Substring (point+1));
 				Adjust ();
 				break;
 				
@@ -685,7 +701,7 @@ namespace Mono.Terminal {
 				
 			case 11: // Control-k, kill-to-end
 				kill = text.Substring (point);
-				text = text.Substring (0, point);
+				SetText (text.Substring (0, point));
 				Adjust ();
 				break;
 
@@ -694,10 +710,10 @@ namespace Mono.Terminal {
 					return true;
 				
 				if (point == text.Length){
-					text = text + kill;
+					SetText (text + kill);
 					point = text.Length;
 				} else {
-					text = text.Substring (0, point) + kill + text.Substring (point);
+					SetText (text.Substring (0, point) + kill + text.Substring (point));
 					point += kill.Length;
 				}
 				Adjust ();
@@ -709,9 +725,9 @@ namespace Mono.Terminal {
 					return false;
 				
 				if (point == text.Length){
-					text = text + (char) key;
+					SetText (text + (char) key);
 				} else {
-					text = text.Substring (0, point) + (char) key + text.Substring (point);
+					SetText (text.Substring (0, point) + (char) key + text.Substring (point));
 				}
 				point++;
 				Adjust ();
