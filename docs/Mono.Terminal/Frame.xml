@@ -19,42 +19,136 @@
             </remarks>
   </Docs>
   <Members>
-    
-    
-    
-    
-    
-    
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public Frame (string title);" />
       <MemberType>Constructor</MemberType>
-      <Parameters><Parameter Name="title" Type="System.String" /></Parameters>
-      <Docs><param name="title">To be added.</param><summary>
+      <Parameters>
+        <Parameter Name="title" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="title">To be added.</param>
+        <summary>
             Creates an empty frame, with the given title
-            </summary><remarks /></Docs>
+            </summary>
+        <remarks />
+      </Docs>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member><Member MemberName=".ctor">
+    </Member>
+    <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public Frame (int x, int y, int w, int h, string title);" />
       <MemberType>Constructor</MemberType>
-      <Parameters><Parameter Name="x" Type="System.Int32" /><Parameter Name="y" Type="System.Int32" /><Parameter Name="w" Type="System.Int32" /><Parameter Name="h" Type="System.Int32" /><Parameter Name="title" Type="System.String" /></Parameters>
-      <Docs><param name="x">To be added.</param><param name="y">To be added.</param><param name="w">To be added.</param><param name="h">To be added.</param><param name="title">To be added.</param><summary>
+      <Parameters>
+        <Parameter Name="x" Type="System.Int32" />
+        <Parameter Name="y" Type="System.Int32" />
+        <Parameter Name="w" Type="System.Int32" />
+        <Parameter Name="h" Type="System.Int32" />
+        <Parameter Name="title" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="x">To be added.</param>
+        <param name="y">To be added.</param>
+        <param name="w">To be added.</param>
+        <param name="h">To be added.</param>
+        <param name="title">To be added.</param>
+        <summary>
             Public constructor, a frame, with the given title.
-            </summary><remarks /></Docs>
+            </summary>
+        <remarks />
+      </Docs>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member><Member MemberName="Title">
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public override void Add (Mono.Terminal.Widget w);" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="w" Type="Mono.Terminal.Widget" />
+      </Parameters>
+      <Docs>
+        <param name="w">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContainerMove">
+      <MemberSignature Language="C#" Value="public override void ContainerMove (int row, int col);" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="row" Type="System.Int32" />
+        <Parameter Name="col" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="row">To be added.</param>
+        <param name="col">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetBase">
+      <MemberSignature Language="C#" Value="public override void GetBase (out int row, out int col);" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="row" Type="System.Int32&amp;" RefType="out" />
+        <Parameter Name="col" Type="System.Int32&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="row">To be added.</param>
+        <param name="col">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Redraw">
+      <MemberSignature Language="C#" Value="public override void Redraw ();" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Title">
       <MemberSignature Language="C#" Value="public string Title;" />
       <MemberType>Field</MemberType>
-      <ReturnValue><ReturnType>System.String</ReturnType></ReturnValue>
-      <Docs><summary>To be added.</summary><remarks>To be added.</remarks></Docs>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
     </Member>
   </Members>

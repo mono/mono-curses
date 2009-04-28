@@ -645,7 +645,7 @@ namespace Mono.Terminal {
 			Redraw ();
 		}
 
-		void SetText (int new_text)
+		void SetText (string new_text)
 		{
 			text = new_text;
 			if (Changed != null)

@@ -13,255 +13,355 @@
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <Member MemberName="AllEvents">
       <MemberSignature Language="C#" Value="AllEvents" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-      <ReturnValue><ReturnType>Mono.Terminal.Curses+Event</ReturnType></ReturnValue>
-      <Docs><summary>To be added.</summary></Docs>
-    </Member><Member MemberName="Button1Clicked">
+      <ReturnValue>
+        <ReturnType>Mono.Terminal.Curses+Event</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Button1Clicked">
       <MemberSignature Language="C#" Value="Button1Clicked" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-      <ReturnValue><ReturnType>Mono.Terminal.Curses+Event</ReturnType></ReturnValue>
-      <Docs><summary>To be added.</summary></Docs>
-    </Member><Member MemberName="Button1DoubleClicked">
+      <ReturnValue>
+        <ReturnType>Mono.Terminal.Curses+Event</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Button1DoubleClicked">
       <MemberSignature Language="C#" Value="Button1DoubleClicked" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-      <ReturnValue><ReturnType>Mono.Terminal.Curses+Event</ReturnType></ReturnValue>
-      <Docs><summary>To be added.</summary></Docs>
-    </Member><Member MemberName="Button1Pressed">
+      <ReturnValue>
+        <ReturnType>Mono.Terminal.Curses+Event</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Button1Pressed">
       <MemberSignature Language="C#" Value="Button1Pressed" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-      <ReturnValue><ReturnType>Mono.Terminal.Curses+Event</ReturnType></ReturnValue>
-      <Docs><summary>To be added.</summary></Docs>
-    </Member><Member MemberName="Button1Released">
+      <ReturnValue>
+        <ReturnType>Mono.Terminal.Curses+Event</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Button1Released">
       <MemberSignature Language="C#" Value="Button1Released" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-      <ReturnValue><ReturnType>Mono.Terminal.Curses+Event</ReturnType></ReturnValue>
-      <Docs><summary>To be added.</summary></Docs>
-    </Member><Member MemberName="Button1TripleClicked">
+      <ReturnValue>
+        <ReturnType>Mono.Terminal.Curses+Event</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Button1TripleClicked">
       <MemberSignature Language="C#" Value="Button1TripleClicked" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-      <ReturnValue><ReturnType>Mono.Terminal.Curses+Event</ReturnType></ReturnValue>
-      <Docs><summary>To be added.</summary></Docs>
-    </Member><Member MemberName="Button2Clicked">
+      <ReturnValue>
+        <ReturnType>Mono.Terminal.Curses+Event</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Button2Clicked">
       <MemberSignature Language="C#" Value="Button2Clicked" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-      <ReturnValue><ReturnType>Mono.Terminal.Curses+Event</ReturnType></ReturnValue>
-      <Docs><summary>To be added.</summary></Docs>
-    </Member><Member MemberName="Button2DoubleClicked">
+      <ReturnValue>
+        <ReturnType>Mono.Terminal.Curses+Event</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Button2DoubleClicked">
       <MemberSignature Language="C#" Value="Button2DoubleClicked" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-      <ReturnValue><ReturnType>Mono.Terminal.Curses+Event</ReturnType></ReturnValue>
-      <Docs><summary>To be added.</summary></Docs>
-    </Member><Member MemberName="Button2Pressed">
+      <ReturnValue>
+        <ReturnType>Mono.Terminal.Curses+Event</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Button2Pressed">
       <MemberSignature Language="C#" Value="Button2Pressed" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-      <ReturnValue><ReturnType>Mono.Terminal.Curses+Event</ReturnType></ReturnValue>
-      <Docs><summary>To be added.</summary></Docs>
-    </Member><Member MemberName="Button2Released">
+      <ReturnValue>
+        <ReturnType>Mono.Terminal.Curses+Event</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Button2Released">
       <MemberSignature Language="C#" Value="Button2Released" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-      <ReturnValue><ReturnType>Mono.Terminal.Curses+Event</ReturnType></ReturnValue>
-      <Docs><summary>To be added.</summary></Docs>
-    </Member><Member MemberName="Button2TrippleClicked">
+      <ReturnValue>
+        <ReturnType>Mono.Terminal.Curses+Event</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Button2TrippleClicked">
       <MemberSignature Language="C#" Value="Button2TrippleClicked" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-      <ReturnValue><ReturnType>Mono.Terminal.Curses+Event</ReturnType></ReturnValue>
-      <Docs><summary>To be added.</summary></Docs>
-    </Member><Member MemberName="Button3Clicked">
+      <ReturnValue>
+        <ReturnType>Mono.Terminal.Curses+Event</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Button3Clicked">
       <MemberSignature Language="C#" Value="Button3Clicked" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-      <ReturnValue><ReturnType>Mono.Terminal.Curses+Event</ReturnType></ReturnValue>
-      <Docs><summary>To be added.</summary></Docs>
-    </Member><Member MemberName="Button3DoubleClicked">
+      <ReturnValue>
+        <ReturnType>Mono.Terminal.Curses+Event</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Button3DoubleClicked">
       <MemberSignature Language="C#" Value="Button3DoubleClicked" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-      <ReturnValue><ReturnType>Mono.Terminal.Curses+Event</ReturnType></ReturnValue>
-      <Docs><summary>To be added.</summary></Docs>
-    </Member><Member MemberName="Button3Pressed">
+      <ReturnValue>
+        <ReturnType>Mono.Terminal.Curses+Event</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Button3Pressed">
       <MemberSignature Language="C#" Value="Button3Pressed" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-      <ReturnValue><ReturnType>Mono.Terminal.Curses+Event</ReturnType></ReturnValue>
-      <Docs><summary>To be added.</summary></Docs>
-    </Member><Member MemberName="Button3Released">
+      <ReturnValue>
+        <ReturnType>Mono.Terminal.Curses+Event</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Button3Released">
       <MemberSignature Language="C#" Value="Button3Released" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-      <ReturnValue><ReturnType>Mono.Terminal.Curses+Event</ReturnType></ReturnValue>
-      <Docs><summary>To be added.</summary></Docs>
-    </Member><Member MemberName="Button3TripleClicked">
+      <ReturnValue>
+        <ReturnType>Mono.Terminal.Curses+Event</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Button3TripleClicked">
       <MemberSignature Language="C#" Value="Button3TripleClicked" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-      <ReturnValue><ReturnType>Mono.Terminal.Curses+Event</ReturnType></ReturnValue>
-      <Docs><summary>To be added.</summary></Docs>
-    </Member><Member MemberName="Button4Clicked">
+      <ReturnValue>
+        <ReturnType>Mono.Terminal.Curses+Event</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Button4Clicked">
       <MemberSignature Language="C#" Value="Button4Clicked" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-      <ReturnValue><ReturnType>Mono.Terminal.Curses+Event</ReturnType></ReturnValue>
-      <Docs><summary>To be added.</summary></Docs>
-    </Member><Member MemberName="Button4DoubleClicked">
+      <ReturnValue>
+        <ReturnType>Mono.Terminal.Curses+Event</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Button4DoubleClicked">
       <MemberSignature Language="C#" Value="Button4DoubleClicked" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-      <ReturnValue><ReturnType>Mono.Terminal.Curses+Event</ReturnType></ReturnValue>
-      <Docs><summary>To be added.</summary></Docs>
-    </Member><Member MemberName="Button4Pressed">
+      <ReturnValue>
+        <ReturnType>Mono.Terminal.Curses+Event</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Button4Pressed">
       <MemberSignature Language="C#" Value="Button4Pressed" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-      <ReturnValue><ReturnType>Mono.Terminal.Curses+Event</ReturnType></ReturnValue>
-      <Docs><summary>To be added.</summary></Docs>
-    </Member><Member MemberName="Button4Released">
+      <ReturnValue>
+        <ReturnType>Mono.Terminal.Curses+Event</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Button4Released">
       <MemberSignature Language="C#" Value="Button4Released" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-      <ReturnValue><ReturnType>Mono.Terminal.Curses+Event</ReturnType></ReturnValue>
-      <Docs><summary>To be added.</summary></Docs>
-    </Member><Member MemberName="Button4TripleClicked">
+      <ReturnValue>
+        <ReturnType>Mono.Terminal.Curses+Event</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Button4TripleClicked">
       <MemberSignature Language="C#" Value="Button4TripleClicked" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-      <ReturnValue><ReturnType>Mono.Terminal.Curses+Event</ReturnType></ReturnValue>
-      <Docs><summary>To be added.</summary></Docs>
-    </Member><Member MemberName="ButtonAlt">
+      <ReturnValue>
+        <ReturnType>Mono.Terminal.Curses+Event</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ButtonAlt">
       <MemberSignature Language="C#" Value="ButtonAlt" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-      <ReturnValue><ReturnType>Mono.Terminal.Curses+Event</ReturnType></ReturnValue>
-      <Docs><summary>To be added.</summary></Docs>
-    </Member><Member MemberName="ButtonCtrl">
+      <ReturnValue>
+        <ReturnType>Mono.Terminal.Curses+Event</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ButtonCtrl">
       <MemberSignature Language="C#" Value="ButtonCtrl" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-      <ReturnValue><ReturnType>Mono.Terminal.Curses+Event</ReturnType></ReturnValue>
-      <Docs><summary>To be added.</summary></Docs>
-    </Member><Member MemberName="ButtonShift">
+      <ReturnValue>
+        <ReturnType>Mono.Terminal.Curses+Event</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ButtonShift">
       <MemberSignature Language="C#" Value="ButtonShift" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-      <ReturnValue><ReturnType>Mono.Terminal.Curses+Event</ReturnType></ReturnValue>
-      <Docs><summary>To be added.</summary></Docs>
-    </Member><Member MemberName="ReportMousePosition">
+      <ReturnValue>
+        <ReturnType>Mono.Terminal.Curses+Event</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ReportMousePosition">
       <MemberSignature Language="C#" Value="ReportMousePosition" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-      <ReturnValue><ReturnType>Mono.Terminal.Curses+Event</ReturnType></ReturnValue>
-      <Docs><summary>To be added.</summary></Docs>
+      <ReturnValue>
+        <ReturnType>Mono.Terminal.Curses+Event</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+      </Docs>
     </Member>
   </Members>
 </Type>

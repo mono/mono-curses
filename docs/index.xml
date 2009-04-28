@@ -3,13 +3,10 @@
     <Assembly Name="mono-curses" Version="1.0.0.0">
       <Attributes>
         <Attribute>
-          <AttributeName>System.Runtime.CompilerServices.RuntimeCompatibility(WrapNonExceptionThrows=true)</AttributeName>
+          <AttributeName>System.Reflection.AssemblyCompany("Novell, Inc.")</AttributeName>
         </Attribute>
         <Attribute>
           <AttributeName>System.Reflection.AssemblyConfiguration("")</AttributeName>
-        </Attribute>
-        <Attribute>
-          <AttributeName>System.Reflection.AssemblyCompany("Novell, Inc.")</AttributeName>
         </Attribute>
         <Attribute>
           <AttributeName>System.Reflection.AssemblyCopyright("2007-2008 Novell, Inc.")</AttributeName>
@@ -20,6 +17,9 @@
         <Attribute>
           <AttributeName>System.Reflection.AssemblyTitle("Curses Binding for Mono/.NET")</AttributeName>
         </Attribute>
+        <Attribute>
+          <AttributeName>System.Runtime.CompilerServices.RuntimeCompatibility(WrapNonExceptionThrows=true)</AttributeName>
+        </Attribute>
       </Attributes>
     </Assembly>
   </Assemblies>
@@ -29,7 +29,7 @@
     <Namespace Name="Mono.Terminal">
       <Type Name="Application" Kind="Class" />
       <Type Name="Button" Kind="Class" />
-      <Type Name="CheckBox" />
+      <Type Name="CheckBox" Kind="Class" />
       <Type Name="Container" Kind="Class" />
       <Type Name="Curses" Kind="Class" />
       <Type Name="Curses+Event" Kind="Enumeration" />
