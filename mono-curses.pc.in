@@ -8,4 +8,4 @@ Description: Mono bindings for Curses Console Library.
 Version: @VERSION@
 
 Requires: 
-Libs:  -L:${pkglibdir} -r:mono-curses.dll
+Libs:  -lib:${pkglibdir} -r:mono-curses.dll
