@@ -1922,6 +1922,12 @@ namespace Mono.Terminal {
 		///   Color used for error text.
 		/// </summary>
 		public static int ColorError;
+
+		/// <summary>
+		///   The basic color of the terminal.
+		/// </summary>
+		public static int ColorBasic;
+		
 		
 		/// <summary>
 		///   The time before we timeout on a curses call.
@@ -2033,6 +2039,7 @@ namespace Mono.Terminal {
 
 				ColorError = Curses.A_BOLD;
 			}
+			ColorBasic = MakeColor (-1, -1);
 		}
 
 		/// <summary>
