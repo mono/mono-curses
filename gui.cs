@@ -615,6 +615,9 @@ namespace Mono.Terminal {
 		/// </remarks>
 		public bool Secret { get; set; }
 		
+		/// <summary>
+		///   Sets the cursor position.
+		/// </summary>
 		public override void PositionCursor ()
 		{
 			Move (y, x+point-first);
@@ -1862,6 +1865,50 @@ namespace Mono.Terminal {
 			LayoutButtons ();
 		}
 	}
+
+	public class Menu {
+		public Menu (string title, string help, Menu [] children)
+		{
+			Title = title;
+			Help = help;
+			Children = children;
+		}
+		public string Title { get; set; }
+		public string Help { get; set; }
+		public Menu [] Children { get; set; }
+	}
+	
+	public class MenuBar : Widget {
+		public Menu [] Menus { get; set; }
+		bool active;
+		
+		public MenuBar (Menu [] menus) : base (0, 0, Application.Cols, 1)
+		{
+			Menus = menus;
+		}
+
+		public override void Redraw ()
+		{
+			Move (y, 0);
+			Curses.attrset (Application.ColorFocus);
+			for (int i = 0; i < Application.Cols; i++)
+				Curses.addch (' ');
+
+			Move (y, 1);
+			foreach (var menu in Menus){
+				if (active){
+				} else {
+				}
+				Curses.addch (' ');
+				Curses.addstr (menu.Title);
+				Curses.addstr ("  ");
+				if (active){
+				} else {
+				}
+				Curses.addch (' ');
+			}
+		}
+	}
 	
 	/// <summary>
 	///   gui.cs Application driver.
@@ -2008,6 +2055,7 @@ namespace Mono.Terminal {
 				use_color = Curses.has_colors ();
 			
 			Curses.start_color ();
+			Curses.use_default_colors ();
 			if (use_color){
 				ColorNormal = MakeColor (Curses.COLOR_WHITE, Curses.COLOR_BLUE);
 				ColorFocus = MakeColor (Curses.COLOR_BLACK, Curses.COLOR_CYAN);
