@@ -1,11 +1,11 @@
 <Type Name="Menu" FullName="Mono.Terminal.Menu">
-  <TypeSignature Language="C#" Value="public class Menu" />
+  <TypeSignature Language="C#" Value="public class Menu : Mono.Terminal.Frame" />
   <AssemblyInfo>
     <AssemblyName>mono-curses</AssemblyName>
     <AssemblyVersion>1.0.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
-    <BaseTypeName>System.Object</BaseTypeName>
+    <BaseTypeName>Mono.Terminal.Frame</BaseTypeName>
   </Base>
   <Interfaces />
   <Docs>

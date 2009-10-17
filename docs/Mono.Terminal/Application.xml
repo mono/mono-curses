@@ -169,7 +169,9 @@
         
         <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member><Member MemberName="ColorNormal">
+    </Member><Member MemberName="ColorMenuSelected"><MemberSignature Language="C#" Value="public static int ColorMenuSelected;" /><MemberType>Field</MemberType><AssemblyInfo><AssemblyVersion>1.0.0.0</AssemblyVersion></AssemblyInfo><ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue><Docs><summary>
+            The basic color of the terminal.
+            </summary><remarks>To be added.</remarks></Docs></Member><Member MemberName="ColorNormal">
       <MemberSignature Language="C#" Value="public static int ColorNormal;" />
       <MemberType>Field</MemberType>
       <ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue>

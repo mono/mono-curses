@@ -110,6 +110,16 @@ main (int argc, char *argv [])
 	put2 ("Mouse", KEY_MOUSE);
 	put2 ("End",   KEY_END);
 	put2 ("DeleteChar", KEY_DC);
+	put2 ("F1", KEY_F(1));
+	put2 ("F2", KEY_F(2));
+	put2 ("F3", KEY_F(3));
+	put2 ("F4", KEY_F(4));
+	put2 ("F5", KEY_F(5));
+	put2 ("F6", KEY_F(6));
+	put2 ("F7", KEY_F(7));
+	put2 ("F8", KEY_F(8));
+	put2 ("F9", KEY_F(9));
+	put2 ("F10", KEY_F(10));
 	
 	diff = COLOR_PAIR (1) - COLOR_PAIR(0);
 	fprintf (OUT, "\n\n\tstatic public int ColorPair(int n){\n"

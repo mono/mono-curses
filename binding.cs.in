@@ -239,6 +239,9 @@ namespace Mono.Terminal {
 
 		[DllImport ("@CURSES@")]
 		extern internal static int init_pair (short pair, short f, short b);
+
+		[DllImport ("@CURSES@")]
+		extern internal static int use_default_colors ();
 		
 #endregion
 		

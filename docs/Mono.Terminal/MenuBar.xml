@@ -1,11 +1,11 @@
 <Type Name="MenuBar" FullName="Mono.Terminal.MenuBar">
-  <TypeSignature Language="C#" Value="public class MenuBar : Mono.Terminal.Widget" />
+  <TypeSignature Language="C#" Value="public class MenuBar : Mono.Terminal.Container" />
   <AssemblyInfo>
     <AssemblyName>mono-curses</AssemblyName>
     <AssemblyVersion>1.0.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
-    <BaseTypeName>Mono.Terminal.Widget</BaseTypeName>
+    <BaseTypeName>Mono.Terminal.Container</BaseTypeName>
   </Base>
   <Interfaces />
   <Docs>
@@ -22,7 +22,9 @@
       </AssemblyInfo>
       <Parameters><Parameter Name="menus" Type="Mono.Terminal.Menu[]" /></Parameters>
       <Docs><param name="menus">To be added.</param><summary>To be added.</summary><remarks>To be added.</remarks></Docs>
-    </Member><Member MemberName="Menus">
+    </Member><Member MemberName="Activate"><MemberSignature Language="C#" Value="public void Activate (int idx);" /><MemberType>Method</MemberType><AssemblyInfo><AssemblyVersion>1.0.0.0</AssemblyVersion></AssemblyInfo><ReturnValue><ReturnType>System.Void</ReturnType></ReturnValue><Parameters><Parameter Name="idx" Type="System.Int32" /></Parameters><Docs><param name="idx">To be added.</param><summary>
+            Activates the menubar
+            </summary><remarks>To be added.</remarks></Docs></Member><Member MemberName="Menus">
       <MemberSignature Language="C#" Value="public Mono.Terminal.Menu[] Menus { set; get; }" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
