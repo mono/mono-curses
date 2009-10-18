@@ -510,6 +510,29 @@
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
     </Member>
+    <Member MemberName="MakeColor">
+      <MemberSignature Language="C#" Value="public static int MakeColor (short f, short b);" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="f" Type="System.Int16" />
+        <Parameter Name="b" Type="System.Int16" />
+      </Parameters>
+      <Docs>
+        <param name="f">To be added.</param>
+        <param name="b">To be added.</param>
+        <summary>
+            Creates a new Curses color to be used by Gui.cs apps
+            </summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
     <Member MemberName="MouseEventsAvailable">
       <MemberSignature Language="C#" Value="public static Mono.Terminal.Curses.Event MouseEventsAvailable;" />
       <MemberType>Field</MemberType>
@@ -623,6 +646,21 @@
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+    </Member>
+    <Member MemberName="UsingColor">
+      <MemberSignature Language="C#" Value="public static bool UsingColor { get; }" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
     </Member>
   </Members>
 </Type>

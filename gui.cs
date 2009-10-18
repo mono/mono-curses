@@ -661,6 +661,11 @@ namespace Mono.Terminal {
 			get { return color; }
 			set { color = value; Container.Redraw (); }
 		}
+
+		/// <summary>
+		///    The current cursor position.
+		/// </summary>
+		public int CursorPosition { get { return point; }}
 		
 		/// <summary>
 		///   Sets the cursor position.
@@ -748,7 +753,7 @@ namespace Mono.Terminal {
 				point++;
 				Adjust ();
 				break;
-				
+
 			case 11: // Control-k, kill-to-end
 				kill = text.Substring (point);
 				SetText (text.Substring (0, point));
@@ -768,7 +773,21 @@ namespace Mono.Terminal {
 				}
 				Adjust ();
 				break;
-				
+
+			case (int) 'b' + Curses.KeyAlt:
+				int bw = WordBackward (point);
+				if (bw != -1)
+					point = bw;
+				Adjust ();
+				break;
+
+			case (int) 'f' + Curses.KeyAlt:
+				int fw = WordForward (point);
+				if (fw != -1)
+					point = fw;
+				Adjust ();
+				break;
+			
 			default:
 				// Ignore other control characters.
 				if (key < 32 || key > 255)
@@ -786,6 +805,65 @@ namespace Mono.Terminal {
 			return true;
 		}
 
+		int WordForward (int p)
+		{
+			if (p >= text.Length)
+				return -1;
+
+			int i = p;
+			if (Char.IsPunctuation (text [p]) || Char.IsWhiteSpace (text[p])){
+				for (; i < text.Length; i++){
+					if (Char.IsLetterOrDigit (text [i]))
+					    break;
+				}
+				for (; i < text.Length; i++){
+					if (!Char.IsLetterOrDigit (text [i]))
+					    break;
+				}
+			} else {
+				for (; i < text.Length; i++){
+					if (!Char.IsLetterOrDigit (text [i]))
+					    break;
+				}
+			}
+			if (i != p)
+				return i;
+			return -1;
+		}
+
+		int WordBackward (int p)
+		{
+			if (p == 0)
+				return -1;
+
+			int i = p-1;
+			if (i == 0)
+				return 0;
+			
+			if (Char.IsPunctuation (text [i]) || Char.IsSymbol (text [i]) || Char.IsWhiteSpace (text[i])){
+				for (; i >= 0; i--){
+					if (Char.IsLetterOrDigit (text [i]))
+						break;
+				}
+				for (; i >= 0; i--){
+					if (!Char.IsLetterOrDigit (text[i]))
+						break;
+				}
+			} else {
+				for (; i >= 0; i--){
+					if (!Char.IsLetterOrDigit (text [i]))
+						break;
+				}
+			}
+			i++;
+			
+			if (i != p)
+				return i;
+
+			return -1;
+		}
+		
+		
 		public override void ProcessMouse (Curses.MouseEvent ev)
 		{
 			if ((ev.ButtonState & Curses.Event.Button1Clicked) == 0)
@@ -2271,7 +2349,10 @@ namespace Mono.Terminal {
 		/// </summary>
 		public static Curses.Event MouseEventsAvailable;
 		
-		static int MakeColor (short f, short b)
+		/// <summary>
+		///    Creates a new Curses color to be used by Gui.cs apps
+		/// </summary>
+		public static int MakeColor (short f, short b)
 		{
 			Curses.init_pair (++last_color_pair, f, b);
 			return Curses.ColorPair (last_color_pair);
@@ -2285,6 +2366,8 @@ namespace Mono.Terminal {
 				return empty_container;
 			}
 		}
+
+		public static bool UsingColor { get; private set; }
 		
 		/// <summary>
 		///    Initializes the runtime.   The boolean flag
@@ -2309,13 +2392,13 @@ namespace Mono.Terminal {
 			MouseEventsAvailable = Curses.console_sharp_mouse_mask (
 				Curses.Event.Button1Clicked | Curses.Event.Button1DoubleClicked, out old);
 			
-			bool use_color = false;
+			UsingColor = false;
 			if (!disable_color)
-				use_color = Curses.has_colors ();
+				UsingColor = Curses.has_colors ();
 			
 			Curses.start_color ();
 			Curses.use_default_colors ();
-			if (use_color){
+			if (UsingColor){
 				ColorNormal = MakeColor (Curses.COLOR_WHITE, Curses.COLOR_BLUE);
 				ColorFocus = MakeColor (Curses.COLOR_BLACK, Curses.COLOR_CYAN);
 				ColorHotNormal = Curses.A_BOLD | MakeColor (Curses.COLOR_YELLOW, Curses.COLOR_BLUE);
