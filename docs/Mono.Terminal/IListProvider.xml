@@ -16,102 +16,159 @@
             </remarks>
   </Docs>
   <Members>
-    
-    
-    
-    
-    
-    
     <Member MemberName="AllowMark">
       <MemberSignature Language="C#" Value="public bool AllowMark { get; }" />
       <MemberType>Property</MemberType>
-      <ReturnValue><ReturnType>System.Boolean</ReturnType></ReturnValue>
-      <Docs><summary>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
             Whether the ListView should allow items to be
             marked.
-            </summary><value>To be added.</value><remarks>To be added.</remarks></Docs>
+            </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member><Member MemberName="IsMarked">
+    </Member>
+    <Member MemberName="IsMarked">
       <MemberSignature Language="C#" Value="public bool IsMarked (int item);" />
       <MemberType>Method</MemberType>
-      <ReturnValue><ReturnType>System.Boolean</ReturnType></ReturnValue>
-      <Parameters><Parameter Name="item" Type="System.Int32" /></Parameters>
-      <Docs><param name="item">To be added.</param><summary>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="item" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="item">To be added.</param>
+        <summary>
             Whether the given item is marked.
-            </summary><returns>To be added.</returns><remarks>To be added.</remarks></Docs>
+            </summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member><Member MemberName="Items">
+    </Member>
+    <Member MemberName="Items">
       <MemberSignature Language="C#" Value="public int Items { get; }" />
       <MemberType>Property</MemberType>
-      <ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue>
-      <Docs><summary>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
             Number of items in the model.
-            </summary><value>To be added.</value><remarks>
+            </summary>
+        <value>To be added.</value>
+        <remarks>
             This should return the number of items in the
             model.
-            </remarks></Docs>
+            </remarks>
+      </Docs>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member><Member MemberName="ProcessKey">
+    </Member>
+    <Member MemberName="ProcessKey">
       <MemberSignature Language="C#" Value="public bool ProcessKey (int ch);" />
       <MemberType>Method</MemberType>
-      <ReturnValue><ReturnType>System.Boolean</ReturnType></ReturnValue>
-      <Parameters><Parameter Name="ch" Type="System.Int32" /></Parameters>
-      <Docs><param name="ch">To be added.</param><summary>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ch" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="ch">To be added.</param>
+        <summary>
             Allows the model to process the given keystroke.
-            </summary><returns>To be added.</returns><remarks>
+            </summary>
+        <returns>To be added.</returns>
+        <remarks>
             The model should return true if the key was
             processed, false otherwise.
-            </remarks></Docs>
+            </remarks>
+      </Docs>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member><Member MemberName="Render">
+    </Member>
+    <Member MemberName="Render">
       <MemberSignature Language="C#" Value="public void Render (int line, int col, int width, int item);" />
       <MemberType>Method</MemberType>
-      <ReturnValue><ReturnType>System.Void</ReturnType></ReturnValue>
-      <Parameters><Parameter Name="line" Type="System.Int32" /><Parameter Name="col" Type="System.Int32" /><Parameter Name="width" Type="System.Int32" /><Parameter Name="item" Type="System.Int32" /></Parameters>
-      <Docs><param name="line">To be added.</param><param name="col">To be added.</param><param name="width">To be added.</param><param name="item">To be added.</param><summary>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="line" Type="System.Int32" />
+        <Parameter Name="col" Type="System.Int32" />
+        <Parameter Name="width" Type="System.Int32" />
+        <Parameter Name="item" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="line">To be added.</param>
+        <param name="col">To be added.</param>
+        <param name="width">To be added.</param>
+        <param name="item">To be added.</param>
+        <summary>
             This should render the item at the given line,
             col with the specified width.
-            </summary><remarks>To be added.</remarks></Docs>
+            </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member><Member MemberName="SelectedChanged">
+    </Member>
+    <Member MemberName="SelectedChanged">
       <MemberSignature Language="C#" Value="public void SelectedChanged ();" />
       <MemberType>Method</MemberType>
-      <ReturnValue><ReturnType>System.Void</ReturnType></ReturnValue>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
       <Parameters />
-      <Docs><summary>
+      <Docs>
+        <summary>
             Callback: invoked when the selected item has changed.
-            </summary><remarks>To be added.</remarks></Docs>
+            </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member><Member MemberName="SetListView">
+    </Member>
+    <Member MemberName="SetListView">
       <MemberSignature Language="C#" Value="public void SetListView (Mono.Terminal.ListView target);" />
       <MemberType>Method</MemberType>
-      <ReturnValue><ReturnType>System.Void</ReturnType></ReturnValue>
-      <Parameters><Parameter Name="target" Type="Mono.Terminal.ListView" /></Parameters>
-      <Docs><param name="target">To be added.</param><summary>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="target" Type="Mono.Terminal.ListView" />
+      </Parameters>
+      <Docs>
+        <param name="target">To be added.</param>
+        <summary>
             Callback: this is the way that the model is
             hooked up to its actual view.
-            </summary><remarks>To be added.</remarks></Docs>
+            </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
     </Member>
   </Members>

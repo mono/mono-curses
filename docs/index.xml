@@ -3,13 +3,10 @@
     <Assembly Name="mono-curses" Version="1.0.0.0">
       <Attributes>
         <Attribute>
-          <AttributeName>System.Runtime.CompilerServices.RuntimeCompatibility(WrapNonExceptionThrows=true)</AttributeName>
+          <AttributeName>System.Reflection.AssemblyCompany("Novell, Inc.")</AttributeName>
         </Attribute>
         <Attribute>
           <AttributeName>System.Reflection.AssemblyConfiguration("")</AttributeName>
-        </Attribute>
-        <Attribute>
-          <AttributeName>System.Reflection.AssemblyCompany("Novell, Inc.")</AttributeName>
         </Attribute>
         <Attribute>
           <AttributeName>System.Reflection.AssemblyCopyright("2007-2008 Novell, Inc.")</AttributeName>
@@ -20,6 +17,9 @@
         <Attribute>
           <AttributeName>System.Reflection.AssemblyTitle("Curses Binding for Mono/.NET")</AttributeName>
         </Attribute>
+        <Attribute>
+          <AttributeName>System.Runtime.CompilerServices.RuntimeCompatibility(WrapNonExceptionThrows=true)</AttributeName>
+        </Attribute>
       </Attributes>
     </Assembly>
   </Assemblies>
@@ -27,7 +27,7 @@
   <Copyright>To be added.</Copyright>
   <Types>
     <Namespace Name="Mono.Terminal">
-      <Type Name="Action" />
+      <Type Name="Action" Kind="Delegate" />
       <Type Name="Application" Kind="Class" />
       <Type Name="Button" Kind="Class" />
       <Type Name="CheckBox" Kind="Class" />
@@ -42,9 +42,9 @@
       <Type Name="IListProvider" Kind="Interface" />
       <Type Name="Label" Kind="Class" />
       <Type Name="ListView" Kind="Class" />
-      <Type Name="MenuBar" />
-      <Type Name="MenuBarItem" />
-      <Type Name="MenuItem" />
+      <Type Name="MenuBar" Kind="Class" />
+      <Type Name="MenuBarItem" Kind="Class" />
+      <Type Name="MenuItem" Kind="Class" />
       <Type Name="Screen" Kind="Class" />
       <Type Name="TrimLabel" Kind="Class" />
       <Type Name="Widget" Kind="Class" />

@@ -14,748 +14,1342 @@
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public Curses ();" />
       <MemberType>Constructor</MemberType>
       <Parameters />
-      <Docs><summary>To be added.</summary><remarks>To be added.</remarks></Docs>
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member><Member MemberName="A_BLINK">
+    </Member>
+    <Member MemberName="A_BLINK">
       <MemberSignature Language="C#" Value="public const int A_BLINK = 524288;" />
       <MemberType>Field</MemberType>
-      <ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
       <MemberValue>524288</MemberValue>
-      <Docs><summary>To be added.</summary><remarks>To be added.</remarks></Docs>
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member><Member MemberName="A_BOLD">
+    </Member>
+    <Member MemberName="A_BOLD">
       <MemberSignature Language="C#" Value="public const int A_BOLD = 2097152;" />
       <MemberType>Field</MemberType>
-      <ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
       <MemberValue>2097152</MemberValue>
-      <Docs><summary>To be added.</summary><remarks>To be added.</remarks></Docs>
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member><Member MemberName="A_DIM">
+    </Member>
+    <Member MemberName="A_DIM">
       <MemberSignature Language="C#" Value="public const int A_DIM = 1048576;" />
       <MemberType>Field</MemberType>
-      <ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
       <MemberValue>1048576</MemberValue>
-      <Docs><summary>To be added.</summary><remarks>To be added.</remarks></Docs>
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member><Member MemberName="A_INVIS">
+    </Member>
+    <Member MemberName="A_INVIS">
       <MemberSignature Language="C#" Value="public const int A_INVIS = 8388608;" />
       <MemberType>Field</MemberType>
-      <ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
       <MemberValue>8388608</MemberValue>
-      <Docs><summary>To be added.</summary><remarks>To be added.</remarks></Docs>
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member><Member MemberName="A_NORMAL">
+    </Member>
+    <Member MemberName="A_NORMAL">
       <MemberSignature Language="C#" Value="public const int A_NORMAL = 0;" />
       <MemberType>Field</MemberType>
-      <ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
       <MemberValue>0</MemberValue>
-      <Docs><summary>To be added.</summary><remarks>To be added.</remarks></Docs>
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member><Member MemberName="A_PROTECT">
+    </Member>
+    <Member MemberName="A_PROTECT">
       <MemberSignature Language="C#" Value="public const int A_PROTECT = 16777216;" />
       <MemberType>Field</MemberType>
-      <ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
       <MemberValue>16777216</MemberValue>
-      <Docs><summary>To be added.</summary><remarks>To be added.</remarks></Docs>
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member><Member MemberName="A_REVERSE">
+    </Member>
+    <Member MemberName="A_REVERSE">
       <MemberSignature Language="C#" Value="public const int A_REVERSE = 262144;" />
       <MemberType>Field</MemberType>
-      <ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
       <MemberValue>262144</MemberValue>
-      <Docs><summary>To be added.</summary><remarks>To be added.</remarks></Docs>
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member><Member MemberName="A_STANDOUT">
+    </Member>
+    <Member MemberName="A_STANDOUT">
       <MemberSignature Language="C#" Value="public const int A_STANDOUT = 65536;" />
       <MemberType>Field</MemberType>
-      <ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
       <MemberValue>65536</MemberValue>
-      <Docs><summary>To be added.</summary><remarks>To be added.</remarks></Docs>
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member><Member MemberName="A_UNDERLINE">
+    </Member>
+    <Member MemberName="A_UNDERLINE">
       <MemberSignature Language="C#" Value="public const int A_UNDERLINE = 131072;" />
       <MemberType>Field</MemberType>
-      <ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
       <MemberValue>131072</MemberValue>
-      <Docs><summary>To be added.</summary><remarks>To be added.</remarks></Docs>
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member><Member MemberName="ACS_HLINE">
+    </Member>
+    <Member MemberName="ACS_HLINE">
       <MemberSignature Language="C#" Value="public const int ACS_HLINE = 4194417;" />
       <MemberType>Field</MemberType>
-      <ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
       <MemberValue>4194417</MemberValue>
-      <Docs><summary>To be added.</summary><remarks>To be added.</remarks></Docs>
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member><Member MemberName="ACS_LLCORNER">
+    </Member>
+    <Member MemberName="ACS_LLCORNER">
       <MemberSignature Language="C#" Value="public const int ACS_LLCORNER = 4194413;" />
       <MemberType>Field</MemberType>
-      <ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
       <MemberValue>4194413</MemberValue>
-      <Docs><summary>To be added.</summary><remarks>To be added.</remarks></Docs>
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member><Member MemberName="ACS_LRCORNER">
+    </Member>
+    <Member MemberName="ACS_LRCORNER">
       <MemberSignature Language="C#" Value="public const int ACS_LRCORNER = 4194410;" />
       <MemberType>Field</MemberType>
-      <ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
       <MemberValue>4194410</MemberValue>
-      <Docs><summary>To be added.</summary><remarks>To be added.</remarks></Docs>
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member><Member MemberName="ACS_ULCORNER">
+    </Member>
+    <Member MemberName="ACS_ULCORNER">
       <MemberSignature Language="C#" Value="public const int ACS_ULCORNER = 4194412;" />
       <MemberType>Field</MemberType>
-      <ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
       <MemberValue>4194412</MemberValue>
-      <Docs><summary>To be added.</summary><remarks>To be added.</remarks></Docs>
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member><Member MemberName="ACS_URCORNER">
+    </Member>
+    <Member MemberName="ACS_URCORNER">
       <MemberSignature Language="C#" Value="public const int ACS_URCORNER = 4194411;" />
       <MemberType>Field</MemberType>
-      <ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
       <MemberValue>4194411</MemberValue>
-      <Docs><summary>To be added.</summary><remarks>To be added.</remarks></Docs>
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member><Member MemberName="ACS_VLINE">
+    </Member>
+    <Member MemberName="ACS_VLINE">
       <MemberSignature Language="C#" Value="public const int ACS_VLINE = 4194424;" />
       <MemberType>Field</MemberType>
-      <ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
       <MemberValue>4194424</MemberValue>
-      <Docs><summary>To be added.</summary><remarks>To be added.</remarks></Docs>
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member><Member MemberName="addch">
+    </Member>
+    <Member MemberName="addch">
       <MemberSignature Language="C#" Value="public static int addch (int ch);" />
       <MemberType>Method</MemberType>
-      <ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue>
-      <Parameters><Parameter Name="ch" Type="System.Int32" /></Parameters>
-      <Docs><param name="ch">To be added.</param><summary>To be added.</summary><returns>To be added.</returns><remarks>To be added.</remarks></Docs>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ch" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="ch">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member><Member MemberName="addstr">
+    </Member>
+    <Member MemberName="addstr">
       <MemberSignature Language="C#" Value="public static int addstr (string s);" />
       <MemberType>Method</MemberType>
-      <ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue>
-      <Parameters><Parameter Name="s" Type="System.String" /></Parameters>
-      <Docs><param name="s">To be added.</param><summary>To be added.</summary><returns>To be added.</returns><remarks>To be added.</remarks></Docs>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="s" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="s">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member><Member MemberName="addstr"><MemberSignature Language="C#" Value="public static int addstr (string format, object[] args);" /><MemberType>Method</MemberType><AssemblyInfo><AssemblyVersion>1.0.0.0</AssemblyVersion></AssemblyInfo><ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue><Parameters><Parameter Name="format" Type="System.String" /><Parameter Name="args" Type="System.Object[]"><Attributes><Attribute><AttributeName>System.ParamArray</AttributeName></Attribute></Attributes></Parameter></Parameters><Docs><param name="format">To be added.</param><param name="args">To be added.</param><summary>To be added.</summary><returns>To be added.</returns><remarks>To be added.</remarks></Docs></Member><Member MemberName="attroff">
+    </Member>
+    <Member MemberName="addstr">
+      <MemberSignature Language="C#" Value="public static int addstr (string format, object[] args);" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="format" Type="System.String" />
+        <Parameter Name="args" Type="System.Object[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="format">To be added.</param>
+        <param name="args">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="attroff">
       <MemberSignature Language="C#" Value="public static int attroff (int attrs);" />
       <MemberType>Method</MemberType>
-      <ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue>
-      <Parameters><Parameter Name="attrs" Type="System.Int32" /></Parameters>
-      <Docs><param name="attrs">To be added.</param><summary>To be added.</summary><returns>To be added.</returns><remarks>To be added.</remarks></Docs>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="attrs" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="attrs">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member><Member MemberName="attron">
+    </Member>
+    <Member MemberName="attron">
       <MemberSignature Language="C#" Value="public static int attron (int attrs);" />
       <MemberType>Method</MemberType>
-      <ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue>
-      <Parameters><Parameter Name="attrs" Type="System.Int32" /></Parameters>
-      <Docs><param name="attrs">To be added.</param><summary>To be added.</summary><returns>To be added.</returns><remarks>To be added.</remarks></Docs>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="attrs" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="attrs">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member><Member MemberName="attrset">
+    </Member>
+    <Member MemberName="attrset">
       <MemberSignature Language="C#" Value="public static int attrset (int attrs);" />
       <MemberType>Method</MemberType>
-      <ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue>
-      <Parameters><Parameter Name="attrs" Type="System.Int32" /></Parameters>
-      <Docs><param name="attrs">To be added.</param><summary>To be added.</summary><returns>To be added.</returns><remarks>To be added.</remarks></Docs>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="attrs" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="attrs">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member><Member MemberName="cbreak">
+    </Member>
+    <Member MemberName="cbreak">
       <MemberSignature Language="C#" Value="public static int cbreak ();" />
       <MemberType>Method</MemberType>
-      <ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
       <Parameters />
-      <Docs><summary>To be added.</summary><returns>To be added.</returns><remarks>To be added.</remarks></Docs>
+      <Docs>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member><Member MemberName="COLOR_BLACK">
+    </Member>
+    <Member MemberName="COLOR_BLACK">
       <MemberSignature Language="C#" Value="public const int COLOR_BLACK = 0;" />
       <MemberType>Field</MemberType>
-      <ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
       <MemberValue>0</MemberValue>
-      <Docs><summary>To be added.</summary><remarks>To be added.</remarks></Docs>
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member><Member MemberName="COLOR_BLUE">
+    </Member>
+    <Member MemberName="COLOR_BLUE">
       <MemberSignature Language="C#" Value="public const int COLOR_BLUE = 4;" />
       <MemberType>Field</MemberType>
-      <ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
       <MemberValue>4</MemberValue>
-      <Docs><summary>To be added.</summary><remarks>To be added.</remarks></Docs>
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member><Member MemberName="COLOR_CYAN">
+    </Member>
+    <Member MemberName="COLOR_CYAN">
       <MemberSignature Language="C#" Value="public const int COLOR_CYAN = 6;" />
       <MemberType>Field</MemberType>
-      <ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
       <MemberValue>6</MemberValue>
-      <Docs><summary>To be added.</summary><remarks>To be added.</remarks></Docs>
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member><Member MemberName="COLOR_GREEN">
+    </Member>
+    <Member MemberName="COLOR_GREEN">
       <MemberSignature Language="C#" Value="public const int COLOR_GREEN = 2;" />
       <MemberType>Field</MemberType>
-      <ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
       <MemberValue>2</MemberValue>
-      <Docs><summary>To be added.</summary><remarks>To be added.</remarks></Docs>
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member><Member MemberName="COLOR_MAGENTA">
+    </Member>
+    <Member MemberName="COLOR_MAGENTA">
       <MemberSignature Language="C#" Value="public const int COLOR_MAGENTA = 5;" />
       <MemberType>Field</MemberType>
-      <ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
       <MemberValue>5</MemberValue>
-      <Docs><summary>To be added.</summary><remarks>To be added.</remarks></Docs>
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member><Member MemberName="COLOR_RED">
+    </Member>
+    <Member MemberName="COLOR_RED">
       <MemberSignature Language="C#" Value="public const int COLOR_RED = 1;" />
       <MemberType>Field</MemberType>
-      <ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
       <MemberValue>1</MemberValue>
-      <Docs><summary>To be added.</summary><remarks>To be added.</remarks></Docs>
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member><Member MemberName="COLOR_WHITE">
+    </Member>
+    <Member MemberName="COLOR_WHITE">
       <MemberSignature Language="C#" Value="public const int COLOR_WHITE = 7;" />
       <MemberType>Field</MemberType>
-      <ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
       <MemberValue>7</MemberValue>
-      <Docs><summary>To be added.</summary><remarks>To be added.</remarks></Docs>
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member><Member MemberName="COLOR_YELLOW">
+    </Member>
+    <Member MemberName="COLOR_YELLOW">
       <MemberSignature Language="C#" Value="public const int COLOR_YELLOW = 3;" />
       <MemberType>Field</MemberType>
-      <ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
       <MemberValue>3</MemberValue>
-      <Docs><summary>To be added.</summary><remarks>To be added.</remarks></Docs>
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member><Member MemberName="ColorPair">
+    </Member>
+    <Member MemberName="ColorPair">
       <MemberSignature Language="C#" Value="public static int ColorPair (int n);" />
       <MemberType>Method</MemberType>
-      <ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue>
-      <Parameters><Parameter Name="n" Type="System.Int32" /></Parameters>
-      <Docs><param name="n">To be added.</param><summary>To be added.</summary><returns>To be added.</returns><remarks>To be added.</remarks></Docs>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="n" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="n">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member><Member MemberName="Cols">
+    </Member>
+    <Member MemberName="Cols">
       <MemberSignature Language="C#" Value="public static int Cols { get; }" />
       <MemberType>Property</MemberType>
-      <ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue>
-      <Docs><summary>To be added.</summary><value>To be added.</value><remarks>To be added.</remarks></Docs>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member><Member MemberName="doupdate">
+    </Member>
+    <Member MemberName="doupdate">
       <MemberSignature Language="C#" Value="public static int doupdate ();" />
       <MemberType>Method</MemberType>
-      <ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
       <Parameters />
-      <Docs><summary>To be added.</summary><returns>To be added.</returns><remarks>To be added.</remarks></Docs>
+      <Docs>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member><Member MemberName="echo">
+    </Member>
+    <Member MemberName="echo">
       <MemberSignature Language="C#" Value="public static int echo ();" />
       <MemberType>Method</MemberType>
-      <ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
       <Parameters />
-      <Docs><summary>To be added.</summary><returns>To be added.</returns><remarks>To be added.</remarks></Docs>
+      <Docs>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member><Member MemberName="endwin">
+    </Member>
+    <Member MemberName="endwin">
       <MemberSignature Language="C#" Value="public static int endwin ();" />
       <MemberType>Method</MemberType>
-      <ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
       <Parameters />
-      <Docs><summary>To be added.</summary><returns>To be added.</returns><remarks>To be added.</remarks></Docs>
+      <Docs>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member><Member MemberName="ERR">
+    </Member>
+    <Member MemberName="ERR">
       <MemberSignature Language="C#" Value="public const int ERR = -1;" />
       <MemberType>Field</MemberType>
-      <ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
       <MemberValue>-1</MemberValue>
-      <Docs><summary>To be added.</summary><remarks>To be added.</remarks></Docs>
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member><Member MemberName="halfdelay">
+    </Member>
+    <Member MemberName="halfdelay">
       <MemberSignature Language="C#" Value="public static int halfdelay (int t);" />
       <MemberType>Method</MemberType>
-      <ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue>
-      <Parameters><Parameter Name="t" Type="System.Int32" /></Parameters>
-      <Docs><param name="t">To be added.</param><summary>To be added.</summary><returns>To be added.</returns><remarks>To be added.</remarks></Docs>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="t" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="t">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member><Member MemberName="initscr">
+    </Member>
+    <Member MemberName="initscr">
       <MemberSignature Language="C#" Value="public static Mono.Terminal.Window initscr ();" />
       <MemberType>Method</MemberType>
-      <ReturnValue><ReturnType>Mono.Terminal.Window</ReturnType></ReturnValue>
+      <ReturnValue>
+        <ReturnType>Mono.Terminal.Window</ReturnType>
+      </ReturnValue>
       <Parameters />
-      <Docs><summary>To be added.</summary><returns>To be added.</returns><remarks>To be added.</remarks></Docs>
+      <Docs>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member><Member MemberName="internal_newterm">
+    </Member>
+    <Member MemberName="internal_newterm">
       <MemberSignature Language="C#" Value="public static IntPtr internal_newterm (string type, IntPtr file_outfd, IntPtr file_infd);" />
       <MemberType>Method</MemberType>
-      <ReturnValue><ReturnType>System.IntPtr</ReturnType></ReturnValue>
-      <Parameters><Parameter Name="type" Type="System.String" /><Parameter Name="file_outfd" Type="System.IntPtr" /><Parameter Name="file_infd" Type="System.IntPtr" /></Parameters>
-      <Docs><param name="type">To be added.</param><param name="file_outfd">To be added.</param><param name="file_infd">To be added.</param><summary>To be added.</summary><returns>To be added.</returns><remarks>To be added.</remarks></Docs>
+      <ReturnValue>
+        <ReturnType>System.IntPtr</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.String" />
+        <Parameter Name="file_outfd" Type="System.IntPtr" />
+        <Parameter Name="file_infd" Type="System.IntPtr" />
+      </Parameters>
+      <Docs>
+        <param name="type">To be added.</param>
+        <param name="file_outfd">To be added.</param>
+        <param name="file_infd">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member><Member MemberName="internal_set_term">
+    </Member>
+    <Member MemberName="internal_set_term">
       <MemberSignature Language="C#" Value="public static IntPtr internal_set_term (IntPtr newscreen);" />
       <MemberType>Method</MemberType>
-      <ReturnValue><ReturnType>System.IntPtr</ReturnType></ReturnValue>
-      <Parameters><Parameter Name="newscreen" Type="System.IntPtr" /></Parameters>
-      <Docs><param name="newscreen">To be added.</param><summary>To be added.</summary><returns>To be added.</returns><remarks>To be added.</remarks></Docs>
+      <ReturnValue>
+        <ReturnType>System.IntPtr</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="newscreen" Type="System.IntPtr" />
+      </Parameters>
+      <Docs>
+        <param name="newscreen">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member><Member MemberName="IsAlt">
+    </Member>
+    <Member MemberName="IsAlt">
       <MemberSignature Language="C#" Value="public static int IsAlt (int key);" />
       <MemberType>Method</MemberType>
-      <ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue>
-      <Parameters><Parameter Name="key" Type="System.Int32" /></Parameters>
-      <Docs><param name="key">To be added.</param><summary>To be added.</summary><returns>To be added.</returns><remarks>To be added.</remarks></Docs>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="key">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member><Member MemberName="isendwin">
+    </Member>
+    <Member MemberName="isendwin">
       <MemberSignature Language="C#" Value="public static bool isendwin ();" />
       <MemberType>Method</MemberType>
-      <ReturnValue><ReturnType>System.Boolean</ReturnType></ReturnValue>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
       <Parameters />
-      <Docs><summary>To be added.</summary><returns>To be added.</returns><remarks>To be added.</remarks></Docs>
+      <Docs>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member><Member MemberName="KeyAlt">
+    </Member>
+    <Member MemberName="KeyAlt">
       <MemberSignature Language="C#" Value="public const int KeyAlt = 8192;" />
       <MemberType>Field</MemberType>
-      <ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
       <MemberValue>8192</MemberValue>
-      <Docs><summary>To be added.</summary><remarks>To be added.</remarks></Docs>
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member><Member MemberName="KeyBackspace">
+    </Member>
+    <Member MemberName="KeyBackspace">
       <MemberSignature Language="C#" Value="public const int KeyBackspace = 263;" />
       <MemberType>Field</MemberType>
-      <ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
       <MemberValue>263</MemberValue>
-      <Docs><summary>To be added.</summary><remarks>To be added.</remarks></Docs>
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member><Member MemberName="KeyDeleteChar">
+    </Member>
+    <Member MemberName="KeyDeleteChar">
       <MemberSignature Language="C#" Value="public const int KeyDeleteChar = 330;" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-      <ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
       <MemberValue>330</MemberValue>
-      <Docs><summary>To be added.</summary><remarks>To be added.</remarks></Docs>
-    </Member><Member MemberName="KeyDown">
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="KeyDown">
       <MemberSignature Language="C#" Value="public const int KeyDown = 258;" />
       <MemberType>Field</MemberType>
-      <ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
       <MemberValue>258</MemberValue>
-      <Docs><summary>To be added.</summary><remarks>To be added.</remarks></Docs>
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member><Member MemberName="KeyEnd">
+    </Member>
+    <Member MemberName="KeyEnd">
       <MemberSignature Language="C#" Value="public const int KeyEnd = 360;" />
       <MemberType>Field</MemberType>
-      <ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
       <MemberValue>360</MemberValue>
-      <Docs><summary>To be added.</summary><remarks>To be added.</remarks></Docs>
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member><Member MemberName="KeyF1"><MemberSignature Language="C#" Value="public const int KeyF1 = 265;" /><MemberType>Field</MemberType><AssemblyInfo><AssemblyVersion>1.0.0.0</AssemblyVersion></AssemblyInfo><ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue><MemberValue>265</MemberValue><Docs><summary>To be added.</summary><remarks>To be added.</remarks></Docs></Member><Member MemberName="KeyF10"><MemberSignature Language="C#" Value="public const int KeyF10 = 274;" /><MemberType>Field</MemberType><AssemblyInfo><AssemblyVersion>1.0.0.0</AssemblyVersion></AssemblyInfo><ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue><MemberValue>274</MemberValue><Docs><summary>To be added.</summary><remarks>To be added.</remarks></Docs></Member><Member MemberName="KeyF2"><MemberSignature Language="C#" Value="public const int KeyF2 = 266;" /><MemberType>Field</MemberType><AssemblyInfo><AssemblyVersion>1.0.0.0</AssemblyVersion></AssemblyInfo><ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue><MemberValue>266</MemberValue><Docs><summary>To be added.</summary><remarks>To be added.</remarks></Docs></Member><Member MemberName="KeyF3"><MemberSignature Language="C#" Value="public const int KeyF3 = 267;" /><MemberType>Field</MemberType><AssemblyInfo><AssemblyVersion>1.0.0.0</AssemblyVersion></AssemblyInfo><ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue><MemberValue>267</MemberValue><Docs><summary>To be added.</summary><remarks>To be added.</remarks></Docs></Member><Member MemberName="KeyF4"><MemberSignature Language="C#" Value="public const int KeyF4 = 268;" /><MemberType>Field</MemberType><AssemblyInfo><AssemblyVersion>1.0.0.0</AssemblyVersion></AssemblyInfo><ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue><MemberValue>268</MemberValue><Docs><summary>To be added.</summary><remarks>To be added.</remarks></Docs></Member><Member MemberName="KeyF5"><MemberSignature Language="C#" Value="public const int KeyF5 = 269;" /><MemberType>Field</MemberType><AssemblyInfo><AssemblyVersion>1.0.0.0</AssemblyVersion></AssemblyInfo><ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue><MemberValue>269</MemberValue><Docs><summary>To be added.</summary><remarks>To be added.</remarks></Docs></Member><Member MemberName="KeyF6"><MemberSignature Language="C#" Value="public const int KeyF6 = 270;" /><MemberType>Field</MemberType><AssemblyInfo><AssemblyVersion>1.0.0.0</AssemblyVersion></AssemblyInfo><ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue><MemberValue>270</MemberValue><Docs><summary>To be added.</summary><remarks>To be added.</remarks></Docs></Member><Member MemberName="KeyF7"><MemberSignature Language="C#" Value="public const int KeyF7 = 271;" /><MemberType>Field</MemberType><AssemblyInfo><AssemblyVersion>1.0.0.0</AssemblyVersion></AssemblyInfo><ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue><MemberValue>271</MemberValue><Docs><summary>To be added.</summary><remarks>To be added.</remarks></Docs></Member><Member MemberName="KeyF8"><MemberSignature Language="C#" Value="public const int KeyF8 = 272;" /><MemberType>Field</MemberType><AssemblyInfo><AssemblyVersion>1.0.0.0</AssemblyVersion></AssemblyInfo><ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue><MemberValue>272</MemberValue><Docs><summary>To be added.</summary><remarks>To be added.</remarks></Docs></Member><Member MemberName="KeyF9"><MemberSignature Language="C#" Value="public const int KeyF9 = 273;" /><MemberType>Field</MemberType><AssemblyInfo><AssemblyVersion>1.0.0.0</AssemblyVersion></AssemblyInfo><ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue><MemberValue>273</MemberValue><Docs><summary>To be added.</summary><remarks>To be added.</remarks></Docs></Member><Member MemberName="KeyHome">
+    </Member>
+    <Member MemberName="KeyF1">
+      <MemberSignature Language="C#" Value="public const int KeyF1 = 265;" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <MemberValue>265</MemberValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="KeyF10">
+      <MemberSignature Language="C#" Value="public const int KeyF10 = 274;" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <MemberValue>274</MemberValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="KeyF2">
+      <MemberSignature Language="C#" Value="public const int KeyF2 = 266;" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <MemberValue>266</MemberValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="KeyF3">
+      <MemberSignature Language="C#" Value="public const int KeyF3 = 267;" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <MemberValue>267</MemberValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="KeyF4">
+      <MemberSignature Language="C#" Value="public const int KeyF4 = 268;" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <MemberValue>268</MemberValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="KeyF5">
+      <MemberSignature Language="C#" Value="public const int KeyF5 = 269;" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <MemberValue>269</MemberValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="KeyF6">
+      <MemberSignature Language="C#" Value="public const int KeyF6 = 270;" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <MemberValue>270</MemberValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="KeyF7">
+      <MemberSignature Language="C#" Value="public const int KeyF7 = 271;" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <MemberValue>271</MemberValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="KeyF8">
+      <MemberSignature Language="C#" Value="public const int KeyF8 = 272;" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <MemberValue>272</MemberValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="KeyF9">
+      <MemberSignature Language="C#" Value="public const int KeyF9 = 273;" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <MemberValue>273</MemberValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="KeyHome">
       <MemberSignature Language="C#" Value="public const int KeyHome = 262;" />
       <MemberType>Field</MemberType>
-      <ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
       <MemberValue>262</MemberValue>
-      <Docs><summary>To be added.</summary><remarks>To be added.</remarks></Docs>
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member><Member MemberName="KeyLeft">
+    </Member>
+    <Member MemberName="KeyLeft">
       <MemberSignature Language="C#" Value="public const int KeyLeft = 260;" />
       <MemberType>Field</MemberType>
-      <ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
       <MemberValue>260</MemberValue>
-      <Docs><summary>To be added.</summary><remarks>To be added.</remarks></Docs>
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member><Member MemberName="KeyMouse">
+    </Member>
+    <Member MemberName="KeyMouse">
       <MemberSignature Language="C#" Value="public const int KeyMouse = 409;" />
       <MemberType>Field</MemberType>
-      <ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
       <MemberValue>409</MemberValue>
-      <Docs><summary>To be added.</summary><remarks>To be added.</remarks></Docs>
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member><Member MemberName="KeyNPage">
+    </Member>
+    <Member MemberName="KeyNPage">
       <MemberSignature Language="C#" Value="public const int KeyNPage = 338;" />
       <MemberType>Field</MemberType>
-      <ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
       <MemberValue>338</MemberValue>
-      <Docs><summary>To be added.</summary><remarks>To be added.</remarks></Docs>
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member><Member MemberName="KeyPPage">
+    </Member>
+    <Member MemberName="KeyPPage">
       <MemberSignature Language="C#" Value="public const int KeyPPage = 339;" />
       <MemberType>Field</MemberType>
-      <ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
       <MemberValue>339</MemberValue>
-      <Docs><summary>To be added.</summary><remarks>To be added.</remarks></Docs>
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member><Member MemberName="KeyRight">
+    </Member>
+    <Member MemberName="KeyRight">
       <MemberSignature Language="C#" Value="public const int KeyRight = 261;" />
       <MemberType>Field</MemberType>
-      <ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
       <MemberValue>261</MemberValue>
-      <Docs><summary>To be added.</summary><remarks>To be added.</remarks></Docs>
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member><Member MemberName="KeyUp">
+    </Member>
+    <Member MemberName="KeyUp">
       <MemberSignature Language="C#" Value="public const int KeyUp = 259;" />
       <MemberType>Field</MemberType>
-      <ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
       <MemberValue>259</MemberValue>
-      <Docs><summary>To be added.</summary><remarks>To be added.</remarks></Docs>
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member><Member MemberName="Lines">
+    </Member>
+    <Member MemberName="Lines">
       <MemberSignature Language="C#" Value="public static int Lines { get; }" />
       <MemberType>Property</MemberType>
-      <ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue>
-      <Docs><summary>To be added.</summary><value>To be added.</value><remarks>To be added.</remarks></Docs>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member><Member MemberName="move">
+    </Member>
+    <Member MemberName="move">
       <MemberSignature Language="C#" Value="public static int move (int line, int col);" />
       <MemberType>Method</MemberType>
-      <ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue>
-      <Parameters><Parameter Name="line" Type="System.Int32" /><Parameter Name="col" Type="System.Int32" /></Parameters>
-      <Docs><param name="line">To be added.</param><param name="col">To be added.</param><summary>To be added.</summary><returns>To be added.</returns><remarks>To be added.</remarks></Docs>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="line" Type="System.Int32" />
+        <Parameter Name="col" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="line">To be added.</param>
+        <param name="col">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member><Member MemberName="nl">
+    </Member>
+    <Member MemberName="nl">
       <MemberSignature Language="C#" Value="public static int nl ();" />
       <MemberType>Method</MemberType>
-      <ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
       <Parameters />
-      <Docs><summary>To be added.</summary><returns>To be added.</returns><remarks>To be added.</remarks></Docs>
+      <Docs>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member><Member MemberName="nocbreak">
+    </Member>
+    <Member MemberName="nocbreak">
       <MemberSignature Language="C#" Value="public static int nocbreak ();" />
       <MemberType>Method</MemberType>
-      <ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
       <Parameters />
-      <Docs><summary>To be added.</summary><returns>To be added.</returns><remarks>To be added.</remarks></Docs>
+      <Docs>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member><Member MemberName="noecho">
+    </Member>
+    <Member MemberName="noecho">
       <MemberSignature Language="C#" Value="public static int noecho ();" />
       <MemberType>Method</MemberType>
-      <ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
       <Parameters />
-      <Docs><summary>To be added.</summary><returns>To be added.</returns><remarks>To be added.</remarks></Docs>
+      <Docs>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member><Member MemberName="nonl">
+    </Member>
+    <Member MemberName="nonl">
       <MemberSignature Language="C#" Value="public static int nonl ();" />
       <MemberType>Method</MemberType>
-      <ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
       <Parameters />
-      <Docs><summary>To be added.</summary><returns>To be added.</returns><remarks>To be added.</remarks></Docs>
+      <Docs>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member><Member MemberName="noqiflush">
+    </Member>
+    <Member MemberName="noqiflush">
       <MemberSignature Language="C#" Value="public static void noqiflush ();" />
       <MemberType>Method</MemberType>
-      <ReturnValue><ReturnType>System.Void</ReturnType></ReturnValue>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
       <Parameters />
-      <Docs><summary>To be added.</summary><remarks>To be added.</remarks></Docs>
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member><Member MemberName="noraw">
+    </Member>
+    <Member MemberName="noraw">
       <MemberSignature Language="C#" Value="public static int noraw ();" />
       <MemberType>Method</MemberType>
-      <ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
       <Parameters />
-      <Docs><summary>To be added.</summary><returns>To be added.</returns><remarks>To be added.</remarks></Docs>
+      <Docs>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member><Member MemberName="qiflush">
+    </Member>
+    <Member MemberName="qiflush">
       <MemberSignature Language="C#" Value="public static void qiflush ();" />
       <MemberType>Method</MemberType>
-      <ReturnValue><ReturnType>System.Void</ReturnType></ReturnValue>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
       <Parameters />
-      <Docs><summary>To be added.</summary><remarks>To be added.</remarks></Docs>
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member><Member MemberName="raw">
+    </Member>
+    <Member MemberName="raw">
       <MemberSignature Language="C#" Value="public static int raw ();" />
       <MemberType>Method</MemberType>
-      <ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
       <Parameters />
-      <Docs><summary>To be added.</summary><returns>To be added.</returns><remarks>To be added.</remarks></Docs>
+      <Docs>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member><Member MemberName="refresh">
+    </Member>
+    <Member MemberName="refresh">
       <MemberSignature Language="C#" Value="public static int refresh ();" />
       <MemberType>Method</MemberType>
-      <ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
       <Parameters />
-      <Docs><summary>To be added.</summary><returns>To be added.</returns><remarks>To be added.</remarks></Docs>
+      <Docs>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member><Member MemberName="setscrreg">
+    </Member>
+    <Member MemberName="setscrreg">
       <MemberSignature Language="C#" Value="public static int setscrreg (int top, int bot);" />
       <MemberType>Method</MemberType>
-      <ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue>
-      <Parameters><Parameter Name="top" Type="System.Int32" /><Parameter Name="bot" Type="System.Int32" /></Parameters>
-      <Docs><param name="top">To be added.</param><param name="bot">To be added.</param><summary>To be added.</summary><returns>To be added.</returns><remarks>To be added.</remarks></Docs>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="top" Type="System.Int32" />
+        <Parameter Name="bot" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="top">To be added.</param>
+        <param name="bot">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member><Member MemberName="timeout">
+    </Member>
+    <Member MemberName="timeout">
       <MemberSignature Language="C#" Value="public static int timeout (int delay);" />
       <MemberType>Method</MemberType>
-      <ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue>
-      <Parameters><Parameter Name="delay" Type="System.Int32" /></Parameters>
-      <Docs><param name="delay">To be added.</param><summary>To be added.</summary><returns>To be added.</returns><remarks>To be added.</remarks></Docs>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="delay" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="delay">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member><Member MemberName="typeahead">
+    </Member>
+    <Member MemberName="typeahead">
       <MemberSignature Language="C#" Value="public static int typeahead (IntPtr fd);" />
       <MemberType>Method</MemberType>
-      <ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue>
-      <Parameters><Parameter Name="fd" Type="System.IntPtr" /></Parameters>
-      <Docs><param name="fd">To be added.</param><summary>To be added.</summary><returns>To be added.</returns><remarks>To be added.</remarks></Docs>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="fd" Type="System.IntPtr" />
+      </Parameters>
+      <Docs>
+        <param name="fd">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
     </Member>
   </Members>

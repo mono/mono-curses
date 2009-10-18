@@ -16,296 +16,498 @@
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public Widget (int x, int y, int w, int h);" />
       <MemberType>Constructor</MemberType>
-      <Parameters><Parameter Name="x" Type="System.Int32" /><Parameter Name="y" Type="System.Int32" /><Parameter Name="w" Type="System.Int32" /><Parameter Name="h" Type="System.Int32" /></Parameters>
-      <Docs><param name="x">To be added.</param><param name="y">To be added.</param><param name="w">To be added.</param><param name="h">To be added.</param><summary>
+      <Parameters>
+        <Parameter Name="x" Type="System.Int32" />
+        <Parameter Name="y" Type="System.Int32" />
+        <Parameter Name="w" Type="System.Int32" />
+        <Parameter Name="h" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="x">To be added.</param>
+        <param name="y">To be added.</param>
+        <param name="w">To be added.</param>
+        <param name="h">To be added.</param>
+        <summary>
             Public constructor for widgets
-            </summary><remarks><para>
+            </summary>
+        <remarks>
+          <para>
             Constructs a widget that starts at positio (x,y) and has width w and height h.
-            These parameters are used by the methods <see cref="M:Mono.Terminal.Widget.Clear" /> and <see cref="M:Mono.Terminal.Widget.Redraw" /></para></remarks></Docs>
+            These parameters are used by the methods <see cref="M:Mono.Terminal.Widget.Clear" /> and <see cref="M:Mono.Terminal.Widget.Redraw" /></para>
+        </remarks>
+      </Docs>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member><Member MemberName="BaseMove">
+    </Member>
+    <Member MemberName="BaseMove">
       <MemberSignature Language="C#" Value="public void BaseMove (int line, int col);" />
       <MemberType>Method</MemberType>
-      <ReturnValue><ReturnType>System.Void</ReturnType></ReturnValue>
-      <Parameters><Parameter Name="line" Type="System.Int32" /><Parameter Name="col" Type="System.Int32" /></Parameters>
-      <Docs><param name="line">To be added.</param><param name="col">To be added.</param><summary>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="line" Type="System.Int32" />
+        <Parameter Name="col" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="line">To be added.</param>
+        <param name="col">To be added.</param>
+        <summary>
             Move relative to the top of the container
-            </summary><remarks><para>This moves the current cursor position to the specified
+            </summary>
+        <remarks>
+          <para>This moves the current cursor position to the specified
             line and column relative to the start of the container
-            where this widget is located.</para><para>The difference between this
+            where this widget is located.</para>
+          <para>The difference between this
             method and <see cref="M:Mono.Terminal.Widget.Move(System.Int32,System.Int32)" /> is that this
             method goes to the beginning of the container,
             while <see cref="M:Mono.Terminal.Widget.Move(System.Int32,System.Int32)" /> goes to the first
-            position that widgets should use.</para><para>
+            position that widgets should use.</para>
+          <para>
             For example, a Frame usually takes up a couple
             of characters for padding.   This method would
             position the cursor at the beginning of the
             frame, while <see cref="M:Mono.Terminal.Widget.Move(System.Int32,System.Int32)" /> would position
             the cursor within the frame.
-            </para></remarks></Docs>
+            </para>
+        </remarks>
+      </Docs>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member><Member MemberName="CanFocus">
+    </Member>
+    <Member MemberName="CanFocus">
       <MemberSignature Language="C#" Value="public bool CanFocus { set; get; }" />
       <MemberType>Property</MemberType>
-      <ReturnValue><ReturnType>System.Boolean</ReturnType></ReturnValue>
-      <Docs><summary>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
             Focus status of this widget
-            </summary><value>To be added.</value><remarks><para>
+            </summary>
+        <value>To be added.</value>
+        <remarks>
+          <para>
             This is used typically by derived classes to flag whether
             this widget can receive focus or not.    Focus is activated
             by either clicking with the mouse on that widget or by using
-            </para></remarks></Docs>
+            </para>
+        </remarks>
+      </Docs>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member><Member MemberName="Clear">
+    </Member>
+    <Member MemberName="Clear">
       <MemberSignature Language="C#" Value="public void Clear ();" />
       <MemberType>Method</MemberType>
-      <ReturnValue><ReturnType>System.Void</ReturnType></ReturnValue>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
       <Parameters />
-      <Docs><summary>
+      <Docs>
+        <summary>
             Clears the widget region withthe current color.
-            </summary><remarks><para>
+            </summary>
+        <remarks>
+          <para>
             This clears the entire region used by this widget.
-            </para></remarks></Docs>
+            </para>
+        </remarks>
+      </Docs>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member><Member MemberName="ColorFocus">
+    </Member>
+    <Member MemberName="ColorFocus">
       <MemberSignature Language="C#" Value="public int ColorFocus { get; }" />
       <MemberType>Property</MemberType>
-      <ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue>
-      <Docs><summary>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
             The color used for rendering a focused widget.
-            </summary><value>To be added.</value><remarks>To be added.</remarks></Docs>
+            </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member><Member MemberName="ColorHotFocus">
+    </Member>
+    <Member MemberName="ColorHotFocus">
       <MemberSignature Language="C#" Value="public int ColorHotFocus { get; }" />
       <MemberType>Property</MemberType>
-      <ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue>
-      <Docs><summary>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
             The color used to render a hotkey in a focused widget.
-            </summary><value>To be added.</value><remarks>To be added.</remarks></Docs>
+            </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member><Member MemberName="ColorHotNormal">
+    </Member>
+    <Member MemberName="ColorHotNormal">
       <MemberSignature Language="C#" Value="public int ColorHotNormal { get; }" />
       <MemberType>Property</MemberType>
-      <ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue>
-      <Docs><summary>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
             The color used for rendering the hotkey on an
             unfocused widget.
-            </summary><value>To be added.</value><remarks>To be added.</remarks></Docs>
+            </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member><Member MemberName="ColorNormal">
+    </Member>
+    <Member MemberName="ColorNormal">
       <MemberSignature Language="C#" Value="public int ColorNormal { get; }" />
       <MemberType>Property</MemberType>
-      <ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue>
-      <Docs><summary>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
             The color used for rendering an unfocused widget.
-            </summary><value>To be added.</value><remarks>To be added.</remarks></Docs>
+            </summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member><Member MemberName="Container">
+    </Member>
+    <Member MemberName="Container">
       <MemberSignature Language="C#" Value="public Mono.Terminal.Container Container;" />
       <MemberType>Field</MemberType>
-      <ReturnValue><ReturnType>Mono.Terminal.Container</ReturnType></ReturnValue>
-      <Docs><summary>
+      <ReturnValue>
+        <ReturnType>Mono.Terminal.Container</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
             Points to the container of this widget
-            </summary><remarks>To be added.</remarks></Docs>
+            </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member><Member MemberName="DoSizeChanged">
+    </Member>
+    <Member MemberName="DoSizeChanged">
       <MemberSignature Language="C#" Value="public virtual void DoSizeChanged ();" />
       <MemberType>Method</MemberType>
-      <ReturnValue><ReturnType>System.Void</ReturnType></ReturnValue>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
       <Parameters />
-      <Docs><summary>
+      <Docs>
+        <summary>
             Method to relayout on size changes.
-            </summary><remarks><para>
+            </summary>
+        <remarks>
+          <para>
             This method can be overwritten by widgets that
             might be interested in adjusting their
             contents or children (if they are
             containers).
-            </para></remarks></Docs>
+            </para>
+        </remarks>
+      </Docs>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member><Member MemberName="DrawFrame">
+    </Member>
+    <Member MemberName="DrawFrame">
       <MemberSignature Language="C#" Value="public static void DrawFrame (int col, int line, int width, int height);" />
       <MemberType>Method</MemberType>
-      <ReturnValue><ReturnType>System.Void</ReturnType></ReturnValue>
-      <Parameters><Parameter Name="col" Type="System.Int32" /><Parameter Name="line" Type="System.Int32" /><Parameter Name="width" Type="System.Int32" /><Parameter Name="height" Type="System.Int32" /></Parameters>
-      <Docs><param name="col">To be added.</param><param name="line">To be added.</param><param name="width">To be added.</param><param name="height">To be added.</param><summary>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="col" Type="System.Int32" />
+        <Parameter Name="line" Type="System.Int32" />
+        <Parameter Name="width" Type="System.Int32" />
+        <Parameter Name="height" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="col">To be added.</param>
+        <param name="line">To be added.</param>
+        <param name="width">To be added.</param>
+        <param name="height">To be added.</param>
+        <summary>
             Utility function to draw frames
-            </summary><remarks>
+            </summary>
+        <remarks>
             Draws a frame with the current color in the
             specified coordinates.
-            </remarks></Docs>
+            </remarks>
+      </Docs>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member><Member MemberName="DrawFrame"><MemberSignature Language="C#" Value="public static void DrawFrame (int col, int line, int width, int height, bool fill);" /><MemberType>Method</MemberType><AssemblyInfo><AssemblyVersion>1.0.0.0</AssemblyVersion></AssemblyInfo><ReturnValue><ReturnType>System.Void</ReturnType></ReturnValue><Parameters><Parameter Name="col" Type="System.Int32" /><Parameter Name="line" Type="System.Int32" /><Parameter Name="width" Type="System.Int32" /><Parameter Name="height" Type="System.Int32" /><Parameter Name="fill" Type="System.Boolean" /></Parameters><Docs><param name="col">To be added.</param><param name="line">To be added.</param><param name="width">To be added.</param><param name="height">To be added.</param><param name="fill">To be added.</param><summary>
+    </Member>
+    <Member MemberName="DrawFrame">
+      <MemberSignature Language="C#" Value="public static void DrawFrame (int col, int line, int width, int height, bool fill);" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="col" Type="System.Int32" />
+        <Parameter Name="line" Type="System.Int32" />
+        <Parameter Name="width" Type="System.Int32" />
+        <Parameter Name="height" Type="System.Int32" />
+        <Parameter Name="fill" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="col">To be added.</param>
+        <param name="line">To be added.</param>
+        <param name="width">To be added.</param>
+        <param name="height">To be added.</param>
+        <param name="fill">To be added.</param>
+        <summary>
             Utility function to draw frames
-            </summary><remarks>
+            </summary>
+        <remarks>
             Draws a frame with the current color in the
             specified coordinates.
-            </remarks></Docs></Member><Member MemberName="DrawHotString"><MemberSignature Language="C#" Value="public static void DrawHotString (string s, int hotcolor, int color);" /><MemberType>Method</MemberType><AssemblyInfo><AssemblyVersion>1.0.0.0</AssemblyVersion></AssemblyInfo><ReturnValue><ReturnType>System.Void</ReturnType></ReturnValue><Parameters><Parameter Name="s" Type="System.String" /><Parameter Name="hotcolor" Type="System.Int32" /><Parameter Name="color" Type="System.Int32" /></Parameters><Docs><param name="s">To be added.</param><param name="hotcolor">To be added.</param><param name="color">To be added.</param><summary>
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawHotString">
+      <MemberSignature Language="C#" Value="public static void DrawHotString (string s, int hotcolor, int color);" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="s" Type="System.String" />
+        <Parameter Name="hotcolor" Type="System.Int32" />
+        <Parameter Name="color" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="s">To be added.</param>
+        <param name="hotcolor">To be added.</param>
+        <param name="color">To be added.</param>
+        <summary>
             Utility function to draw strings that contain a hotkey
-            </summary><remarks>
+            </summary>
+        <remarks>
             Draws a string with the given color.   If a character "_" is
             found, then the next character is drawn using the hotcolor.
-            </remarks></Docs></Member><Member MemberName="Fill">
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Fill">
       <MemberSignature Language="C#" Value="public Mono.Terminal.Fill Fill;" />
       <MemberType>Field</MemberType>
-      <ReturnValue><ReturnType>Mono.Terminal.Fill</ReturnType></ReturnValue>
-      <Docs><summary>To be added.</summary><remarks>To be added.</remarks></Docs>
+      <ReturnValue>
+        <ReturnType>Mono.Terminal.Fill</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member><Member MemberName="h">
+    </Member>
+    <Member MemberName="h">
       <MemberSignature Language="C#" Value="public int h;" />
       <MemberType>Field</MemberType>
-      <ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue>
-      <Docs><summary>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
             The height of this widget, it is the area that receives mouse events and that must be repainted.
-            </summary><remarks>To be added.</remarks></Docs>
+            </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member><Member MemberName="HasFocus">
+    </Member>
+    <Member MemberName="HasFocus">
       <MemberSignature Language="C#" Value="public bool HasFocus { set; get; }" />
       <MemberType>Property</MemberType>
-      <ReturnValue><ReturnType>System.Boolean</ReturnType></ReturnValue>
-      <Docs><summary>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
             Gets or sets the current focus status.
-            </summary><value>To be added.</value><remarks><para>
+            </summary>
+        <value>To be added.</value>
+        <remarks>
+          <para>
             A widget can grab the focus by setting this value to true and
             the current focus status can be inquired by using this property.
-            </para></remarks></Docs>
+            </para>
+        </remarks>
+      </Docs>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member><Member MemberName="Log">
+    </Member>
+    <Member MemberName="Log">
       <MemberSignature Language="C#" Value="public static void Log (string s);" />
       <MemberType>Method</MemberType>
-      <ReturnValue><ReturnType>System.Void</ReturnType></ReturnValue>
-      <Parameters><Parameter Name="s" Type="System.String" /></Parameters>
-      <Docs><param name="s">To be added.</param><summary>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="s" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="s">To be added.</param>
+        <summary>
             Utility function to log messages
-            </summary><remarks><para>This is a utility function that you can use to log messages
+            </summary>
+        <remarks>
+          <para>This is a utility function that you can use to log messages
             that will be stored in a file (as curses has taken over the
-            screen and you can not really log information there).</para><para>
-            The data is written to the file "log2" for now</para></remarks></Docs>
+            screen and you can not really log information there).</para>
+          <para>
+            The data is written to the file "log2" for now</para>
+        </remarks>
+      </Docs>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member><Member MemberName="Log">
+    </Member>
+    <Member MemberName="Log">
       <MemberSignature Language="C#" Value="public static void Log (string s, object[] args);" />
       <MemberType>Method</MemberType>
-      <ReturnValue><ReturnType>System.Void</ReturnType></ReturnValue>
-      <Parameters><Parameter Name="s" Type="System.String" /><Parameter Name="args" Type="System.Object[]"><Attributes><Attribute><AttributeName>System.ParamArray</AttributeName></Attribute></Attributes></Parameter></Parameters>
-      <Docs><param name="s">To be added.</param><param name="args">To be added.</param><summary>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="s" Type="System.String" />
+        <Parameter Name="args" Type="System.Object[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="s">To be added.</param>
+        <param name="args">To be added.</param>
+        <summary>
             Utility function to log messages
-            </summary><remarks><para>This is a utility function that you can use to log messages
+            </summary>
+        <remarks>
+          <para>This is a utility function that you can use to log messages
             that will be stored in a file (as curses has taken over the
-            screen and you can not really log information there). </para><para>
-            The data is written to the file "log2" for now</para></remarks></Docs>
+            screen and you can not really log information there). </para>
+          <para>
+            The data is written to the file "log2" for now</para>
+        </remarks>
+      </Docs>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member><Member MemberName="Move">
+    </Member>
+    <Member MemberName="Move">
       <MemberSignature Language="C#" Value="public void Move (int line, int col);" />
       <MemberType>Method</MemberType>
-      <ReturnValue><ReturnType>System.Void</ReturnType></ReturnValue>
-      <Parameters><Parameter Name="line" Type="System.Int32" /><Parameter Name="col" Type="System.Int32" /></Parameters>
-      <Docs><param name="line">To be added.</param><param name="col">To be added.</param><summary>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="line" Type="System.Int32" />
+        <Parameter Name="col" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="line">To be added.</param>
+        <param name="col">To be added.</param>
+        <summary>
             Moves inside the first location inside the container
-            </summary><remarks><para>This moves the current cursor position to the specified
+            </summary>
+        <remarks>
+          <para>This moves the current cursor position to the specified
             line and column relative to the container
-            client area where this widget is located.</para><para>The difference between this
+            client area where this widget is located.</para>
+          <para>The difference between this
             method and <see cref="M:Mono.Terminal.Widget.BaseMove(System.Int32,System.Int32)" /> is that this
             method goes to the beginning of the client area
             inside the container while <see cref="M:Mono.Terminal.Widget.BaseMove(System.Int32,System.Int32)" /> goes to the first
-            position that container uses.</para><para>
+            position that container uses.</para>
+          <para>
             For example, a Frame usually takes up a couple
             of characters for padding.   This method would
             position the cursor inside the client area,
             while <see cref="M:Mono.Terminal.Widget.BaseMove(System.Int32,System.Int32)" /> would position
             the cursor at the top of the frame.
-            </para></remarks></Docs>
+            </para>
+        </remarks>
+      </Docs>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member><Member MemberName="PositionCursor">
+    </Member>
+    <Member MemberName="PositionCursor">
       <MemberSignature Language="C#" Value="public virtual void PositionCursor ();" />
       <MemberType>Method</MemberType>
-      <ReturnValue><ReturnType>System.Void</ReturnType></ReturnValue>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
       <Parameters />
-      <Docs><summary>
+      <Docs>
+        <summary>
             Moves inside the first location inside the container
-            </summary><remarks><para>
+            </summary>
+        <remarks>
+          <para>
             A helper routine that positions the cursor at
             the logical beginning of the widget.   The
             default implementation merely puts the cursor at
             the beginning, but derived classes should find a
             suitable spot for the cursor to be shown.
-            </para><para>
+            </para>
+          <para>
             This method must be overwritten by most
             widgets since screen repaints can happen at
             any point and it is important to leave the
@@ -316,51 +518,77 @@
             would be the position where the hotkey is, for
             an entry the location of the editing cursor
             and so on.
-            </para></remarks></Docs>
+            </para>
+        </remarks>
+      </Docs>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member><Member MemberName="ProcessHotKey">
+    </Member>
+    <Member MemberName="ProcessHotKey">
       <MemberSignature Language="C#" Value="public virtual bool ProcessHotKey (int key);" />
       <MemberType>Method</MemberType>
-      <ReturnValue><ReturnType>System.Boolean</ReturnType></ReturnValue>
-      <Parameters><Parameter Name="key" Type="System.Int32" /></Parameters>
-      <Docs><param name="key">To be added.</param><summary>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="key">To be added.</param>
+        <summary>
             This method can be overwritten by widgets that
             want to provide accelerator functionality
             (Alt-key for example).
-            </summary><returns>To be added.</returns><remarks><para>
+            </summary>
+        <returns>To be added.</returns>
+        <remarks>
+          <para>
             Before keys are sent to the widgets on the
             current Container, all the widgets are
             processed and the key is passed to the widgets
             to allow some of them to process the keystroke
-            as a hot-key. </para><para>
+            as a hot-key. </para>
+          <para>
             For example, if you implement a button that
             has a hotkey ok "o", you would catch the
             combination Alt-o here.  If the event is
             caught, you must return true to stop the
             keystroke from being dispatched to other
             widgets.
-            </para><para>
+            </para>
+          <para>
             Typically to check if the keystroke is an
             Alt-key combination, you would use
             Curses.IsAlt(key) and then Char.ToUpper(key)
             to compare with your hotkey.
-            </para></remarks></Docs>
+            </para>
+        </remarks>
+      </Docs>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member><Member MemberName="ProcessKey">
+    </Member>
+    <Member MemberName="ProcessKey">
       <MemberSignature Language="C#" Value="public virtual bool ProcessKey (int key);" />
       <MemberType>Method</MemberType>
-      <ReturnValue><ReturnType>System.Boolean</ReturnType></ReturnValue>
-      <Parameters><Parameter Name="key" Type="System.Int32" /></Parameters>
-      <Docs><param name="key">To be added.</param><summary>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="key">To be added.</param>
+        <summary>
             If the widget is focused, gives the widget a
             chance to process the keystroke.
-            </summary><returns>To be added.</returns><remarks><para>
+            </summary>
+        <returns>To be added.</returns>
+        <remarks>
+          <para>
             Widgets can override this method if they are
             interested in processing the given keystroke.
             If they consume the keystroke, they must
@@ -369,81 +597,119 @@
             widget engine.    If they return false, the
             keystroke will be passed out to other widgets
             for processing.
-            </para></remarks></Docs>
+            </para>
+        </remarks>
+      </Docs>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member><Member MemberName="ProcessMouse">
+    </Member>
+    <Member MemberName="ProcessMouse">
       <MemberSignature Language="C#" Value="public virtual void ProcessMouse (Mono.Terminal.Curses.MouseEvent ev);" />
       <MemberType>Method</MemberType>
-      <ReturnValue><ReturnType>System.Void</ReturnType></ReturnValue>
-      <Parameters><Parameter Name="ev" Type="Mono.Terminal.Curses+MouseEvent" /></Parameters>
-      <Docs><param name="ev">To be added.</param><summary>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ev" Type="Mono.Terminal.Curses+MouseEvent" />
+      </Parameters>
+      <Docs>
+        <param name="ev">To be added.</param>
+        <summary>
             Gives widgets a chance to process the given
             mouse event.
-            </summary><remarks>
+            </summary>
+        <remarks>
             Widgets can inspect the value of
             ev.ButtonState to determine if this is a
             message they are interested in (typically
             ev.ButtonState &amp; Curses.Event.Button1Clicked).
-            </remarks></Docs>
+            </remarks>
+      </Docs>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member><Member MemberName="Redraw">
+    </Member>
+    <Member MemberName="Redraw">
       <MemberSignature Language="C#" Value="public virtual void Redraw ();" />
       <MemberType>Method</MemberType>
-      <ReturnValue><ReturnType>System.Void</ReturnType></ReturnValue>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
       <Parameters />
-      <Docs><summary>
+      <Docs>
+        <summary>
             Redraws the current widget, must be overwritten.
-            </summary><remarks><para>
+            </summary>
+        <remarks>
+          <para>
             This method should be overwritten by classes
             that derive from Widget.   The default
             implementation of this method just fills out
             the region with the character 'x'.
-            </para><para>
+            </para>
+          <para>
             Widgets are responsible for painting the
             entire region that they have been allocated.
-            </para></remarks></Docs>
+            </para>
+        </remarks>
+      </Docs>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member><Member MemberName="w">
+    </Member>
+    <Member MemberName="w">
       <MemberSignature Language="C#" Value="public int w;" />
       <MemberType>Field</MemberType>
-      <ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue>
-      <Docs><summary>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
             The width of this widget, it is the area that receives mouse events and that must be repainted.
-            </summary><remarks>To be added.</remarks></Docs>
+            </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member><Member MemberName="x">
+    </Member>
+    <Member MemberName="x">
       <MemberSignature Language="C#" Value="public int x;" />
       <MemberType>Field</MemberType>
-      <ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue>
-      <Docs><summary>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
             The x position of this widget
-            </summary><remarks>To be added.</remarks></Docs>
+            </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member><Member MemberName="y">
+    </Member>
+    <Member MemberName="y">
       <MemberSignature Language="C#" Value="public int y;" />
       <MemberType>Field</MemberType>
-      <ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue>
-      <Docs><summary>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
             The y position of this widget
-            </summary><remarks>To be added.</remarks></Docs>
+            </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
       <AssemblyInfo>
-        
-        <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
     </Member>
   </Members>

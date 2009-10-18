@@ -28,6 +28,7 @@
 
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using Mono;
 using System.IO;
 
@@ -598,7 +599,8 @@ namespace Mono.Terminal {
 	public class Entry : Widget {
 		string text, kill;
 		int first, point;
-
+		int color;
+		
 		/// <summary>
 		///   Changed event, raised when the text has clicked.
 		/// </summary>
@@ -622,6 +624,7 @@ namespace Mono.Terminal {
 			point = s.Length;
 			first = point > w ? point - w : 0;
 			CanFocus = true;
+			Color = Application.ColorDialogFocus;
 		}
 
 		/// <summary>
@@ -650,6 +653,14 @@ namespace Mono.Terminal {
 		///   This makes the text entry suitable for entering passwords. 
 		/// </remarks>
 		public bool Secret { get; set; }
+
+		/// <summary>
+		///    The color used to display the text
+		/// </summary>
+		public int Color {
+			get { return color; }
+			set { color = value; Container.Redraw (); }
+		}
 		
 		/// <summary>
 		///   Sets the cursor position.
@@ -661,7 +672,7 @@ namespace Mono.Terminal {
 		
 		public override void Redraw ()
 		{
-			Curses.attrset (Application.ColorDialogFocus);
+			Curses.attrset (Color);
 			Move (y, x);
 			
 			for (int i = 0; i < w; i++){
@@ -1346,8 +1357,8 @@ namespace Mono.Terminal {
 	///   inside their boundaries.   It provides focus handling
 	///   and event routing.
 	/// </remarks>
-	public class Container : Widget {
-		ArrayList widgets = new ArrayList ();
+	public class Container : Widget, IEnumerable {
+		List<Widget> widgets = new List<Widget> ();
 		Widget focused = null;
 		public bool Running;
 	
@@ -1360,6 +1371,11 @@ namespace Mono.Terminal {
 		
 		static Container ()
 		{
+		}
+
+		public IEnumerator GetEnumerator ()
+		{
+			return widgets.GetEnumerator ();
 		}
 		
 		/// <summary>
@@ -1802,7 +1818,7 @@ namespace Mono.Terminal {
 	/// </remarks>
 	public class Dialog : Frame {
 		int button_len;
-		ArrayList buttons;
+		List<Button> buttons;
 
 		const int button_space = 3;
 		
@@ -1850,7 +1866,7 @@ namespace Mono.Terminal {
 		public void AddButton (Button b)
 		{
 			if (buttons == null)
-				buttons = new ArrayList ();
+				buttons = new List<Button> ();
 			
 			buttons.Add (b);
 			button_len += b.w + button_space;
@@ -1958,7 +1974,8 @@ namespace Mono.Terminal {
 			
 			Application.Run (this);
 			selected = -1;
-			Redraw ();
+			Container.Redraw ();
+			
 			if (action != null)
 				action ();
 		}
@@ -2052,6 +2069,7 @@ namespace Mono.Terminal {
 
 		void Selected (MenuItem item)
 		{
+			Running = false;
 			action = item.Action;
 		}
 		
@@ -2098,7 +2116,7 @@ namespace Mono.Terminal {
 			case '\n':
 				if (Menus [selected].Children == null)
 					return false;
-				
+
 				Selected (Menus [selected].Children [Menus [selected].Current]);
 				break;
 
@@ -2116,8 +2134,8 @@ namespace Mono.Terminal {
 					
 					foreach (var mi in Menus [selected].Children){
 						int p = mi.Title.IndexOf ('_');
-						if (p != -1){
-							if (mi.Title [p] == c){
+						if (p != -1 && p+1 < mi.Title.Length){
+							if (mi.Title [p+1] == c){
 								Selected (mi);
 								return true;
 							}
@@ -2243,7 +2261,7 @@ namespace Mono.Terminal {
 		static public event EventHandler Iteration;
 
 		// Private variables
-		static ArrayList toplevels = new ArrayList ();
+		static List<Container> toplevels = new List<Container> ();
 		static short last_color_pair;
 		static bool inited;
 		static Container empty_container;
@@ -2376,7 +2394,7 @@ namespace Mono.Terminal {
 		/// </remarks>
 		static public void Msg (bool error, string caption, string t)
 		{
-			ArrayList lines = new ArrayList ();
+			var lines = new List<string> ();
 			int last = 0;
 			int max_w = 0;
 			string x;
