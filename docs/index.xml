@@ -27,6 +27,7 @@
   <Copyright>To be added.</Copyright>
   <Types>
     <Namespace Name="Mono.Terminal">
+      <Type Name="Action" />
       <Type Name="Application" Kind="Class" />
       <Type Name="Button" Kind="Class" />
       <Type Name="CheckBox" Kind="Class" />
@@ -41,8 +42,9 @@
       <Type Name="IListProvider" Kind="Interface" />
       <Type Name="Label" Kind="Class" />
       <Type Name="ListView" Kind="Class" />
-      <Type Name="Menu" />
       <Type Name="MenuBar" />
+      <Type Name="MenuBarItem" />
+      <Type Name="MenuItem" />
       <Type Name="Screen" Kind="Class" />
       <Type Name="TrimLabel" Kind="Class" />
       <Type Name="Widget" Kind="Class" />

@@ -194,7 +194,17 @@
         
         <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member><Member MemberName="Fill">
+    </Member><Member MemberName="DrawFrame"><MemberSignature Language="C#" Value="public static void DrawFrame (int col, int line, int width, int height, bool fill);" /><MemberType>Method</MemberType><AssemblyInfo><AssemblyVersion>1.0.0.0</AssemblyVersion></AssemblyInfo><ReturnValue><ReturnType>System.Void</ReturnType></ReturnValue><Parameters><Parameter Name="col" Type="System.Int32" /><Parameter Name="line" Type="System.Int32" /><Parameter Name="width" Type="System.Int32" /><Parameter Name="height" Type="System.Int32" /><Parameter Name="fill" Type="System.Boolean" /></Parameters><Docs><param name="col">To be added.</param><param name="line">To be added.</param><param name="width">To be added.</param><param name="height">To be added.</param><param name="fill">To be added.</param><summary>
+            Utility function to draw frames
+            </summary><remarks>
+            Draws a frame with the current color in the
+            specified coordinates.
+            </remarks></Docs></Member><Member MemberName="DrawHotString"><MemberSignature Language="C#" Value="public static void DrawHotString (string s, int hotcolor, int color);" /><MemberType>Method</MemberType><AssemblyInfo><AssemblyVersion>1.0.0.0</AssemblyVersion></AssemblyInfo><ReturnValue><ReturnType>System.Void</ReturnType></ReturnValue><Parameters><Parameter Name="s" Type="System.String" /><Parameter Name="hotcolor" Type="System.Int32" /><Parameter Name="color" Type="System.Int32" /></Parameters><Docs><param name="s">To be added.</param><param name="hotcolor">To be added.</param><param name="color">To be added.</param><summary>
+            Utility function to draw strings that contain a hotkey
+            </summary><remarks>
+            Draws a string with the given color.   If a character "_" is
+            found, then the next character is drawn using the hotcolor.
+            </remarks></Docs></Member><Member MemberName="Fill">
       <MemberSignature Language="C#" Value="public Mono.Terminal.Fill Fill;" />
       <MemberType>Field</MemberType>
       <ReturnValue><ReturnType>Mono.Terminal.Fill</ReturnType></ReturnValue>

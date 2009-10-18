@@ -44,6 +44,8 @@ namespace Mono.Terminal {
 		Vertical = 2
 	}
 
+	public delegate void Action ();
+	
 	/// <summary>
 	///   Base class for creating curses widgets
 	/// </summary>
@@ -386,6 +388,38 @@ namespace Mono.Terminal {
 		/// </remarks>
 		static public void DrawFrame (int col, int line, int width, int height)
 		{
+			DrawFrame (col, line, width, height, false);
+		}
+
+		/// <summary>
+		///   Utility function to draw strings that contain a hotkey
+		/// </summary>
+		/// <remarks>
+		///    Draws a string with the given color.   If a character "_" is
+		///    found, then the next character is drawn using the hotcolor.
+		/// </remarks>
+		static public void DrawHotString (string s, int hotcolor, int color)
+		{
+			Curses.attrset (color);
+			foreach (char c in s){
+				if (c == '_'){
+					Curses.attrset (hotcolor);
+					continue;
+				}
+				Curses.addch (c);
+				Curses.attrset (color);
+			}
+		}
+
+		/// <summary>
+		///   Utility function to draw frames
+		/// </summary>
+		/// <remarks>
+		///    Draws a frame with the current color in the
+		///    specified coordinates.
+		/// </remarks>
+		static public void DrawFrame (int col, int line, int width, int height, bool fill)
+		{
 			int b;
 			Curses.move (line, col);
 			Curses.addch (Curses.ACS_ULCORNER);
@@ -396,9 +430,11 @@ namespace Mono.Terminal {
 			for (b = 1; b < height-1; b++){
 				Curses.move (line+b, col);
 				Curses.addch (Curses.ACS_VLINE);
-			}
-			for (b = 1; b < height-1; b++){
-				Curses.move (line+b, col+width-1);
+				if (fill){
+					for (int x = 1; x < width-1; x++)
+						Curses.addch (' ');
+				} else
+					Curses.move (line+b, col+width-1);
 				Curses.addch (Curses.ACS_VLINE);
 			}
 			Curses.move (line + height-1, col);
@@ -1868,24 +1904,38 @@ namespace Mono.Terminal {
 		}
 	}
 
-	public class Menu : Frame {
-		public Menu (string title, string help, Menu [] children) : base (null)
+	public class MenuItem {
+		public MenuItem (string title, string help, Action action)
 		{
-			Title = title;
-			Help = help;
-			Children = children;
+			Title = title ?? "";
+			Help = help ?? "";
+			Action = action;
+			Width = Title.Length + Help.Length + 1;
 		}
 		public string Title { get; set; }
 		public string Help { get; set; }
-		public Menu [] Children { get; set; }
+		public Action Action { get; set; }
+		public int Width { get; set; }
+	}
+	
+	public class MenuBarItem {
+		public MenuBarItem (string title, MenuItem [] children) 
+		{
+			Title = title ?? "";
+			Children = children;
+		}
+
+		public string Title { get; set; }
+		public MenuItem [] Children { get; set; }
+		public int Current { get; set; }
 	}
 	
 	public class MenuBar : Container {
-		public Menu [] Menus { get; set; }
+		public MenuBarItem [] Menus { get; set; }
 		int selected;
-		bool active;
+		Action action;
 		
-		public MenuBar (Menu [] menus) : base (0, 0, Application.Cols, 1)
+		public MenuBar (MenuBarItem [] menus) : base (0, 0, Application.Cols, 1)
 		{
 			Menus = menus;
 			CanFocus = false;
@@ -1900,13 +1950,57 @@ namespace Mono.Terminal {
 			if (idx < 0 || idx > Menus.Length)
 				throw new ArgumentException ("idx");
 
+			action = null;
 			selected = idx;
 
-			active = true;
+			foreach (var m in Menus)
+				m.Current = 0;
+			
 			Application.Run (this);
-			active = false;
 			selected = -1;
 			Redraw ();
+			if (action != null)
+				action ();
+		}
+
+		void DrawMenu (int idx, int col, int line)
+		{
+			int max = 0;
+			var menu = Menus [idx];
+
+			if (menu.Children == null)
+				return;
+
+			foreach (var m in menu.Children){
+				if (m == null)
+					continue;
+				
+				if (m.Width > max)
+					max = m.Width;
+			}
+			max += 4;
+			DrawFrame (col + x, line, max, menu.Children.Length + 2, true);
+			for (int i = 0; i < menu.Children.Length; i++){
+				var item = menu.Children [i];
+
+				Move (line + 1 + i, col + 1);
+				Curses.attrset (item == null ? Application.ColorFocus : i == menu.Current ? Application.ColorMenuSelected : Application.ColorMenu);
+				for (int p = 0; p < max - 2; p++)
+					Curses.addch (item == null ? Curses.ACS_HLINE : ' ');
+
+				if (item == null)
+					continue;
+				
+				Move (line + 1 + i, col + 2);
+				DrawHotString (item.Title,
+					       i == menu.Current ? Application.ColorMenuHotSelected : Application.ColorMenuHot,
+					       i == menu.Current ? Application.ColorMenuSelected : Application.ColorMenu);
+
+				// The help string
+				var l = item.Help.Length;
+				Move (line + 1 + i, col + x + max - l - 2);
+				Curses.addstr (item.Help);
+			}
 		}
 		
 		public override void Redraw ()
@@ -1917,13 +2011,16 @@ namespace Mono.Terminal {
 				Curses.addch (' ');
 
 			Move (y, 1);
+			int pos = 0;
 			for (int i = 0; i < Menus.Length; i++){
 				var menu = Menus [i];
 				if (i == selected){
+					DrawMenu (i, pos, y+1);
 					Curses.attrset (Application.ColorMenuSelected);
 				} else
 					Curses.attrset (Application.ColorFocus);
 
+				Move (y, pos);
 				Curses.addch (' ');
 				Curses.addstr (menu.Title);
 				Curses.addch (' ');
@@ -1932,6 +2029,8 @@ namespace Mono.Terminal {
 				else
 					Curses.attrset (Application.ColorFocus);
 				Curses.addstr ("  ");
+				
+				pos += menu.Title.Length + 4;
 			}
 			PositionCursor ();
 		}
@@ -1951,9 +2050,42 @@ namespace Mono.Terminal {
 			Move (y, 0);
 		}
 
+		void Selected (MenuItem item)
+		{
+			action = item.Action;
+		}
+		
 		public override bool ProcessKey (int key)
 		{
 			switch (key){
+			case Curses.KeyUp:
+				if (Menus [selected].Children == null)
+					return false;
+
+				int current = Menus [selected].Current;
+				do {
+					current--;
+					if (current < 0)
+						current = Menus [selected].Children.Length-1;
+				} while (Menus [selected].Children [current] == null);
+				Menus [selected].Current = current;
+				
+				Redraw ();
+				Curses.refresh ();
+				return true;
+				
+			case Curses.KeyDown:
+				if (Menus [selected].Children == null)
+					return false;
+
+				do {
+					Menus [selected].Current = (Menus [selected].Current+1) % Menus [selected].Children.Length;
+				} while (Menus [selected].Children [Menus [selected].Current] == null);
+				
+				Redraw ();
+				Curses.refresh ();
+				break;
+				
 			case Curses.KeyLeft:
 				selected--;
 				if (selected < 0)
@@ -1962,15 +2094,40 @@ namespace Mono.Terminal {
 			case Curses.KeyRight:
 				selected = (selected + 1) % Menus.Length;
 				break;
+
+			case '\n':
+				if (Menus [selected].Children == null)
+					return false;
+				
+				Selected (Menus [selected].Children [Menus [selected].Current]);
+				break;
+
 			case 27:
 			case 3:
 				Running = false;
 				break;
+
 			default:
+				if ((key >= 'a' && key <= 'z') || (key >= 'A' && key <= 'Z') || (key >= '0' && key <= '9')){
+					char c = Char.ToUpper ((char)key);
+
+					if (Menus [selected].Children == null)
+						return false;
+					
+					foreach (var mi in Menus [selected].Children){
+						int p = mi.Title.IndexOf ('_');
+						if (p != -1){
+							if (mi.Title [p] == c){
+								Selected (mi);
+								return true;
+							}
+						}
+					}
+				}
+				    
 				return false;
 			}
-			Redraw ();
-			Curses.refresh ();
+			Container.Redraw ();
 			return true;
 		}
 	}
@@ -2041,10 +2198,24 @@ namespace Mono.Terminal {
 		public static int ColorBasic;
 
 		/// <summary>
-		///   The basic color of the terminal.
+		///   The regular color for a selected item on a menu
 		/// </summary>
 		public static int ColorMenuSelected;
+
+		/// <summary>
+		///   The hot color for a selected item on a menu
+		/// </summary>
+		public static int ColorMenuHotSelected;
+
+		/// <summary>
+		///   The regular color for a menu entry
+		/// </summary>
+		public static int ColorMenu;
 		
+		/// <summary>
+		///   The hot color for a menu entry
+		/// </summary>
+		public static int ColorMenuHot;
 		
 		/// <summary>
 		///   The time before we timeout on a curses call.
@@ -2132,7 +2303,11 @@ namespace Mono.Terminal {
 				ColorHotNormal = Curses.A_BOLD | MakeColor (Curses.COLOR_YELLOW, Curses.COLOR_BLUE);
 				ColorHotFocus = Curses.A_BOLD | MakeColor (Curses.COLOR_YELLOW, Curses.COLOR_CYAN);
 
+				ColorMenu = Curses.A_BOLD | MakeColor (Curses.COLOR_WHITE, Curses.COLOR_CYAN);
+				ColorMenuHot = Curses.A_BOLD | MakeColor (Curses.COLOR_YELLOW, Curses.COLOR_CYAN);
 				ColorMenuSelected = Curses.A_BOLD | MakeColor (Curses.COLOR_WHITE, Curses.COLOR_BLACK);
+				ColorMenuHotSelected = Curses.A_BOLD | MakeColor (Curses.COLOR_YELLOW, Curses.COLOR_BLACK);
+				
 				ColorMarked = ColorHotNormal;
 				ColorMarkedSelected = ColorHotFocus;
 
@@ -2148,7 +2323,11 @@ namespace Mono.Terminal {
 				ColorHotNormal = Curses.A_BOLD;
 				ColorHotFocus = Curses.A_REVERSE | Curses.A_BOLD;
 
+				ColorMenu = Curses.A_REVERSE;
+				ColorMenuHot = Curses.A_NORMAL;
 				ColorMenuSelected = Curses.A_BOLD;
+				ColorMenuHotSelected = Curses.A_NORMAL;
+				
 				ColorMarked = Curses.A_BOLD;
 				ColorMarkedSelected = Curses.A_REVERSE | Curses.A_BOLD;
 

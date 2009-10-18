@@ -203,6 +203,12 @@ namespace Mono.Terminal {
 		[DllImport ("@CURSES@")]
 		extern public static int addstr (string s);
 
+		public static int addstr (string format, params object [] args)
+		{
+			var s = string.Format (format, args);
+			return addstr (s);
+		}
+		
 		[DllImport ("@CURSES@")]
 		extern internal static int wmove (IntPtr win, int line, int col);
 

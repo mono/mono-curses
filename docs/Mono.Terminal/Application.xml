@@ -169,8 +169,14 @@
         
         <AssemblyVersion>0.0.0.0</AssemblyVersion><AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member><Member MemberName="ColorMenuSelected"><MemberSignature Language="C#" Value="public static int ColorMenuSelected;" /><MemberType>Field</MemberType><AssemblyInfo><AssemblyVersion>1.0.0.0</AssemblyVersion></AssemblyInfo><ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue><Docs><summary>
-            The basic color of the terminal.
+    </Member><Member MemberName="ColorMenu"><MemberSignature Language="C#" Value="public static int ColorMenu;" /><MemberType>Field</MemberType><AssemblyInfo><AssemblyVersion>1.0.0.0</AssemblyVersion></AssemblyInfo><ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue><Docs><summary>
+            The regular color for a menu entry
+            </summary><remarks>To be added.</remarks></Docs></Member><Member MemberName="ColorMenuHot"><MemberSignature Language="C#" Value="public static int ColorMenuHot;" /><MemberType>Field</MemberType><AssemblyInfo><AssemblyVersion>1.0.0.0</AssemblyVersion></AssemblyInfo><ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue><Docs><summary>
+            The hot color for a menu entry
+            </summary><remarks>To be added.</remarks></Docs></Member><Member MemberName="ColorMenuHotSelected"><MemberSignature Language="C#" Value="public static int ColorMenuHotSelected;" /><MemberType>Field</MemberType><AssemblyInfo><AssemblyVersion>1.0.0.0</AssemblyVersion></AssemblyInfo><ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue><Docs><summary>
+            The hot color for a selected item on a menu
+            </summary><remarks>To be added.</remarks></Docs></Member><Member MemberName="ColorMenuSelected"><MemberSignature Language="C#" Value="public static int ColorMenuSelected;" /><MemberType>Field</MemberType><AssemblyInfo><AssemblyVersion>1.0.0.0</AssemblyVersion></AssemblyInfo><ReturnValue><ReturnType>System.Int32</ReturnType></ReturnValue><Docs><summary>
+            The regular color for a selected item on a menu
             </summary><remarks>To be added.</remarks></Docs></Member><Member MemberName="ColorNormal">
       <MemberSignature Language="C#" Value="public static int ColorNormal;" />
       <MemberType>Field</MemberType>
