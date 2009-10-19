@@ -365,7 +365,7 @@
       </AssemblyInfo>
     </Member>
     <Member MemberName="HasFocus">
-      <MemberSignature Language="C#" Value="public bool HasFocus { set; get; }" />
+      <MemberSignature Language="C#" Value="public virtual bool HasFocus { set; get; }" />
       <MemberType>Property</MemberType>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>

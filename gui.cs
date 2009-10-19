@@ -164,7 +164,7 @@ namespace Mono.Terminal {
 		///     the current focus status can be inquired by using this property.
 		///   </para>
 		/// </remarks>
-		public bool HasFocus {
+		public virtual bool HasFocus {
 			get {
 				return has_focus;
 			}
@@ -1623,7 +1623,7 @@ namespace Mono.Terminal {
 		{
 			if (focused == null){
 				FocusFirst ();
-				return true;
+				return focused != null;
 			}
 			int n = widgets.Count;
 			int focused_idx = -1;
