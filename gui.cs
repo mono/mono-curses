@@ -1719,6 +1719,9 @@ namespace Mono.Terminal {
 		/// </remarks>
 		public virtual void Remove (Widget w)
 		{
+			if (w == null)
+				return;
+			
 			widgets.Remove (w);
 			w.Container = null;
 			
@@ -1906,7 +1909,7 @@ namespace Mono.Terminal {
 		/// <remarks>
 		/// </remarks>
 		public Dialog (int w, int h, string title)
-			: base ((Application.Cols - w) / 2, (Application.Lines-h)/2, w, h, title)
+			: base ((Application.Cols - w) / 2, (Application.Lines-h)/3, w, h, title)
 		{
 			ContainerColorNormal = Application.ColorDialogNormal;
 			ContainerColorFocus = Application.ColorDialogFocus;
@@ -1972,6 +1975,7 @@ namespace Mono.Terminal {
 			Widget.DrawFrame (x + 1, y + 1, w - 2, h - 2);
 			Curses.move (y + 1, x + (w - Title.Length) / 2);
 			Curses.addch (' ');
+			Curses.attrset (Application.ColorDialogHotNormal);
 			Curses.addstr (Title);
 			Curses.addch (' ');
 			RedrawChildren ();
@@ -1992,12 +1996,37 @@ namespace Mono.Terminal {
 			base.DoSizeChanged ();
 			
 			x = (Application.Cols - w) / 2;
-			y = (Application.Lines-h) / 2;
+			y = (Application.Lines-h) / 3;
 
 			LayoutButtons ();
 		}
 	}
 
+	public class MessageBox {
+		public static int Query (int width, int height, string title, string message, params string [] buttons)
+		{
+			var d = new Dialog (width, height, title);
+			int clicked = -1, count = 0;
+			
+			foreach (var s in buttons){
+				int n = count++;
+				var b = new Button (s);
+				b.Clicked += delegate {
+					clicked = n;
+					d.Running = false;
+				};
+				d.AddButton (b);
+			}
+			if (message != null){
+				var l = new Label ((width - 4 - message.Length)/2, 0, message);
+				d.Add (l);
+			}
+			
+			Application.Run (d);
+			return clicked;
+		}
+	}
+	
 	public class MenuItem {
 		public MenuItem (string title, string help, Action action)
 		{

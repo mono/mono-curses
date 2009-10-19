@@ -45,6 +45,7 @@
       <Type Name="MenuBar" Kind="Class" />
       <Type Name="MenuBarItem" Kind="Class" />
       <Type Name="MenuItem" Kind="Class" />
+      <Type Name="MessageBox" Kind="Class" />
       <Type Name="Screen" Kind="Class" />
       <Type Name="TrimLabel" Kind="Class" />
       <Type Name="Widget" Kind="Class" />
