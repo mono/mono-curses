@@ -2396,6 +2396,8 @@ namespace Mono.Terminal {
 			}
 		}
 
+		static Window main_window;
+		
 		public static bool UsingColor { get; private set; }
 		
 		/// <summary>
@@ -2407,7 +2409,7 @@ namespace Mono.Terminal {
 			empty_container = new Container (0, 0, Application.Cols, Application.Lines);
 
 			try {
-				Curses.initscr ();
+				main_window = Curses.initscr ();
 			} catch (Exception e){
 				Console.WriteLine ("Curses failed to initialize, the exception is: " + e);
 				throw new Exception ("Application.Init failed");
@@ -2606,7 +2608,8 @@ namespace Mono.Terminal {
 		public static void Refresh ()
 		{
 			Container last = null;
-			
+
+			Curses.redrawwin (main_window.Handle);
 			foreach (Container c in toplevels){
 				c.Redraw ();
 				last = c;
