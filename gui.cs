@@ -2671,9 +2671,9 @@ namespace Mono.Terminal {
 				}
 				
 				if (ch == 27){
-					Curses.timeout (0);
+					Curses.timeout (100);
 					int k = Curses.getch ();
-					if (k != Curses.ERR)
+					if (k != Curses.ERR && k != 27)
 						ch = Curses.KeyAlt | k;
 					Curses.timeout (Timeout);
 				}
