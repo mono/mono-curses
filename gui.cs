@@ -1919,6 +1919,16 @@ namespace Mono.Terminal {
 			Border++;
 		}
 
+		/// <summary>
+		///   Makes the default style for the dialog use the error colors.
+		/// </summary>
+		public void ErrorColors ()
+		{
+			ContainerColorNormal = Application.ColorError;
+			ContainerColorFocus = Application.ColorError;
+			ContainerColorHotFocus = Application.ColorError;
+		}
+		
 		public override void Prepare ()
 		{
 			LayoutButtons ();
@@ -2527,11 +2537,8 @@ namespace Mono.Terminal {
 			lines.Add (x);
 
 			Dialog d = new Dialog (System.Math.Max (caption.Length + 8, max_w + 8), lines.Count + 7, caption);
-			if (error){
-				d.ContainerColorNormal = Application.ColorError;
-				d.ContainerColorFocus = Application.ColorError;
-				d.ContainerColorHotFocus = Application.ColorError;
-			}
+			if (error)
+				d.ErrorColors ();
 			
 			for (int i = 0; i < lines.Count; i++)
 				d.Add (new Label (1, i + 1, (string) lines [i]));
