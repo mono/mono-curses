@@ -335,6 +335,32 @@ namespace Mono.Terminal {
 		{
 			return false;
 		}
+
+		/// <summary>
+		///   This method can be overwritten by widgets that
+		///     want to provide accelerator functionality
+		///     (Alt-key for example), but without
+		///     interefering with normal ProcessKey behavior.
+		/// </summary>
+		/// <remarks>
+		///   <para>
+		///     After keys are sent to the widgets on the
+		///     current Container, all the widgets are
+		///     processed and the key is passed to the widgets
+		///     to allow some of them to process the keystroke
+		///     as a cold-key. </para>
+		///  <para>
+		///    This functionality is used, for example, by
+		///    default buttons to act on the enter key.
+		///    Processing this as a hot-key would prevent
+		///    non-default buttons from consuming the enter
+		///    keypress when they have the focus.
+		///  </para>
+		/// </remarks>
+		public virtual bool ProcessColdKey (int key)
+		{
+			return false;
+		}
 		
 		/// <summary>
 		///   Moves inside the first location inside the container
@@ -1017,11 +1043,17 @@ namespace Mono.Terminal {
 				return false;
 			}
 
+			return false;
+		}
+
+		public override bool ProcessColdKey (int key)
+		{
 			if (is_default && key == '\n'){
 				if (Clicked != null)
 					Clicked (this, EventArgs.Empty);
 				return true;
 			}
+
 			return false;
 		}
 
@@ -1749,6 +1781,22 @@ namespace Mono.Terminal {
 					continue;
 				
 				if (w.ProcessHotKey (key))
+					return true;
+			}
+			return false;
+		}
+
+		public override bool ProcessColdKey (int key)
+		{
+			if (focused != null)
+				if (focused.ProcessColdKey (key))
+					return true;
+			
+			foreach (Widget w in widgets){
+				if (w == focused)
+					continue;
+				
+				if (w.ProcessColdKey (key))
 					return true;
 			}
 			return false;
@@ -2689,6 +2737,9 @@ namespace Mono.Terminal {
 					continue;
 
 				if (container.ProcessKey (ch))
+					continue;
+
+				if (container.ProcessColdKey (ch))
 					continue;
 
 				// Control-c, quit the current operation.

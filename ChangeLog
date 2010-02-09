@@ -1,3 +1,14 @@
+2010-02-08  Chris Howie <cdhowie@gmail.com>
+
+	* gui.cs: ProcessColdKey is broadcast to all widgets just like
+	ProcessHotKey, but after ProcessKey instead of before.
+
+	This method is now used by Button to implement default-button
+	logic.  This prevents a default button from consuming '\n' keys when there is
+	another default	button, or some other widget interested in '\n' when it it focused
+	(like perhaps a TextArea widget).
+	
+
 2009-04-24  Miguel de Icaza  <miguel@novell.com>
 
 	* gui.cs (Entry): Raise the Changed event if set.

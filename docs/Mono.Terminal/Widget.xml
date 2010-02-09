@@ -526,6 +526,44 @@
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
     </Member>
+    <Member MemberName="ProcessColdKey">
+      <MemberSignature Language="C#" Value="public virtual bool ProcessColdKey (int key);" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="key">To be added.</param>
+        <summary>
+            This method can be overwritten by widgets that
+            want to provide accelerator functionality
+            (Alt-key for example), but without
+            interefering with normal ProcessKey behavior.
+            </summary>
+        <returns>To be added.</returns>
+        <remarks>
+          <para>
+            After keys are sent to the widgets on the
+            current Container, all the widgets are
+            processed and the key is passed to the widgets
+            to allow some of them to process the keystroke
+            as a cold-key. </para>
+          <para>
+            This functionality is used, for example, by
+            default buttons to act on the enter key.
+            Processing this as a hot-key would prevent
+            non-default buttons from consuming the enter
+            keypress when they have the focus.
+            </para>
+        </remarks>
+      </Docs>
+    </Member>
     <Member MemberName="ProcessHotKey">
       <MemberSignature Language="C#" Value="public virtual bool ProcessHotKey (int key);" />
       <MemberType>Method</MemberType>
