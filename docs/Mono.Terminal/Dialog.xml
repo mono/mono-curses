@@ -105,6 +105,23 @@
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
+    <Member MemberName="ErrorColors">
+      <MemberSignature Language="C#" Value="public void ErrorColors ();" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+            Makes the default style for the dialog use the error colors.
+            </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
     <Member MemberName="GetBase">
       <MemberSignature Language="C#" Value="public override void GetBase (out int row, out int col);" />
       <MemberType>Method</MemberType>
