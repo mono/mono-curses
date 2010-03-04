@@ -110,6 +110,7 @@ main (int argc, char *argv [])
 	put2 ("Mouse", KEY_MOUSE);
 	put2 ("End",   KEY_END);
 	put2 ("DeleteChar", KEY_DC);
+	put2 ("InsertChar", KEY_IC);
 	put2 ("F1", KEY_F(1));
 	put2 ("F2", KEY_F(2));
 	put2 ("F3", KEY_F(3));
