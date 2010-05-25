@@ -50,7 +50,16 @@ namespace Mono.Terminal {
 		static public Window initscr ()
 		{
 			main_window = new Window (real_initscr ());
-			console_sharp_get_dims (out lines, out cols);
+			try {
+				console_sharp_get_dims (out lines, out cols);
+			} catch (DllNotFoundException){
+				endwin ();
+				Console.Error.WriteLine ("Unable to find the @MONO_CURSES@ native library\n" + 
+							 "this is different than the managed mono-curses.dll\n\n" +
+							 "Typically you need to install to a LD_LIBRARY_PATH directory\n" +
+							 "or DYLD_LIBRARY_PATH directory or run /sbin/ldconfig");
+				Environment.Exit (1);
+			}
 			return main_window;
 		}
 

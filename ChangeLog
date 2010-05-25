@@ -1,3 +1,7 @@
+2010-05-25  Miguel de Icaza  <miguel@novell.com>
+
+	*  binding.cs.in: Assist in installation setups.
+
 2010-02-08  Chris Howie <cdhowie@gmail.com>
 
 	* gui.cs: ProcessColdKey is broadcast to all widgets just like
