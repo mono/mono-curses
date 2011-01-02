@@ -71,9 +71,10 @@ clean:
 install: all
 	mkdir -p $(prefix)/bin
 	mkdir -p $(prefix)/lib/mono-curses
+	mkdir -p $(prefix)/lib/pkgconfig
 	gacutil -i mono-curses.dll -package mono-curses
 	cp libmono-curses* $(prefix)/lib/
-	cp mono-curses.pc $(prefix)/lib/pkgconfig
+	cp mono-curses.pc $(prefix)/lib/pkgconfig/
 	cp mono-curses.tree mono-curses.zip mono-curses.source  `pkg-config --variable sourcesdir monodoc`
 
 config.make:
