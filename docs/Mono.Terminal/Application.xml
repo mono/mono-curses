@@ -1,5 +1,6 @@
 <Type Name="Application" FullName="Mono.Terminal.Application">
   <TypeSignature Language="C#" Value="public class Application" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Application extends System.Object" />
   <AssemblyInfo>
     <AssemblyName>mono-curses</AssemblyName>
     <AssemblyVersion>0.0.0.0</AssemblyVersion>
@@ -24,19 +25,21 @@
   <Members>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public Application ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
       <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
       <Parameters />
       <Docs>
         <summary>To be added.</summary>
         <remarks>To be added.</remarks>
       </Docs>
-      <AssemblyInfo>
-        <AssemblyVersion>0.0.0.0</AssemblyVersion>
-        <AssemblyVersion>1.0.0.0</AssemblyVersion>
-      </AssemblyInfo>
     </Member>
     <Member MemberName="ColorBasic">
       <MemberSignature Language="C#" Value="public static int ColorBasic;" />
+      <MemberSignature Language="ILAsm" Value=".field public static int32 ColorBasic" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
@@ -53,7 +56,12 @@
     </Member>
     <Member MemberName="ColorDialogFocus">
       <MemberSignature Language="C#" Value="public static int ColorDialogFocus;" />
+      <MemberSignature Language="ILAsm" Value=".field public static int32 ColorDialogFocus" />
       <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
@@ -63,14 +71,15 @@
             </summary>
         <remarks>To be added.</remarks>
       </Docs>
+    </Member>
+    <Member MemberName="ColorDialogHotFocus">
+      <MemberSignature Language="C#" Value="public static int ColorDialogHotFocus;" />
+      <MemberSignature Language="ILAsm" Value=".field public static int32 ColorDialogHotFocus" />
+      <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member>
-    <Member MemberName="ColorDialogHotFocus">
-      <MemberSignature Language="C#" Value="public static int ColorDialogHotFocus;" />
-      <MemberType>Field</MemberType>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
@@ -80,14 +89,15 @@
             </summary>
         <remarks>To be added.</remarks>
       </Docs>
+    </Member>
+    <Member MemberName="ColorDialogHotNormal">
+      <MemberSignature Language="C#" Value="public static int ColorDialogHotNormal;" />
+      <MemberSignature Language="ILAsm" Value=".field public static int32 ColorDialogHotNormal" />
+      <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member>
-    <Member MemberName="ColorDialogHotNormal">
-      <MemberSignature Language="C#" Value="public static int ColorDialogHotNormal;" />
-      <MemberType>Field</MemberType>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
@@ -97,14 +107,15 @@
             </summary>
         <remarks>To be added.</remarks>
       </Docs>
+    </Member>
+    <Member MemberName="ColorDialogNormal">
+      <MemberSignature Language="C#" Value="public static int ColorDialogNormal;" />
+      <MemberSignature Language="ILAsm" Value=".field public static int32 ColorDialogNormal" />
+      <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member>
-    <Member MemberName="ColorDialogNormal">
-      <MemberSignature Language="C#" Value="public static int ColorDialogNormal;" />
-      <MemberType>Field</MemberType>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
@@ -114,14 +125,15 @@
             </summary>
         <remarks>To be added.</remarks>
       </Docs>
+    </Member>
+    <Member MemberName="ColorError">
+      <MemberSignature Language="C#" Value="public static int ColorError;" />
+      <MemberSignature Language="ILAsm" Value=".field public static int32 ColorError" />
+      <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member>
-    <Member MemberName="ColorError">
-      <MemberSignature Language="C#" Value="public static int ColorError;" />
-      <MemberType>Field</MemberType>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
@@ -131,14 +143,15 @@
             </summary>
         <remarks>To be added.</remarks>
       </Docs>
+    </Member>
+    <Member MemberName="ColorFocus">
+      <MemberSignature Language="C#" Value="public static int ColorFocus;" />
+      <MemberSignature Language="ILAsm" Value=".field public static int32 ColorFocus" />
+      <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member>
-    <Member MemberName="ColorFocus">
-      <MemberSignature Language="C#" Value="public static int ColorFocus;" />
-      <MemberType>Field</MemberType>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
@@ -148,14 +161,15 @@
             </summary>
         <remarks>To be added.</remarks>
       </Docs>
+    </Member>
+    <Member MemberName="ColorHotFocus">
+      <MemberSignature Language="C#" Value="public static int ColorHotFocus;" />
+      <MemberSignature Language="ILAsm" Value=".field public static int32 ColorHotFocus" />
+      <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member>
-    <Member MemberName="ColorHotFocus">
-      <MemberSignature Language="C#" Value="public static int ColorHotFocus;" />
-      <MemberType>Field</MemberType>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
@@ -165,14 +179,15 @@
             </summary>
         <remarks>To be added.</remarks>
       </Docs>
+    </Member>
+    <Member MemberName="ColorHotNormal">
+      <MemberSignature Language="C#" Value="public static int ColorHotNormal;" />
+      <MemberSignature Language="ILAsm" Value=".field public static int32 ColorHotNormal" />
+      <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member>
-    <Member MemberName="ColorHotNormal">
-      <MemberSignature Language="C#" Value="public static int ColorHotNormal;" />
-      <MemberType>Field</MemberType>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
@@ -182,14 +197,15 @@
             </summary>
         <remarks>To be added.</remarks>
       </Docs>
+    </Member>
+    <Member MemberName="ColorMarked">
+      <MemberSignature Language="C#" Value="public static int ColorMarked;" />
+      <MemberSignature Language="ILAsm" Value=".field public static int32 ColorMarked" />
+      <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member>
-    <Member MemberName="ColorMarked">
-      <MemberSignature Language="C#" Value="public static int ColorMarked;" />
-      <MemberType>Field</MemberType>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
@@ -199,14 +215,15 @@
             </summary>
         <remarks>To be added.</remarks>
       </Docs>
+    </Member>
+    <Member MemberName="ColorMarkedSelected">
+      <MemberSignature Language="C#" Value="public static int ColorMarkedSelected;" />
+      <MemberSignature Language="ILAsm" Value=".field public static int32 ColorMarkedSelected" />
+      <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member>
-    <Member MemberName="ColorMarkedSelected">
-      <MemberSignature Language="C#" Value="public static int ColorMarkedSelected;" />
-      <MemberType>Field</MemberType>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
@@ -217,13 +234,10 @@
             </summary>
         <remarks>To be added.</remarks>
       </Docs>
-      <AssemblyInfo>
-        <AssemblyVersion>0.0.0.0</AssemblyVersion>
-        <AssemblyVersion>1.0.0.0</AssemblyVersion>
-      </AssemblyInfo>
     </Member>
     <Member MemberName="ColorMenu">
       <MemberSignature Language="C#" Value="public static int ColorMenu;" />
+      <MemberSignature Language="ILAsm" Value=".field public static int32 ColorMenu" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
@@ -240,6 +254,7 @@
     </Member>
     <Member MemberName="ColorMenuHot">
       <MemberSignature Language="C#" Value="public static int ColorMenuHot;" />
+      <MemberSignature Language="ILAsm" Value=".field public static int32 ColorMenuHot" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
@@ -256,6 +271,7 @@
     </Member>
     <Member MemberName="ColorMenuHotSelected">
       <MemberSignature Language="C#" Value="public static int ColorMenuHotSelected;" />
+      <MemberSignature Language="ILAsm" Value=".field public static int32 ColorMenuHotSelected" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
@@ -272,6 +288,7 @@
     </Member>
     <Member MemberName="ColorMenuSelected">
       <MemberSignature Language="C#" Value="public static int ColorMenuSelected;" />
+      <MemberSignature Language="ILAsm" Value=".field public static int32 ColorMenuSelected" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
@@ -288,7 +305,12 @@
     </Member>
     <Member MemberName="ColorNormal">
       <MemberSignature Language="C#" Value="public static int ColorNormal;" />
+      <MemberSignature Language="ILAsm" Value=".field public static int32 ColorNormal" />
       <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
@@ -298,14 +320,15 @@
             </summary>
         <remarks>To be added.</remarks>
       </Docs>
+    </Member>
+    <Member MemberName="Cols">
+      <MemberSignature Language="C#" Value="public static int Cols { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property int32 Cols" />
+      <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member>
-    <Member MemberName="Cols">
-      <MemberSignature Language="C#" Value="public static int Cols { get; }" />
-      <MemberType>Property</MemberType>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
@@ -316,14 +339,15 @@
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
+    </Member>
+    <Member MemberName="EmptyContainer">
+      <MemberSignature Language="C#" Value="public static Mono.Terminal.Container EmptyContainer { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class Mono.Terminal.Container EmptyContainer" />
+      <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member>
-    <Member MemberName="EmptyContainer">
-      <MemberSignature Language="C#" Value="public static Mono.Terminal.Container EmptyContainer { get; }" />
-      <MemberType>Property</MemberType>
       <ReturnValue>
         <ReturnType>Mono.Terminal.Container</ReturnType>
       </ReturnValue>
@@ -334,14 +358,15 @@
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
-      <AssemblyInfo>
-        <AssemblyVersion>0.0.0.0</AssemblyVersion>
-        <AssemblyVersion>1.0.0.0</AssemblyVersion>
-      </AssemblyInfo>
     </Member>
     <Member MemberName="Error">
       <MemberSignature Language="C#" Value="public static void Error (string caption, string text);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Error(string caption, string text) cil managed" />
       <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
@@ -357,14 +382,15 @@
             </summary>
         <remarks />
       </Docs>
-      <AssemblyInfo>
-        <AssemblyVersion>0.0.0.0</AssemblyVersion>
-        <AssemblyVersion>1.0.0.0</AssemblyVersion>
-      </AssemblyInfo>
     </Member>
     <Member MemberName="Error">
       <MemberSignature Language="C#" Value="public static void Error (string caption, string format, object[] pars);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Error(string caption, string format, object[] pars) cil managed" />
       <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
@@ -390,14 +416,15 @@
             Overload that allows for String.Format parameters.
             </remarks>
       </Docs>
+    </Member>
+    <Member MemberName="Info">
+      <MemberSignature Language="C#" Value="public static void Info (string caption, string text);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Info(string caption, string text) cil managed" />
+      <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member>
-    <Member MemberName="Info">
-      <MemberSignature Language="C#" Value="public static void Info (string caption, string text);" />
-      <MemberType>Method</MemberType>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
@@ -413,14 +440,15 @@
             </summary>
         <remarks />
       </Docs>
+    </Member>
+    <Member MemberName="Info">
+      <MemberSignature Language="C#" Value="public static void Info (string caption, string format, object[] pars);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Info(string caption, string format, object[] pars) cil managed" />
+      <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member>
-    <Member MemberName="Info">
-      <MemberSignature Language="C#" Value="public static void Info (string caption, string format, object[] pars);" />
-      <MemberType>Method</MemberType>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
@@ -446,14 +474,15 @@
             Overload that allows for String.Format parameters.
             </remarks>
       </Docs>
+    </Member>
+    <Member MemberName="Init">
+      <MemberSignature Language="C#" Value="public static void Init (bool disable_color);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Init(bool disable_color) cil managed" />
+      <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member>
-    <Member MemberName="Init">
-      <MemberSignature Language="C#" Value="public static void Init (bool disable_color);" />
-      <MemberType>Method</MemberType>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
@@ -468,14 +497,15 @@
             </summary>
         <remarks>To be added.</remarks>
       </Docs>
+    </Member>
+    <Member MemberName="Iteration">
+      <MemberSignature Language="C#" Value="public static event EventHandler Iteration;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler Iteration" />
+      <MemberType>Event</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member>
-    <Member MemberName="Iteration">
-      <MemberSignature Language="C#" Value="public static event EventHandler Iteration;" />
-      <MemberType>Event</MemberType>
       <ReturnValue>
         <ReturnType>System.EventHandler</ReturnType>
       </ReturnValue>
@@ -487,14 +517,15 @@
         <remarks>
             See also <see cref="F:Mono.Terminal.Application.Timeout" /></remarks>
       </Docs>
+    </Member>
+    <Member MemberName="Lines">
+      <MemberSignature Language="C#" Value="public static int Lines { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property int32 Lines" />
+      <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member>
-    <Member MemberName="Lines">
-      <MemberSignature Language="C#" Value="public static int Lines { get; }" />
-      <MemberType>Property</MemberType>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
@@ -505,13 +536,10 @@
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
-      <AssemblyInfo>
-        <AssemblyVersion>0.0.0.0</AssemblyVersion>
-        <AssemblyVersion>1.0.0.0</AssemblyVersion>
-      </AssemblyInfo>
     </Member>
     <Member MemberName="MakeColor">
       <MemberSignature Language="C#" Value="public static int MakeColor (short f, short b);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int32 MakeColor(int16 f, int16 b) cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
@@ -535,7 +563,12 @@
     </Member>
     <Member MemberName="MouseEventsAvailable">
       <MemberSignature Language="C#" Value="public static Mono.Terminal.Curses.Event MouseEventsAvailable;" />
+      <MemberSignature Language="ILAsm" Value=".field public static valuetype Mono.Terminal.Curses/Event MouseEventsAvailable" />
       <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Mono.Terminal.Curses+Event</ReturnType>
       </ReturnValue>
@@ -545,14 +578,15 @@
             </summary>
         <remarks>To be added.</remarks>
       </Docs>
+    </Member>
+    <Member MemberName="Msg">
+      <MemberSignature Language="C#" Value="public static void Msg (bool error, string caption, string t);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Msg(bool error, string caption, string t) cil managed" />
+      <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member>
-    <Member MemberName="Msg">
-      <MemberSignature Language="C#" Value="public static void Msg (bool error, string caption, string t);" />
-      <MemberType>Method</MemberType>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
@@ -573,14 +607,15 @@
             error message box or not.
             </remarks>
       </Docs>
+    </Member>
+    <Member MemberName="Refresh">
+      <MemberSignature Language="C#" Value="public static void Refresh ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Refresh() cil managed" />
+      <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member>
-    <Member MemberName="Refresh">
-      <MemberSignature Language="C#" Value="public static void Refresh ();" />
-      <MemberType>Method</MemberType>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
@@ -591,14 +626,15 @@
             </summary>
         <remarks />
       </Docs>
+    </Member>
+    <Member MemberName="Run">
+      <MemberSignature Language="C#" Value="public static void Run (Mono.Terminal.Container container);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Run(class Mono.Terminal.Container container) cil managed" />
+      <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member>
-    <Member MemberName="Run">
-      <MemberSignature Language="C#" Value="public static void Run (Mono.Terminal.Container container);" />
-      <MemberType>Method</MemberType>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
@@ -616,14 +652,15 @@
             run modal dialog boxes.
             </remarks>
       </Docs>
+    </Member>
+    <Member MemberName="Timeout">
+      <MemberSignature Language="C#" Value="public static int Timeout;" />
+      <MemberSignature Language="ILAsm" Value=".field public static int32 Timeout" />
+      <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member>
-    <Member MemberName="Timeout">
-      <MemberSignature Language="C#" Value="public static int Timeout;" />
-      <MemberType>Field</MemberType>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
@@ -642,13 +679,10 @@
             for an event to arrive before running an
             iteration on the main loop.   See <see cref="E:Mono.Terminal.Application.Iteration" />.</para></remarks>
       </Docs>
-      <AssemblyInfo>
-        <AssemblyVersion>0.0.0.0</AssemblyVersion>
-        <AssemblyVersion>1.0.0.0</AssemblyVersion>
-      </AssemblyInfo>
     </Member>
     <Member MemberName="UsingColor">
       <MemberSignature Language="C#" Value="public static bool UsingColor { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property bool UsingColor" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>

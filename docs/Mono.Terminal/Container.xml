@@ -1,5 +1,6 @@
 <Type Name="Container" FullName="Mono.Terminal.Container">
   <TypeSignature Language="C#" Value="public class Container : Mono.Terminal.Widget, System.Collections.IEnumerable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi Container extends Mono.Terminal.Widget implements class System.Collections.IEnumerable" />
   <AssemblyInfo>
     <AssemblyName>mono-curses</AssemblyName>
     <AssemblyVersion>0.0.0.0</AssemblyVersion>
@@ -27,7 +28,12 @@
   <Members>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public Container (int x, int y, int w, int h);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 x, int32 y, int32 w, int32 h) cil managed" />
       <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
       <Parameters>
         <Parameter Name="x" Type="System.Int32" />
         <Parameter Name="y" Type="System.Int32" />
@@ -44,14 +50,15 @@
             </summary>
         <remarks />
       </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public virtual void Add (Mono.Terminal.Widget w);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Add(class Mono.Terminal.Widget w) cil managed" />
+      <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member>
-    <Member MemberName="Add">
-      <MemberSignature Language="C#" Value="public virtual void Add (Mono.Terminal.Widget w);" />
-      <MemberType>Method</MemberType>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
@@ -65,14 +72,15 @@
             </summary>
         <remarks />
       </Docs>
-      <AssemblyInfo>
-        <AssemblyVersion>0.0.0.0</AssemblyVersion>
-        <AssemblyVersion>1.0.0.0</AssemblyVersion>
-      </AssemblyInfo>
     </Member>
     <Member MemberName="Border">
       <MemberSignature Language="C#" Value="public int Border;" />
+      <MemberSignature Language="ILAsm" Value=".field public int32 Border" />
       <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
@@ -80,14 +88,15 @@
         <summary>To be added.</summary>
         <remarks>To be added.</remarks>
       </Docs>
-      <AssemblyInfo>
-        <AssemblyVersion>0.0.0.0</AssemblyVersion>
-        <AssemblyVersion>1.0.0.0</AssemblyVersion>
-      </AssemblyInfo>
     </Member>
     <Member MemberName="ContainerBaseMove">
       <MemberSignature Language="C#" Value="public virtual void ContainerBaseMove (int row, int col);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void ContainerBaseMove(int32 row, int32 col) cil managed" />
       <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
@@ -101,14 +110,15 @@
         <summary>To be added.</summary>
         <remarks>To be added.</remarks>
       </Docs>
-      <AssemblyInfo>
-        <AssemblyVersion>0.0.0.0</AssemblyVersion>
-        <AssemblyVersion>1.0.0.0</AssemblyVersion>
-      </AssemblyInfo>
     </Member>
     <Member MemberName="ContainerColorFocus">
       <MemberSignature Language="C#" Value="public int ContainerColorFocus;" />
+      <MemberSignature Language="ILAsm" Value=".field public int32 ContainerColorFocus" />
       <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
@@ -116,14 +126,15 @@
         <summary>To be added.</summary>
         <remarks>To be added.</remarks>
       </Docs>
-      <AssemblyInfo>
-        <AssemblyVersion>0.0.0.0</AssemblyVersion>
-        <AssemblyVersion>1.0.0.0</AssemblyVersion>
-      </AssemblyInfo>
     </Member>
     <Member MemberName="ContainerColorHotFocus">
       <MemberSignature Language="C#" Value="public int ContainerColorHotFocus;" />
+      <MemberSignature Language="ILAsm" Value=".field public int32 ContainerColorHotFocus" />
       <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
@@ -131,14 +142,15 @@
         <summary>To be added.</summary>
         <remarks>To be added.</remarks>
       </Docs>
-      <AssemblyInfo>
-        <AssemblyVersion>0.0.0.0</AssemblyVersion>
-        <AssemblyVersion>1.0.0.0</AssemblyVersion>
-      </AssemblyInfo>
     </Member>
     <Member MemberName="ContainerColorHotNormal">
       <MemberSignature Language="C#" Value="public int ContainerColorHotNormal;" />
+      <MemberSignature Language="ILAsm" Value=".field public int32 ContainerColorHotNormal" />
       <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
@@ -146,14 +158,15 @@
         <summary>To be added.</summary>
         <remarks>To be added.</remarks>
       </Docs>
-      <AssemblyInfo>
-        <AssemblyVersion>0.0.0.0</AssemblyVersion>
-        <AssemblyVersion>1.0.0.0</AssemblyVersion>
-      </AssemblyInfo>
     </Member>
     <Member MemberName="ContainerColorNormal">
       <MemberSignature Language="C#" Value="public int ContainerColorNormal;" />
+      <MemberSignature Language="ILAsm" Value=".field public int32 ContainerColorNormal" />
       <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
@@ -161,14 +174,15 @@
         <summary>To be added.</summary>
         <remarks>To be added.</remarks>
       </Docs>
+    </Member>
+    <Member MemberName="ContainerMove">
+      <MemberSignature Language="C#" Value="public virtual void ContainerMove (int row, int col);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void ContainerMove(int32 row, int32 col) cil managed" />
+      <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member>
-    <Member MemberName="ContainerMove">
-      <MemberSignature Language="C#" Value="public virtual void ContainerMove (int row, int col);" />
-      <MemberType>Method</MemberType>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
@@ -182,13 +196,10 @@
         <summary>To be added.</summary>
         <remarks>To be added.</remarks>
       </Docs>
-      <AssemblyInfo>
-        <AssemblyVersion>0.0.0.0</AssemblyVersion>
-        <AssemblyVersion>1.0.0.0</AssemblyVersion>
-      </AssemblyInfo>
     </Member>
     <Member MemberName="DoSizeChanged">
       <MemberSignature Language="C#" Value="public override void DoSizeChanged ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void DoSizeChanged() cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
@@ -204,7 +215,12 @@
     </Member>
     <Member MemberName="EnsureFocus">
       <MemberSignature Language="C#" Value="public void EnsureFocus ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void EnsureFocus() cil managed" />
       <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
@@ -216,14 +232,15 @@
             </summary>
         <remarks>To be added.</remarks>
       </Docs>
+    </Member>
+    <Member MemberName="FocusFirst">
+      <MemberSignature Language="C#" Value="public void FocusFirst ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void FocusFirst() cil managed" />
+      <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member>
-    <Member MemberName="FocusFirst">
-      <MemberSignature Language="C#" Value="public void FocusFirst ();" />
-      <MemberType>Method</MemberType>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
@@ -234,14 +251,15 @@
             </summary>
         <remarks>To be added.</remarks>
       </Docs>
+    </Member>
+    <Member MemberName="FocusLast">
+      <MemberSignature Language="C#" Value="public void FocusLast ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void FocusLast() cil managed" />
+      <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member>
-    <Member MemberName="FocusLast">
-      <MemberSignature Language="C#" Value="public void FocusLast ();" />
-      <MemberType>Method</MemberType>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
@@ -252,14 +270,15 @@
             </summary>
         <remarks>To be added.</remarks>
       </Docs>
+    </Member>
+    <Member MemberName="FocusNext">
+      <MemberSignature Language="C#" Value="public bool FocusNext ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool FocusNext() cil managed" />
+      <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member>
-    <Member MemberName="FocusNext">
-      <MemberSignature Language="C#" Value="public bool FocusNext ();" />
-      <MemberType>Method</MemberType>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
@@ -271,14 +290,15 @@
         <returns>To be added.</returns>
         <remarks />
       </Docs>
+    </Member>
+    <Member MemberName="FocusPrev">
+      <MemberSignature Language="C#" Value="public bool FocusPrev ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool FocusPrev() cil managed" />
+      <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member>
-    <Member MemberName="FocusPrev">
-      <MemberSignature Language="C#" Value="public bool FocusPrev ();" />
-      <MemberType>Method</MemberType>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
@@ -290,14 +310,15 @@
         <returns>To be added.</returns>
         <remarks />
       </Docs>
+    </Member>
+    <Member MemberName="GetBase">
+      <MemberSignature Language="C#" Value="public virtual void GetBase (out int row, out int col);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void GetBase(int32 row, int32 col) cil managed" />
+      <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member>
-    <Member MemberName="GetBase">
-      <MemberSignature Language="C#" Value="public virtual void GetBase (out int row, out int col);" />
-      <MemberType>Method</MemberType>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
@@ -318,13 +339,10 @@
             Frames or Dialogs).
             </remarks>
       </Docs>
-      <AssemblyInfo>
-        <AssemblyVersion>0.0.0.0</AssemblyVersion>
-        <AssemblyVersion>1.0.0.0</AssemblyVersion>
-      </AssemblyInfo>
     </Member>
     <Member MemberName="GetEnumerator">
       <MemberSignature Language="C#" Value="public System.Collections.IEnumerator GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.IEnumerator GetEnumerator() cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
@@ -341,6 +359,7 @@
     </Member>
     <Member MemberName="PositionCursor">
       <MemberSignature Language="C#" Value="public override void PositionCursor ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void PositionCursor() cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
@@ -356,7 +375,12 @@
     </Member>
     <Member MemberName="Prepare">
       <MemberSignature Language="C#" Value="public virtual void Prepare ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Prepare() cil managed" />
       <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
@@ -367,13 +391,10 @@
             </summary>
         <remarks />
       </Docs>
-      <AssemblyInfo>
-        <AssemblyVersion>0.0.0.0</AssemblyVersion>
-        <AssemblyVersion>1.0.0.0</AssemblyVersion>
-      </AssemblyInfo>
     </Member>
     <Member MemberName="ProcessColdKey">
       <MemberSignature Language="C#" Value="public override bool ProcessColdKey (int key);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool ProcessColdKey(int32 key) cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
@@ -393,6 +414,7 @@
     </Member>
     <Member MemberName="ProcessHotKey">
       <MemberSignature Language="C#" Value="public override bool ProcessHotKey (int key);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool ProcessHotKey(int32 key) cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
@@ -412,6 +434,7 @@
     </Member>
     <Member MemberName="ProcessKey">
       <MemberSignature Language="C#" Value="public override bool ProcessKey (int key);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool ProcessKey(int32 key) cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
@@ -431,6 +454,7 @@
     </Member>
     <Member MemberName="ProcessMouse">
       <MemberSignature Language="C#" Value="public override void ProcessMouse (Mono.Terminal.Curses.MouseEvent ev);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void ProcessMouse(valuetype Mono.Terminal.Curses/MouseEvent ev) cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
@@ -449,6 +473,7 @@
     </Member>
     <Member MemberName="Redraw">
       <MemberSignature Language="C#" Value="public override void Redraw ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Redraw() cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
@@ -464,7 +489,12 @@
     </Member>
     <Member MemberName="RedrawChildren">
       <MemberSignature Language="C#" Value="public void RedrawChildren ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RedrawChildren() cil managed" />
       <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
@@ -475,13 +505,10 @@
             </summary>
         <remarks />
       </Docs>
-      <AssemblyInfo>
-        <AssemblyVersion>0.0.0.0</AssemblyVersion>
-        <AssemblyVersion>1.0.0.0</AssemblyVersion>
-      </AssemblyInfo>
     </Member>
     <Member MemberName="Remove">
       <MemberSignature Language="C#" Value="public virtual void Remove (Mono.Terminal.Widget w);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Remove(class Mono.Terminal.Widget w) cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
@@ -502,6 +529,7 @@
     </Member>
     <Member MemberName="RemoveAll">
       <MemberSignature Language="C#" Value="public virtual void RemoveAll ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void RemoveAll() cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
@@ -519,7 +547,12 @@
     </Member>
     <Member MemberName="Running">
       <MemberSignature Language="C#" Value="public bool Running;" />
+      <MemberSignature Language="ILAsm" Value=".field public bool Running" />
       <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
@@ -527,14 +560,15 @@
         <summary>To be added.</summary>
         <remarks>To be added.</remarks>
       </Docs>
+    </Member>
+    <Member MemberName="SetFocus">
+      <MemberSignature Language="C#" Value="public void SetFocus (Mono.Terminal.Widget w);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetFocus(class Mono.Terminal.Widget w) cil managed" />
+      <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member>
-    <Member MemberName="SetFocus">
-      <MemberSignature Language="C#" Value="public void SetFocus (Mono.Terminal.Widget w);" />
-      <MemberType>Method</MemberType>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
@@ -553,14 +587,15 @@
             supports being focused.
             </remarks>
       </Docs>
+    </Member>
+    <Member MemberName="SizeChanged">
+      <MemberSignature Language="C#" Value="public void SizeChanged ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SizeChanged() cil managed" />
+      <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member>
-    <Member MemberName="SizeChanged">
-      <MemberSignature Language="C#" Value="public void SizeChanged ();" />
-      <MemberType>Method</MemberType>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
@@ -572,14 +607,15 @@
             </summary>
         <remarks />
       </Docs>
+    </Member>
+    <Member MemberName="SizeChangedEvent">
+      <MemberSignature Language="C#" Value="public event EventHandler SizeChangedEvent;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler SizeChangedEvent" />
+      <MemberType>Event</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member>
-    <Member MemberName="SizeChangedEvent">
-      <MemberSignature Language="C#" Value="public event EventHandler SizeChangedEvent;" />
-      <MemberType>Event</MemberType>
       <ReturnValue>
         <ReturnType>System.EventHandler</ReturnType>
       </ReturnValue>
@@ -589,10 +625,6 @@
             </summary>
         <remarks />
       </Docs>
-      <AssemblyInfo>
-        <AssemblyVersion>0.0.0.0</AssemblyVersion>
-        <AssemblyVersion>1.0.0.0</AssemblyVersion>
-      </AssemblyInfo>
     </Member>
   </Members>
 </Type>

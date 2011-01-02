@@ -1,5 +1,6 @@
 <Type Name="CheckBox" FullName="Mono.Terminal.CheckBox">
   <TypeSignature Language="C#" Value="public class CheckBox : Mono.Terminal.Widget" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit CheckBox extends Mono.Terminal.Widget" />
   <AssemblyInfo>
     <AssemblyName>mono-curses</AssemblyName>
     <AssemblyVersion>1.0.0.0</AssemblyVersion>
@@ -15,6 +16,7 @@
   <Members>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public CheckBox (int x, int y, string s);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 x, int32 y, string s) cil managed" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
@@ -40,6 +42,7 @@
     </Member>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public CheckBox (int x, int y, string s, bool is_checked);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 x, int32 y, string s, bool is_checked) cil managed" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
@@ -67,6 +70,7 @@
     </Member>
     <Member MemberName="Checked">
       <MemberSignature Language="C#" Value="public bool Checked { set; get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Checked" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
@@ -84,6 +88,7 @@
     </Member>
     <Member MemberName="PositionCursor">
       <MemberSignature Language="C#" Value="public override void PositionCursor ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void PositionCursor() cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
@@ -99,6 +104,7 @@
     </Member>
     <Member MemberName="ProcessKey">
       <MemberSignature Language="C#" Value="public override bool ProcessKey (int c);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool ProcessKey(int32 c) cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
@@ -118,6 +124,7 @@
     </Member>
     <Member MemberName="ProcessMouse">
       <MemberSignature Language="C#" Value="public override void ProcessMouse (Mono.Terminal.Curses.MouseEvent ev);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void ProcessMouse(valuetype Mono.Terminal.Curses/MouseEvent ev) cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
@@ -136,6 +143,7 @@
     </Member>
     <Member MemberName="Redraw">
       <MemberSignature Language="C#" Value="public override void Redraw ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Redraw() cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
@@ -151,6 +159,7 @@
     </Member>
     <Member MemberName="Text">
       <MemberSignature Language="C#" Value="public string Text { set; get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Text" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
@@ -168,6 +177,7 @@
     </Member>
     <Member MemberName="Toggled">
       <MemberSignature Language="C#" Value="public event EventHandler Toggled;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler Toggled" />
       <MemberType>Event</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>

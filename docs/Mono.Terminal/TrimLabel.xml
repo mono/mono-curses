@@ -1,5 +1,6 @@
 <Type Name="TrimLabel" FullName="Mono.Terminal.TrimLabel">
   <TypeSignature Language="C#" Value="public class TrimLabel : Mono.Terminal.Label" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit TrimLabel extends Mono.Terminal.Label" />
   <AssemblyInfo>
     <AssemblyName>mono-curses</AssemblyName>
     <AssemblyVersion>0.0.0.0</AssemblyVersion>
@@ -22,7 +23,12 @@
   <Members>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public TrimLabel (int x, int y, int w, string s);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 x, int32 y, int32 w, string s) cil managed" />
       <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
       <Parameters>
         <Parameter Name="x" Type="System.Int32" />
         <Parameter Name="y" Type="System.Int32" />
@@ -39,13 +45,10 @@
             </summary>
         <remarks />
       </Docs>
-      <AssemblyInfo>
-        <AssemblyVersion>0.0.0.0</AssemblyVersion>
-        <AssemblyVersion>1.0.0.0</AssemblyVersion>
-      </AssemblyInfo>
     </Member>
     <Member MemberName="DoSizeChanged">
       <MemberSignature Language="C#" Value="public override void DoSizeChanged ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void DoSizeChanged() cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
@@ -61,6 +64,7 @@
     </Member>
     <Member MemberName="Text">
       <MemberSignature Language="C#" Value="public override string Text { set; get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Text" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>

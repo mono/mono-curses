@@ -1,5 +1,6 @@
 <Type Name="Button" FullName="Mono.Terminal.Button">
   <TypeSignature Language="C#" Value="public class Button : Mono.Terminal.Widget" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Button extends Mono.Terminal.Widget" />
   <AssemblyInfo>
     <AssemblyName>mono-curses</AssemblyName>
     <AssemblyVersion>0.0.0.0</AssemblyVersion>
@@ -22,7 +23,12 @@
   <Members>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public Button (string s);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string s) cil managed" />
       <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
       <Parameters>
         <Parameter Name="s" Type="System.String" />
       </Parameters>
@@ -37,14 +43,15 @@
             text length.   This button is not a default button.
             </remarks>
       </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Button (string s, bool is_default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string s, bool is_default) cil managed" />
+      <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member>
-    <Member MemberName=".ctor">
-      <MemberSignature Language="C#" Value="public Button (string s, bool is_default);" />
-      <MemberType>Constructor</MemberType>
       <Parameters>
         <Parameter Name="s" Type="System.String" />
         <Parameter Name="is_default" Type="System.Boolean" />
@@ -62,14 +69,15 @@
             dialog would implicitly activate this button.
             </remarks>
       </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Button (int x, int y, string s);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 x, int32 y, string s) cil managed" />
+      <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member>
-    <Member MemberName=".ctor">
-      <MemberSignature Language="C#" Value="public Button (int x, int y, string s);" />
-      <MemberType>Constructor</MemberType>
       <Parameters>
         <Parameter Name="x" Type="System.Int32" />
         <Parameter Name="y" Type="System.Int32" />
@@ -88,14 +96,15 @@
             text length.   This button is not a default button.
             </remarks>
       </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Button (int x, int y, string s, bool is_default);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 x, int32 y, string s, bool is_default) cil managed" />
+      <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member>
-    <Member MemberName=".ctor">
-      <MemberSignature Language="C#" Value="public Button (int x, int y, string s, bool is_default);" />
-      <MemberType>Constructor</MemberType>
       <Parameters>
         <Parameter Name="x" Type="System.Int32" />
         <Parameter Name="y" Type="System.Int32" />
@@ -117,14 +126,15 @@
             dialog would implicitly activate this button.
             </remarks>
       </Docs>
+    </Member>
+    <Member MemberName="Clicked">
+      <MemberSignature Language="C#" Value="public event EventHandler Clicked;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler Clicked" />
+      <MemberType>Event</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member>
-    <Member MemberName="Clicked">
-      <MemberSignature Language="C#" Value="public event EventHandler Clicked;" />
-      <MemberType>Event</MemberType>
       <ReturnValue>
         <ReturnType>System.EventHandler</ReturnType>
       </ReturnValue>
@@ -138,13 +148,10 @@
             the mouse or the keyboard.
             </remarks>
       </Docs>
-      <AssemblyInfo>
-        <AssemblyVersion>0.0.0.0</AssemblyVersion>
-        <AssemblyVersion>1.0.0.0</AssemblyVersion>
-      </AssemblyInfo>
     </Member>
     <Member MemberName="PositionCursor">
       <MemberSignature Language="C#" Value="public override void PositionCursor ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void PositionCursor() cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
@@ -160,6 +167,7 @@
     </Member>
     <Member MemberName="ProcessColdKey">
       <MemberSignature Language="C#" Value="public override bool ProcessColdKey (int key);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool ProcessColdKey(int32 key) cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
@@ -179,6 +187,7 @@
     </Member>
     <Member MemberName="ProcessHotKey">
       <MemberSignature Language="C#" Value="public override bool ProcessHotKey (int key);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool ProcessHotKey(int32 key) cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
@@ -198,6 +207,7 @@
     </Member>
     <Member MemberName="ProcessKey">
       <MemberSignature Language="C#" Value="public override bool ProcessKey (int c);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool ProcessKey(int32 c) cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
@@ -217,6 +227,7 @@
     </Member>
     <Member MemberName="ProcessMouse">
       <MemberSignature Language="C#" Value="public override void ProcessMouse (Mono.Terminal.Curses.MouseEvent ev);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void ProcessMouse(valuetype Mono.Terminal.Curses/MouseEvent ev) cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
@@ -235,6 +246,7 @@
     </Member>
     <Member MemberName="Redraw">
       <MemberSignature Language="C#" Value="public override void Redraw ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Redraw() cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
@@ -250,6 +262,7 @@
     </Member>
     <Member MemberName="Text">
       <MemberSignature Language="C#" Value="public string Text { set; get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Text" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>

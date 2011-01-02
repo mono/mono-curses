@@ -1,5 +1,6 @@
 <Type Name="Entry" FullName="Mono.Terminal.Entry">
   <TypeSignature Language="C#" Value="public class Entry : Mono.Terminal.Widget" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Entry extends Mono.Terminal.Widget" />
   <AssemblyInfo>
     <AssemblyName>mono-curses</AssemblyName>
     <AssemblyVersion>0.0.0.0</AssemblyVersion>
@@ -21,7 +22,12 @@
   <Members>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public Entry (int x, int y, int w, string s);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 x, int32 y, int32 w, string s) cil managed" />
       <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
       <Parameters>
         <Parameter Name="x" Type="System.Int32" />
         <Parameter Name="y" Type="System.Int32" />
@@ -38,13 +44,10 @@
             </summary>
         <remarks />
       </Docs>
-      <AssemblyInfo>
-        <AssemblyVersion>0.0.0.0</AssemblyVersion>
-        <AssemblyVersion>1.0.0.0</AssemblyVersion>
-      </AssemblyInfo>
     </Member>
     <Member MemberName="Changed">
       <MemberSignature Language="C#" Value="public event EventHandler Changed;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler Changed" />
       <MemberType>Event</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
@@ -64,6 +67,7 @@
     </Member>
     <Member MemberName="Color">
       <MemberSignature Language="C#" Value="public int Color { set; get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Color" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
@@ -81,6 +85,7 @@
     </Member>
     <Member MemberName="CursorPosition">
       <MemberSignature Language="C#" Value="public int CursorPosition { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 CursorPosition" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
@@ -98,6 +103,7 @@
     </Member>
     <Member MemberName="PositionCursor">
       <MemberSignature Language="C#" Value="public override void PositionCursor ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void PositionCursor() cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
@@ -115,6 +121,7 @@
     </Member>
     <Member MemberName="ProcessKey">
       <MemberSignature Language="C#" Value="public override bool ProcessKey (int key);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool ProcessKey(int32 key) cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
@@ -134,6 +141,7 @@
     </Member>
     <Member MemberName="ProcessMouse">
       <MemberSignature Language="C#" Value="public override void ProcessMouse (Mono.Terminal.Curses.MouseEvent ev);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void ProcessMouse(valuetype Mono.Terminal.Curses/MouseEvent ev) cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
@@ -152,6 +160,7 @@
     </Member>
     <Member MemberName="Redraw">
       <MemberSignature Language="C#" Value="public override void Redraw ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Redraw() cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
@@ -167,6 +176,7 @@
     </Member>
     <Member MemberName="Secret">
       <MemberSignature Language="C#" Value="public bool Secret { set; get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Secret" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
@@ -186,7 +196,12 @@
     </Member>
     <Member MemberName="Text">
       <MemberSignature Language="C#" Value="public string Text { set; get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Text" />
       <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
@@ -197,10 +212,6 @@
         <value>To be added.</value>
         <remarks />
       </Docs>
-      <AssemblyInfo>
-        <AssemblyVersion>0.0.0.0</AssemblyVersion>
-        <AssemblyVersion>1.0.0.0</AssemblyVersion>
-      </AssemblyInfo>
     </Member>
   </Members>
 </Type>

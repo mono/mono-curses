@@ -1,5 +1,6 @@
 <Type Name="Curses+Event" FullName="Mono.Terminal.Curses+Event">
   <TypeSignature Language="C#" Value="public enum Curses.Event" />
+  <TypeSignature Language="ILAsm" Value=".class nested public auto ansi sealed Curses/Event extends System.Enum" />
   <AssemblyInfo>
     <AssemblyName>mono-curses</AssemblyName>
     <AssemblyVersion>0.0.0.0</AssemblyVersion>
@@ -15,6 +16,7 @@
   <Members>
     <Member MemberName="AllEvents">
       <MemberSignature Language="C#" Value="AllEvents" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Mono.Terminal.Curses/Event AllEvents = int64(134217727)" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
@@ -29,6 +31,7 @@
     </Member>
     <Member MemberName="Button1Clicked">
       <MemberSignature Language="C#" Value="Button1Clicked" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Mono.Terminal.Curses/Event Button1Clicked = int64(4)" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
@@ -43,6 +46,7 @@
     </Member>
     <Member MemberName="Button1DoubleClicked">
       <MemberSignature Language="C#" Value="Button1DoubleClicked" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Mono.Terminal.Curses/Event Button1DoubleClicked = int64(8)" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
@@ -57,6 +61,7 @@
     </Member>
     <Member MemberName="Button1Pressed">
       <MemberSignature Language="C#" Value="Button1Pressed" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Mono.Terminal.Curses/Event Button1Pressed = int64(2)" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
@@ -71,6 +76,7 @@
     </Member>
     <Member MemberName="Button1Released">
       <MemberSignature Language="C#" Value="Button1Released" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Mono.Terminal.Curses/Event Button1Released = int64(1)" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
@@ -85,6 +91,7 @@
     </Member>
     <Member MemberName="Button1TripleClicked">
       <MemberSignature Language="C#" Value="Button1TripleClicked" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Mono.Terminal.Curses/Event Button1TripleClicked = int64(16)" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
@@ -99,6 +106,7 @@
     </Member>
     <Member MemberName="Button2Clicked">
       <MemberSignature Language="C#" Value="Button2Clicked" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Mono.Terminal.Curses/Event Button2Clicked = int64(256)" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
@@ -113,6 +121,7 @@
     </Member>
     <Member MemberName="Button2DoubleClicked">
       <MemberSignature Language="C#" Value="Button2DoubleClicked" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Mono.Terminal.Curses/Event Button2DoubleClicked = int64(512)" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
@@ -127,6 +136,7 @@
     </Member>
     <Member MemberName="Button2Pressed">
       <MemberSignature Language="C#" Value="Button2Pressed" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Mono.Terminal.Curses/Event Button2Pressed = int64(128)" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
@@ -141,6 +151,7 @@
     </Member>
     <Member MemberName="Button2Released">
       <MemberSignature Language="C#" Value="Button2Released" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Mono.Terminal.Curses/Event Button2Released = int64(64)" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
@@ -155,6 +166,7 @@
     </Member>
     <Member MemberName="Button2TrippleClicked">
       <MemberSignature Language="C#" Value="Button2TrippleClicked" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Mono.Terminal.Curses/Event Button2TrippleClicked = int64(1024)" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
@@ -169,6 +181,7 @@
     </Member>
     <Member MemberName="Button3Clicked">
       <MemberSignature Language="C#" Value="Button3Clicked" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Mono.Terminal.Curses/Event Button3Clicked = int64(16384)" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
@@ -183,6 +196,7 @@
     </Member>
     <Member MemberName="Button3DoubleClicked">
       <MemberSignature Language="C#" Value="Button3DoubleClicked" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Mono.Terminal.Curses/Event Button3DoubleClicked = int64(32768)" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
@@ -197,6 +211,7 @@
     </Member>
     <Member MemberName="Button3Pressed">
       <MemberSignature Language="C#" Value="Button3Pressed" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Mono.Terminal.Curses/Event Button3Pressed = int64(8192)" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
@@ -211,6 +226,7 @@
     </Member>
     <Member MemberName="Button3Released">
       <MemberSignature Language="C#" Value="Button3Released" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Mono.Terminal.Curses/Event Button3Released = int64(4096)" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
@@ -225,6 +241,7 @@
     </Member>
     <Member MemberName="Button3TripleClicked">
       <MemberSignature Language="C#" Value="Button3TripleClicked" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Mono.Terminal.Curses/Event Button3TripleClicked = int64(65536)" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
@@ -239,6 +256,7 @@
     </Member>
     <Member MemberName="Button4Clicked">
       <MemberSignature Language="C#" Value="Button4Clicked" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Mono.Terminal.Curses/Event Button4Clicked = int64(1048576)" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
@@ -253,6 +271,7 @@
     </Member>
     <Member MemberName="Button4DoubleClicked">
       <MemberSignature Language="C#" Value="Button4DoubleClicked" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Mono.Terminal.Curses/Event Button4DoubleClicked = int64(2097152)" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
@@ -267,6 +286,7 @@
     </Member>
     <Member MemberName="Button4Pressed">
       <MemberSignature Language="C#" Value="Button4Pressed" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Mono.Terminal.Curses/Event Button4Pressed = int64(524288)" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
@@ -281,6 +301,7 @@
     </Member>
     <Member MemberName="Button4Released">
       <MemberSignature Language="C#" Value="Button4Released" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Mono.Terminal.Curses/Event Button4Released = int64(262144)" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
@@ -295,6 +316,7 @@
     </Member>
     <Member MemberName="Button4TripleClicked">
       <MemberSignature Language="C#" Value="Button4TripleClicked" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Mono.Terminal.Curses/Event Button4TripleClicked = int64(4194304)" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
@@ -309,6 +331,7 @@
     </Member>
     <Member MemberName="ButtonAlt">
       <MemberSignature Language="C#" Value="ButtonAlt" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Mono.Terminal.Curses/Event ButtonAlt = int64(67108864)" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
@@ -323,6 +346,7 @@
     </Member>
     <Member MemberName="ButtonCtrl">
       <MemberSignature Language="C#" Value="ButtonCtrl" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Mono.Terminal.Curses/Event ButtonCtrl = int64(16777216)" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
@@ -337,6 +361,7 @@
     </Member>
     <Member MemberName="ButtonShift">
       <MemberSignature Language="C#" Value="ButtonShift" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Mono.Terminal.Curses/Event ButtonShift = int64(33554432)" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
@@ -351,6 +376,7 @@
     </Member>
     <Member MemberName="ReportMousePosition">
       <MemberSignature Language="C#" Value="ReportMousePosition" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Mono.Terminal.Curses/Event ReportMousePosition = int64(134217728)" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>

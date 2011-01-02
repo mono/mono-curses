@@ -1,5 +1,6 @@
 <Type Name="Curses" FullName="Mono.Terminal.Curses">
   <TypeSignature Language="C#" Value="public class Curses" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Curses extends System.Object" />
   <AssemblyInfo>
     <AssemblyName>mono-curses</AssemblyName>
     <AssemblyVersion>0.0.0.0</AssemblyVersion>
@@ -16,20 +17,26 @@
   <Members>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public Curses ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
       <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
       <Parameters />
       <Docs>
         <summary>To be added.</summary>
         <remarks>To be added.</remarks>
       </Docs>
+    </Member>
+    <Member MemberName="A_BLINK">
+      <MemberSignature Language="C#" Value="public const int A_BLINK = 524288;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 A_BLINK = (524288)" />
+      <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member>
-    <Member MemberName="A_BLINK">
-      <MemberSignature Language="C#" Value="public const int A_BLINK = 524288;" />
-      <MemberType>Field</MemberType>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
@@ -38,14 +45,15 @@
         <summary>To be added.</summary>
         <remarks>To be added.</remarks>
       </Docs>
+    </Member>
+    <Member MemberName="A_BOLD">
+      <MemberSignature Language="C#" Value="public const int A_BOLD = 2097152;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 A_BOLD = (2097152)" />
+      <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member>
-    <Member MemberName="A_BOLD">
-      <MemberSignature Language="C#" Value="public const int A_BOLD = 2097152;" />
-      <MemberType>Field</MemberType>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
@@ -54,14 +62,15 @@
         <summary>To be added.</summary>
         <remarks>To be added.</remarks>
       </Docs>
+    </Member>
+    <Member MemberName="A_DIM">
+      <MemberSignature Language="C#" Value="public const int A_DIM = 1048576;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 A_DIM = (1048576)" />
+      <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member>
-    <Member MemberName="A_DIM">
-      <MemberSignature Language="C#" Value="public const int A_DIM = 1048576;" />
-      <MemberType>Field</MemberType>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
@@ -70,14 +79,15 @@
         <summary>To be added.</summary>
         <remarks>To be added.</remarks>
       </Docs>
+    </Member>
+    <Member MemberName="A_INVIS">
+      <MemberSignature Language="C#" Value="public const int A_INVIS = 8388608;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 A_INVIS = (8388608)" />
+      <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member>
-    <Member MemberName="A_INVIS">
-      <MemberSignature Language="C#" Value="public const int A_INVIS = 8388608;" />
-      <MemberType>Field</MemberType>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
@@ -86,14 +96,15 @@
         <summary>To be added.</summary>
         <remarks>To be added.</remarks>
       </Docs>
+    </Member>
+    <Member MemberName="A_NORMAL">
+      <MemberSignature Language="C#" Value="public const int A_NORMAL = 0;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 A_NORMAL = (0)" />
+      <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member>
-    <Member MemberName="A_NORMAL">
-      <MemberSignature Language="C#" Value="public const int A_NORMAL = 0;" />
-      <MemberType>Field</MemberType>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
@@ -102,14 +113,15 @@
         <summary>To be added.</summary>
         <remarks>To be added.</remarks>
       </Docs>
+    </Member>
+    <Member MemberName="A_PROTECT">
+      <MemberSignature Language="C#" Value="public const int A_PROTECT = 16777216;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 A_PROTECT = (16777216)" />
+      <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member>
-    <Member MemberName="A_PROTECT">
-      <MemberSignature Language="C#" Value="public const int A_PROTECT = 16777216;" />
-      <MemberType>Field</MemberType>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
@@ -118,14 +130,15 @@
         <summary>To be added.</summary>
         <remarks>To be added.</remarks>
       </Docs>
+    </Member>
+    <Member MemberName="A_REVERSE">
+      <MemberSignature Language="C#" Value="public const int A_REVERSE = 262144;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 A_REVERSE = (262144)" />
+      <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member>
-    <Member MemberName="A_REVERSE">
-      <MemberSignature Language="C#" Value="public const int A_REVERSE = 262144;" />
-      <MemberType>Field</MemberType>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
@@ -134,14 +147,15 @@
         <summary>To be added.</summary>
         <remarks>To be added.</remarks>
       </Docs>
+    </Member>
+    <Member MemberName="A_STANDOUT">
+      <MemberSignature Language="C#" Value="public const int A_STANDOUT = 65536;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 A_STANDOUT = (65536)" />
+      <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member>
-    <Member MemberName="A_STANDOUT">
-      <MemberSignature Language="C#" Value="public const int A_STANDOUT = 65536;" />
-      <MemberType>Field</MemberType>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
@@ -150,14 +164,15 @@
         <summary>To be added.</summary>
         <remarks>To be added.</remarks>
       </Docs>
+    </Member>
+    <Member MemberName="A_UNDERLINE">
+      <MemberSignature Language="C#" Value="public const int A_UNDERLINE = 131072;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 A_UNDERLINE = (131072)" />
+      <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member>
-    <Member MemberName="A_UNDERLINE">
-      <MemberSignature Language="C#" Value="public const int A_UNDERLINE = 131072;" />
-      <MemberType>Field</MemberType>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
@@ -166,14 +181,15 @@
         <summary>To be added.</summary>
         <remarks>To be added.</remarks>
       </Docs>
+    </Member>
+    <Member MemberName="ACS_HLINE">
+      <MemberSignature Language="C#" Value="public const int ACS_HLINE = 4194417;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 ACS_HLINE = (4194417)" />
+      <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member>
-    <Member MemberName="ACS_HLINE">
-      <MemberSignature Language="C#" Value="public const int ACS_HLINE = 4194417;" />
-      <MemberType>Field</MemberType>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
@@ -182,14 +198,15 @@
         <summary>To be added.</summary>
         <remarks>To be added.</remarks>
       </Docs>
+    </Member>
+    <Member MemberName="ACS_LLCORNER">
+      <MemberSignature Language="C#" Value="public const int ACS_LLCORNER = 4194413;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 ACS_LLCORNER = (4194413)" />
+      <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member>
-    <Member MemberName="ACS_LLCORNER">
-      <MemberSignature Language="C#" Value="public const int ACS_LLCORNER = 4194413;" />
-      <MemberType>Field</MemberType>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
@@ -198,14 +215,15 @@
         <summary>To be added.</summary>
         <remarks>To be added.</remarks>
       </Docs>
+    </Member>
+    <Member MemberName="ACS_LRCORNER">
+      <MemberSignature Language="C#" Value="public const int ACS_LRCORNER = 4194410;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 ACS_LRCORNER = (4194410)" />
+      <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member>
-    <Member MemberName="ACS_LRCORNER">
-      <MemberSignature Language="C#" Value="public const int ACS_LRCORNER = 4194410;" />
-      <MemberType>Field</MemberType>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
@@ -214,14 +232,15 @@
         <summary>To be added.</summary>
         <remarks>To be added.</remarks>
       </Docs>
+    </Member>
+    <Member MemberName="ACS_ULCORNER">
+      <MemberSignature Language="C#" Value="public const int ACS_ULCORNER = 4194412;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 ACS_ULCORNER = (4194412)" />
+      <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member>
-    <Member MemberName="ACS_ULCORNER">
-      <MemberSignature Language="C#" Value="public const int ACS_ULCORNER = 4194412;" />
-      <MemberType>Field</MemberType>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
@@ -230,14 +249,15 @@
         <summary>To be added.</summary>
         <remarks>To be added.</remarks>
       </Docs>
+    </Member>
+    <Member MemberName="ACS_URCORNER">
+      <MemberSignature Language="C#" Value="public const int ACS_URCORNER = 4194411;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 ACS_URCORNER = (4194411)" />
+      <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member>
-    <Member MemberName="ACS_URCORNER">
-      <MemberSignature Language="C#" Value="public const int ACS_URCORNER = 4194411;" />
-      <MemberType>Field</MemberType>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
@@ -246,14 +266,15 @@
         <summary>To be added.</summary>
         <remarks>To be added.</remarks>
       </Docs>
+    </Member>
+    <Member MemberName="ACS_VLINE">
+      <MemberSignature Language="C#" Value="public const int ACS_VLINE = 4194424;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 ACS_VLINE = (4194424)" />
+      <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member>
-    <Member MemberName="ACS_VLINE">
-      <MemberSignature Language="C#" Value="public const int ACS_VLINE = 4194424;" />
-      <MemberType>Field</MemberType>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
@@ -262,14 +283,15 @@
         <summary>To be added.</summary>
         <remarks>To be added.</remarks>
       </Docs>
+    </Member>
+    <Member MemberName="addch">
+      <MemberSignature Language="C#" Value="public static int addch (int ch);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig pinvokeimpl (&quot;libncurses.dylib&quot; as &quot;addch&quot; winapi)int32 addch(int32 ch) cil managed" />
+      <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member>
-    <Member MemberName="addch">
-      <MemberSignature Language="C#" Value="public static int addch (int ch);" />
-      <MemberType>Method</MemberType>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
@@ -282,14 +304,15 @@
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
+    </Member>
+    <Member MemberName="addstr">
+      <MemberSignature Language="C#" Value="public static int addstr (string s);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig pinvokeimpl (&quot;libncurses.dylib&quot; as &quot;addstr&quot; winapi)int32 addstr(string s) cil managed" />
+      <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member>
-    <Member MemberName="addstr">
-      <MemberSignature Language="C#" Value="public static int addstr (string s);" />
-      <MemberType>Method</MemberType>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
@@ -302,13 +325,10 @@
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
-      <AssemblyInfo>
-        <AssemblyVersion>0.0.0.0</AssemblyVersion>
-        <AssemblyVersion>1.0.0.0</AssemblyVersion>
-      </AssemblyInfo>
     </Member>
     <Member MemberName="addstr">
       <MemberSignature Language="C#" Value="public static int addstr (string format, object[] args);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int32 addstr(string format, object[] args) cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
@@ -336,7 +356,12 @@
     </Member>
     <Member MemberName="attroff">
       <MemberSignature Language="C#" Value="public static int attroff (int attrs);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig pinvokeimpl (&quot;libncurses.dylib&quot; as &quot;attroff&quot; winapi)int32 attroff(int32 attrs) cil managed" />
       <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
@@ -349,14 +374,15 @@
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
-      <AssemblyInfo>
-        <AssemblyVersion>0.0.0.0</AssemblyVersion>
-        <AssemblyVersion>1.0.0.0</AssemblyVersion>
-      </AssemblyInfo>
     </Member>
     <Member MemberName="attron">
       <MemberSignature Language="C#" Value="public static int attron (int attrs);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig pinvokeimpl (&quot;libncurses.dylib&quot; as &quot;attron&quot; winapi)int32 attron(int32 attrs) cil managed" />
       <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
@@ -369,14 +395,15 @@
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
-      <AssemblyInfo>
-        <AssemblyVersion>0.0.0.0</AssemblyVersion>
-        <AssemblyVersion>1.0.0.0</AssemblyVersion>
-      </AssemblyInfo>
     </Member>
     <Member MemberName="attrset">
       <MemberSignature Language="C#" Value="public static int attrset (int attrs);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig pinvokeimpl (&quot;libncurses.dylib&quot; as &quot;attrset&quot; winapi)int32 attrset(int32 attrs) cil managed" />
       <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
@@ -389,14 +416,15 @@
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
+    </Member>
+    <Member MemberName="cbreak">
+      <MemberSignature Language="C#" Value="public static int cbreak ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig pinvokeimpl (&quot;libncurses.dylib&quot; as &quot;cbreak&quot; winapi)int32 cbreak() cil managed" />
+      <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member>
-    <Member MemberName="cbreak">
-      <MemberSignature Language="C#" Value="public static int cbreak ();" />
-      <MemberType>Method</MemberType>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
@@ -406,14 +434,15 @@
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
+    </Member>
+    <Member MemberName="COLOR_BLACK">
+      <MemberSignature Language="C#" Value="public const int COLOR_BLACK = 0;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 COLOR_BLACK = (0)" />
+      <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member>
-    <Member MemberName="COLOR_BLACK">
-      <MemberSignature Language="C#" Value="public const int COLOR_BLACK = 0;" />
-      <MemberType>Field</MemberType>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
@@ -422,14 +451,15 @@
         <summary>To be added.</summary>
         <remarks>To be added.</remarks>
       </Docs>
+    </Member>
+    <Member MemberName="COLOR_BLUE">
+      <MemberSignature Language="C#" Value="public const int COLOR_BLUE = 4;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 COLOR_BLUE = (4)" />
+      <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member>
-    <Member MemberName="COLOR_BLUE">
-      <MemberSignature Language="C#" Value="public const int COLOR_BLUE = 4;" />
-      <MemberType>Field</MemberType>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
@@ -438,14 +468,15 @@
         <summary>To be added.</summary>
         <remarks>To be added.</remarks>
       </Docs>
+    </Member>
+    <Member MemberName="COLOR_CYAN">
+      <MemberSignature Language="C#" Value="public const int COLOR_CYAN = 6;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 COLOR_CYAN = (6)" />
+      <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member>
-    <Member MemberName="COLOR_CYAN">
-      <MemberSignature Language="C#" Value="public const int COLOR_CYAN = 6;" />
-      <MemberType>Field</MemberType>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
@@ -454,14 +485,15 @@
         <summary>To be added.</summary>
         <remarks>To be added.</remarks>
       </Docs>
+    </Member>
+    <Member MemberName="COLOR_GREEN">
+      <MemberSignature Language="C#" Value="public const int COLOR_GREEN = 2;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 COLOR_GREEN = (2)" />
+      <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member>
-    <Member MemberName="COLOR_GREEN">
-      <MemberSignature Language="C#" Value="public const int COLOR_GREEN = 2;" />
-      <MemberType>Field</MemberType>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
@@ -470,14 +502,15 @@
         <summary>To be added.</summary>
         <remarks>To be added.</remarks>
       </Docs>
+    </Member>
+    <Member MemberName="COLOR_MAGENTA">
+      <MemberSignature Language="C#" Value="public const int COLOR_MAGENTA = 5;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 COLOR_MAGENTA = (5)" />
+      <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member>
-    <Member MemberName="COLOR_MAGENTA">
-      <MemberSignature Language="C#" Value="public const int COLOR_MAGENTA = 5;" />
-      <MemberType>Field</MemberType>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
@@ -486,14 +519,15 @@
         <summary>To be added.</summary>
         <remarks>To be added.</remarks>
       </Docs>
+    </Member>
+    <Member MemberName="COLOR_RED">
+      <MemberSignature Language="C#" Value="public const int COLOR_RED = 1;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 COLOR_RED = (1)" />
+      <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member>
-    <Member MemberName="COLOR_RED">
-      <MemberSignature Language="C#" Value="public const int COLOR_RED = 1;" />
-      <MemberType>Field</MemberType>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
@@ -502,14 +536,15 @@
         <summary>To be added.</summary>
         <remarks>To be added.</remarks>
       </Docs>
+    </Member>
+    <Member MemberName="COLOR_WHITE">
+      <MemberSignature Language="C#" Value="public const int COLOR_WHITE = 7;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 COLOR_WHITE = (7)" />
+      <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member>
-    <Member MemberName="COLOR_WHITE">
-      <MemberSignature Language="C#" Value="public const int COLOR_WHITE = 7;" />
-      <MemberType>Field</MemberType>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
@@ -518,14 +553,15 @@
         <summary>To be added.</summary>
         <remarks>To be added.</remarks>
       </Docs>
+    </Member>
+    <Member MemberName="COLOR_YELLOW">
+      <MemberSignature Language="C#" Value="public const int COLOR_YELLOW = 3;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 COLOR_YELLOW = (3)" />
+      <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member>
-    <Member MemberName="COLOR_YELLOW">
-      <MemberSignature Language="C#" Value="public const int COLOR_YELLOW = 3;" />
-      <MemberType>Field</MemberType>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
@@ -534,14 +570,15 @@
         <summary>To be added.</summary>
         <remarks>To be added.</remarks>
       </Docs>
+    </Member>
+    <Member MemberName="ColorPair">
+      <MemberSignature Language="C#" Value="public static int ColorPair (int n);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int32 ColorPair(int32 n) cil managed" />
+      <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member>
-    <Member MemberName="ColorPair">
-      <MemberSignature Language="C#" Value="public static int ColorPair (int n);" />
-      <MemberType>Method</MemberType>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
@@ -554,14 +591,15 @@
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
+    </Member>
+    <Member MemberName="Cols">
+      <MemberSignature Language="C#" Value="public static int Cols { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property int32 Cols" />
+      <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member>
-    <Member MemberName="Cols">
-      <MemberSignature Language="C#" Value="public static int Cols { get; }" />
-      <MemberType>Property</MemberType>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
@@ -570,14 +608,15 @@
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
-      <AssemblyInfo>
-        <AssemblyVersion>0.0.0.0</AssemblyVersion>
-        <AssemblyVersion>1.0.0.0</AssemblyVersion>
-      </AssemblyInfo>
     </Member>
     <Member MemberName="doupdate">
       <MemberSignature Language="C#" Value="public static int doupdate ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig pinvokeimpl (&quot;libncurses.dylib&quot; as &quot;doupdate&quot; winapi)int32 doupdate() cil managed" />
       <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
@@ -587,14 +626,15 @@
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
-      <AssemblyInfo>
-        <AssemblyVersion>0.0.0.0</AssemblyVersion>
-        <AssemblyVersion>1.0.0.0</AssemblyVersion>
-      </AssemblyInfo>
     </Member>
     <Member MemberName="echo">
       <MemberSignature Language="C#" Value="public static int echo ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig pinvokeimpl (&quot;libncurses.dylib&quot; as &quot;echo&quot; winapi)int32 echo() cil managed" />
       <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
@@ -604,14 +644,15 @@
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
-      <AssemblyInfo>
-        <AssemblyVersion>0.0.0.0</AssemblyVersion>
-        <AssemblyVersion>1.0.0.0</AssemblyVersion>
-      </AssemblyInfo>
     </Member>
     <Member MemberName="endwin">
       <MemberSignature Language="C#" Value="public static int endwin ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig pinvokeimpl (&quot;libncurses.dylib&quot; as &quot;endwin&quot; winapi)int32 endwin() cil managed" />
       <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
@@ -621,14 +662,15 @@
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
+    </Member>
+    <Member MemberName="ERR">
+      <MemberSignature Language="C#" Value="public const int ERR = -1;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 ERR = (-1)" />
+      <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member>
-    <Member MemberName="ERR">
-      <MemberSignature Language="C#" Value="public const int ERR = -1;" />
-      <MemberType>Field</MemberType>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
@@ -637,14 +679,15 @@
         <summary>To be added.</summary>
         <remarks>To be added.</remarks>
       </Docs>
+    </Member>
+    <Member MemberName="halfdelay">
+      <MemberSignature Language="C#" Value="public static int halfdelay (int t);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig pinvokeimpl (&quot;libncurses.dylib&quot; as &quot;halfdelay&quot; winapi)int32 halfdelay(int32 t) cil managed" />
+      <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member>
-    <Member MemberName="halfdelay">
-      <MemberSignature Language="C#" Value="public static int halfdelay (int t);" />
-      <MemberType>Method</MemberType>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
@@ -657,14 +700,15 @@
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
+    </Member>
+    <Member MemberName="initscr">
+      <MemberSignature Language="C#" Value="public static Mono.Terminal.Window initscr ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Mono.Terminal.Window initscr() cil managed" />
+      <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member>
-    <Member MemberName="initscr">
-      <MemberSignature Language="C#" Value="public static Mono.Terminal.Window initscr ();" />
-      <MemberType>Method</MemberType>
       <ReturnValue>
         <ReturnType>Mono.Terminal.Window</ReturnType>
       </ReturnValue>
@@ -674,14 +718,15 @@
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
+    </Member>
+    <Member MemberName="internal_newterm">
+      <MemberSignature Language="C#" Value="public static IntPtr internal_newterm (string type, IntPtr file_outfd, IntPtr file_infd);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig pinvokeimpl (&quot;libncurses.dylib&quot; as &quot;internal_newterm&quot; winapi)native int internal_newterm(string type, native int file_outfd, native int file_infd) cil managed" />
+      <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member>
-    <Member MemberName="internal_newterm">
-      <MemberSignature Language="C#" Value="public static IntPtr internal_newterm (string type, IntPtr file_outfd, IntPtr file_infd);" />
-      <MemberType>Method</MemberType>
       <ReturnValue>
         <ReturnType>System.IntPtr</ReturnType>
       </ReturnValue>
@@ -698,14 +743,15 @@
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
+    </Member>
+    <Member MemberName="internal_set_term">
+      <MemberSignature Language="C#" Value="public static IntPtr internal_set_term (IntPtr newscreen);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig pinvokeimpl (&quot;libncurses.dylib&quot; as &quot;internal_set_term&quot; winapi)native int internal_set_term(native int newscreen) cil managed" />
+      <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member>
-    <Member MemberName="internal_set_term">
-      <MemberSignature Language="C#" Value="public static IntPtr internal_set_term (IntPtr newscreen);" />
-      <MemberType>Method</MemberType>
       <ReturnValue>
         <ReturnType>System.IntPtr</ReturnType>
       </ReturnValue>
@@ -718,14 +764,15 @@
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
+    </Member>
+    <Member MemberName="IsAlt">
+      <MemberSignature Language="C#" Value="public static int IsAlt (int key);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int32 IsAlt(int32 key) cil managed" />
+      <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member>
-    <Member MemberName="IsAlt">
-      <MemberSignature Language="C#" Value="public static int IsAlt (int key);" />
-      <MemberType>Method</MemberType>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
@@ -738,14 +785,15 @@
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
+    </Member>
+    <Member MemberName="isendwin">
+      <MemberSignature Language="C#" Value="public static bool isendwin ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig pinvokeimpl (&quot;libncurses.dylib&quot; as &quot;isendwin&quot; winapi)bool isendwin() cil managed" />
+      <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member>
-    <Member MemberName="isendwin">
-      <MemberSignature Language="C#" Value="public static bool isendwin ();" />
-      <MemberType>Method</MemberType>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
@@ -755,14 +803,15 @@
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
+    </Member>
+    <Member MemberName="KeyAlt">
+      <MemberSignature Language="C#" Value="public const int KeyAlt = 8192;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 KeyAlt = (8192)" />
+      <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member>
-    <Member MemberName="KeyAlt">
-      <MemberSignature Language="C#" Value="public const int KeyAlt = 8192;" />
-      <MemberType>Field</MemberType>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
@@ -771,14 +820,15 @@
         <summary>To be added.</summary>
         <remarks>To be added.</remarks>
       </Docs>
+    </Member>
+    <Member MemberName="KeyBackspace">
+      <MemberSignature Language="C#" Value="public const int KeyBackspace = 263;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 KeyBackspace = (263)" />
+      <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member>
-    <Member MemberName="KeyBackspace">
-      <MemberSignature Language="C#" Value="public const int KeyBackspace = 263;" />
-      <MemberType>Field</MemberType>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
@@ -787,13 +837,10 @@
         <summary>To be added.</summary>
         <remarks>To be added.</remarks>
       </Docs>
-      <AssemblyInfo>
-        <AssemblyVersion>0.0.0.0</AssemblyVersion>
-        <AssemblyVersion>1.0.0.0</AssemblyVersion>
-      </AssemblyInfo>
     </Member>
     <Member MemberName="KeyDeleteChar">
       <MemberSignature Language="C#" Value="public const int KeyDeleteChar = 330;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 KeyDeleteChar = (330)" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
@@ -809,7 +856,12 @@
     </Member>
     <Member MemberName="KeyDown">
       <MemberSignature Language="C#" Value="public const int KeyDown = 258;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 KeyDown = (258)" />
       <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
@@ -818,14 +870,15 @@
         <summary>To be added.</summary>
         <remarks>To be added.</remarks>
       </Docs>
+    </Member>
+    <Member MemberName="KeyEnd">
+      <MemberSignature Language="C#" Value="public const int KeyEnd = 360;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 KeyEnd = (360)" />
+      <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member>
-    <Member MemberName="KeyEnd">
-      <MemberSignature Language="C#" Value="public const int KeyEnd = 360;" />
-      <MemberType>Field</MemberType>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
@@ -834,13 +887,10 @@
         <summary>To be added.</summary>
         <remarks>To be added.</remarks>
       </Docs>
-      <AssemblyInfo>
-        <AssemblyVersion>0.0.0.0</AssemblyVersion>
-        <AssemblyVersion>1.0.0.0</AssemblyVersion>
-      </AssemblyInfo>
     </Member>
     <Member MemberName="KeyF1">
       <MemberSignature Language="C#" Value="public const int KeyF1 = 265;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 KeyF1 = (265)" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
@@ -856,6 +906,7 @@
     </Member>
     <Member MemberName="KeyF10">
       <MemberSignature Language="C#" Value="public const int KeyF10 = 274;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 KeyF10 = (274)" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
@@ -871,6 +922,7 @@
     </Member>
     <Member MemberName="KeyF2">
       <MemberSignature Language="C#" Value="public const int KeyF2 = 266;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 KeyF2 = (266)" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
@@ -886,6 +938,7 @@
     </Member>
     <Member MemberName="KeyF3">
       <MemberSignature Language="C#" Value="public const int KeyF3 = 267;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 KeyF3 = (267)" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
@@ -901,6 +954,7 @@
     </Member>
     <Member MemberName="KeyF4">
       <MemberSignature Language="C#" Value="public const int KeyF4 = 268;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 KeyF4 = (268)" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
@@ -916,6 +970,7 @@
     </Member>
     <Member MemberName="KeyF5">
       <MemberSignature Language="C#" Value="public const int KeyF5 = 269;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 KeyF5 = (269)" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
@@ -931,6 +986,7 @@
     </Member>
     <Member MemberName="KeyF6">
       <MemberSignature Language="C#" Value="public const int KeyF6 = 270;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 KeyF6 = (270)" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
@@ -946,6 +1002,7 @@
     </Member>
     <Member MemberName="KeyF7">
       <MemberSignature Language="C#" Value="public const int KeyF7 = 271;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 KeyF7 = (271)" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
@@ -961,6 +1018,7 @@
     </Member>
     <Member MemberName="KeyF8">
       <MemberSignature Language="C#" Value="public const int KeyF8 = 272;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 KeyF8 = (272)" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
@@ -976,6 +1034,7 @@
     </Member>
     <Member MemberName="KeyF9">
       <MemberSignature Language="C#" Value="public const int KeyF9 = 273;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 KeyF9 = (273)" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
@@ -991,7 +1050,12 @@
     </Member>
     <Member MemberName="KeyHome">
       <MemberSignature Language="C#" Value="public const int KeyHome = 262;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 KeyHome = (262)" />
       <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
@@ -1000,13 +1064,10 @@
         <summary>To be added.</summary>
         <remarks>To be added.</remarks>
       </Docs>
-      <AssemblyInfo>
-        <AssemblyVersion>0.0.0.0</AssemblyVersion>
-        <AssemblyVersion>1.0.0.0</AssemblyVersion>
-      </AssemblyInfo>
     </Member>
     <Member MemberName="KeyInsertChar">
       <MemberSignature Language="C#" Value="public const int KeyInsertChar = 331;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 KeyInsertChar = (331)" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
@@ -1022,7 +1083,12 @@
     </Member>
     <Member MemberName="KeyLeft">
       <MemberSignature Language="C#" Value="public const int KeyLeft = 260;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 KeyLeft = (260)" />
       <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
@@ -1031,14 +1097,15 @@
         <summary>To be added.</summary>
         <remarks>To be added.</remarks>
       </Docs>
+    </Member>
+    <Member MemberName="KeyMouse">
+      <MemberSignature Language="C#" Value="public const int KeyMouse = 409;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 KeyMouse = (409)" />
+      <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member>
-    <Member MemberName="KeyMouse">
-      <MemberSignature Language="C#" Value="public const int KeyMouse = 409;" />
-      <MemberType>Field</MemberType>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
@@ -1047,14 +1114,15 @@
         <summary>To be added.</summary>
         <remarks>To be added.</remarks>
       </Docs>
+    </Member>
+    <Member MemberName="KeyNPage">
+      <MemberSignature Language="C#" Value="public const int KeyNPage = 338;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 KeyNPage = (338)" />
+      <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member>
-    <Member MemberName="KeyNPage">
-      <MemberSignature Language="C#" Value="public const int KeyNPage = 338;" />
-      <MemberType>Field</MemberType>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
@@ -1063,14 +1131,15 @@
         <summary>To be added.</summary>
         <remarks>To be added.</remarks>
       </Docs>
+    </Member>
+    <Member MemberName="KeyPPage">
+      <MemberSignature Language="C#" Value="public const int KeyPPage = 339;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 KeyPPage = (339)" />
+      <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member>
-    <Member MemberName="KeyPPage">
-      <MemberSignature Language="C#" Value="public const int KeyPPage = 339;" />
-      <MemberType>Field</MemberType>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
@@ -1079,14 +1148,15 @@
         <summary>To be added.</summary>
         <remarks>To be added.</remarks>
       </Docs>
+    </Member>
+    <Member MemberName="KeyRight">
+      <MemberSignature Language="C#" Value="public const int KeyRight = 261;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 KeyRight = (261)" />
+      <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member>
-    <Member MemberName="KeyRight">
-      <MemberSignature Language="C#" Value="public const int KeyRight = 261;" />
-      <MemberType>Field</MemberType>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
@@ -1095,14 +1165,15 @@
         <summary>To be added.</summary>
         <remarks>To be added.</remarks>
       </Docs>
+    </Member>
+    <Member MemberName="KeyUp">
+      <MemberSignature Language="C#" Value="public const int KeyUp = 259;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 KeyUp = (259)" />
+      <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member>
-    <Member MemberName="KeyUp">
-      <MemberSignature Language="C#" Value="public const int KeyUp = 259;" />
-      <MemberType>Field</MemberType>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
@@ -1111,14 +1182,15 @@
         <summary>To be added.</summary>
         <remarks>To be added.</remarks>
       </Docs>
+    </Member>
+    <Member MemberName="Lines">
+      <MemberSignature Language="C#" Value="public static int Lines { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property int32 Lines" />
+      <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member>
-    <Member MemberName="Lines">
-      <MemberSignature Language="C#" Value="public static int Lines { get; }" />
-      <MemberType>Property</MemberType>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
@@ -1127,14 +1199,15 @@
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
+    </Member>
+    <Member MemberName="move">
+      <MemberSignature Language="C#" Value="public static int move (int line, int col);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig pinvokeimpl (&quot;libncurses.dylib&quot; as &quot;move&quot; winapi)int32 move(int32 line, int32 col) cil managed" />
+      <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member>
-    <Member MemberName="move">
-      <MemberSignature Language="C#" Value="public static int move (int line, int col);" />
-      <MemberType>Method</MemberType>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
@@ -1149,14 +1222,15 @@
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
-      <AssemblyInfo>
-        <AssemblyVersion>0.0.0.0</AssemblyVersion>
-        <AssemblyVersion>1.0.0.0</AssemblyVersion>
-      </AssemblyInfo>
     </Member>
     <Member MemberName="nl">
       <MemberSignature Language="C#" Value="public static int nl ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig pinvokeimpl (&quot;libncurses.dylib&quot; as &quot;nl&quot; winapi)int32 nl() cil managed" />
       <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
@@ -1166,14 +1240,15 @@
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
-      <AssemblyInfo>
-        <AssemblyVersion>0.0.0.0</AssemblyVersion>
-        <AssemblyVersion>1.0.0.0</AssemblyVersion>
-      </AssemblyInfo>
     </Member>
     <Member MemberName="nocbreak">
       <MemberSignature Language="C#" Value="public static int nocbreak ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig pinvokeimpl (&quot;libncurses.dylib&quot; as &quot;nocbreak&quot; winapi)int32 nocbreak() cil managed" />
       <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
@@ -1183,14 +1258,15 @@
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
-      <AssemblyInfo>
-        <AssemblyVersion>0.0.0.0</AssemblyVersion>
-        <AssemblyVersion>1.0.0.0</AssemblyVersion>
-      </AssemblyInfo>
     </Member>
     <Member MemberName="noecho">
       <MemberSignature Language="C#" Value="public static int noecho ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig pinvokeimpl (&quot;libncurses.dylib&quot; as &quot;noecho&quot; winapi)int32 noecho() cil managed" />
       <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
@@ -1200,14 +1276,15 @@
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
-      <AssemblyInfo>
-        <AssemblyVersion>0.0.0.0</AssemblyVersion>
-        <AssemblyVersion>1.0.0.0</AssemblyVersion>
-      </AssemblyInfo>
     </Member>
     <Member MemberName="nonl">
       <MemberSignature Language="C#" Value="public static int nonl ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig pinvokeimpl (&quot;libncurses.dylib&quot; as &quot;nonl&quot; winapi)int32 nonl() cil managed" />
       <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
@@ -1217,14 +1294,15 @@
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
-      <AssemblyInfo>
-        <AssemblyVersion>0.0.0.0</AssemblyVersion>
-        <AssemblyVersion>1.0.0.0</AssemblyVersion>
-      </AssemblyInfo>
     </Member>
     <Member MemberName="noqiflush">
       <MemberSignature Language="C#" Value="public static void noqiflush ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig pinvokeimpl (&quot;libncurses.dylib&quot; as &quot;noqiflush&quot; winapi)void noqiflush() cil managed" />
       <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
@@ -1233,14 +1311,15 @@
         <summary>To be added.</summary>
         <remarks>To be added.</remarks>
       </Docs>
-      <AssemblyInfo>
-        <AssemblyVersion>0.0.0.0</AssemblyVersion>
-        <AssemblyVersion>1.0.0.0</AssemblyVersion>
-      </AssemblyInfo>
     </Member>
     <Member MemberName="noraw">
       <MemberSignature Language="C#" Value="public static int noraw ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig pinvokeimpl (&quot;libncurses.dylib&quot; as &quot;noraw&quot; winapi)int32 noraw() cil managed" />
       <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
@@ -1250,14 +1329,15 @@
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
+    </Member>
+    <Member MemberName="qiflush">
+      <MemberSignature Language="C#" Value="public static void qiflush ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig pinvokeimpl (&quot;libncurses.dylib&quot; as &quot;qiflush&quot; winapi)void qiflush() cil managed" />
+      <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member>
-    <Member MemberName="qiflush">
-      <MemberSignature Language="C#" Value="public static void qiflush ();" />
-      <MemberType>Method</MemberType>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
@@ -1266,14 +1346,15 @@
         <summary>To be added.</summary>
         <remarks>To be added.</remarks>
       </Docs>
-      <AssemblyInfo>
-        <AssemblyVersion>0.0.0.0</AssemblyVersion>
-        <AssemblyVersion>1.0.0.0</AssemblyVersion>
-      </AssemblyInfo>
     </Member>
     <Member MemberName="raw">
       <MemberSignature Language="C#" Value="public static int raw ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig pinvokeimpl (&quot;libncurses.dylib&quot; as &quot;raw&quot; winapi)int32 raw() cil managed" />
       <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
@@ -1283,14 +1364,15 @@
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
-      <AssemblyInfo>
-        <AssemblyVersion>0.0.0.0</AssemblyVersion>
-        <AssemblyVersion>1.0.0.0</AssemblyVersion>
-      </AssemblyInfo>
     </Member>
     <Member MemberName="refresh">
       <MemberSignature Language="C#" Value="public static int refresh ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig pinvokeimpl (&quot;libncurses.dylib&quot; as &quot;refresh&quot; winapi)int32 refresh() cil managed" />
       <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
@@ -1300,14 +1382,15 @@
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
+    </Member>
+    <Member MemberName="setscrreg">
+      <MemberSignature Language="C#" Value="public static int setscrreg (int top, int bot);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig pinvokeimpl (&quot;libncurses.dylib&quot; as &quot;setscrreg&quot; winapi)int32 setscrreg(int32 top, int32 bot) cil managed" />
+      <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member>
-    <Member MemberName="setscrreg">
-      <MemberSignature Language="C#" Value="public static int setscrreg (int top, int bot);" />
-      <MemberType>Method</MemberType>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
@@ -1322,14 +1405,15 @@
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
+    </Member>
+    <Member MemberName="timeout">
+      <MemberSignature Language="C#" Value="public static int timeout (int delay);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig pinvokeimpl (&quot;libncurses.dylib&quot; as &quot;timeout&quot; winapi)int32 timeout(int32 delay) cil managed" />
+      <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member>
-    <Member MemberName="timeout">
-      <MemberSignature Language="C#" Value="public static int timeout (int delay);" />
-      <MemberType>Method</MemberType>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
@@ -1342,14 +1426,15 @@
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
+    </Member>
+    <Member MemberName="typeahead">
+      <MemberSignature Language="C#" Value="public static int typeahead (IntPtr fd);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig pinvokeimpl (&quot;libncurses.dylib&quot; as &quot;typeahead&quot; winapi)int32 typeahead(native int fd) cil managed" />
+      <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member>
-    <Member MemberName="typeahead">
-      <MemberSignature Language="C#" Value="public static int typeahead (IntPtr fd);" />
-      <MemberType>Method</MemberType>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
@@ -1362,10 +1447,6 @@
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
-      <AssemblyInfo>
-        <AssemblyVersion>0.0.0.0</AssemblyVersion>
-        <AssemblyVersion>1.0.0.0</AssemblyVersion>
-      </AssemblyInfo>
     </Member>
   </Members>
 </Type>

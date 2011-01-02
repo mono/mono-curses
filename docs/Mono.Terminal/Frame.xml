@@ -1,5 +1,6 @@
 <Type Name="Frame" FullName="Mono.Terminal.Frame">
   <TypeSignature Language="C#" Value="public class Frame : Mono.Terminal.Container" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Frame extends Mono.Terminal.Container" />
   <AssemblyInfo>
     <AssemblyName>mono-curses</AssemblyName>
     <AssemblyVersion>0.0.0.0</AssemblyVersion>
@@ -21,7 +22,12 @@
   <Members>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public Frame (string title);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string title) cil managed" />
       <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
       <Parameters>
         <Parameter Name="title" Type="System.String" />
       </Parameters>
@@ -32,14 +38,15 @@
             </summary>
         <remarks />
       </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Frame (int x, int y, int w, int h, string title);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 x, int32 y, int32 w, int32 h, string title) cil managed" />
+      <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
-    </Member>
-    <Member MemberName=".ctor">
-      <MemberSignature Language="C#" Value="public Frame (int x, int y, int w, int h, string title);" />
-      <MemberType>Constructor</MemberType>
       <Parameters>
         <Parameter Name="x" Type="System.Int32" />
         <Parameter Name="y" Type="System.Int32" />
@@ -58,13 +65,10 @@
             </summary>
         <remarks />
       </Docs>
-      <AssemblyInfo>
-        <AssemblyVersion>0.0.0.0</AssemblyVersion>
-        <AssemblyVersion>1.0.0.0</AssemblyVersion>
-      </AssemblyInfo>
     </Member>
     <Member MemberName="Add">
       <MemberSignature Language="C#" Value="public override void Add (Mono.Terminal.Widget w);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Add(class Mono.Terminal.Widget w) cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
@@ -83,6 +87,7 @@
     </Member>
     <Member MemberName="ContainerMove">
       <MemberSignature Language="C#" Value="public override void ContainerMove (int row, int col);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void ContainerMove(int32 row, int32 col) cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
@@ -103,6 +108,7 @@
     </Member>
     <Member MemberName="GetBase">
       <MemberSignature Language="C#" Value="public override void GetBase (out int row, out int col);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void GetBase(int32 row, int32 col) cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
@@ -123,6 +129,7 @@
     </Member>
     <Member MemberName="Redraw">
       <MemberSignature Language="C#" Value="public override void Redraw ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Redraw() cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
@@ -138,7 +145,12 @@
     </Member>
     <Member MemberName="Title">
       <MemberSignature Language="C#" Value="public string Title;" />
+      <MemberSignature Language="ILAsm" Value=".field public string Title" />
       <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>0.0.0.0</AssemblyVersion>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
@@ -146,10 +158,6 @@
         <summary>To be added.</summary>
         <remarks>To be added.</remarks>
       </Docs>
-      <AssemblyInfo>
-        <AssemblyVersion>0.0.0.0</AssemblyVersion>
-        <AssemblyVersion>1.0.0.0</AssemblyVersion>
-      </AssemblyInfo>
     </Member>
   </Members>
 </Type>
