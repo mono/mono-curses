@@ -144,6 +144,54 @@
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
+    <Member MemberName="ColorErrorFocus">
+      <MemberSignature Language="C#" Value="public static int ColorErrorFocus;" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Color used for focused widgets on an error dialog.
+            </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ColorErrorHot">
+      <MemberSignature Language="C#" Value="public static int ColorErrorHot;" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Color used for hotkeys in error dialogs
+            </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ColorErrorHotFocus">
+      <MemberSignature Language="C#" Value="public static int ColorErrorHotFocus;" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Color used for hotkeys in a focused widget in an error dialog
+            </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
     <Member MemberName="ColorFocus">
       <MemberSignature Language="C#" Value="public static int ColorFocus;" />
       <MemberSignature Language="ILAsm" Value=".field public static int32 ColorFocus" />

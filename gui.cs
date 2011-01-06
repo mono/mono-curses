@@ -524,6 +524,11 @@ namespace Mono.Terminal {
 		{
 			text = s;
 		}
+
+		public Label (int x, int y, string s, params object [] args) : base (x, y, String.Format (s, args).Length, 1)
+		{
+			text = String.Format (s, args);
+		}
 		
 		public override void Redraw ()
 		{
@@ -993,7 +998,7 @@ namespace Mono.Terminal {
 				}
 			}
 		}
-		
+
 		/// <summary>
 		///   Public constructor, creates a button based on
 		///   the given text at the given position.
@@ -1030,18 +1035,22 @@ namespace Mono.Terminal {
 			Move (y, x + hot_pos);
 		}
 
+		bool CheckKey (int key)
+		{
+			if (Char.ToUpper ((char)key) == hot_key){
+				Container.SetFocus (this);
+				if (Clicked != null)
+					Clicked (this, EventArgs.Empty);
+				return true;
+			}
+			return false;
+		}
+			
 		public override bool ProcessHotKey (int key)
 		{
 			int k = Curses.IsAlt (key);
-			if (k != 0){
-				if (Char.ToUpper ((char)k) == hot_key){
-					Container.SetFocus (this);
-					if (Clicked != null)
-						Clicked (this, EventArgs.Empty);
-					return true;
-				}
-				return false;
-			}
+			if (k != 0)
+				return CheckKey (k);
 
 			return false;
 		}
@@ -1053,8 +1062,7 @@ namespace Mono.Terminal {
 					Clicked (this, EventArgs.Empty);
 				return true;
 			}
-
-			return false;
+			return CheckKey (key);
 		}
 
 		public override bool ProcessKey (int c)
@@ -1973,8 +1981,9 @@ namespace Mono.Terminal {
 		public void ErrorColors ()
 		{
 			ContainerColorNormal = Application.ColorError;
-			ContainerColorFocus = Application.ColorError;
-			ContainerColorHotFocus = Application.ColorError;
+			ContainerColorFocus = Application.ColorErrorFocus;
+			ContainerColorHotFocus = Application.ColorErrorHotFocus;
+			ContainerColorHotNormal = Application.ColorErrorHot;
 		}
 		
 		public override void Prepare ()
@@ -2376,6 +2385,21 @@ namespace Mono.Terminal {
 		public static int ColorError;
 
 		/// <summary>
+		///   Color used for focused widgets on an error dialog.
+		/// </summary>
+		public static int ColorErrorFocus;
+		
+		/// <summary>
+		///   Color used for hotkeys in error dialogs
+		/// </summary>
+		public static int ColorErrorHot;
+		
+		/// <summary>
+		///   Color used for hotkeys in a focused widget in an error dialog
+		/// </summary>
+		public static int ColorErrorHotFocus;
+		
+		/// <summary>
 		///   The basic color of the terminal.
 		/// </summary>
 		public static int ColorBasic;
@@ -2507,6 +2531,9 @@ namespace Mono.Terminal {
 				ColorDialogHotFocus  = MakeColor (Curses.COLOR_BLUE,  Curses.COLOR_CYAN);
 
 				ColorError = Curses.A_BOLD | MakeColor (Curses.COLOR_WHITE, Curses.COLOR_RED);
+				ColorErrorFocus = MakeColor (Curses.COLOR_BLACK, Curses.COLOR_WHITE);
+				ColorErrorHot = Curses.A_BOLD | MakeColor (Curses.COLOR_YELLOW, Curses.COLOR_RED);
+				ColorErrorHotFocus = ColorErrorHot;
 			} else {
 				ColorNormal = Curses.A_NORMAL;
 				ColorFocus = Curses.A_REVERSE;

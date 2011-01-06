@@ -41,6 +41,33 @@
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Label (int x, int y, string s, object[] args);" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="x" Type="System.Int32" />
+        <Parameter Name="y" Type="System.Int32" />
+        <Parameter Name="s" Type="System.String" />
+        <Parameter Name="args" Type="System.Object[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="x">To be added.</param>
+        <param name="y">To be added.</param>
+        <param name="s">To be added.</param>
+        <param name="args">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
     <Member MemberName="Color">
       <MemberSignature Language="C#" Value="public int Color;" />
       <MemberSignature Language="ILAsm" Value=".field public int32 Color" />
