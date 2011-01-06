@@ -1,8 +1,18 @@
 Things that should be done:
+	
+	* Split main loop, so that it can be used without driving the
+	  application, in non-blocking mode.
+	
+	* Add support for watching events on a file descriptor
 
-       * Make some of the virtual methods that are part of the GUI
-         infrastructure protected, no point in having ProcessEvent,
-         HandleKey and so on be public.
+	* Add support for timer events
 
-       * Expose x, y, w, h into properties and have those trigger
-         repaints if changed.
+	* Make some of the virtual methods that are part of the GUI
+	  infrastructure protected, no point in having ProcessEvent,
+	  HandleKey and so on be public.
+	
+	* Expose x, y, w, h into properties and have those trigger
+	  repaints if changed.
+	
+	* Rename?  those to Width, Height?
+
