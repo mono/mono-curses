@@ -43,6 +43,8 @@
       <Type Name="IListProvider" Kind="Interface" />
       <Type Name="Label" Kind="Class" />
       <Type Name="ListView" Kind="Class" />
+      <Type Name="MainLoop" Kind="Class" />
+      <Type Name="MainLoop+Condition" Kind="Enumeration" />
       <Type Name="MenuBar" Kind="Class" />
       <Type Name="MenuBarItem" Kind="Class" />
       <Type Name="MenuItem" Kind="Class" />

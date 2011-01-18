@@ -2323,7 +2323,7 @@ namespace Mono.Terminal {
 			return true;
 		}
 	}
-	
+
 	/// <summary>
 	///   gui.cs Application driver.
 	/// </summary>

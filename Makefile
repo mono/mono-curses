@@ -6,6 +6,7 @@ SOURCES = 		\
 	handles.cs	\
 	binding.cs	\
 	gui.cs		\
+	mainloop.cs	\
 	constants.cs
 
 EXTRA_DIST = 	\
@@ -27,13 +28,19 @@ DOCS_DIST = \
 all: config.make mono-curses.dll libmono-curses.so mono-curses.zip mono-curses.pc
 
 test.exe: test.cs mono-curses.dll libmono-curses.so
-	gmcs -debug test.cs -r:mono-curses.dll
+	dmcs -debug test.cs -r:mono-curses.dll
+
+mltest.exe: mltest.cs mono-curses.dll
+	dmcs -debug mltest.cs -r:mono-curses.dll
+
+mlrun: mltest.exe
+	mono --debug mltest.exe
 
 mono-curses.pc: mono-curses.pc.in Makefile
 	sed -e 's,@PREFIX@,$(prefix),' -e 's/@VERSION@/$(VERSION)/' < mono-curses.pc.in > mono-curses.pc
 
 mono-curses.dll mono-curses.xml: $(SOURCES)
-	gmcs -doc:mono-curses.xml -debug -target:library -out:mono-curses.dll -debug $(SOURCES)
+	dmcs -doc:mono-curses.xml -debug -target:library -out:mono-curses.dll -r:Mono.Posix -debug $(SOURCES)
 
 #
 mono-curses.tree mono-curses.zip: mono-curses.xml mono-curses.dll docs/ns-Mono.Terminal.xml docs/index.xml
