@@ -47,8 +47,6 @@ TODO
 	* Date/Time widget
 	* Process widget
 	* Command line parsing to demo (to active B&W support).
-	* Port to MacOS X (they have a downgraded curses).
-
 	* Implement Layout managers, which?
 
 	* Write a manual/tutorial

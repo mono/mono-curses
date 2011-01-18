@@ -1,12 +1,7 @@
 Things that should be done:
 	
-	* Split main loop, so that it can be used without driving the
-	  application, in non-blocking mode.
+	* Switch the main loop in gui.cs to use mainloop.cs
 	
-	* Add support for watching events on a file descriptor
-
-	* Add support for timer events
-
 	* Make some of the virtual methods that are part of the GUI
 	  infrastructure protected, no point in having ProcessEvent,
 	  HandleKey and so on be public.
