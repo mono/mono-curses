@@ -1822,14 +1822,12 @@ namespace Mono.Terminal {
 				int wx = w.x + bx;
 				int wy = w.y + by;
 
-				Log ("considering {0}", w);
 				if ((ev.X < wx) || (ev.X > (wx + w.w)))
 					continue;
 
 				if ((ev.Y < wy) || (ev.Y > (wy + w.h)))
 					continue;
 				
-				Log ("OK {0}", w);
 				ev.X -= bx;
 				ev.Y -= by;
 
@@ -2479,6 +2477,7 @@ namespace Mono.Terminal {
 		}
 
 		static Window main_window;
+		static MainLoop mainloop;
 		
 		public static bool UsingColor { get; private set; }
 		
@@ -2556,6 +2555,14 @@ namespace Mono.Terminal {
 				ColorError = Curses.A_BOLD;
 			}
 			ColorBasic = MakeColor (-1, -1);
+			mainloop = new MainLoop ();
+			mainloop.AddWatch (0, MainLoop.Condition.PollIn, x => {
+				Container top = toplevels.Count > 0 ? toplevels [toplevels.Count-1] : null;
+				if (top != null)
+					ProcessChar (top);
+				Curses.refresh ();
+				return true;
+			});
 		}
 
 		/// <summary>
@@ -2725,81 +2732,84 @@ namespace Mono.Terminal {
 			Redraw (container);
 			container.PositionCursor ();
 			
-			int ch;
 			Curses.timeout (Timeout);
 
-			for (container.Running = true; container.Running; ){
-				ch = Curses.getch ();
-
+			container.Running = true;
+			for (container.Running = true; container.Running && mainloop.EventsPending (true); ){
+				mainloop.MainIteration ();
 				if (Iteration != null)
 					Iteration (null, EventArgs.Empty);
-				
-				if (ch == -1){
-					if (Curses.CheckWinChange ()){
-						EmptyContainer.Clear ();
-						foreach (Container c in toplevels)
-							c.SizeChanged ();
-						Refresh ();
-					}
-					continue;
-				}
-				
-				if (ch == Curses.KeyMouse){
-					Curses.MouseEvent ev;
-					
-					Curses.console_sharp_getmouse (out ev);
-					container.ProcessMouse (ev);
-					continue;
-				}
-				
-				if (ch == 27){
-					Curses.timeout (100);
-					int k = Curses.getch ();
-					if (k != Curses.ERR && k != 27)
-						ch = Curses.KeyAlt | k;
-					Curses.timeout (Timeout);
-				}
-				
-				if (container.ProcessHotKey (ch))
-					continue;
-
-				if (container.ProcessKey (ch))
-					continue;
-
-				if (container.ProcessColdKey (ch))
-					continue;
-
-				// Control-c, quit the current operation.
-				if (ch == 3)
-					break;
-
-				// Control-z, suspend execution, then repaint.
-				if (ch == 26){
-					Curses.console_sharp_sendsigtstp ();
-					Window.Standard.redrawwin ();
-					Curses.refresh ();
-				}
-				
-				//
-				// Focus handling
-				//
-				if (ch == 9 || ch == Curses.KeyDown || ch == Curses.KeyRight){
-					if (!container.FocusNext ())
-						container.FocusNext ();
-					continue;
-				} else if (ch == Curses.KeyUp || ch == Curses.KeyLeft){
-					if (!container.FocusPrev ())
-						container.FocusPrev ();
-					continue;
-				}
-					
 			}
-
 			toplevels.Remove (container);
 			if (toplevels.Count == 0)
 				Shutdown ();
 			else
 				Refresh ();
 		}
+				
+		static void ProcessChar (Container container)
+		{
+			int ch = Curses.getch ();
+
+			if (ch == -1){
+				if (Curses.CheckWinChange ()){
+					EmptyContainer.Clear ();
+					foreach (Container c in toplevels)
+						c.SizeChanged ();
+					Refresh ();
+				}
+				return;
+			}
+				
+			if (ch == Curses.KeyMouse){
+				Curses.MouseEvent ev;
+				
+				Curses.console_sharp_getmouse (out ev);
+				container.ProcessMouse (ev);
+				return;
+			}
+				
+			if (ch == 27){
+				Curses.timeout (100);
+				int k = Curses.getch ();
+				if (k != Curses.ERR && k != 27)
+					ch = Curses.KeyAlt | k;
+				Curses.timeout (Timeout);
+			}
+			
+			if (container.ProcessHotKey (ch))
+				return;
+			
+			if (container.ProcessKey (ch))
+				return;
+
+			if (container.ProcessColdKey (ch))
+				return;
+			
+			// Control-c, quit the current operation.
+			if (ch == 3){
+				container.Running = false;
+				return;
+			}
+			
+			// Control-z, suspend execution, then repaint.
+			if (ch == 26){
+				Curses.console_sharp_sendsigtstp ();
+				Window.Standard.redrawwin ();
+				Curses.refresh ();
+			}
+			
+			//
+			// Focus handling
+			//
+			if (ch == 9 || ch == Curses.KeyDown || ch == Curses.KeyRight){
+				if (!container.FocusNext ())
+					container.FocusNext ();
+			} else if (ch == Curses.KeyUp || ch == Curses.KeyLeft){
+				if (!container.FocusPrev ())
+					container.FocusPrev ();
+			}
+		}
+		
 	}
 }

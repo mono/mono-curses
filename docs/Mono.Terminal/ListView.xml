@@ -145,7 +145,7 @@
       </Docs>
     </Member>
     <Member MemberName="Selected">
-      <MemberSignature Language="C#" Value="public int Selected { set; get; }" />
+      <MemberSignature Language="C#" Value="public int Selected { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int32 Selected" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>

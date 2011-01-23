@@ -1,0 +1,15 @@
+*.exe
+*.dll
+*~
+*.mdb
+config.make
+mono-curses.pc
+mono-curses.tree
+mono-curses.xml
+mono-curses.zip
+tmp
+tmp.c
+attrib
+binding.cs
+*.so
+log

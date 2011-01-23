@@ -39,31 +39,32 @@ namespace Mono.Terminal {
 		/// <summary>
 		///   Condition on which to wake up from file descriptor activity
 		/// </summary>
+		[Flags]
 		public enum Condition {
 			/// <summary>
 			/// There is data to read
 			/// </summary>
-			PollIn,
+			PollIn = 1,
 			/// <summary>
 			/// Writing to the specified descriptor will not block
 			/// </summary>
-			PollOut,
+			PollOut = 2,
 			/// <summary>
 			/// There is urgent data to read
 			/// </summary>
-			PollPri,
+			PollPri = 4,
 			/// <summary>
 			///  Error condition on output
 			/// </summary>
-			PollErr,
+			PollErr = 8,
 			/// <summary>
 			/// Hang-up on output
 			/// </summary>
-			PollHup,
+			PollHup = 16,
 			/// <summary>
 			/// File descriptor is not open.
 			/// </summary>
-			PollNval
+			PollNval = 32
 		}
 
 		class Watch {
@@ -197,6 +198,7 @@ namespace Mono.Terminal {
 			foreach (var fd in descriptorWatchers.Keys){
 				pollmap [i].fd = fd;
 				pollmap [i].events = MapCondition (descriptorWatchers [fd].Condition);
+				Widget.Log ("Got {0} from {1}", pollmap [i].events, descriptorWatchers [fd].Condition);
 			}
 		}
 
@@ -250,11 +252,11 @@ namespace Mono.Terminal {
 			else
 				pollTimeout = -1;
 			
-			if (!wait || pollTimeout < 0)
+			if (!wait)
 				pollTimeout = 0;
 			
 			UpdatePollMap ();
-			
+
 			n = Syscall.poll (pollmap, (uint) pollmap.Length, pollTimeout);
 			return n > 0 || timeouts.Count > 0 && ((timeouts.Keys [0] - DateTime.UtcNow.Ticks) < 0);
 		}
@@ -268,11 +270,8 @@ namespace Mono.Terminal {
 		///   You can use it like this:
 		///     while (main.EvensPending ()) MainIteration ();
 		/// </remarks>
-		public void MainIteration (bool wait = false)
+		public void MainIteration ()
 		{
-			if (!EventsPending (wait))
-				return;
-			
 			if (timeouts.Count > 0)
 				RunTimers ();
 			
@@ -281,7 +280,7 @@ namespace Mono.Terminal {
 
 				if (p.revents == 0)
 					continue;
-				
+
 				if (!descriptorWatchers.TryGetValue (p.fd, out watch))
 					continue;
 				if (!watch.Callback (this))
@@ -294,10 +293,13 @@ namespace Mono.Terminal {
 		/// </summary>
 		public void Run ()
 		{
+			bool prev = running;
 			running = true;
-			do {
-				MainIteration (true);
-			} while (running);
+			while (running){
+				EventsPending (true);
+				MainIteration ();
+			}
+			running = prev;
 		}
 	}
 }
