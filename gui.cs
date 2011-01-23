@@ -729,6 +729,7 @@ namespace Mono.Terminal {
 			else if (first + point >= w)
 				first = point - (w / 3);
 			Redraw ();
+			Curses.refresh ();
 		}
 
 		void SetText (string new_text)
@@ -2478,6 +2479,11 @@ namespace Mono.Terminal {
 
 		static Window main_window;
 		static MainLoop mainloop;
+		public static MainLoop MainLoop {
+			get {
+				return mainloop;
+			}
+		}
 		
 		public static bool UsingColor { get; private set; }
 		
@@ -2560,7 +2566,7 @@ namespace Mono.Terminal {
 				Container top = toplevels.Count > 0 ? toplevels [toplevels.Count-1] : null;
 				if (top != null)
 					ProcessChar (top);
-				Curses.refresh ();
+
 				return true;
 			});
 		}
