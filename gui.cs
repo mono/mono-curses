@@ -95,7 +95,7 @@ namespace Mono.Terminal {
 		public static void Log (string s)
 		{
 			if (l == null)
-				l = new StreamWriter (File.OpenWrite ("log2"));
+				l = new StreamWriter (File.Create ("log2"));
 			
 			l.WriteLine (s);
 			l.Flush ();
@@ -2506,10 +2506,12 @@ namespace Mono.Terminal {
 				return;
 			inited = true;
 
+#if BREAK_UTF8_RENDERING
 			Curses.Event old = 0;
 			MouseEventsAvailable = Curses.console_sharp_mouse_mask (
 				Curses.Event.Button1Clicked | Curses.Event.Button1DoubleClicked, out old);
-			
+#endif
+	
 			UsingColor = false;
 			if (!disable_color)
 				UsingColor = Curses.has_colors ();
