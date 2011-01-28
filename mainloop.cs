@@ -28,6 +28,7 @@
 using Mono.Unix.Native;
 using System.Collections.Generic;
 using System;
+using System.Runtime.InteropServices;
 
 namespace Mono.Terminal {
 
@@ -77,20 +78,64 @@ namespace Mono.Terminal {
 			public TimeSpan Span;
 			public Func<MainLoop,bool> Callback;
 		}
-		
+
 		Dictionary <int, Watch> descriptorWatchers = new Dictionary<int,Watch>();
 		SortedList <double, Timeout> timeouts = new SortedList<double,Timeout> ();
+		List<Func<bool>> idleHandlers = new List<Func<bool>> ();
 		
 		Pollfd [] pollmap;
 		bool poll_dirty = true;
+		int [] wakeupPipes = new int [2];
+		static IntPtr ignore = Marshal.AllocHGlobal (1);
 		
 		/// <summary>
 		///  Default constructor
 		/// </summary>
 		public MainLoop ()
 		{
+			Syscall.pipe (wakeupPipes);
+			AddWatch (wakeupPipes [0], Condition.PollIn, ml => {
+				Syscall.read (wakeupPipes [0], ignore, 1);
+				return true;
+			});
 		}
 
+		void Wakeup ()
+		{
+			Syscall.write (wakeupPipes [1], ignore, 1);
+		}
+		
+		/// <summary>
+		///   Runs @action on the thread that is processing events
+		/// </summary>
+		public void Invoke (Action action)
+		{
+			AddIdle (()=> {
+				action ();
+				return false;
+			});
+			Wakeup ();
+		}
+
+		/// <summary>
+		///   Executes the specified @idleHandler on the idle loop.  The return value is a token to remove it.
+		/// </summary>
+		public Func<bool> AddIdle (Func<bool> idleHandler)
+		{
+			lock (idleHandlers)
+				idleHandlers.Add (idleHandler);
+			return idleHandler;
+		}
+
+		/// <summary>
+		///   Removes the specified idleHandler from processing.
+		/// </summary>
+		public void RemoveIdle (Func<bool> idleHandler)
+		{
+			lock (idleHandler)
+				idleHandlers.Remove (idleHandler);
+		}
+		
 		/// <summary>
 		///  Watches a file descriptor for activity.
 		/// </summary>
@@ -225,6 +270,21 @@ namespace Mono.Terminal {
 				AddTimeout (timeout.Span, timeout);
 		}
 
+		void RunIdle ()
+		{
+			List<Func<bool>> iterate;
+			lock (idleHandlers){
+				iterate = idleHandlers;
+				idleHandlers = new List<Func<bool>> ();
+			}
+
+			foreach (var idle in iterate){
+				if (idle ())
+					lock (idleHandlers)
+						idleHandlers.Add (idle);
+			}
+		}
+		
 		bool running;
 		
 		/// <summary>
@@ -233,6 +293,7 @@ namespace Mono.Terminal {
 		public void Stop ()
 		{
 			running = false;
+			Wakeup ();
 		}
 
 		/// <summary>
@@ -258,9 +319,12 @@ namespace Mono.Terminal {
 			UpdatePollMap ();
 
 			n = Syscall.poll (pollmap, (uint) pollmap.Length, pollTimeout);
-			return n > 0 || timeouts.Count > 0 && ((timeouts.Keys [0] - DateTime.UtcNow.Ticks) < 0);
+			int ic;
+			lock (idleHandlers)
+				ic = idleHandlers.Count;
+			return n > 0 || timeouts.Count > 0 && ((timeouts.Keys [0] - DateTime.UtcNow.Ticks) < 0) || ic > 0;
 		}
-		
+
 		/// <summary>
 		///   Runs one iteration of timers and file watches
 		/// </summary>
@@ -286,6 +350,8 @@ namespace Mono.Terminal {
 				if (!watch.Callback (this))
 					descriptorWatchers.Remove (p.fd);
 			}
+			if (idleHandlers.Count > 0)
+				RunIdle ();
 		}
 		
 		/// <summary>

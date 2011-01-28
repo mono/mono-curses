@@ -87,7 +87,7 @@
       </Docs>
     </Member>
     <Member MemberName="CanFocus">
-      <MemberSignature Language="C#" Value="public bool CanFocus { get; set; }" />
+      <MemberSignature Language="C#" Value="public bool CanFocus { set; get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool CanFocus" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
@@ -381,7 +381,7 @@
       </Docs>
     </Member>
     <Member MemberName="HasFocus">
-      <MemberSignature Language="C#" Value="public virtual bool HasFocus { get; set; }" />
+      <MemberSignature Language="C#" Value="public virtual bool HasFocus { set; get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool HasFocus" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>

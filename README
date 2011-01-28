@@ -40,6 +40,8 @@ Features
 TODO
 ====
 
+	* Rename x,y,w,h into something better, expose rects?
+	* Merge Widget and Container?
 	* Add scrollbar and thumb to listviews
 	* Add text view widget
 	* Add scrollable control

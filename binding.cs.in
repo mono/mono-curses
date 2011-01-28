@@ -207,8 +207,9 @@ namespace Mono.Terminal {
 		[DllImport ("@CURSES@")]
 		extern public static int move (int line, int col);
 
-		[DllImport ("@CURSES@")]
-		extern public static int addch (int ch);
+		[DllImport ("@CURSES@", EntryPoint="addch")]
+		extern internal static int _addch (int ch);
+		
 		[DllImport ("@CURSES@")]
 		extern public static int addstr (string s);
 
@@ -216,6 +217,14 @@ namespace Mono.Terminal {
 		{
 			var s = string.Format (format, args);
 			return addstr (s);
+		}
+
+		static char [] r = new char [1];
+		
+		public static int addch (int ch)
+		{
+			char c = (char) ch;
+			return addstr (new String (c, 1));
 		}
 		
 		[DllImport ("@CURSES@")]
@@ -236,13 +245,13 @@ namespace Mono.Terminal {
 
 #region Input
 		[DllImport ("@CURSES@")]
-		extern internal static int getch ();
+		extern public static int getch ();
 
 		[DllImport ("@CURSES@")]
-		extern internal static int ungetch (int ch);
+		extern public static int ungetch (int ch);
 
 		[DllImport ("@CURSES@")]
-		extern internal static int mvgetch (int y, int x);
+		extern public static int mvgetch (int y, int x);
 #endregion
 		
 #region Colors

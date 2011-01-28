@@ -13,6 +13,17 @@ class Demo {
 		// Recommended
 		Curses.nonl ();
 
+		Curses.addch ('ó');
+		Curses.addch ('ó');
+		Curses.addch ('ó');
+		Curses.addch ('ó');
+		Curses.addch ('ó');
+		Curses.addch ('ó');
+		Curses.addch ('ó');
+		Curses.addstr ("acción");
+		Curses.refresh ();
+		Curses.getch ();
+		
 		Window.Standard.intrflush (false);
 		Window.Standard.keypad (true);
 

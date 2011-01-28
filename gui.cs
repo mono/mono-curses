@@ -4,7 +4,7 @@
 // Authors:
 //   Miguel de Icaza (miguel.de.icaza@gmail.com)
 //
-// Copyright (C) 2007 Novell (http://www.novell.com)
+// Copyright (C) 2007-2011 Novell (http://www.novell.com)
 //
 // Permission is hereby granted, free of charge, to any person obtaining
 // a copy of this software and associated documentation files (the
@@ -2424,22 +2424,6 @@ namespace Mono.Terminal {
 		public static int ColorMenuHot;
 		
 		/// <summary>
-		///   The time before we timeout on a curses call.
-		/// </summary>
-		/// <remarks>
-		///   This is needed for applications that need to
-		///   poll or update other bits of information at
-		///   specified intervals.
-		///   <para>The default value -1, means to wait until
-		///   an event is ready.   If the value is zero, then
-		///   events are only processed if they are available,
-		///   otherwise it is timeout in milliseconds to wait
-		///   for an event to arrive before running an
-		///   iteration on the main loop.   See <see cref="Iteration"/>.</para>
-		/// </remarks>
-		static public int Timeout = -1;
-
-		/// <summary>
 		///   This event is raised on each iteration of the
 		///   main loop. 
 		/// </summary>
@@ -2493,6 +2477,10 @@ namespace Mono.Terminal {
 		/// </summary>
 		public static void Init (bool disable_color)
 		{
+			if (inited)
+				return;
+			inited = true;
+
 			empty_container = new Container (0, 0, Application.Cols, Application.Lines);
 
 			try {
@@ -2501,10 +2489,10 @@ namespace Mono.Terminal {
 				Console.WriteLine ("Curses failed to initialize, the exception is: " + e);
 				throw new Exception ("Application.Init failed");
 			}
-
-			if (inited)
-				return;
-			inited = true;
+			Curses.raw ();
+			Curses.noecho ();
+			//Curses.nonl ();
+			Window.Standard.keypad (true);
 
 #if BREAK_UTF8_RENDERING
 			Curses.Event old = 0;
@@ -2589,14 +2577,6 @@ namespace Mono.Terminal {
 			get {
 				return Curses.Cols;
 			}
-		}
-
-		static void InitApp ()
-		{
-			Curses.raw ();
-			Curses.noecho ();
-			//Curses.nonl ();
-			Window.Standard.keypad (true);
 		}
 
 		/// <summary>
@@ -2717,6 +2697,85 @@ namespace Mono.Terminal {
 		}
 
 		/// <summary>
+		///   Starts running a new container or dialog box.
+		/// </summary>
+		/// <remarks>
+		///   Use this method if you want to start the dialog, but
+		///   you want to control the main loop execution manually
+		///   by calling the RunLoop method (for example, to start
+		///   the dialog, but continuing to process events).
+		///
+		///    Use the returned value as the argument to RunLoop
+		///    and later to the End method to remove the container
+		///    from the screen.
+		/// </remarks>
+		static public RunState Begin (Container container)
+		{
+			if (container == null)
+				throw new ArgumentNullException ("container");
+			var rs = new RunState (container);
+			
+			Init (false);
+			
+			Curses.timeout (-1);
+
+			toplevels.Add (container);
+
+			container.Prepare ();
+			container.SizeChanged ();			
+			container.FocusFirst ();
+			Redraw (container);
+			container.PositionCursor ();
+			Curses.refresh ();
+			
+			return rs;
+		}
+
+		/// <summary>
+		///   Runs the main loop for the created dialog
+		/// </summary>
+		/// <remarks>
+		///   Calling this method will block until the
+		///   dialog has completed execution.
+		/// </remarks>
+		public static void RunLoop (RunState state)
+		{
+			RunLoop (state, true);
+		}
+		
+		/// <summary>
+		///   Runs the main loop for the created dialog
+		/// </summary>
+		/// <remarks>
+		///   Use the wait parameter to control whether this is a
+		///   blocking or non-blocking call.
+		/// </remarks>
+		public static void RunLoop (RunState state, bool wait)
+		{
+			if (state == null)
+				throw new ArgumentNullException ("state");
+			if (state.Container == null)
+				throw new ObjectDisposedException ("state");
+			
+			for (state.Container.Running = true; state.Container.Running; ){
+				if (mainloop.EventsPending (wait)){
+					mainloop.MainIteration ();
+					if (Iteration != null)
+						Iteration (null, EventArgs.Empty);
+				} else if (wait == false)
+					return;
+			}
+		}
+
+		public static void Stop ()
+		{
+			if (toplevels.Count == 0)
+				return;
+			toplevels [toplevels.Count-1].Running = false;
+			MainLoop.Stop ();
+		}
+		
+		/// <summary>
 		///   Runs the main loop on the given container.
 		/// </summary>
 		/// <remarks>
@@ -2726,33 +2785,24 @@ namespace Mono.Terminal {
 		/// </remarks>
 		static public void Run (Container container)
 		{
-			Init (false);
-			
-			Curses.timeout (-1);
-			if (toplevels.Count == 0)
-				InitApp ();
+			var runToken = Begin (container);
+			RunLoop (runToken);
+			End (runToken);
+		}
 
-			toplevels.Add (container);
-
-			container.Prepare ();
-			container.SizeChanged ();			
-			container.FocusFirst ();
-			Redraw (container);
-			container.PositionCursor ();
-			
-			Curses.timeout (Timeout);
-
-			container.Running = true;
-			for (container.Running = true; container.Running && mainloop.EventsPending (true); ){
-				mainloop.MainIteration ();
-				if (Iteration != null)
-					Iteration (null, EventArgs.Empty);
-			}
-			toplevels.Remove (container);
+		/// <summary>
+		///   Use this method to complete an execution started with Begin
+		/// </summary>
+		static public void End (RunState state)
+		{
+			if (state == null)
+				throw new ArgumentNullException ("state");
+			toplevels.Remove (state.Container);
 			if (toplevels.Count == 0)
 				Shutdown ();
 			else
 				Refresh ();
+			state.Container = null;
 		}
 				
 		static void ProcessChar (Container container)
@@ -2782,7 +2832,7 @@ namespace Mono.Terminal {
 				int k = Curses.getch ();
 				if (k != Curses.ERR && k != 27)
 					ch = Curses.KeyAlt | k;
-				Curses.timeout (Timeout);
+				Curses.timeout (-1);
 			}
 			
 			if (container.ProcessHotKey (ch))
@@ -2813,11 +2863,20 @@ namespace Mono.Terminal {
 			if (ch == 9 || ch == Curses.KeyDown || ch == Curses.KeyRight){
 				if (!container.FocusNext ())
 					container.FocusNext ();
+				Curses.refresh ();
 			} else if (ch == Curses.KeyUp || ch == Curses.KeyLeft){
 				if (!container.FocusPrev ())
 					container.FocusPrev ();
+				Curses.refresh ();
 			}
 		}
-		
+	}
+
+	public class RunState {
+		internal RunState (Container container)
+		{
+			Container = container;
+		}
+		internal Container Container;
 	}
 }

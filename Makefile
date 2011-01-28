@@ -62,7 +62,7 @@ t-bugosx:
 #cute hack to avoid depending on ncurses-devel on Linux
 detect:
 	echo "main () {initscr();}" > tmp.c
-	gcc tmp.c -lncurses -o tmp
+	gcc tmp.c -lncursesw -o tmp
 	make binding CURSES=`ldd ./tmp  | grep ncurses | awk '{print $$3}' | sed 's#.*libncurses#ncurses#'`
 
 binding:

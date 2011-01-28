@@ -37,6 +37,35 @@
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
+    <Member MemberName="Begin">
+      <MemberSignature Language="C#" Value="public static Mono.Terminal.RunState Begin (Mono.Terminal.Container container);" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Mono.Terminal.RunState</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="container" Type="Mono.Terminal.Container" />
+      </Parameters>
+      <Docs>
+        <param name="container">To be added.</param>
+        <summary>
+            Starts running a new container or dialog box.
+            </summary>
+        <returns>To be added.</returns>
+        <remarks>
+            Use this method if you want to start the dialog, but
+            you want to control the main loop execution manually
+            by calling the RunLoop method (for example, to start
+            the dialog, but continuing to process events).
+            Use the returned value as the argument to RunLoop
+            and later to the End method to remove the container
+            from the screen.
+            </remarks>
+      </Docs>
+    </Member>
     <Member MemberName="ColorBasic">
       <MemberSignature Language="C#" Value="public static int ColorBasic;" />
       <MemberSignature Language="ILAsm" Value=".field public static int32 ColorBasic" />
@@ -410,6 +439,26 @@
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
+    <Member MemberName="End">
+      <MemberSignature Language="C#" Value="public static void End (Mono.Terminal.RunState state);" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="state" Type="Mono.Terminal.RunState" />
+      </Parameters>
+      <Docs>
+        <param name="state">To be added.</param>
+        <summary>
+            Use this method to complete an execution started with Begin
+            </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
     <Member MemberName="Error">
       <MemberSignature Language="C#" Value="public static void Error (string caption, string text);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Error(string caption, string text) cil managed" />
@@ -566,7 +615,7 @@
             main loop.
             </summary>
         <remarks>
-            See also <see cref="F:Mono.Terminal.Application.Timeout" /></remarks>
+            See also <see cref="!:Timeout" /></remarks>
       </Docs>
     </Member>
     <Member MemberName="Lines">
@@ -720,13 +769,75 @@
             </remarks>
       </Docs>
     </Member>
+    <Member MemberName="RunLoop">
+      <MemberSignature Language="C#" Value="public static void RunLoop (Mono.Terminal.RunState state);" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="state" Type="Mono.Terminal.RunState" />
+      </Parameters>
+      <Docs>
+        <param name="state">To be added.</param>
+        <summary>
+            Runs the main loop for the created dialog
+            </summary>
+        <remarks>
+            Calling this method will block until the
+            dialog has completed execution.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RunLoop">
+      <MemberSignature Language="C#" Value="public static void RunLoop (Mono.Terminal.RunState state, bool wait);" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="state" Type="Mono.Terminal.RunState" />
+        <Parameter Name="wait" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="state">To be added.</param>
+        <param name="wait">To be added.</param>
+        <summary>
+            Runs the main loop for the created dialog
+            </summary>
+        <remarks>
+            Use the wait parameter to control whether this is a
+            blocking or non-blocking call.
+            </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Stop">
+      <MemberSignature Language="C#" Value="public static void Stop ();" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
     <Member MemberName="Timeout">
       <MemberSignature Language="C#" Value="public static int Timeout;" />
       <MemberSignature Language="ILAsm" Value=".field public static int32 Timeout" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
-        <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>

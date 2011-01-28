@@ -32,6 +32,27 @@
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
+    <Member MemberName="AddIdle">
+      <MemberSignature Language="C#" Value="public Func&lt;bool&gt; AddIdle (Func&lt;bool&gt; idleHandler);" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Func&lt;System.Boolean&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="idleHandler" Type="System.Func&lt;System.Boolean&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="idleHandler">To be added.</param>
+        <summary>
+            Executes the specified @idleHandler on the idle loop.  The return value is a token to remove it.
+            </summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
     <Member MemberName="AddTimeout">
       <MemberSignature Language="C#" Value="public object AddTimeout (TimeSpan time, Func&lt;Mono.Terminal.MainLoop,bool&gt; callback);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object AddTimeout(valuetype System.TimeSpan time, class System.Func`2&lt;class Mono.Terminal.MainLoop, bool&gt; callback) cil managed" />
@@ -120,6 +141,26 @@
             </remarks>
       </Docs>
     </Member>
+    <Member MemberName="Invoke">
+      <MemberSignature Language="C#" Value="public void Invoke (Mono.Terminal.Action action);" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="action" Type="Mono.Terminal.Action" />
+      </Parameters>
+      <Docs>
+        <param name="action">To be added.</param>
+        <summary>
+            Runs @action on the thread that is processing events
+            </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
     <Member MemberName="MainIteration">
       <MemberSignature Language="C#" Value="public void MainIteration ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void MainIteration() cil managed" />
@@ -163,6 +204,26 @@
             You can use it like this:
             while (main.EvensPending ()) MainIteration ();
             </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveIdle">
+      <MemberSignature Language="C#" Value="public void RemoveIdle (Func&lt;bool&gt; idleHandler);" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="idleHandler" Type="System.Func&lt;System.Boolean&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="idleHandler">To be added.</param>
+        <summary>
+            Removes the specified idleHandler from processing.
+            </summary>
+        <remarks>To be added.</remarks>
       </Docs>
     </Member>
     <Member MemberName="RemoveTimeout">

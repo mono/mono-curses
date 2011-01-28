@@ -69,7 +69,7 @@
       </Docs>
     </Member>
     <Member MemberName="Checked">
-      <MemberSignature Language="C#" Value="public bool Checked { get; set; }" />
+      <MemberSignature Language="C#" Value="public bool Checked { set; get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool Checked" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
@@ -158,7 +158,7 @@
       </Docs>
     </Member>
     <Member MemberName="Text">
-      <MemberSignature Language="C#" Value="public string Text { get; set; }" />
+      <MemberSignature Language="C#" Value="public string Text { set; get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string Text" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>

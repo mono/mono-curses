@@ -35,7 +35,7 @@
       </Docs>
     </Member>
     <Member MemberName="Action">
-      <MemberSignature Language="C#" Value="public Mono.Terminal.Action Action { get; set; }" />
+      <MemberSignature Language="C#" Value="public Mono.Terminal.Action Action { set; get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class Mono.Terminal.Action Action" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
@@ -51,7 +51,7 @@
       </Docs>
     </Member>
     <Member MemberName="Help">
-      <MemberSignature Language="C#" Value="public string Help { get; set; }" />
+      <MemberSignature Language="C#" Value="public string Help { set; get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string Help" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
@@ -67,7 +67,7 @@
       </Docs>
     </Member>
     <Member MemberName="Title">
-      <MemberSignature Language="C#" Value="public string Title { get; set; }" />
+      <MemberSignature Language="C#" Value="public string Title { set; get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string Title" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
@@ -83,7 +83,7 @@
       </Docs>
     </Member>
     <Member MemberName="Width">
-      <MemberSignature Language="C#" Value="public int Width { get; set; }" />
+      <MemberSignature Language="C#" Value="public int Width { set; get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int32 Width" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>

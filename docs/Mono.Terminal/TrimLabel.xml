@@ -63,7 +63,7 @@
       </Docs>
     </Member>
     <Member MemberName="Text">
-      <MemberSignature Language="C#" Value="public override string Text { get; set; }" />
+      <MemberSignature Language="C#" Value="public override string Text { set; get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string Text" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>

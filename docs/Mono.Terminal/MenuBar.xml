@@ -52,7 +52,7 @@
       </Docs>
     </Member>
     <Member MemberName="Menus">
-      <MemberSignature Language="C#" Value="public Mono.Terminal.MenuBarItem[] Menus { get; set; }" />
+      <MemberSignature Language="C#" Value="public Mono.Terminal.MenuBarItem[] Menus { set; get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class Mono.Terminal.MenuBarItem[] Menus" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>

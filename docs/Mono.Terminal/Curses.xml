@@ -286,7 +286,7 @@
     </Member>
     <Member MemberName="addch">
       <MemberSignature Language="C#" Value="public static int addch (int ch);" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig pinvokeimpl (&quot;ncurses.so.5&quot; as &quot;addch&quot; winapi)int32 addch(int32 ch) cil managed" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig pinvokeimpl (&quot;ncursesw.so.5&quot; as &quot;addch&quot; winapi)int32 addch(int32 ch) cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
@@ -307,7 +307,7 @@
     </Member>
     <Member MemberName="addstr">
       <MemberSignature Language="C#" Value="public static int addstr (string s);" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig pinvokeimpl (&quot;ncurses.so.5&quot; as &quot;addstr&quot; winapi)int32 addstr(string s) cil managed" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig pinvokeimpl (&quot;ncursesw.so.5&quot; as &quot;addstr&quot; winapi)int32 addstr(string s) cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
@@ -356,7 +356,7 @@
     </Member>
     <Member MemberName="attroff">
       <MemberSignature Language="C#" Value="public static int attroff (int attrs);" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig pinvokeimpl (&quot;ncurses.so.5&quot; as &quot;attroff&quot; winapi)int32 attroff(int32 attrs) cil managed" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig pinvokeimpl (&quot;ncursesw.so.5&quot; as &quot;attroff&quot; winapi)int32 attroff(int32 attrs) cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
@@ -377,7 +377,7 @@
     </Member>
     <Member MemberName="attron">
       <MemberSignature Language="C#" Value="public static int attron (int attrs);" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig pinvokeimpl (&quot;ncurses.so.5&quot; as &quot;attron&quot; winapi)int32 attron(int32 attrs) cil managed" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig pinvokeimpl (&quot;ncursesw.so.5&quot; as &quot;attron&quot; winapi)int32 attron(int32 attrs) cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
@@ -398,7 +398,7 @@
     </Member>
     <Member MemberName="attrset">
       <MemberSignature Language="C#" Value="public static int attrset (int attrs);" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig pinvokeimpl (&quot;ncurses.so.5&quot; as &quot;attrset&quot; winapi)int32 attrset(int32 attrs) cil managed" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig pinvokeimpl (&quot;ncursesw.so.5&quot; as &quot;attrset&quot; winapi)int32 attrset(int32 attrs) cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
@@ -419,7 +419,7 @@
     </Member>
     <Member MemberName="cbreak">
       <MemberSignature Language="C#" Value="public static int cbreak ();" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig pinvokeimpl (&quot;ncurses.so.5&quot; as &quot;cbreak&quot; winapi)int32 cbreak() cil managed" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig pinvokeimpl (&quot;ncursesw.so.5&quot; as &quot;cbreak&quot; winapi)int32 cbreak() cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
@@ -611,7 +611,7 @@
     </Member>
     <Member MemberName="doupdate">
       <MemberSignature Language="C#" Value="public static int doupdate ();" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig pinvokeimpl (&quot;ncurses.so.5&quot; as &quot;doupdate&quot; winapi)int32 doupdate() cil managed" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig pinvokeimpl (&quot;ncursesw.so.5&quot; as &quot;doupdate&quot; winapi)int32 doupdate() cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
@@ -629,7 +629,7 @@
     </Member>
     <Member MemberName="echo">
       <MemberSignature Language="C#" Value="public static int echo ();" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig pinvokeimpl (&quot;ncurses.so.5&quot; as &quot;echo&quot; winapi)int32 echo() cil managed" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig pinvokeimpl (&quot;ncursesw.so.5&quot; as &quot;echo&quot; winapi)int32 echo() cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
@@ -647,7 +647,7 @@
     </Member>
     <Member MemberName="endwin">
       <MemberSignature Language="C#" Value="public static int endwin ();" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig pinvokeimpl (&quot;ncurses.so.5&quot; as &quot;endwin&quot; winapi)int32 endwin() cil managed" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig pinvokeimpl (&quot;ncursesw.so.5&quot; as &quot;endwin&quot; winapi)int32 endwin() cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
@@ -680,9 +680,26 @@
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
+    <Member MemberName="getch">
+      <MemberSignature Language="C#" Value="public static int getch ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig pinvokeimpl (&quot;ncursesw.so.5&quot; as &quot;getch&quot; winapi)int32 getch() cil managed" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
     <Member MemberName="halfdelay">
       <MemberSignature Language="C#" Value="public static int halfdelay (int t);" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig pinvokeimpl (&quot;ncurses.so.5&quot; as &quot;halfdelay&quot; winapi)int32 halfdelay(int32 t) cil managed" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig pinvokeimpl (&quot;ncursesw.so.5&quot; as &quot;halfdelay&quot; winapi)int32 halfdelay(int32 t) cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
@@ -721,7 +738,7 @@
     </Member>
     <Member MemberName="internal_newterm">
       <MemberSignature Language="C#" Value="public static IntPtr internal_newterm (string type, IntPtr file_outfd, IntPtr file_infd);" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig pinvokeimpl (&quot;ncurses.so.5&quot; as &quot;internal_newterm&quot; winapi)native int internal_newterm(string type, native int file_outfd, native int file_infd) cil managed" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig pinvokeimpl (&quot;ncursesw.so.5&quot; as &quot;internal_newterm&quot; winapi)native int internal_newterm(string type, native int file_outfd, native int file_infd) cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
@@ -746,7 +763,7 @@
     </Member>
     <Member MemberName="internal_set_term">
       <MemberSignature Language="C#" Value="public static IntPtr internal_set_term (IntPtr newscreen);" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig pinvokeimpl (&quot;ncurses.so.5&quot; as &quot;internal_set_term&quot; winapi)native int internal_set_term(native int newscreen) cil managed" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig pinvokeimpl (&quot;ncursesw.so.5&quot; as &quot;internal_set_term&quot; winapi)native int internal_set_term(native int newscreen) cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
@@ -788,7 +805,7 @@
     </Member>
     <Member MemberName="isendwin">
       <MemberSignature Language="C#" Value="public static bool isendwin ();" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig pinvokeimpl (&quot;ncurses.so.5&quot; as &quot;isendwin&quot; winapi)bool isendwin() cil managed" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig pinvokeimpl (&quot;ncursesw.so.5&quot; as &quot;isendwin&quot; winapi)bool isendwin() cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
@@ -1202,7 +1219,7 @@
     </Member>
     <Member MemberName="move">
       <MemberSignature Language="C#" Value="public static int move (int line, int col);" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig pinvokeimpl (&quot;ncurses.so.5&quot; as &quot;move&quot; winapi)int32 move(int32 line, int32 col) cil managed" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig pinvokeimpl (&quot;ncursesw.so.5&quot; as &quot;move&quot; winapi)int32 move(int32 line, int32 col) cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
@@ -1223,9 +1240,31 @@
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
+    <Member MemberName="mvgetch">
+      <MemberSignature Language="C#" Value="public static int mvgetch (int y, int x);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig pinvokeimpl (&quot;ncursesw.so.5&quot; as &quot;mvgetch&quot; winapi)int32 mvgetch(int32 y, int32 x) cil managed" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="y" Type="System.Int32" />
+        <Parameter Name="x" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="y">To be added.</param>
+        <param name="x">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
     <Member MemberName="nl">
       <MemberSignature Language="C#" Value="public static int nl ();" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig pinvokeimpl (&quot;ncurses.so.5&quot; as &quot;nl&quot; winapi)int32 nl() cil managed" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig pinvokeimpl (&quot;ncursesw.so.5&quot; as &quot;nl&quot; winapi)int32 nl() cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
@@ -1243,7 +1282,7 @@
     </Member>
     <Member MemberName="nocbreak">
       <MemberSignature Language="C#" Value="public static int nocbreak ();" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig pinvokeimpl (&quot;ncurses.so.5&quot; as &quot;nocbreak&quot; winapi)int32 nocbreak() cil managed" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig pinvokeimpl (&quot;ncursesw.so.5&quot; as &quot;nocbreak&quot; winapi)int32 nocbreak() cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
@@ -1261,7 +1300,7 @@
     </Member>
     <Member MemberName="noecho">
       <MemberSignature Language="C#" Value="public static int noecho ();" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig pinvokeimpl (&quot;ncurses.so.5&quot; as &quot;noecho&quot; winapi)int32 noecho() cil managed" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig pinvokeimpl (&quot;ncursesw.so.5&quot; as &quot;noecho&quot; winapi)int32 noecho() cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
@@ -1279,7 +1318,7 @@
     </Member>
     <Member MemberName="nonl">
       <MemberSignature Language="C#" Value="public static int nonl ();" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig pinvokeimpl (&quot;ncurses.so.5&quot; as &quot;nonl&quot; winapi)int32 nonl() cil managed" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig pinvokeimpl (&quot;ncursesw.so.5&quot; as &quot;nonl&quot; winapi)int32 nonl() cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
@@ -1297,7 +1336,7 @@
     </Member>
     <Member MemberName="noqiflush">
       <MemberSignature Language="C#" Value="public static void noqiflush ();" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig pinvokeimpl (&quot;ncurses.so.5&quot; as &quot;noqiflush&quot; winapi)void noqiflush() cil managed" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig pinvokeimpl (&quot;ncursesw.so.5&quot; as &quot;noqiflush&quot; winapi)void noqiflush() cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
@@ -1314,7 +1353,7 @@
     </Member>
     <Member MemberName="noraw">
       <MemberSignature Language="C#" Value="public static int noraw ();" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig pinvokeimpl (&quot;ncurses.so.5&quot; as &quot;noraw&quot; winapi)int32 noraw() cil managed" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig pinvokeimpl (&quot;ncursesw.so.5&quot; as &quot;noraw&quot; winapi)int32 noraw() cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
@@ -1332,7 +1371,7 @@
     </Member>
     <Member MemberName="qiflush">
       <MemberSignature Language="C#" Value="public static void qiflush ();" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig pinvokeimpl (&quot;ncurses.so.5&quot; as &quot;qiflush&quot; winapi)void qiflush() cil managed" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig pinvokeimpl (&quot;ncursesw.so.5&quot; as &quot;qiflush&quot; winapi)void qiflush() cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
@@ -1349,7 +1388,7 @@
     </Member>
     <Member MemberName="raw">
       <MemberSignature Language="C#" Value="public static int raw ();" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig pinvokeimpl (&quot;ncurses.so.5&quot; as &quot;raw&quot; winapi)int32 raw() cil managed" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig pinvokeimpl (&quot;ncursesw.so.5&quot; as &quot;raw&quot; winapi)int32 raw() cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
@@ -1367,7 +1406,7 @@
     </Member>
     <Member MemberName="refresh">
       <MemberSignature Language="C#" Value="public static int refresh ();" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig pinvokeimpl (&quot;ncurses.so.5&quot; as &quot;refresh&quot; winapi)int32 refresh() cil managed" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig pinvokeimpl (&quot;ncursesw.so.5&quot; as &quot;refresh&quot; winapi)int32 refresh() cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
@@ -1385,7 +1424,7 @@
     </Member>
     <Member MemberName="setscrreg">
       <MemberSignature Language="C#" Value="public static int setscrreg (int top, int bot);" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig pinvokeimpl (&quot;ncurses.so.5&quot; as &quot;setscrreg&quot; winapi)int32 setscrreg(int32 top, int32 bot) cil managed" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig pinvokeimpl (&quot;ncursesw.so.5&quot; as &quot;setscrreg&quot; winapi)int32 setscrreg(int32 top, int32 bot) cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
@@ -1408,7 +1447,7 @@
     </Member>
     <Member MemberName="timeout">
       <MemberSignature Language="C#" Value="public static int timeout (int delay);" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig pinvokeimpl (&quot;ncurses.so.5&quot; as &quot;timeout&quot; winapi)int32 timeout(int32 delay) cil managed" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig pinvokeimpl (&quot;ncursesw.so.5&quot; as &quot;timeout&quot; winapi)int32 timeout(int32 delay) cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
@@ -1429,7 +1468,7 @@
     </Member>
     <Member MemberName="typeahead">
       <MemberSignature Language="C#" Value="public static int typeahead (IntPtr fd);" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig pinvokeimpl (&quot;ncurses.so.5&quot; as &quot;typeahead&quot; winapi)int32 typeahead(native int fd) cil managed" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig pinvokeimpl (&quot;ncursesw.so.5&quot; as &quot;typeahead&quot; winapi)int32 typeahead(native int fd) cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>0.0.0.0</AssemblyVersion>
@@ -1443,6 +1482,26 @@
       </Parameters>
       <Docs>
         <param name="fd">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ungetch">
+      <MemberSignature Language="C#" Value="public static int ungetch (int ch);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig pinvokeimpl (&quot;ncursesw.so.5&quot; as &quot;ungetch&quot; winapi)int32 ungetch(int32 ch) cil managed" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ch" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="ch">To be added.</param>
         <summary>To be added.</summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
