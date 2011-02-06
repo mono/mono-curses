@@ -2319,6 +2319,7 @@ namespace Mono.Terminal {
 				return false;
 			}
 			Container.Redraw ();
+			Curses.refresh ();
 			return true;
 		}
 	}
