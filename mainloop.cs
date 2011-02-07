@@ -249,25 +249,17 @@ namespace Mono.Terminal {
 
 		void RunTimers ()
 		{
-			var add = new List<Timeout> ();
-			var remove = new List<double> ();
-
 			long now = DateTime.UtcNow.Ticks;
-			foreach (var k in timeouts.Keys){
+			var copy = timeouts;
+			timeouts = new SortedList<double,Timeout> ();
+			foreach (var k in copy.Keys){
 				if (k >= now)
 					break;
 
-				var timeout = timeouts [k];
+				var timeout = copy [k];
 				if (timeout.Callback (this))
-					add.Add (timeout);
-				
-				remove.Add (k);
+					AddTimeout (timeout.Span, timeout);
 			}
-			foreach (var ticks in remove)
-				timeouts.Remove (ticks);
-
-			foreach (var timeout in add)
-				AddTimeout (timeout.Span, timeout);
 		}
 
 		void RunIdle ()
