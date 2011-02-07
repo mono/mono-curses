@@ -631,6 +631,7 @@ namespace Mono.Terminal {
 		string text, kill;
 		int first, point;
 		int color;
+		bool used;
 		
 		/// <summary>
 		///   Changed event, raised when the text has clicked.
@@ -824,16 +825,24 @@ namespace Mono.Terminal {
 				// Ignore other control characters.
 				if (key < 32 || key > 255)
 					return false;
-				
-				if (point == text.Length){
-					SetText (text + (char) key);
+
+				if (used){
+					if (point == text.Length){
+						SetText (text + (char) key);
+					} else {
+						SetText (text.Substring (0, point) + (char) key + text.Substring (point));
+					}
+					point++;
 				} else {
-					SetText (text.Substring (0, point) + (char) key + text.Substring (point));
+					SetText ("" + (char) key);
+					first = 0;
+					point = 1;
 				}
-				point++;
+				used = true;
 				Adjust ();
 				return true;
 			}
+			used = true;
 			return true;
 		}
 
@@ -2798,12 +2807,17 @@ namespace Mono.Terminal {
 		{
 			if (state == null)
 				throw new ArgumentNullException ("state");
-			toplevels.Remove (state.Container);
+			state.Dispose ();
+		}
+
+		// Called by the Dispose handler.
+		internal static void End (Container container)
+		{
+			toplevels.Remove (container);
 			if (toplevels.Count == 0)
 				Shutdown ();
 			else
 				Refresh ();
-			state.Container = null;
 		}
 				
 		static void ProcessChar (Container container)
@@ -2873,11 +2887,25 @@ namespace Mono.Terminal {
 		}
 	}
 
-	public class RunState {
+	public class RunState : IDisposable {
 		internal RunState (Container container)
 		{
 			Container = container;
 		}
 		internal Container Container;
+
+		public void Dispose ()
+		{
+			Dispose (true);
+			GC.SuppressFinalize(this);
+		}
+
+		public virtual void Dispose (bool disposing)
+		{
+			if (Container != null){
+				Application.End (Container);
+				Container = null;
+			}
+		}
 	}
 }
