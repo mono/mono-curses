@@ -229,7 +229,7 @@ namespace Mono.Terminal {
 		//
 		public static int addch (int ch)
 		{
-			if (ch > 0xffff)
+			if (ch < 127 || ch > 0xffff )
 				return _addch (ch);
 			char c = (char) ch;
 			return addstr (new String (c, 1));
