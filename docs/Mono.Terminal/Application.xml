@@ -39,6 +39,7 @@
     </Member>
     <Member MemberName="Begin">
       <MemberSignature Language="C#" Value="public static Mono.Terminal.RunState Begin (Mono.Terminal.Container container);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class Mono.Terminal.RunState Begin(class Mono.Terminal.Container container) cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
@@ -441,6 +442,7 @@
     </Member>
     <Member MemberName="End">
       <MemberSignature Language="C#" Value="public static void End (Mono.Terminal.RunState state);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void End(class Mono.Terminal.RunState state) cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
@@ -771,6 +773,7 @@
     </Member>
     <Member MemberName="RunLoop">
       <MemberSignature Language="C#" Value="public static void RunLoop (Mono.Terminal.RunState state);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RunLoop(class Mono.Terminal.RunState state) cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
@@ -794,6 +797,7 @@
     </Member>
     <Member MemberName="RunLoop">
       <MemberSignature Language="C#" Value="public static void RunLoop (Mono.Terminal.RunState state, bool wait);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RunLoop(class Mono.Terminal.RunState state, bool wait) cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
@@ -819,6 +823,7 @@
     </Member>
     <Member MemberName="Stop">
       <MemberSignature Language="C#" Value="public static void Stop ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Stop() cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>

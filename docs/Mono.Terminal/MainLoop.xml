@@ -34,6 +34,7 @@
     </Member>
     <Member MemberName="AddIdle">
       <MemberSignature Language="C#" Value="public Func&lt;bool&gt; AddIdle (Func&lt;bool&gt; idleHandler);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Func`1&lt;bool&gt; AddIdle(class System.Func`1&lt;bool&gt; idleHandler) cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
@@ -143,6 +144,7 @@
     </Member>
     <Member MemberName="Invoke">
       <MemberSignature Language="C#" Value="public void Invoke (Mono.Terminal.Action action);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Invoke(class Mono.Terminal.Action action) cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
@@ -208,6 +210,7 @@
     </Member>
     <Member MemberName="RemoveIdle">
       <MemberSignature Language="C#" Value="public void RemoveIdle (Func&lt;bool&gt; idleHandler);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RemoveIdle(class System.Func`1&lt;bool&gt; idleHandler) cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>

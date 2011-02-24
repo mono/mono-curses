@@ -220,9 +220,17 @@ namespace Mono.Terminal {
 		}
 
 		static char [] r = new char [1];
-		
+
+		//
+		// Have to wrap the native addch, as it can not
+		// display unicode characters, we have to use addstr
+		// for that.   but we need addch to render special ACS
+		// characters
+		//
 		public static int addch (int ch)
 		{
+			if (ch > 0xffff)
+				return _addch (ch);
 			char c = (char) ch;
 			return addstr (new String (c, 1));
 		}

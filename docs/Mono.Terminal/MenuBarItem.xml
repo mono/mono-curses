@@ -33,7 +33,7 @@
       </Docs>
     </Member>
     <Member MemberName="Children">
-      <MemberSignature Language="C#" Value="public Mono.Terminal.MenuItem[] Children { set; get; }" />
+      <MemberSignature Language="C#" Value="public Mono.Terminal.MenuItem[] Children { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class Mono.Terminal.MenuItem[] Children" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
@@ -49,7 +49,7 @@
       </Docs>
     </Member>
     <Member MemberName="Current">
-      <MemberSignature Language="C#" Value="public int Current { set; get; }" />
+      <MemberSignature Language="C#" Value="public int Current { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int32 Current" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
@@ -65,7 +65,7 @@
       </Docs>
     </Member>
     <Member MemberName="Title">
-      <MemberSignature Language="C#" Value="public string Title { set; get; }" />
+      <MemberSignature Language="C#" Value="public string Title { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string Title" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
