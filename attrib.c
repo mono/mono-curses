@@ -121,6 +121,7 @@ main (int argc, char *argv [])
 	put2 ("F8", KEY_F(8));
 	put2 ("F9", KEY_F(9));
 	put2 ("F10", KEY_F(10));
+	put2 ("Resize", KEY_RESIZE);
 	
 	diff = COLOR_PAIR (1) - COLOR_PAIR(0);
 	fprintf (OUT, "\n\n\tstatic public int ColorPair(int n){\n"
