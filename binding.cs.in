@@ -219,8 +219,6 @@ namespace Mono.Terminal {
 			return addstr (s);
 		}
 
-		static char [] r = new char [1];
-
 		//
 		// Have to wrap the native addch, as it can not
 		// display unicode characters, we have to use addstr
