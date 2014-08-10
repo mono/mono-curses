@@ -1758,8 +1758,11 @@ namespace Mono.Terminal {
 		/// </remarks>
 		public virtual void RemoveAll ()
 		{
+			List<Widget> tmp = new List<Widget>();
 			foreach (Widget w in widgets)
-				Remove (w);
+				tmp.Add(w);
+			foreach (Widget w in tmp)
+				Remove(w);
 		}
 
 		/// <summary>
