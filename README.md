@@ -20,8 +20,8 @@ create our own abstraction here.
 License
 =======
 
-Console sharp is an ncurses binding licensed under the terms
-of the MIT X11 license.
+This is an ncurses binding licensed under the terms of the MIT X11
+license.
 
 Features
 ========
