@@ -4,6 +4,9 @@
       <AssemblyPublicKey>[00 24 00 00 04 80 00 00 94 00 00 00 06 02 00 00 00 24 00 00 52 53 41 31 00 04 00 00 11 00 00 00 95 c1 72 1e 2f a8 72 7e f4 03 4d 8a 92 9f ed f2 b2 b1 58 4e 79 f2 b6 45 7a 77 00 e5 e6 bc 35 eb 79 ab 54 ab ec 06 b4 21 dd 87 0e 57 ef ca c9 d5 42 dc f9 43 93 d2 dc 3a b6 90 50 65 99 c6 c8 25 75 f0 e9 3d 31 08 fe df 98 c6 68 03 c1 ee f8 e4 d2 17 99 26 ff 77 8b 50 96 9d 4d 3b 0c 42 c5 72 29 c1 e8 58 19 f3 db e4 6c be 4e 8a 8f 5f a9 cf 40 97 c6 bc 21 fb 69 2d 18 65 70 52 33 2b bc 85 ]</AssemblyPublicKey>
       <Attributes>
         <Attribute>
+          <AttributeName>System.Diagnostics.Debuggable(System.Diagnostics.DebuggableAttribute+DebuggingModes.DisableOptimizations | System.Diagnostics.DebuggableAttribute+DebuggingModes.IgnoreSymbolStoreSequencePoints)</AttributeName>
+        </Attribute>
+        <Attribute>
           <AttributeName>System.Reflection.AssemblyCompany("Novell, Inc.")</AttributeName>
         </Attribute>
         <Attribute>

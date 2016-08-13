@@ -12,15 +12,15 @@
   <Interfaces />
   <Docs>
     <summary>
-            gui.cs Application driver.
-            </summary>
+               gui.cs Application driver.
+             </summary>
     <remarks>
-            Before using gui.cs, you must call Application.Init, then
-            you would create your toplevel container (typically by
-            calling:  new Container (0, 0, Application.Cols,
-            Application.Lines), adding widgets to it and finally
-            calling Application.Run on the toplevel container.
-            </remarks>
+               Before using gui.cs, you must call Application.Init, then
+               you would create your toplevel container (typically by
+               calling:  new Container (0, 0, Application.Cols,
+               Application.Lines), adding widgets to it and finally
+               calling Application.Run on the toplevel container. 
+             </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -53,18 +53,19 @@
       <Docs>
         <param name="container">To be added.</param>
         <summary>
-            Starts running a new container or dialog box.
-            </summary>
+               Starts running a new container or dialog box.
+             </summary>
         <returns>To be added.</returns>
         <remarks>
-            Use this method if you want to start the dialog, but
-            you want to control the main loop execution manually
-            by calling the RunLoop method (for example, to start
-            the dialog, but continuing to process events).
-            Use the returned value as the argument to RunLoop
-            and later to the End method to remove the container
-            from the screen.
-            </remarks>
+               Use this method if you want to start the dialog, but
+               you want to control the main loop execution manually
+               by calling the RunLoop method (for example, to start
+               the dialog, but continuing to process events).
+            
+                Use the returned value as the argument to RunLoop
+                and later to the End method to remove the container
+                from the screen.
+             </remarks>
       </Docs>
     </Member>
     <Member MemberName="ColorBasic">
@@ -79,8 +80,8 @@
       </ReturnValue>
       <Docs>
         <summary>
-            The basic color of the terminal.
-            </summary>
+               The basic color of the terminal.
+             </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -97,8 +98,8 @@
       </ReturnValue>
       <Docs>
         <summary>
-            Color for focused widgets on a dialog.
-            </summary>
+               Color for focused widgets on a dialog.
+             </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -115,8 +116,8 @@
       </ReturnValue>
       <Docs>
         <summary>
-            Color for a hotkey in a focused widget on a dialog.
-            </summary>
+               Color for a hotkey in a focused widget on a dialog.
+             </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -133,8 +134,8 @@
       </ReturnValue>
       <Docs>
         <summary>
-            Color for hotkeys in an unfocused widget on a dialog.
-            </summary>
+               Color for hotkeys in an unfocused widget on a dialog.
+             </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -151,8 +152,8 @@
       </ReturnValue>
       <Docs>
         <summary>
-            Color for unfocused widgets on a dialog.
-            </summary>
+               Color for unfocused widgets on a dialog.
+             </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -169,8 +170,8 @@
       </ReturnValue>
       <Docs>
         <summary>
-            Color used for error text.
-            </summary>
+               Color used for error text.
+             </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -186,8 +187,8 @@
       </ReturnValue>
       <Docs>
         <summary>
-            Color used for focused widgets on an error dialog.
-            </summary>
+               Color used for focused widgets on an error dialog.
+             </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -203,8 +204,8 @@
       </ReturnValue>
       <Docs>
         <summary>
-            Color used for hotkeys in error dialogs
-            </summary>
+               Color used for hotkeys in error dialogs
+             </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -220,8 +221,8 @@
       </ReturnValue>
       <Docs>
         <summary>
-            Color used for hotkeys in a focused widget in an error dialog
-            </summary>
+               Color used for hotkeys in a focused widget in an error dialog
+             </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -238,8 +239,8 @@
       </ReturnValue>
       <Docs>
         <summary>
-            Color used for focused widgets.
-            </summary>
+               Color used for focused widgets.
+             </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -256,8 +257,8 @@
       </ReturnValue>
       <Docs>
         <summary>
-            Color used for hotkeys in focused widgets.
-            </summary>
+               Color used for hotkeys in focused widgets.
+             </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -274,8 +275,8 @@
       </ReturnValue>
       <Docs>
         <summary>
-            Color used for hotkeys in unfocused widgets.
-            </summary>
+               Color used for hotkeys in unfocused widgets.
+             </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -292,8 +293,8 @@
       </ReturnValue>
       <Docs>
         <summary>
-            Color used for marked entries.
-            </summary>
+               Color used for marked entries.
+             </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -310,9 +311,9 @@
       </ReturnValue>
       <Docs>
         <summary>
-            Color used for marked entries that are currently
-            selected with the cursor.
-            </summary>
+               Color used for marked entries that are currently
+               selected with the cursor.
+             </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -328,8 +329,8 @@
       </ReturnValue>
       <Docs>
         <summary>
-            The regular color for a menu entry
-            </summary>
+               The regular color for a menu entry
+             </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -345,8 +346,8 @@
       </ReturnValue>
       <Docs>
         <summary>
-            The hot color for a menu entry
-            </summary>
+               The hot color for a menu entry
+             </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -362,8 +363,8 @@
       </ReturnValue>
       <Docs>
         <summary>
-            The hot color for a selected item on a menu
-            </summary>
+               The hot color for a selected item on a menu
+             </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -379,8 +380,8 @@
       </ReturnValue>
       <Docs>
         <summary>
-            The regular color for a selected item on a menu
-            </summary>
+               The regular color for a selected item on a menu
+             </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -397,8 +398,8 @@
       </ReturnValue>
       <Docs>
         <summary>
-            Color used for unfocused widgets.
-            </summary>
+               Color used for unfocused widgets.
+             </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -415,8 +416,8 @@
       </ReturnValue>
       <Docs>
         <summary>
-            The number of columns on the screen
-            </summary>
+               The number of columns on the screen
+             </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -434,8 +435,8 @@
       </ReturnValue>
       <Docs>
         <summary>
-            The singleton EmptyContainer that covers the entire screen.
-            </summary>
+                The singleton EmptyContainer that covers the entire screen.
+             </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -456,8 +457,8 @@
       <Docs>
         <param name="state">To be added.</param>
         <summary>
-            Use this method to complete an execution started with Begin
-            </summary>
+               Use this method to complete an execution started with Begin
+             </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -480,8 +481,8 @@
         <param name="caption">To be added.</param>
         <param name="text">To be added.</param>
         <summary>
-            Displays an error message.
-            </summary>
+               Displays an error message.
+             </summary>
         <remarks />
       </Docs>
     </Member>
@@ -512,11 +513,11 @@
         <param name="format">To be added.</param>
         <param name="pars">To be added.</param>
         <summary>
-            Displays an error message.
-            </summary>
+               Displays an error message.
+             </summary>
         <remarks>
-            Overload that allows for String.Format parameters.
-            </remarks>
+               Overload that allows for String.Format parameters.
+             </remarks>
       </Docs>
     </Member>
     <Member MemberName="Info">
@@ -538,8 +539,8 @@
         <param name="caption">To be added.</param>
         <param name="text">To be added.</param>
         <summary>
-            Displays an informational message.
-            </summary>
+               Displays an informational message.
+             </summary>
         <remarks />
       </Docs>
     </Member>
@@ -570,11 +571,11 @@
         <param name="format">To be added.</param>
         <param name="pars">To be added.</param>
         <summary>
-            Displays an informational message.
-            </summary>
+               Displays an informational message.
+             </summary>
         <remarks>
-            Overload that allows for String.Format parameters.
-            </remarks>
+               Overload that allows for String.Format parameters.
+             </remarks>
       </Docs>
     </Member>
     <Member MemberName="Init">
@@ -594,9 +595,9 @@
       <Docs>
         <param name="disable_color">To be added.</param>
         <summary>
-            Initializes the runtime.   The boolean flag
-            indicates whether we are forcing color to be off.
-            </summary>
+                Initializes the runtime.   The boolean flag
+               indicates whether we are forcing color to be off.
+             </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -613,11 +614,11 @@
       </ReturnValue>
       <Docs>
         <summary>
-            This event is raised on each iteration of the
-            main loop.
-            </summary>
+               This event is raised on each iteration of the
+               main loop. 
+             </summary>
         <remarks>
-            See also <see cref="!:Timeout" /></remarks>
+               See also <see cref="!:Timeout" /></remarks>
       </Docs>
     </Member>
     <Member MemberName="Lines">
@@ -633,8 +634,8 @@
       </ReturnValue>
       <Docs>
         <summary>
-            The number of lines on the screen
-            </summary>
+               The number of lines on the screen
+             </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -673,8 +674,8 @@
         <param name="f">To be added.</param>
         <param name="b">To be added.</param>
         <summary>
-            Creates a new Curses color to be used by Gui.cs apps
-            </summary>
+                Creates a new Curses color to be used by Gui.cs apps
+             </summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -692,8 +693,8 @@
       </ReturnValue>
       <Docs>
         <summary>
-            A flag indicating which mouse events are available
-            </summary>
+                A flag indicating which mouse events are available
+             </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -718,12 +719,12 @@
         <param name="caption">To be added.</param>
         <param name="t">To be added.</param>
         <summary>
-            Displays a message on a modal dialog box.
-            </summary>
+               Displays a message on a modal dialog box.
+             </summary>
         <remarks>
-            The error boolean indicates whether this is an
-            error message box or not.
-            </remarks>
+               The error boolean indicates whether this is an
+               error message box or not.   
+             </remarks>
       </Docs>
     </Member>
     <Member MemberName="Refresh">
@@ -740,8 +741,8 @@
       <Parameters />
       <Docs>
         <summary>
-            Forces a repaint of the screen.
-            </summary>
+               Forces a repaint of the screen.
+             </summary>
         <remarks />
       </Docs>
     </Member>
@@ -762,13 +763,13 @@
       <Docs>
         <param name="container">To be added.</param>
         <summary>
-            Runs the main loop on the given container.
-            </summary>
+               Runs the main loop on the given container.
+             </summary>
         <remarks>
-            This method is used to start processing events
-            for the main application, but it is also used to
-            run modal dialog boxes.
-            </remarks>
+               This method is used to start processing events
+               for the main application, but it is also used to
+               run modal dialog boxes.
+             </remarks>
       </Docs>
     </Member>
     <Member MemberName="RunLoop">
@@ -787,12 +788,12 @@
       <Docs>
         <param name="state">To be added.</param>
         <summary>
-            Runs the main loop for the created dialog
-            </summary>
+               Runs the main loop for the created dialog
+             </summary>
         <remarks>
-            Calling this method will block until the
-            dialog has completed execution.
-            </remarks>
+               Calling this method will block until the
+               dialog has completed execution.
+             </remarks>
       </Docs>
     </Member>
     <Member MemberName="RunLoop">
@@ -813,12 +814,12 @@
         <param name="state">To be added.</param>
         <param name="wait">To be added.</param>
         <summary>
-            Runs the main loop for the created dialog
-            </summary>
+               Runs the main loop for the created dialog
+             </summary>
         <remarks>
-            Use the wait parameter to control whether this is a
-            blocking or non-blocking call.
-            </remarks>
+               Use the wait parameter to control whether this is a
+               blocking or non-blocking call.
+             </remarks>
       </Docs>
     </Member>
     <Member MemberName="Stop">

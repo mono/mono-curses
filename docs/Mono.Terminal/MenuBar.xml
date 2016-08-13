@@ -46,8 +46,8 @@
       <Docs>
         <param name="idx">To be added.</param>
         <summary>
-            Activates the menubar
-            </summary>
+               Activates the menubar
+             </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

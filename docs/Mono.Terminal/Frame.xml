@@ -12,12 +12,12 @@
   <Interfaces />
   <Docs>
     <summary>
-            Framed-container widget.
-            </summary>
+               Framed-container widget.
+             </summary>
     <remarks>
-            A container that provides a frame around its children,
-            and an optional title.
-            </remarks>
+               A container that provides a frame around its children,
+               and an optional title.
+             </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -34,8 +34,8 @@
       <Docs>
         <param name="title">To be added.</param>
         <summary>
-            Creates an empty frame, with the given title
-            </summary>
+               Creates an empty frame, with the given title
+             </summary>
         <remarks />
       </Docs>
     </Member>
@@ -61,8 +61,8 @@
         <param name="h">To be added.</param>
         <param name="title">To be added.</param>
         <summary>
-            Public constructor, a frame, with the given title.
-            </summary>
+               Public constructor, a frame, with the given title.
+             </summary>
         <remarks />
       </Docs>
     </Member>

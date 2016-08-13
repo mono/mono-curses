@@ -12,8 +12,8 @@
   <Interfaces />
   <Docs>
     <summary>
-            Label widget, displays a string at a given position.
-            </summary>
+               Label widget, displays a string at a given position.
+             </summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
@@ -35,9 +35,9 @@
         <param name="y">To be added.</param>
         <param name="s">To be added.</param>
         <summary>
-            Public constructor: creates a label at the given
-            coordinate with the given string.
-            </summary>
+               Public constructor: creates a label at the given
+               coordinate with the given string.
+             </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -130,8 +130,8 @@
       </ReturnValue>
       <Docs>
         <summary>
-            The text displayed by this widget.
-            </summary>
+               The text displayed by this widget.
+             </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>

@@ -31,13 +31,13 @@
         <param name="y">To be added.</param>
         <param name="s">To be added.</param>
         <summary>
-            Public constructor, creates a CheckButton based on
-            the given text at the given position.
-            </summary>
+               Public constructor, creates a CheckButton based on
+               the given text at the given position.
+             </summary>
         <remarks>
-            The size of CheckButton is computed based on the
-            text length. This CheckButton is not toggled.
-            </remarks>
+               The size of CheckButton is computed based on the
+               text length. This CheckButton is not toggled.
+             </remarks>
       </Docs>
     </Member>
     <Member MemberName=".ctor">
@@ -59,13 +59,13 @@
         <param name="s">To be added.</param>
         <param name="is_checked">To be added.</param>
         <summary>
-            Public constructor, creates a CheckButton based on
-            the given text at the given position and a state.
-            </summary>
+               Public constructor, creates a CheckButton based on
+               the given text at the given position and a state.
+             </summary>
         <remarks>
-            The size of CheckButton is computed based on the
-            text length.
-            </remarks>
+               The size of CheckButton is computed based on the
+               text length. 
+             </remarks>
       </Docs>
     </Member>
     <Member MemberName="Checked">
@@ -80,8 +80,8 @@
       </ReturnValue>
       <Docs>
         <summary>
-            The state of the checkbox.
-            </summary>
+                The state of the checkbox.
+             </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -169,8 +169,8 @@
       </ReturnValue>
       <Docs>
         <summary>
-            The text displayed by this widget.
-            </summary>
+               The text displayed by this widget.
+             </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -187,13 +187,13 @@
       </ReturnValue>
       <Docs>
         <summary>
-            Toggled event, raised when the CheckButton is toggled.
-            </summary>
+               Toggled event, raised when the CheckButton is toggled.
+             </summary>
         <remarks>
-            Client code can hook up to this event, it is
-            raised when the checkbutton is activated either with
-            the mouse or the keyboard.
-            </remarks>
+               Client code can hook up to this event, it is
+               raised when the checkbutton is activated either with
+               the mouse or the keyboard.
+             </remarks>
       </Docs>
     </Member>
   </Members>

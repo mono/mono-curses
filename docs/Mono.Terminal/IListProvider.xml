@@ -9,12 +9,12 @@
   <Interfaces />
   <Docs>
     <summary>
-            Model for the <see cref="T:Mono.Terminal.ListView" /> widget.
-            </summary>
+               Model for the <see cref="T:Mono.Terminal.ListView" /> widget.
+             </summary>
     <remarks>
-            Consumers of the <see cref="T:Mono.Terminal.ListView" /> widget should
-            implement this interface
-            </remarks>
+               Consumers of the <see cref="T:Mono.Terminal.ListView" /> widget should
+               implement this interface
+             </remarks>
   </Docs>
   <Members>
     <Member MemberName="AllowMark">
@@ -30,9 +30,9 @@
       </ReturnValue>
       <Docs>
         <summary>
-            Whether the ListView should allow items to be
-            marked.
-            </summary>
+               Whether the ListView should allow items to be
+               marked. 
+             </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -54,8 +54,8 @@
       <Docs>
         <param name="item">To be added.</param>
         <summary>
-            Whether the given item is marked.
-            </summary>
+               Whether the given item is marked.
+             </summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -73,13 +73,13 @@
       </ReturnValue>
       <Docs>
         <summary>
-            Number of items in the model.
-            </summary>
+               Number of items in the model.
+             </summary>
         <value>To be added.</value>
         <remarks>
-            This should return the number of items in the
-            model.
-            </remarks>
+               This should return the number of items in the
+               model. 
+             </remarks>
       </Docs>
     </Member>
     <Member MemberName="ProcessKey">
@@ -99,13 +99,13 @@
       <Docs>
         <param name="ch">To be added.</param>
         <summary>
-            Allows the model to process the given keystroke.
-            </summary>
+               Allows the model to process the given keystroke.
+             </summary>
         <returns>To be added.</returns>
         <remarks>
-            The model should return true if the key was
-            processed, false otherwise.
-            </remarks>
+               The model should return true if the key was
+               processed, false otherwise.
+             </remarks>
       </Docs>
     </Member>
     <Member MemberName="Render">
@@ -131,9 +131,9 @@
         <param name="width">To be added.</param>
         <param name="item">To be added.</param>
         <summary>
-            This should render the item at the given line,
-            col with the specified width.
-            </summary>
+               This should render the item at the given line,
+               col with the specified width.
+             </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -151,8 +151,8 @@
       <Parameters />
       <Docs>
         <summary>
-            Callback: invoked when the selected item has changed.
-            </summary>
+               Callback: invoked when the selected item has changed.
+             </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -173,9 +173,9 @@
       <Docs>
         <param name="target">To be added.</param>
         <summary>
-            Callback: this is the way that the model is
-            hooked up to its actual view.
-            </summary>
+               Callback: this is the way that the model is
+               hooked up to its actual view. 
+             </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

@@ -16,14 +16,14 @@
   </Interfaces>
   <Docs>
     <summary>
-            Container widget, can host other widgets.
-            </summary>
+               Container widget, can host other widgets.
+             </summary>
     <remarks>
-            This implements the foundation for other containers
-            (like Dialogs and Frames) that can host other widgets
-            inside their boundaries.   It provides focus handling
-            and event routing.
-            </remarks>
+               This implements the foundation for other containers
+               (like Dialogs and Frames) that can host other widgets
+               inside their boundaries.   It provides focus handling
+               and event routing.
+             </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -46,8 +46,8 @@
         <param name="w">To be added.</param>
         <param name="h">To be added.</param>
         <summary>
-            Public constructor.
-            </summary>
+               Public constructor.
+             </summary>
         <remarks />
       </Docs>
     </Member>
@@ -68,8 +68,8 @@
       <Docs>
         <param name="w">To be added.</param>
         <summary>
-            Adds a widget to this container.
-            </summary>
+               Adds a widget to this container.
+             </summary>
         <remarks />
       </Docs>
     </Member>
@@ -227,9 +227,9 @@
       <Parameters />
       <Docs>
         <summary>
-            Focuses the first possible focusable widget in
-            the contained widgets.
-            </summary>
+               Focuses the first possible focusable widget in
+               the contained widgets.
+             </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -247,8 +247,8 @@
       <Parameters />
       <Docs>
         <summary>
-            Focuses the first widget in the contained widgets.
-            </summary>
+               Focuses the first widget in the contained widgets.
+             </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -266,8 +266,8 @@
       <Parameters />
       <Docs>
         <summary>
-            Focuses the last widget in the contained widgets.
-            </summary>
+               Focuses the last widget in the contained widgets.
+             </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -285,8 +285,8 @@
       <Parameters />
       <Docs>
         <summary>
-            Focuses the next widget.
-            </summary>
+               Focuses the next widget.
+             </summary>
         <returns>To be added.</returns>
         <remarks />
       </Docs>
@@ -305,8 +305,8 @@
       <Parameters />
       <Docs>
         <summary>
-            Focuses the previous widget.
-            </summary>
+               Focuses the previous widget.
+             </summary>
         <returns>To be added.</returns>
         <remarks />
       </Docs>
@@ -330,14 +330,14 @@
         <param name="row">To be added.</param>
         <param name="col">To be added.</param>
         <summary>
-            Returns the base position for child widgets to
-            paint on.
-            </summary>
+               Returns the base position for child widgets to
+               paint on.   
+             </summary>
         <remarks>
-            This method is typically overwritten by
-            containers that want to have some padding (like
-            Frames or Dialogs).
-            </remarks>
+               This method is typically overwritten by
+               containers that want to have some padding (like
+               Frames or Dialogs).
+             </remarks>
       </Docs>
     </Member>
     <Member MemberName="GetEnumerator">
@@ -387,8 +387,8 @@
       <Parameters />
       <Docs>
         <summary>
-            Called on top-level container before starting up.
-            </summary>
+               Called on top-level container before starting up.
+             </summary>
         <remarks />
       </Docs>
     </Member>
@@ -501,8 +501,8 @@
       <Parameters />
       <Docs>
         <summary>
-            Used to redraw all the children in this container.
-            </summary>
+               Used to redraw all the children in this container.
+             </summary>
         <remarks />
       </Docs>
     </Member>
@@ -522,8 +522,8 @@
       <Docs>
         <param name="w">To be added.</param>
         <summary>
-            Removes a widget from this container.
-            </summary>
+               Removes a widget from this container.
+             </summary>
         <remarks />
       </Docs>
     </Member>
@@ -540,8 +540,8 @@
       <Parameters />
       <Docs>
         <summary>
-            Removes all the widgets from this container.
-            </summary>
+               Removes all the widgets from this container.
+             </summary>
         <remarks />
       </Docs>
     </Member>
@@ -578,14 +578,14 @@
       <Docs>
         <param name="w">To be added.</param>
         <summary>
-            Focuses the specified widget in this container.
-            </summary>
+               Focuses the specified widget in this container.
+             </summary>
         <remarks>
-            Focuses the specified widge, taking the focus
-            away from any previously focused widgets.   This
-            method only works if the widget specified
-            supports being focused.
-            </remarks>
+               Focuses the specified widge, taking the focus
+               away from any previously focused widgets.   This
+               method only works if the widget specified
+               supports being focused.
+             </remarks>
       </Docs>
     </Member>
     <Member MemberName="SizeChanged">
@@ -602,9 +602,9 @@
       <Parameters />
       <Docs>
         <summary>
-            This method is invoked when the size of this
-            container changes.
-            </summary>
+               This method is invoked when the size of this
+               container changes. 
+             </summary>
         <remarks />
       </Docs>
     </Member>
@@ -621,8 +621,8 @@
       </ReturnValue>
       <Docs>
         <summary>
-            Raised when the size of this container changes.
-            </summary>
+               Raised when the size of this container changes.
+             </summary>
         <remarks />
       </Docs>
     </Member>

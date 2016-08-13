@@ -12,19 +12,19 @@
   <Interfaces />
   <Docs>
     <summary>
-            A Dialog is a container that can also have a number of
-            buttons at the bottom
-            </summary>
+               A Dialog is a container that can also have a number of
+               buttons at the bottom
+             </summary>
     <remarks>
       <para>Dialogs are containers that can have a set of buttons at
-            the bottom.   Dialogs are automatically centered on the
-            screen, and on screen changes the buttons are
-            relaid out.</para>
+               the bottom.   Dialogs are automatically centered on the
+               screen, and on screen changes the buttons are
+               relaid out.</para>
       <para>
-            To make the dialog box run until an option has been
-            executed, you would typically create the dialog box and
-            then call Application.Run on the Dialog instance.
-            </para>
+               To make the dialog box run until an option has been
+               executed, you would typically create the dialog box and
+               then call Application.Run on the Dialog instance.
+             </para>
     </remarks>
   </Docs>
   <Members>
@@ -46,8 +46,8 @@
         <param name="h">To be added.</param>
         <param name="title">To be added.</param>
         <summary>
-            Public constructor.
-            </summary>
+               Public constructor.
+             </summary>
         <remarks />
       </Docs>
     </Member>
@@ -68,8 +68,8 @@
       <Docs>
         <param name="b">To be added.</param>
         <summary>
-            Adds a button to the dialog
-            </summary>
+               Adds a button to the dialog
+             </summary>
         <remarks />
       </Docs>
     </Member>
@@ -123,8 +123,8 @@
       <Parameters />
       <Docs>
         <summary>
-            Makes the default style for the dialog use the error colors.
-            </summary>
+               Makes the default style for the dialog use the error colors.
+             </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

@@ -12,13 +12,13 @@
   <Interfaces />
   <Docs>
     <summary>
-            A label that can be trimmed to a given position
-            </summary>
+               A label that can be trimmed to a given position
+             </summary>
     <remarks>
-            Just like a label, but it can be trimmed to a given
-            position if the text being displayed overflows the
-            specified width.
-            </remarks>
+               Just like a label, but it can be trimmed to a given
+               position if the text being displayed overflows the
+               specified width. 
+             </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -41,8 +41,8 @@
         <param name="w">To be added.</param>
         <param name="s">To be added.</param>
         <summary>
-            Public constructor.
-            </summary>
+               Public constructor.
+             </summary>
         <remarks />
       </Docs>
     </Member>
@@ -74,8 +74,8 @@
       </ReturnValue>
       <Docs>
         <summary>
-            The text displayed by this widget.
-            </summary>
+               The text displayed by this widget.
+             </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>

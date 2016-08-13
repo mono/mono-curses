@@ -12,12 +12,12 @@
   <Interfaces />
   <Docs>
     <summary>
-            Text data entry widget
-            </summary>
+               Text data entry widget
+             </summary>
     <remarks>
-            The Entry widget provides Emacs-like editing
-            functionality,  and mouse support.
-            </remarks>
+               The Entry widget provides Emacs-like editing
+               functionality,  and mouse support.
+             </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -40,8 +40,8 @@
         <param name="w">To be added.</param>
         <param name="s">To be added.</param>
         <summary>
-            Public constructor.
-            </summary>
+               Public constructor.
+             </summary>
         <remarks />
       </Docs>
     </Member>
@@ -57,12 +57,12 @@
       </ReturnValue>
       <Docs>
         <summary>
-            Changed event, raised when the text has clicked.
-            </summary>
+               Changed event, raised when the text has clicked.
+             </summary>
         <remarks>
-            Client code can hook up to this event, it is
-            raised when the text in the entry changes.
-            </remarks>
+               Client code can hook up to this event, it is
+               raised when the text in the entry changes.
+             </remarks>
       </Docs>
     </Member>
     <Member MemberName="Color">
@@ -77,8 +77,8 @@
       </ReturnValue>
       <Docs>
         <summary>
-            The color used to display the text
-            </summary>
+                The color used to display the text
+             </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -95,8 +95,8 @@
       </ReturnValue>
       <Docs>
         <summary>
-            The current cursor position.
-            </summary>
+                The current cursor position.
+             </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -114,8 +114,8 @@
       <Parameters />
       <Docs>
         <summary>
-            Sets the cursor position.
-            </summary>
+               Sets the cursor position.
+             </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -186,12 +186,12 @@
       </ReturnValue>
       <Docs>
         <summary>
-            Sets the secret property.
-            </summary>
+               Sets the secret property.
+             </summary>
         <value>To be added.</value>
         <remarks>
-            This makes the text entry suitable for entering passwords.
-            </remarks>
+               This makes the text entry suitable for entering passwords. 
+             </remarks>
       </Docs>
     </Member>
     <Member MemberName="Text">
@@ -207,8 +207,8 @@
       </ReturnValue>
       <Docs>
         <summary>
-            Sets or gets the text in the entry.
-            </summary>
+               Sets or gets the text in the entry.
+             </summary>
         <value>To be added.</value>
         <remarks />
       </Docs>

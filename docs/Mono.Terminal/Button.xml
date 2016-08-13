@@ -12,13 +12,13 @@
   <Interfaces />
   <Docs>
     <summary>
-            Button widget
-            </summary>
+               Button widget
+             </summary>
     <remarks>
-            Provides a button that can be clicked, or pressed with
-            the enter key and processes hotkeys (the first uppercase
-            letter in the button becomes the hotkey).
-            </remarks>
+               Provides a button that can be clicked, or pressed with
+               the enter key and processes hotkeys (the first uppercase
+               letter in the button becomes the hotkey).
+             </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -35,13 +35,13 @@
       <Docs>
         <param name="s">To be added.</param>
         <summary>
-            Public constructor, creates a button based on
-            the given text at position 0,0
-            </summary>
+               Public constructor, creates a button based on
+               the given text at position 0,0
+             </summary>
         <remarks>
-            The size of the button is computed based on the
-            text length.   This button is not a default button.
-            </remarks>
+               The size of the button is computed based on the
+               text length.   This button is not a default button.
+             </remarks>
       </Docs>
     </Member>
     <Member MemberName=".ctor">
@@ -60,14 +60,14 @@
         <param name="s">To be added.</param>
         <param name="is_default">To be added.</param>
         <summary>
-            Public constructor, creates a button based on
-            the given text.
-            </summary>
+               Public constructor, creates a button based on
+               the given text.
+             </summary>
         <remarks>
-            If the value for is_default is true, a special
-            decoration is used, and the enter key on a
-            dialog would implicitly activate this button.
-            </remarks>
+               If the value for is_default is true, a special
+               decoration is used, and the enter key on a
+               dialog would implicitly activate this button.
+             </remarks>
       </Docs>
     </Member>
     <Member MemberName=".ctor">
@@ -88,13 +88,13 @@
         <param name="y">To be added.</param>
         <param name="s">To be added.</param>
         <summary>
-            Public constructor, creates a button based on
-            the given text at the given position.
-            </summary>
+               Public constructor, creates a button based on
+               the given text at the given position.
+             </summary>
         <remarks>
-            The size of the button is computed based on the
-            text length.   This button is not a default button.
-            </remarks>
+               The size of the button is computed based on the
+               text length.   This button is not a default button.
+             </remarks>
       </Docs>
     </Member>
     <Member MemberName=".ctor">
@@ -117,14 +117,14 @@
         <param name="s">To be added.</param>
         <param name="is_default">To be added.</param>
         <summary>
-            Public constructor, creates a button based on
-            the given text at the given position.
-            </summary>
+               Public constructor, creates a button based on
+               the given text at the given position.
+             </summary>
         <remarks>
-            If the value for is_default is true, a special
-            decoration is used, and the enter key on a
-            dialog would implicitly activate this button.
-            </remarks>
+               If the value for is_default is true, a special
+               decoration is used, and the enter key on a
+               dialog would implicitly activate this button.
+             </remarks>
       </Docs>
     </Member>
     <Member MemberName="Clicked">
@@ -140,13 +140,13 @@
       </ReturnValue>
       <Docs>
         <summary>
-            Clicked event, raised when the button is clicked.
-            </summary>
+               Clicked event, raised when the button is clicked.
+             </summary>
         <remarks>
-            Client code can hook up to this event, it is
-            raised when the button is activated either with
-            the mouse or the keyboard.
-            </remarks>
+               Client code can hook up to this event, it is
+               raised when the button is activated either with
+               the mouse or the keyboard.
+             </remarks>
       </Docs>
     </Member>
     <Member MemberName="PositionCursor">
@@ -273,8 +273,8 @@
       </ReturnValue>
       <Docs>
         <summary>
-            The text displayed by this widget.
-            </summary>
+               The text displayed by this widget.
+             </summary>
         <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>

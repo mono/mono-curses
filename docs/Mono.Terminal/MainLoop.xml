@@ -11,9 +11,9 @@
   <Interfaces />
   <Docs>
     <summary>
-            Simple main loop implementation that can be used to monitor
-            file descriptor, run timers and idle handlers.
-            </summary>
+               Simple main loop implementation that can be used to monitor
+               file descriptor, run timers and idle handlers.
+             </summary>
     <remarks>To be added.</remarks>
   </Docs>
   <Members>
@@ -27,8 +27,8 @@
       <Parameters />
       <Docs>
         <summary>
-            Default constructor
-            </summary>
+              Default constructor
+             </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -48,8 +48,8 @@
       <Docs>
         <param name="idleHandler">To be added.</param>
         <summary>
-            Executes the specified @idleHandler on the idle loop.  The return value is a token to remove it.
-            </summary>
+               Executes the specified @idleHandler on the idle loop.  The return value is a token to remove it.
+             </summary>
         <returns>To be added.</returns>
         <remarks>To be added.</remarks>
       </Docs>
@@ -72,16 +72,17 @@
         <param name="time">To be added.</param>
         <param name="callback">To be added.</param>
         <summary>
-            Adds a timeout to the mainloop.
-            </summary>
+               Adds a timeout to the mainloop.
+             </summary>
         <returns>To be added.</returns>
         <remarks>
-            When time time specified passes, the callback will be invoked.
-            If the callback returns true, the timeout will be reset, repeating
-            the invocation. If it returns false, the timeout will stop.
-            The returned value is a token that can be used to stop the timeout
-            by calling RemoveTimeout.
-            </remarks>
+               When time time specified passes, the callback will be invoked.
+               If the callback returns true, the timeout will be reset, repeating
+               the invocation. If it returns false, the timeout will stop.
+            
+               The returned value is a token that can be used to stop the timeout
+               by calling RemoveTimeout.
+             </remarks>
       </Docs>
     </Member>
     <Member MemberName="AddWatch">
@@ -104,20 +105,21 @@
         <param name="condition">To be added.</param>
         <param name="callback">To be added.</param>
         <summary>
-            Watches a file descriptor for activity.
-            </summary>
+              Watches a file descriptor for activity.
+             </summary>
         <returns>To be added.</returns>
         <remarks>
-            When the condition is met, the provided callback
-            is invoked.  If the callback returns false, the
-            watch is automatically removed.
-            The return value is a token that represents this watch, you can
-            use this token to remove the watch by calling RemoveWatch.
-            </remarks>
+              When the condition is met, the provided callback
+              is invoked.  If the callback returns false, the
+              watch is automatically removed.
+            
+              The return value is a token that represents this watch, you can
+              use this token to remove the watch by calling RemoveWatch.
+             </remarks>
       </Docs>
     </Member>
     <Member MemberName="EventsPending">
-      <MemberSignature Language="C#" Value="public bool EventsPending (bool wait);" />
+      <MemberSignature Language="C#" Value="public bool EventsPending (bool wait = false);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool EventsPending(bool wait) cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
@@ -132,14 +134,14 @@
       <Docs>
         <param name="wait">To be added.</param>
         <summary>
-            Determines whether there are pending events to be processed.
-            </summary>
+               Determines whether there are pending events to be processed.
+             </summary>
         <returns>To be added.</returns>
         <remarks>
-            You can use this method if you want to probe if events are pending.
-            Typically used if you need to flush the input queue while still
-            running some of your own code in your main thread.
-            </remarks>
+               You can use this method if you want to probe if events are pending.
+               Typically used if you need to flush the input queue while still
+               running some of your own code in your main thread. 
+             </remarks>
       </Docs>
     </Member>
     <Member MemberName="Invoke">
@@ -158,8 +160,8 @@
       <Docs>
         <param name="action">To be added.</param>
         <summary>
-            Runs @action on the thread that is processing events
-            </summary>
+               Runs @action on the thread that is processing events
+             </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -176,20 +178,19 @@
       <Parameters />
       <Docs>
         <summary>
-            Runs one iteration of timers and file watches
-            </summary>
+               Runs one iteration of timers and file watches
+             </summary>
         <remarks>
-            You use this to process all pending events (timers, idle handlers and file watches).
-            You can use it like this:
-            while (main.EvensPending ()) MainIteration ();
-            </remarks>
+               You use this to process all pending events (timers, idle handlers and file watches).
+            
+               You can use it like this:
+                 while (main.EvensPending ()) MainIteration ();
+             </remarks>
       </Docs>
     </Member>
     <Member MemberName="MainIteration">
       <MemberSignature Language="C#" Value="public void MainIteration (bool wait);" />
       <MemberType>Method</MemberType>
-      <AssemblyInfo>
-      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
@@ -224,8 +225,8 @@
       <Docs>
         <param name="idleHandler">To be added.</param>
         <summary>
-            Removes the specified idleHandler from processing.
-            </summary>
+               Removes the specified idleHandler from processing.
+             </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -245,11 +246,11 @@
       <Docs>
         <param name="token">To be added.</param>
         <summary>
-            Removes a previously scheduled timeout
-            </summary>
+               Removes a previously scheduled timeout
+             </summary>
         <remarks>
-            The token parameter is the value returned by AddTimeout.
-            </remarks>
+               The token parameter is the value returned by AddTimeout.
+             </remarks>
       </Docs>
     </Member>
     <Member MemberName="RemoveWatch">
@@ -268,11 +269,11 @@
       <Docs>
         <param name="token">To be added.</param>
         <summary>
-            Removes an active watch from the mainloop.
-            </summary>
+               Removes an active watch from the mainloop.
+             </summary>
         <remarks>
-            The token parameter is the value returned from AddWatch
-            </remarks>
+               The token parameter is the value returned from AddWatch
+             </remarks>
       </Docs>
     </Member>
     <Member MemberName="Run">
@@ -288,8 +289,8 @@
       <Parameters />
       <Docs>
         <summary>
-            Runs the mainloop.
-            </summary>
+               Runs the mainloop.
+             </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -306,8 +307,8 @@
       <Parameters />
       <Docs>
         <summary>
-            Stops the mainloop.
-            </summary>
+               Stops the mainloop.
+             </summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>

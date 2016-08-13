@@ -1166,6 +1166,22 @@
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
+    <Member MemberName="KeyResize">
+      <MemberSignature Language="C#" Value="public const int KeyResize = 410;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 KeyResize = (410)" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <MemberValue>410</MemberValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
     <Member MemberName="KeyRight">
       <MemberSignature Language="C#" Value="public const int KeyRight = 261;" />
       <MemberSignature Language="ILAsm" Value=".field public static literal int32 KeyRight = (261)" />
