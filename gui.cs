@@ -45,6 +45,31 @@ namespace Mono.Terminal {
 		Vertical = 2
 	}
 
+
+	// Keys in addition to what Curses constants provide
+	class Keys
+	{
+		public const int CtrlA = 1;
+		public const int CtrlB = 2;
+		public const int CtrlC = 3;
+		public const int CtrlD = 4;
+		public const int CtrlE = 5;
+		public const int CtrlF = 6;
+		public const int Tab = 9;
+		public const int CtrlK = 11;
+		public const int CtrlN = 14;
+		public const int CtrlP = 16;
+		public const int CtrlV = 22;
+		public const int CtrlY = 25;
+		public const int CtrlZ = 26;
+
+		public const int Esc = 27;
+		public const int Enter = '\n';
+
+		public const int ShiftTab = 353;
+	}
+
+
 	public delegate void Action ();
 	
 	/// <summary>
@@ -754,46 +779,46 @@ namespace Mono.Terminal {
 				break;
 
 			case Curses.KeyHome:
-			case 1: // Control-a, Home
+			case Keys.CtrlA: // Home
 				point = 0;
 				Adjust ();
 				break;
 
 			case Curses.KeyLeft:
-			case 2: // Control-b, back character
+			case Keys.CtrlB: // back character
 				if (point > 0){
 					point--;
 					Adjust ();
 				}
 				break;
 
-			case 4: // Control-d, Delete
+			case Keys.CtrlD: // Delete
 				if (point == text.Length)
 					break;
 				SetText (text.Substring (0, point) + text.Substring (point+1));
 				Adjust ();
 				break;
 				
-			case 5: // Control-e, End
+			case Keys.CtrlE: // End
 				point = text.Length;
 				Adjust ();
 				break;
 
 			case Curses.KeyRight:
-			case 6: // Control-f, forward char
+			case Keys.CtrlF: // Control-f, forward char
 				if (point == text.Length)
 					break;
 				point++;
 				Adjust ();
 				break;
 
-			case 11: // Control-k, kill-to-end
+			case Keys.CtrlK: // kill-to-end
 				kill = text.Substring (point);
 				SetText (text.Substring (0, point));
 				Adjust ();
 				break;
 
-			case 25: // Control-y, yank
+			case Keys.CtrlY: // Control-y, yank
 				if (kill == null)
 					return true;
 				
@@ -1344,7 +1369,7 @@ namespace Mono.Terminal {
 			int n;
 
 			switch (c){
-			case 16: // Control-p
+			case Keys.CtrlP:
 			case Curses.KeyUp:
 				if (selected > 0){
 					selected--;
@@ -1356,7 +1381,7 @@ namespace Mono.Terminal {
 				} else
 					return false;
 
-			case 14: // Control-n
+			case Keys.CtrlN:
 			case Curses.KeyDown:
 				if (selected+1 < items){
 					selected++;
@@ -1369,7 +1394,7 @@ namespace Mono.Terminal {
 				} else 
 					return false;
 
-			case 22: //  Control-v
+			case Keys.CtrlV:
 			case Curses.KeyNPage:
 				n = (selected + h);
 				if (n > items)
@@ -2298,15 +2323,15 @@ namespace Mono.Terminal {
 				selected = (selected + 1) % Menus.Length;
 				break;
 
-			case '\n':
+			case Keys.Enter:
 				if (Menus [selected].Children == null)
 					return false;
 
 				Selected (Menus [selected].Children [Menus [selected].Current]);
 				break;
 
-			case 27:
-			case 3:
+			case Keys.Esc:
+			case Keys.CtrlC:
 				Running = false;
 				break;
 
@@ -2845,10 +2870,10 @@ namespace Mono.Terminal {
 				return;
 			}
 				
-			if (ch == 27){
+			if (ch == Keys.Esc){
 				Curses.timeout (100);
 				int k = Curses.getch ();
-				if (k != Curses.ERR && k != 27)
+				if (k != Curses.ERR && k != Keys.Esc)
 					ch = Curses.KeyAlt | k;
 				Curses.timeout (-1);
 			}
@@ -2863,13 +2888,13 @@ namespace Mono.Terminal {
 				return;
 			
 			// Control-c, quit the current operation.
-			if (ch == 3){
+			if (ch == Keys.CtrlC){
 				container.Running = false;
 				return;
 			}
 			
 			// Control-z, suspend execution, then repaint.
-			if (ch == 26){
+			if (ch == Keys.CtrlZ){
 				Curses.console_sharp_sendsigtstp ();
 				Window.Standard.redrawwin ();
 				Curses.refresh ();
@@ -2878,17 +2903,18 @@ namespace Mono.Terminal {
 			//
 			// Focus handling
 			//
-			if (ch == 9 || ch == Curses.KeyDown || ch == Curses.KeyRight){
+			if (ch == Keys.Tab || ch == Curses.KeyDown || ch == Curses.KeyRight){
 				if (!container.FocusNext ())
 					container.FocusNext ();
 				Curses.refresh ();
-			} else if (ch == Curses.KeyUp || ch == Curses.KeyLeft){
+			} else if (ch == Keys.ShiftTab || ch == Curses.KeyUp || ch == Curses.KeyLeft){
 				if (!container.FocusPrev ())
 					container.FocusPrev ();
 				Curses.refresh ();
 			}
 		}
 	}
+
 
 	public class RunState : IDisposable {
 		internal RunState (Container container)
