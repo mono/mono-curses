@@ -40,8 +40,8 @@ ListView widget uses Model/View setup.
 
 Color and black and white support (first parameter to Application.Init)
 
-Building
-========
+Setup and Building
+==================
 
 To build, make sure that you run the configure script, where you can specify
 an installation prefix, and then run make.   Like this:
@@ -58,6 +58,9 @@ use the `--prefix` flag, like this:
 $ configure --prefix=/opt/mono-curses/my-install
 $ make
 ```
+
+Once you do a first build with the above, you can use the provided solution
+file to rebuild.
 
 TODO
 ====
