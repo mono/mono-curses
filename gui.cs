@@ -1308,7 +1308,6 @@ namespace Mono.Terminal {
 	///   IListProvider that must be supplied at construction time.
 	/// </remarks>
 	public class ListView : Widget {
-		int items;
 		int top;
 		int selected;
 		bool allow_mark;
@@ -1325,7 +1324,6 @@ namespace Mono.Terminal {
 
 			this.provider = provider;
 			provider.SetListView (this);
-			items = provider.Items;
 			allow_mark = provider.AllowMark;
 		}
 		
@@ -1341,20 +1339,17 @@ namespace Mono.Terminal {
 		/// </remarks>
 		public void ProviderChanged ()
 		{
-			if (provider.Items != items){
-				items = provider.Items;
-				if (top > items){
-					if (items > 1)
-						top = items-1;
-					else
-						top = 0;
-				}
-				if (selected > items){
-					if (items > 1)
-						selected = items - 1;
-					else
-						selected = 0;
-				}
+			if (top > provider.Items){
+				if (provider.Items > 1)
+					top = provider.Items -1;
+				else
+					top = 0;
+			}
+			if (selected > provider.Items){
+				if (provider.Items > 1)
+					selected = provider.Items - 1;
+				else
+					selected = 0;
 			}
 			Redraw ();
 		}
@@ -1383,7 +1378,7 @@ namespace Mono.Terminal {
 
 			case Keys.CtrlN:
 			case Curses.KeyDown:
-				if (selected+1 < items){
+				if (selected+1 < provider.Items){
 					selected++;
 					if (selected >= top + h){
 						top++;
@@ -1397,11 +1392,11 @@ namespace Mono.Terminal {
 			case Keys.CtrlV:
 			case Curses.KeyNPage:
 				n = (selected + h);
-				if (n > items)
-					n = items-1;
+				if (n > provider.Items)
+					n = provider.Items -1;
 				if (n != selected){
 					selected = n;
-					if (items >= h)
+					if (provider.Items >= h)
 						top = selected;
 					else
 						top = 0;
@@ -1438,7 +1433,7 @@ namespace Mono.Terminal {
 				Move (y + l, x);
 				int item = l + top;
 
-				if (item >= items){
+				if (item >= provider.Items){
 					Curses.attrset (ColorNormal);
 					for (int c = 0; c < w; c++)
 						Curses.addch (' ');
@@ -1458,6 +1453,7 @@ namespace Mono.Terminal {
 					else
 						Curses.attrset (ColorNormal);
 				}
+
 				provider.Render (y + l, x, w, item);
 			}
 			PositionCursor ();
@@ -1468,16 +1464,18 @@ namespace Mono.Terminal {
 		/// </summary>
 		public int Selected {
 			get {
-				if (items == 0)
+				if (provider.Items == 0)
 					return -1;
 				return selected;
 			}
 
 			set {
-				if (value >= items)
+				if (value >= provider.Items)
 					throw new ArgumentException ("value");
 
 				selected = value;
+				SelectedChanged();
+
 				Redraw ();
 			}
 		}
@@ -1492,7 +1490,7 @@ namespace Mono.Terminal {
 
 			if (ev.Y < 0)
 				return;
-			if (ev.Y+top >= items)
+			if (ev.Y+top >= provider.Items)
 				return;
 			selected = ev.Y - top;
 			SelectedChanged ();
