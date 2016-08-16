@@ -2903,11 +2903,11 @@ namespace Mono.Terminal {
 			//
 			// Focus handling
 			//
-			if (ch == Keys.Tab || ch == Curses.KeyDown || ch == Curses.KeyRight){
+			if (ch == Keys.Tab){
 				if (!container.FocusNext ())
 					container.FocusNext ();
 				Curses.refresh ();
-			} else if (ch == Keys.ShiftTab || ch == Curses.KeyUp || ch == Curses.KeyLeft){
+			} else if (ch == Keys.ShiftTab){
 				if (!container.FocusPrev ())
 					container.FocusPrev ();
 				Curses.refresh ();
