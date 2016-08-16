@@ -1457,6 +1457,7 @@ namespace Mono.Terminal {
 				provider.Render (y + l, x, w, item);
 			}
 			PositionCursor ();
+			Curses.refresh();
 		}
 
 		/// <summary>
