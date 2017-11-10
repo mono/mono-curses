@@ -53,27 +53,18 @@ mono-curses.tree mono-curses.zip: mono-curses.xml mono-curses.dll docs/ns-Mono.T
 	monodocer -importslashdoc:mono-curses.xml -path:docs -assembly:mono-curses.dll
 	mdassembler --ecma docs/ --out mono-curses
 
-binding.cs: binding.cs.in Makefile
-	if test `uname` = Darwin; then make t-bugosx; else make detect; fi
-
-t-bugosx: 
-	make binding CURSES=libncurses.dylib MONO_CURSES=libmono-curses.dylib
-
 #cute hack to avoid depending on ncurses-devel on Linux
 detect:
 	echo "main () {initscr();}" > tmp.c
 	gcc tmp.c -lncursesw -o tmp
 	make binding CURSES=`ldd ./tmp  | grep ncurses | awk '{print $$3}' | sed 's#.*libncurses#ncurses#'`
 
-binding:
-	sed -e 's/@CURSES@/$(CURSES)/' -e 's/@MONO_CURSES@/$(MONO_CURSES)/' < binding.cs.in > binding.cs
-
 constants.cs: attrib.c
 	gcc -o attrib attrib.c  -lncurses
 	./attrib constants.cs
 
 libmono-curses.so: mono-curses.c
-	if test `uname` = Darwin; then gcc -dynamiclib -m32 mono-curses.c -o libmono-curses.dylib -lncurses; else gcc -g -shared -fPIC mono-curses.c -o libmono-curses.so -lncurses; fi
+	if test `uname` = Darwin; then gcc -dynamiclib mono-curses.c -o libmono-curses.dylib -lncurses; else gcc -g -shared -fPIC mono-curses.c -o libmono-curses.so -lncurses; fi
 
 test: test.exe
 	mono test.exe
@@ -91,8 +82,8 @@ install: all
 	cp mono-curses.tree mono-curses.zip mono-curses.source  `pkg-config --variable sourcesdir monodoc`
 
 config.make:
-	echo You must run configure first
-	exit 1
+	@echo You must run configure first
+	@exit 1
 
 include config.make
 

@@ -2840,7 +2840,7 @@ namespace Mono.Terminal {
 			if (ch == Curses.KeyMouse){
 				Curses.MouseEvent ev;
 				
-				Curses.console_sharp_getmouse (out ev);
+				Curses.getmouse (out ev);
 				container.ProcessMouse (ev);
 				return;
 			}

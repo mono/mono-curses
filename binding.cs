@@ -26,6 +26,7 @@
 // WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 using System;
+using System.IO;
 using System.Runtime.InteropServices;
 
 namespace Mono.Terminal {
@@ -34,21 +35,40 @@ namespace Mono.Terminal {
 
 		[StructLayout (LayoutKind.Sequential)]
 		public struct MouseEvent {
-			public int ID;
+			public short ID;
 			public int X, Y, Z;
 			public Event ButtonState;
 		}
 
 #region Screen initialization
-	
-		[DllImport ("@CURSES@", EntryPoint="initscr")]
+
+		[DllImport ("ncurses", EntryPoint="initscr")]
 		extern static internal IntPtr real_initscr ();
 		static int lines, cols;
 
 		static Window main_window;
+		static IntPtr curses_handle, curscr_ptr, lines_ptr, cols_ptr;
+
+		static void FindNCurses ()
+		{
+			if (File.Exists ("/usr/lib/libncurses.dylib"))
+				curses_handle = dlopen ("libncurses.dylib", 0);
+			else
+				curses_handle = dlopen ("libncurses.so", 0);
+			
+			if (curses_handle == IntPtr.Zero)
+				throw new Exception ("Could not dlopen ncurses");
+
+			stdscr = read_static_ptr ("stdscr");
+			curscr_ptr = get_ptr ("curscr");
+			lines_ptr = get_ptr ("LINES");
+			cols_ptr = get_ptr ("COLS");
+		}
 		
 		static public Window initscr ()
 		{
+			FindNCurses ();
+			
 			main_window = new Window (real_initscr ());
 			try {
 				console_sharp_get_dims (out lines, out cols);
@@ -88,129 +108,129 @@ namespace Mono.Terminal {
 			return false;
 		}
 		
-		[DllImport ("@CURSES@")]
+		[DllImport ("ncurses")]
 		extern static public int endwin ();
 
-		[DllImport ("@CURSES@")]
+		[DllImport ("ncurses")]
 		extern static public bool isendwin ();
 
 		//
 		// Screen operations are flagged as internal, as we need to
 		// catch all changes so we can update newscr, curscr, stdscr
 		//
-		[DllImport ("@CURSES@")]
+		[DllImport ("ncurses")]
 		extern static public IntPtr internal_newterm (string type, IntPtr file_outfd, IntPtr file_infd);
 
-		[DllImport ("@CURSES@")]
+		[DllImport ("ncurses")]
 		extern static public IntPtr internal_set_term (IntPtr newscreen);
 
-		[DllImport ("@CURSES@")]
+		[DllImport ("ncurses")]
 	        extern static internal void internal_delscreen (IntPtr sp);
 #endregion
 
 #region Input Options
-		[DllImport ("@CURSES@")]
+		[DllImport ("ncurses")]
 		extern static public int cbreak ();
 		
-		[DllImport ("@CURSES@")]
+		[DllImport ("ncurses")]
 		extern static public int nocbreak ();
 		
-		[DllImport ("@CURSES@")]
+		[DllImport ("ncurses")]
 		extern static public int echo ();
 		
-		[DllImport ("@CURSES@")]
+		[DllImport ("ncurses")]
 		extern static public int noecho ();
 		
-		[DllImport ("@CURSES@")]
+		[DllImport ("ncurses")]
 		extern static public int halfdelay (int t);
 
-		[DllImport ("@CURSES@")]
+		[DllImport ("ncurses")]
 		extern static public int raw ();
 
-		[DllImport ("@CURSES@")]
+		[DllImport ("ncurses")]
 		extern static public int noraw ();
 		
-		[DllImport ("@CURSES@")]
+		[DllImport ("ncurses")]
 		extern static public void noqiflush ();
 		
-		[DllImport ("@CURSES@")]
+		[DllImport ("ncurses")]
 		extern static public void qiflush ();
 
-		[DllImport ("@CURSES@")]
+		[DllImport ("ncurses")]
 		extern static public int typeahead (IntPtr fd);
 
-		[DllImport ("@CURSES@")]
+		[DllImport ("ncurses")]
 		extern static public int timeout (int delay);
 
 		//
 		// Internal, as they are exposed in Window
 		//
-		[DllImport ("@CURSES@")]
+		[DllImport ("ncurses")]
 		extern static internal int wtimeout (IntPtr win, int delay);
 	       
-		[DllImport ("@CURSES@")]
+		[DllImport ("ncurses")]
 		extern static internal int notimeout (IntPtr win, bool bf);
 
-		[DllImport ("@CURSES@")]
+		[DllImport ("ncurses")]
 		extern static internal int keypad (IntPtr win, bool bf);
 		
-		[DllImport ("@CURSES@")]
+		[DllImport ("ncurses")]
 		extern static internal int meta (IntPtr win, bool bf);
 		
-		[DllImport ("@CURSES@")]
+		[DllImport ("ncurses")]
 		extern static internal int intrflush (IntPtr win, bool bf);
 #endregion
 
 #region Output Options
-		[DllImport ("@CURSES@")]
+		[DllImport ("ncurses")]
 		extern internal static int clearok (IntPtr win, bool bf);
-		[DllImport ("@CURSES@")]
+		[DllImport ("ncurses")]
 		extern internal static int idlok (IntPtr win, bool bf);
-		[DllImport ("@CURSES@")]
+		[DllImport ("ncurses")]
 		extern internal static void idcok (IntPtr win, bool bf);
-		[DllImport ("@CURSES@")]
+		[DllImport ("ncurses")]
 		extern internal static void immedok (IntPtr win, bool bf);
-		[DllImport ("@CURSES@")]
+		[DllImport ("ncurses")]
 		extern internal static int leaveok (IntPtr win, bool bf);
-		[DllImport ("@CURSES@")]
+		[DllImport ("ncurses")]
 		extern internal static int wsetscrreg (IntPtr win, int top, int bot);
-		[DllImport ("@CURSES@")]
+		[DllImport ("ncurses")]
 		extern internal static int scrollok (IntPtr win, bool bf);
 		
-		[DllImport ("@CURSES@")]
+		[DllImport ("ncurses")]
 		extern public static int nl();
-		[DllImport ("@CURSES@")]
+		[DllImport ("ncurses")]
 		extern public static int nonl();
-		[DllImport ("@CURSES@")]
+		[DllImport ("ncurses")]
 		extern public static int setscrreg (int top, int bot);
 		
 #endregion
 
 #region refresh functions
 
-		[DllImport ("@CURSES@")]
+		[DllImport ("ncurses")]
 		extern public static int refresh ();
-		[DllImport ("@CURSES@")]
+		[DllImport ("ncurses")]
 		extern public static int doupdate();
 
-		[DllImport ("@CURSES@")]
+		[DllImport ("ncurses")]
 		extern internal static int wrefresh (IntPtr win);
-		[DllImport ("@CURSES@")]
+		[DllImport ("ncurses")]
 		extern internal static int redrawwin (IntPtr win);
-		[DllImport ("@CURSES@")]
+		[DllImport ("ncurses")]
 		extern internal static int wredrawwin (IntPtr win, int beg_line, int num_lines);
-		[DllImport ("@CURSES@")]
+		[DllImport ("ncurses")]
 		extern internal static int wnoutrefresh (IntPtr win);
 #endregion
 
 #region Output
-		[DllImport ("@CURSES@")]
+		[DllImport ("ncurses")]
 		extern public static int move (int line, int col);
 
-		[DllImport ("@CURSES@", EntryPoint="addch")]
+		[DllImport ("ncurses", EntryPoint="addch")]
 		extern internal static int _addch (int ch);
 		
-		[DllImport ("@CURSES@")]
+		[DllImport ("ncurses")]
 		extern public static int addstr (string s);
 
 		public static int addstr (string format, params object [] args)
@@ -235,72 +255,104 @@ namespace Mono.Terminal {
 			return addstr (new String (c, 1));
 		}
 		
-		[DllImport ("@CURSES@")]
+		[DllImport ("ncurses")]
 		extern internal static int wmove (IntPtr win, int line, int col);
 
-		[DllImport ("@CURSES@")]
+		[DllImport ("ncurses")]
 		extern internal static int waddch (IntPtr win, int ch);
 #endregion
 
 #region Attributes
-		[DllImport ("@CURSES@")]
+		[DllImport ("ncurses")]
 		extern public static int attron (int attrs);
-		[DllImport ("@CURSES@")]
+		[DllImport ("ncurses")]
 		extern public static int attroff (int attrs);
-		[DllImport ("@CURSES@")]
+		[DllImport ("ncurses")]
 		extern public static int attrset (int attrs);
 #endregion
 
 #region Input
-		[DllImport ("@CURSES@")]
+		[DllImport ("ncurses")]
 		extern public static int getch ();
 
-		[DllImport ("@CURSES@")]
+		[DllImport ("ncurses")]
 		extern public static int ungetch (int ch);
 
-		[DllImport ("@CURSES@")]
+		[DllImport ("ncurses")]
 		extern public static int mvgetch (int y, int x);
 #endregion
 		
 #region Colors
-		[DllImport ("@CURSES@")]
+		[DllImport ("ncurses")]
 		extern internal static bool has_colors ();
 
-		[DllImport ("@CURSES@")]
+		[DllImport ("ncurses")]
 		extern internal static int start_color ();
 
-		[DllImport ("@CURSES@")]
+		[DllImport ("ncurses")]
 		extern internal static int init_pair (short pair, short f, short b);
 
-		[DllImport ("@CURSES@")]
+		[DllImport ("ncurses")]
 		extern internal static int use_default_colors ();
 		
 #endregion
 		
-#region Mouse
-#endregion
+		[DllImport ("libc")]
+		extern static IntPtr dlopen (string file, int mode);
 
+		[DllImport ("libc")]
+		extern static IntPtr dlsym (IntPtr handle, string symbol);
+
+		static IntPtr stdscr;
+
+		static IntPtr get_ptr (string key)
+		{
+			var ptr = dlsym (curses_handle, key);
+			if (ptr == IntPtr.Zero)
+				throw new Exception ("Could not load the key " + key);
+			return ptr;
+		}
+		
+		internal static IntPtr read_static_ptr (string key)
+		{
+			var ptr = get_ptr (key);
+			return Marshal.ReadIntPtr (ptr);
+		}
+
+		internal static IntPtr console_sharp_get_stdscr () => stdscr;
+		
+		
 #region Helpers
-		[DllImport ("@MONO_CURSES@")]
-		internal extern static IntPtr console_sharp_get_stdscr ();
+		internal static IntPtr console_sharp_get_curscr ()
+		{
+			return Marshal.ReadIntPtr (curscr_ptr);
+		}
 
-		[DllImport ("@MONO_CURSES@")]
-		internal extern static IntPtr console_sharp_get_curscr ();
+		internal static void console_sharp_get_dims (out int lines, out int cols)
+		{
+			lines = Marshal.ReadInt32 (lines_ptr);
+			cols = Marshal.ReadInt32 (cols_ptr);
+		}
 
-		[DllImport ("@MONO_CURSES@")]
-		internal extern static void console_sharp_get_dims (out int lines, out int cols);
-
-		[DllImport ("@MONO_CURSES@")]
+		[DllImport ("libmono-curses.dylib")]
 		internal extern static void console_sharp_sendsigtstp ();
 
-		[DllImport ("@MONO_CURSES@")]
-		internal extern static Event console_sharp_mouse_mask (Event newmask, out Event oldmask);
+		[DllImport ("ncurses")]
+		extern static IntPtr mousemask (IntPtr newmask, out IntPtr oldmask);
+		
+		internal static Event console_sharp_mouse_mask (Event newmask, out Event oldmask)
+		{
+			IntPtr e;
+			var ret = (Event) mousemask ((IntPtr) newmask, out e);
+			oldmask = (Event) e;
+			return ret;
+		}
 
-		[DllImport ("@MONO_CURSES@")]
-		internal extern static uint console_sharp_getmouse (out MouseEvent ev);
+		[DllImport ("ncurses")]
+		internal extern static uint getmouse (out MouseEvent ev);
 
-		[DllImport ("@MONO_CURSES@")]
-		internal extern static uint console_sharp_ungetmouse (ref MouseEvent ev);
+		[DllImport ("ncurses")]
+		internal extern static uint ungetmouse (ref MouseEvent ev);
 #endregion
 
 		// We encode ESC + char (what Alt-char generates) as 0x2000 + char
