@@ -1,9 +1,93 @@
 using Mono.Terminal;
 using System;
+using System.IO;
 
 class GuiTest {
-	static void AddDialog () {}
-	static void OptionsDialog () {}
+	
+	static void OptionsDialog ()
+	{
+		Dialog d = new Dialog (62, 15, "Options");
+
+		d.Add (new Label (1, 1, "  Download Directory:"));
+		d.Add (new Label (1, 3, "         Listen Port:"));
+		d.Add (new Label (1, 5, "  Upload Speed Limit:"));
+		d.Add (new Label (35,5, "kB/s"));
+		d.Add (new Label (1, 7, "Download Speed Limit:"));
+		d.Add (new Label (35,7, "kB/s"));
+
+		Entry download_dir = new Entry (24, 1, 30, "~/Download");
+		d.Add (download_dir);
+
+		Entry listen_port = new Entry (24, 3, 6, "34");
+		d.Add (listen_port);
+
+		Entry upload_limit = new Entry (24, 5, 10, "1024");
+		d.Add (upload_limit);
+
+		Entry download_limit = new Entry (24, 7, 10, "1024");
+		d.Add (download_limit);
+		
+		bool ok = false;
+		
+		Button b = new Button ("Ok", true);
+		b.Clicked += delegate { ok = true; b.Container.Running = false; };
+		d.AddButton (b);
+
+		b = new Button ("Cancel");
+		b.Clicked += delegate { b.Container.Running = false; };
+		d.AddButton (b);
+		
+		Application.Run (d);
+
+		if (ok){
+			int v;
+			
+			if (!Int32.TryParse (listen_port.Text, out v)){
+				Application.Error ("Error", "The value `{0}' is not a valid port number", listen_port.Text);
+				return;
+			}
+
+			if (!Directory.Exists (download_dir.Text)){
+				Application.Error ("Error", "The directory\n{0}\ndoes not exist", download_dir.Text);
+				return;
+			}
+		}
+	}
+	
+	static void AddDialog ()
+	{
+		int cols = (int) (Application.Cols * 0.7);
+		Dialog d = new Dialog (cols, 8, "Add");
+		Entry e;
+		string name = null;
+		
+		
+		d.Add (new Label (1, 0, "Torrent file:"));
+		e = new Entry (1, 1, cols - 6, Environment.CurrentDirectory);
+		d.Add (e);
+
+		// buttons
+		Button b = new Button ("Ok", true);
+		b.Clicked += delegate {
+			b.Container.Running = false;
+			name = e.Text;
+		};
+		d.AddButton (b);
+		b = new Button ("Cancel");
+		b.Clicked += delegate {
+			b.Container.Running = false;
+		};
+		d.AddButton (b);
+		
+		Application.Run (d);
+
+		if (name != null){
+			if (!File.Exists (name)){
+				Application.Error ("Missing File", "Torrent file:\n" + name + "\ndoes not exist");
+				return;
+			}
+		}
+	}
 
 	public class TorrentDetailsList : IListProvider {
 		public ListView view;
