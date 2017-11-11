@@ -17,6 +17,17 @@ The work in `gui' does not take advantage of curses "WINDOWS"
 or the Panel library as am not familiar with them, instead we
 create our own abstraction here. 
 
+Example
+=======
+
+I recently added a neutered version of an old UI I did for MonoTorrent
+that has the actual torrent code removed, but shows how to use
+the gui.cs toolkit.
+
+To run, just type `make grun`
+
+![sample guitest.cs in action](gtestshot.png "Sample GuiTest.cs in action")
+
 License
 =======
 
