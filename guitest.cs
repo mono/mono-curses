@@ -23,7 +23,7 @@ class GuiTest {
 
 		void IListProvider.Render (int line, int col, int width, int item)
 		{
-			string s = $"{item}";
+			string s = $"{item} This is item {item}";
 			if (s.Length > width){
 				s = s.Substring (0, width);
 				Curses.addstr (s);
@@ -182,7 +182,7 @@ class GuiTest {
 		status_state.Text = $"{DateTime.Now}";
 		status_peers.Text = $"{DateTime.Now}";
 		status_up.Text = "1000";
-		status_up_speed.Text = "Lots of bytes";
+		status_up_speed.Text = "Lots";
 	}
 	
 	static void Main ()

@@ -30,11 +30,14 @@ all: config.make mono-curses.dll libmono-curses.so mono-curses.zip mono-curses.p
 test.exe: test.cs mono-curses.dll libmono-curses.so
 	mcs -debug  test.cs -r:mono-curses.dll
 
-grun: gtest.exe
-	MONO_PATH=. mono --debug gtest.exe
+grun: gtest.exe guitest.exe
+	MONO_PATH=. mono --debug guitest.exe
 
 gtest.exe: gtest.cs mono-curses.dll
 	dmcs -debug gtest.cs -r:mono-curses.dll
+
+guitest.exe: guitest.cs mono-curses.dll
+	mcs -debug guitest.cs -r:mono-curses.dll
 
 mltest.exe: mltest.cs mono-curses.dll
 	dmcs -debug mltest.cs -r:mono-curses.dll
