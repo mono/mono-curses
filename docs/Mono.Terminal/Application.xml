@@ -579,7 +579,7 @@
       </Docs>
     </Member>
     <Member MemberName="Init">
-      <MemberSignature Language="C#" Value="public static void Init (bool disable_color);" />
+      <MemberSignature Language="C#" Value="public static void Init (bool disable_color = false);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Init(bool disable_color) cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>

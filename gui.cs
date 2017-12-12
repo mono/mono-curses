@@ -2488,7 +2488,7 @@ namespace Mono.Terminal {
 		///    Initializes the runtime.   The boolean flag
 		///   indicates whether we are forcing color to be off.
 		/// </summary>
-		public static void Init (bool disable_color)
+		public static void Init (bool disable_color = false)
 		{
 			if (inited)
 				return;
@@ -2840,7 +2840,7 @@ namespace Mono.Terminal {
 			if (ch == Curses.KeyMouse){
 				Curses.MouseEvent ev;
 				
-				Curses.console_sharp_getmouse (out ev);
+				Curses.getmouse (out ev);
 				container.ProcessMouse (ev);
 				return;
 			}
