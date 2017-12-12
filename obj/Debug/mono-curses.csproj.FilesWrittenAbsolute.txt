@@ -1,0 +1,5 @@
+/Users/ralfw/Projects/mono-curses.fork.github/obj/Debug/.NETFramework,Version=v4.0.AssemblyAttribute.cs
+/Users/ralfw/Projects/mono-curses.fork.github/bin/Debug/mono-curses.dll.mdb
+/Users/ralfw/Projects/mono-curses.fork.github/bin/Debug/mono-curses.dll
+/Users/ralfw/Projects/mono-curses.fork.github/obj/Debug/mono-curses.dll
+/Users/ralfw/Projects/mono-curses.fork.github/obj/Debug/mono-curses.dll.mdb
