@@ -73,8 +73,15 @@ $ make
 Once you do a first build with the above, you can use the provided solution
 file to rebuild.
 
-TODO
+Demo
 ====
+
+You can see how to use the curses API by running the `test.exe`, which only shows
+some letters on the screen with curses, or the `guitest.exe` which is a fake 
+application using gui.cs
+
+TODO for the tiny Gui.cs library
+================================
 
 * Rename x,y,w,h into something better, expose rects?
 * Merge Widget and Container?
