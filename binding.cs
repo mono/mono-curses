@@ -1,3 +1,4 @@
+
 //
 // binding.cs.in: Core binding for curses.
 //
@@ -29,7 +30,7 @@ using System;
 using System.IO;
 using System.Runtime.InteropServices;
 
-namespace Mono.Terminal {
+namespace Unix.Terminal {
 
 	public partial class Curses {
 
@@ -285,15 +286,20 @@ namespace Mono.Terminal {
 #region Colors
 		[DllImport ("ncurses")]
 		extern internal static bool has_colors ();
+		public static bool HasColors => has_colors ();
 
 		[DllImport ("ncurses")]
 		extern internal static int start_color ();
+		public static int StartColor () => start_color ();
 
 		[DllImport ("ncurses")]
 		extern internal static int init_pair (short pair, short f, short b);
+		public static int InitColorPair (short pair, short foreground, short background) => init_pair (pair, foreground, background);
 
 		[DllImport ("ncurses")]
 		extern internal static int use_default_colors ();
+		public static int UseDefaultColors () => use_default_colors ();
+		
 		
 #endregion
 		

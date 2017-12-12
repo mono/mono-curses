@@ -1,3 +1,4 @@
+using Unix.Terminal;
 using Mono.Terminal;
 using System;
 using System.IO;

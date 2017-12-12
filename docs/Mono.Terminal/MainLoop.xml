@@ -165,6 +165,24 @@
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
+    <Member MemberName="Invoke">
+      <MemberSignature Language="C#" Value="public void Invoke (Action action);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Invoke(class System.Action action) cil managed" />
+      <MemberType>Method</MemberType>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="action" Type="System.Action" />
+      </Parameters>
+      <Docs>
+        <param name="action">To be added.</param>
+        <summary>
+               Runs @action on the thread that is processing events
+             </summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
     <Member MemberName="MainIteration">
       <MemberSignature Language="C#" Value="public void MainIteration ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void MainIteration() cil managed" />
@@ -186,27 +204,6 @@
                You can use it like this:
                  while (main.EvensPending ()) MainIteration ();
              </remarks>
-      </Docs>
-    </Member>
-    <Member MemberName="MainIteration">
-      <MemberSignature Language="C#" Value="public void MainIteration (bool wait);" />
-      <MemberType>Method</MemberType>
-      <ReturnValue>
-        <ReturnType>System.Void</ReturnType>
-      </ReturnValue>
-      <Parameters>
-        <Parameter Name="wait" Type="System.Boolean" />
-      </Parameters>
-      <Docs>
-        <param name="wait">To be added.</param>
-        <summary>
-            Runs one iteration of timers and file watches
-            </summary>
-        <remarks>
-            You use this to process all pending events (timers, idle handlers and file watches).
-            You can use it like this:
-            while (main.EvensPending ()) MainIteration ();
-            </remarks>
       </Docs>
     </Member>
     <Member MemberName="RemoveIdle">

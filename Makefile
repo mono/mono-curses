@@ -24,8 +24,12 @@ DOCS_DIST = \
 	docs/ns-Mono.Terminal.xml \
 	docs/index.xml
 
+TESTS = test.exe 	\
+	gtest.exe	\
+	guitest.exe	\
+	mltest.exe
 
-all: config.make mono-curses.dll libmono-curses.so mono-curses.zip mono-curses.pc
+all: config.make mono-curses.dll libmono-curses.so mono-curses.zip mono-curses.pc $(TESTS)
 
 test.exe: test.cs mono-curses.dll libmono-curses.so
 	mcs -debug  test.cs -r:mono-curses.dll
@@ -73,7 +77,7 @@ test: test.exe
 	mono test.exe
 
 clean:
-	-rm -f *.exe *dll binding.cs *.so *dylib
+	-rm -f *.exe *dll *.so *dylib
 
 install: all
 	mkdir -p $(prefix)/bin

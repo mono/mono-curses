@@ -58,6 +58,13 @@
       <Type Name="Widget" Kind="Class" />
       <Type Name="Window" Kind="Class" />
     </Namespace>
+    <Namespace Name="Unix.Terminal">
+      <Type Name="Curses" Kind="Class" />
+      <Type Name="Curses+Event" Kind="Enumeration" />
+      <Type Name="Curses+MouseEvent" Kind="Structure" />
+      <Type Name="Curses+Screen" Kind="Class" />
+      <Type Name="Curses+Window" Kind="Class" />
+    </Namespace>
   </Types>
   <Title>mono-curses</Title>
 </Overview>

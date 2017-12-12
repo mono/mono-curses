@@ -31,6 +31,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Mono;
 using System.IO;
+using Unix.Terminal;
 
 namespace Mono.Terminal {
 
@@ -44,7 +45,6 @@ namespace Mono.Terminal {
 		Horizontal = 1,
 		Vertical = 2
 	}
-
 
 	// Keys in addition to what Curses constants provide
 	class Keys
@@ -2498,7 +2498,7 @@ namespace Mono.Terminal {
 			}
 		}
 
-		static Window main_window;
+		static Curses.Window main_window;
 		static MainLoop mainloop;
 		public static MainLoop MainLoop {
 			get {
@@ -2529,7 +2529,7 @@ namespace Mono.Terminal {
 			Curses.raw ();
 			Curses.noecho ();
 			//Curses.nonl ();
-			Window.Standard.keypad (true);
+			Curses.Window.Standard.keypad (true);
 
 #if BREAK_UTF8_RENDERING
 			Curses.Event old = 0;
@@ -2895,7 +2895,7 @@ namespace Mono.Terminal {
 			// Control-z, suspend execution, then repaint.
 			if (ch == Keys.CtrlZ){
 				Curses.console_sharp_sendsigtstp ();
-				Window.Standard.redrawwin ();
+				Curses.Window.Standard.redrawwin ();
 				Curses.refresh ();
 			}
 			

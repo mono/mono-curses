@@ -123,8 +123,8 @@
       </Docs>
     </Member>
     <Member MemberName="ProcessMouse">
-      <MemberSignature Language="C#" Value="public override void ProcessMouse (Mono.Terminal.Curses.MouseEvent ev);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void ProcessMouse(valuetype Mono.Terminal.Curses/MouseEvent ev) cil managed" />
+      <MemberSignature Language="C#" Value="public override void ProcessMouse (Unix.Terminal.Curses.MouseEvent ev);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void ProcessMouse(valuetype Unix.Terminal.Curses/MouseEvent ev) cil managed" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
@@ -133,7 +133,7 @@
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="ev" Type="Mono.Terminal.Curses+MouseEvent" />
+        <Parameter Name="ev" Type="Unix.Terminal.Curses+MouseEvent" />
       </Parameters>
       <Docs>
         <param name="ev">To be added.</param>

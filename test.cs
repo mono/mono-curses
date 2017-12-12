@@ -1,6 +1,6 @@
 using System;
 using Mono;
-using Mono.Terminal;
+using Unix.Terminal;
 
 class Demo {
 	static void Main ()
@@ -24,8 +24,8 @@ class Demo {
 		Curses.refresh ();
 		Curses.getch ();
 		
-		Window.Standard.intrflush (false);
-		Window.Standard.keypad (true);
+		Curses.Window.Standard.intrflush (false);
+		Curses.Window.Standard.keypad (true);
 
 		// Shutdown
 		Curses.endwin ();
