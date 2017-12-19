@@ -31,7 +31,6 @@
   <Copyright>To be added.</Copyright>
   <Types>
     <Namespace Name="Mono.Terminal">
-      <Type Name="Action" Kind="Delegate" />
       <Type Name="Application" Kind="Class" />
       <Type Name="Button" Kind="Class" />
       <Type Name="CheckBox" Kind="Class" />

@@ -96,7 +96,11 @@ namespace Unix.Terminal {
 			}
 		}
 
-		static internal bool CheckWinChange ()
+		//
+		// Returns true if the window changed since the last invocation, as a
+		// side effect, the Lines and Cols properties are updated
+		//
+		public static bool CheckWinChange ()
 		{
 			int l, c;
 			
@@ -299,6 +303,10 @@ namespace Unix.Terminal {
 		[DllImport ("ncurses")]
 		extern internal static int use_default_colors ();
 		public static int UseDefaultColors () => use_default_colors ();
+
+		[DllImport ("ncurses")]
+		extern internal static int COLOR_PAIRS();
+		public static int ColorPairs => COLOR_PAIRS();
 		
 		
 #endregion

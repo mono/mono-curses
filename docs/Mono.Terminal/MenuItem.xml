@@ -15,8 +15,8 @@
   </Docs>
   <Members>
     <Member MemberName=".ctor">
-      <MemberSignature Language="C#" Value="public MenuItem (string title, string help, Mono.Terminal.Action action);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string title, string help, class Mono.Terminal.Action action) cil managed" />
+      <MemberSignature Language="C#" Value="public MenuItem (string title, string help, Action action);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string title, string help, class System.Action action) cil managed" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
@@ -24,7 +24,7 @@
       <Parameters>
         <Parameter Name="title" Type="System.String" />
         <Parameter Name="help" Type="System.String" />
-        <Parameter Name="action" Type="Mono.Terminal.Action" />
+        <Parameter Name="action" Type="System.Action" />
       </Parameters>
       <Docs>
         <param name="title">To be added.</param>
@@ -35,14 +35,14 @@
       </Docs>
     </Member>
     <Member MemberName="Action">
-      <MemberSignature Language="C#" Value="public Mono.Terminal.Action Action { get; set; }" />
-      <MemberSignature Language="ILAsm" Value=".property instance class Mono.Terminal.Action Action" />
+      <MemberSignature Language="C#" Value="public Action Action { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Action Action" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
-        <ReturnType>Mono.Terminal.Action</ReturnType>
+        <ReturnType>System.Action</ReturnType>
       </ReturnValue>
       <Docs>
         <summary>To be added.</summary>

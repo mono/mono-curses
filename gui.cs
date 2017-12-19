@@ -70,8 +70,6 @@ namespace Mono.Terminal {
 	}
 
 
-	public delegate void Action ();
-	
 	/// <summary>
 	///   Base class for creating curses widgets
 	/// </summary>
