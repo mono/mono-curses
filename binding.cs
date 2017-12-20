@@ -281,7 +281,7 @@ namespace Unix.Terminal {
 		extern public static int getch ();
 		
 		[DllImport ("ncurses")]
-		extern public static int get_wch (ref int sequence);
+		extern public static int get_wch (out int sequence);
 
 		[DllImport ("ncurses")]
 		extern public static int ungetch (int ch);
