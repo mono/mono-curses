@@ -70,7 +70,13 @@ main (int argc, char *argv [])
 	put (COLOR_CYAN);
 	put (COLOR_WHITE);
 
+<<<<<<< HEAD
 	fprintf (OUT, "\t\tpublic enum Event : long {\n");
+=======
+	put (KEY_CODE_YES);
+
+	fprintf (OUT, "public enum Event : long {\n");
+>>>>>>> Surface get_wch
 	pute ("Button1Pressed", BUTTON1_PRESSED);
 	pute ("Button1Released", BUTTON1_RELEASED);
 	pute ("Button1Clicked", BUTTON1_CLICKED);

@@ -279,6 +279,9 @@ namespace Unix.Terminal {
 #region Input
 		[DllImport ("ncurses")]
 		extern public static int getch ();
+		
+		[DllImport ("ncurses")]
+		extern public static int get_wch (ref int sequence);
 
 		[DllImport ("ncurses")]
 		extern public static int ungetch (int ch);
