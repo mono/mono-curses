@@ -354,22 +354,22 @@ namespace Unix.Terminal {
 		[DllImport ("libmono-curses.dylib")]
 		internal extern static void console_sharp_sendsigtstp ();
 
-		[DllImport ("ncurses")]
-		extern static IntPtr mousemask (IntPtr newmask, out IntPtr oldmask);
+		[DllImport ("ncurses", EntryPoint="mousemask")]
+		extern static IntPtr call_mousemask (IntPtr newmask, out IntPtr oldmask);
 		
-		internal static Event console_sharp_mouse_mask (Event newmask, out Event oldmask)
+		public static Event mousemask (Event newmask, out Event oldmask)
 		{
 			IntPtr e;
-			var ret = (Event) mousemask ((IntPtr) newmask, out e);
+			var ret = (Event) call_mousemask ((IntPtr) newmask, out e);
 			oldmask = (Event) e;
 			return ret;
 		}
 
 		[DllImport ("ncurses")]
-		internal extern static uint getmouse (out MouseEvent ev);
+		public extern static uint getmouse (out MouseEvent ev);
 
 		[DllImport ("ncurses")]
-		internal extern static uint ungetmouse (ref MouseEvent ev);
+		public extern static uint ungetmouse (ref MouseEvent ev);
 #endregion
 
 		// We encode ESC + char (what Alt-char generates) as 0x2000 + char
