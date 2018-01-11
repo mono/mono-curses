@@ -83,6 +83,10 @@ application using gui.cs
 TODO for the tiny Gui.cs library
 ================================
 
+I started an alternative version for gui.cs here:
+
+	github.com/migueldeicaza/gui.cs
+
 * Rename x,y,w,h into something better, expose rects?
 * Merge Widget and Container?
 * Add scrollbar and thumb to listviews
