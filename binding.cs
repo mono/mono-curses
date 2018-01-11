@@ -351,9 +351,6 @@ namespace Unix.Terminal {
 			cols = Marshal.ReadInt32 (cols_ptr);
 		}
 
-		[DllImport ("libmono-curses.dylib")]
-		internal extern static void console_sharp_sendsigtstp ();
-
 		[DllImport ("ncurses", EntryPoint="mousemask")]
 		extern static IntPtr call_mousemask (IntPtr newmask, out IntPtr oldmask);
 		

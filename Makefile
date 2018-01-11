@@ -70,9 +70,6 @@ constants.cs: attrib.c
 	gcc -o attrib attrib.c  -lncurses
 	./attrib constants.cs
 
-libmono-curses.so: mono-curses.c
-	if test `uname` = Darwin; then gcc -dynamiclib mono-curses.c -o libmono-curses.dylib -lncurses; else gcc -g -shared -fPIC mono-curses.c -o libmono-curses.so -lncurses; fi
-
 test: test.exe
 	mono test.exe
 
@@ -84,7 +81,6 @@ install: all
 	mkdir -p $(prefix)/lib/mono-curses
 	mkdir -p $(prefix)/lib/pkgconfig
 	gacutil -i mono-curses.dll -package mono-curses -root $(DESTDIR)$(prefix)/lib
-	cp libmono-curses* $(prefix)/lib/
 	cp mono-curses.pc $(prefix)/lib/pkgconfig/
 	cp mono-curses.tree mono-curses.zip mono-curses.source  `pkg-config --variable sourcesdir monodoc`
 
