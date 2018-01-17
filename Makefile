@@ -29,9 +29,9 @@ TESTS = test.exe 	\
 	guitest.exe	\
 	mltest.exe
 
-all: config.make mono-curses.dll libmono-curses.so mono-curses.zip mono-curses.pc $(TESTS)
+all: config.make mono-curses.dll mono-curses.zip mono-curses.pc $(TESTS)
 
-test.exe: test.cs mono-curses.dll libmono-curses.so
+test.exe: test.cs mono-curses.dll
 	mcs -debug  test.cs -r:mono-curses.dll
 
 grun: gtest.exe guitest.exe
