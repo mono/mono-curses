@@ -1,13 +1,17 @@
 CURSES=ncurses
+DESTDIR=/tmp
 MONO_CURSES=mono-curses
 
-SOURCES = 		\
-	AssemblyInfo.cs	\
+CORE_SOURCES = 		\
 	handles.cs	\
 	binding.cs	\
-	gui.cs		\
 	mainloop.cs	\
 	constants.cs
+
+SOURCES = \
+	$(CORE_SOURCES) \
+	AssemblyInfo.cs	\
+	gui.cs
 
 EXTRA_DIST = 	\
 	mono-curses.snk	\
@@ -54,6 +58,14 @@ mono-curses.pc: mono-curses.pc.in Makefile
 
 mono-curses.dll mono-curses.xml: $(SOURCES)
 	mcs -nowarn:1591 -doc:mono-curses.xml -debug -target:library -out:mono-curses.dll -r:Mono.Posix -debug $(SOURCES)
+
+
+publish-internal:
+	for i in $(CORE_SOURCES); do sed -e 's/public partial/internal partial/' -e 's/public struct /internal struct /g' -e 's/public class/internal class/' -e 's/public enum/internal enum/' -e 's/public interface/internal interface/' -e 's/internal class MainLoop/public class MainLoop/' -e 's/internal enum Condition/public enum Condition/'  < $$i > $(DESTDIR)/$$i; done
+	mcs  -target:library -out:test.dll t/*cs -r:Mono.Posix
+
+publish-to-gui:
+	make publish-internal DESTDIR=../gui.cs/Terminal.Gui/MonoCurses/
 
 #
 mono-curses.tree mono-curses.zip: mono-curses.xml mono-curses.dll docs/ns-Mono.Terminal.xml docs/index.xml
