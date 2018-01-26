@@ -60,6 +60,27 @@ main (int argc, char *argv [])
 	put (ACS_ULCORNER);
 	put (ACS_URCORNER);
 	put (ACS_VLINE);
+	put (ACS_LTEE);
+	put (ACS_RTEE);
+	put (ACS_BTEE);
+	put (ACS_TTEE);
+	put (ACS_PLUS);
+	put (ACS_S1);
+	put (ACS_S9);
+	put (ACS_DIAMOND);
+	put (ACS_CKBOARD);
+	put (ACS_DEGREE);
+	put (ACS_PLMINUS);
+	put (ACS_BULLET);
+	put (ACS_LARROW);
+	put (ACS_RARROW);
+	put (ACS_DARROW);
+	put (ACS_UARROW);
+	put (ACS_BOARD);
+	put (ACS_LANTERN);
+	put (ACS_BLOCK);
+
+
 
 	put (COLOR_BLACK);
 	put (COLOR_RED);
