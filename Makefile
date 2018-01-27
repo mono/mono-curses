@@ -62,7 +62,6 @@ mono-curses.dll mono-curses.xml: $(SOURCES)
 
 publish-internal:
 	for i in $(CORE_SOURCES); do sed -e 's/public partial/internal partial/' -e 's/public struct /internal struct /g' -e 's/public class/internal class/' -e 's/public enum/internal enum/' -e 's/public interface/internal interface/' -e 's/internal class MainLoop/public class MainLoop/' -e 's/internal enum Condition/public enum Condition/'  < $$i > $(DESTDIR)/$$i; done
-	mcs  -target:library -out:test.dll t/*cs -r:Mono.Posix
 
 publish-to-gui:
 	make publish-internal DESTDIR=../gui.cs/Terminal.Gui/MonoCurses/
