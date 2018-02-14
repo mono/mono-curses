@@ -57,7 +57,7 @@ mono-curses.pc: mono-curses.pc.in Makefile
 	sed -e 's,@PREFIX@,$(prefix),' -e 's/@VERSION@/$(VERSION)/' < mono-curses.pc.in > mono-curses.pc
 
 mono-curses.dll mono-curses.xml: $(SOURCES)
-	mcs -nowarn:1591 -doc:mono-curses.xml -debug -target:library -out:mono-curses.dll -r:Mono.Posix -debug $(SOURCES)
+	mcs -nowarn:1591 -doc:mono-curses.xml -debug -target:library -out:mono-curses.dll -debug $(SOURCES)
 
 
 publish-internal:
